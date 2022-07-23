@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/App.css';
+import '../styles/App.scss';
 import Amneties from '../components/Amneties';
 import BookingCard from '../components/BookingCard';
 import NavBar from '../components/NavBar';

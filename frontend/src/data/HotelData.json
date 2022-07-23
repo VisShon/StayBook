@@ -1,0 +1,78 @@
+[
+
+    {   
+        "name" : "Jyoti Mahal" , 
+        "phone" : "+918373929299" ,
+        "email" : "booking@staybook.in" , 
+        "address"  : "2488 Central Delhi, Delhi, India - 110055" ,
+        "amenities" : ["Internet/Wi-Fi" , 
+                        "On Premise Parking" , 
+                        "24-hour front desk service Bar" ,
+                        "Restaurant" ,
+                        "Coffee/tea in lobby" , 
+                        "Vending Machine" ,
+                        "Room Service" , 
+                        "Spa" ,
+                        "Sauna" ,
+                        "Hot Tub/Jacuzzi" ,
+                        "Gym" ,
+                        "Breakfast" ,
+                        "Shuttle Service" ,
+                        "Currency Exchange" ,
+                        "Dry Cleaning" ,
+                        "Laundry" ,
+                        "Meeting/Banquet Facilities" ,
+                        "ATM On Site" ,
+                        "24 Hours Power Backup" ,
+                        "Luggage storage" ,
+                        "Safety deposit boxes" ,
+                        "Elevator" , 
+                        "Concierge" ,
+                        "Airport transfer" ,
+                        "Rental car" ,
+                        "Valet parking" , 
+                        "Tours"
+                        ], 
+        
+        "rooms" : {
+        
+            "Deluxe Double Room" : {
+
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "plans" : {"Standard Plan" : 2599.00 , "CP" : 3299.00 , "MAP" : 5099.00 , "AP" : 6799.00 }
+            }, 
+            
+            "Standard Double Room" : {
+
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "plans" : {"Standard Plan" : 1665.00 , "CP" : 2599.00 , "MAP" : 3299.00 , "AP" : 3739.00 }
+
+            }, 
+
+            "Deluxe Suite" : {
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "plans" : {"Monthly Rate" : 3419.10 , "Standard Plan" : 3799.00 , "CP" : 3799.00 , "MAP" : 5099.00 , "AP" : 5979.00 }
+
+            }, 
+
+            "Luxury Triple Room" : {
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "plans" : { "Standard Plan" : 3599.00 , "CP" : 3999.00 , "MAP" : 6199.00 , "AP" : 6999.00 }
+
+            },
+
+            "Deluxe Family Suite" : {
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "plans" : { "Weekly Rate" : 4084.05 , "Standard Plan" : 4299.00 , "CP" : 4499.00 , "MAP" : 5099.00 , "AP" : 5539.00 }
+
+            }
+        }
+    }
+]
+    
+    

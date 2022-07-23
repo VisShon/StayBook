@@ -1,0 +1,16 @@
+@import 'colors';
+
+.navbar{
+    width: screen;
+    height: 4rem;
+    box-shadow: 0 0 10px #cbcbcb;
+    display: flex;
+    align-items: center;
+    position:sticky;
+    top: 0;
+}
+
+.logo{
+    height: 80%;
+    margin-left: 5em;
+}

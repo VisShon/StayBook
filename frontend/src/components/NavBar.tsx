@@ -1,8 +1,11 @@
 import React from 'react'
-
+import '../styles/NavBar.scss';
+import logo from "../images/logo.png"
 function NavBar() {
   return (
-    <div>NavBar</div>
+    <div className="navbar">
+      <img src={logo} className="logo"/>
+    </div>
   )
 }
 

@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import './index.css';
-import App from './App';
+import App from './pages/BookingEngine';
 
 const rootElement = document.getElementById("root") as HTMLElement;
 const root = createRoot(rootElement);

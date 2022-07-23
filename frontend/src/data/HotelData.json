@@ -1,10 +1,11 @@
-[
+{
 
-    {   
-        "name" : "Jyoti Mahal" , 
+    "jyotimahal":{   
+        "name" : "Staybook Jyoti Mahal A Heritage Hotel" , 
         "phone" : "+918373929299" ,
         "email" : "booking@staybook.in" , 
         "address"  : "2488 Central Delhi, Delhi, India - 110055" ,
+        "images": ["JyotiMahal/img1.jpg", "JyotiMahal/img2.jpg", "JyotiMahal/img3.jpg", "JyotiMahal/img4.jpg", "JyotiMahal/img5.jpg"],
         "amenities" : ["Internet/Wi-Fi" , 
                         "On Premise Parking" , 
                         "24-hour front desk service Bar" ,
@@ -72,7 +73,11 @@
 
             }
         }
+    },
+    "others":{
+        
     }
-]
+
+}
     
     

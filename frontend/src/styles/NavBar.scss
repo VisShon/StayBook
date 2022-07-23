@@ -1,9 +1,10 @@
 @import 'colors';
 
 .navbar{
+    background-color: $background;
     width: screen;
     height: 4rem;
-    box-shadow: 0 0 10px #cbcbcb;
+    box-shadow: 0 0 10px $shadow;
     display: flex;
     align-items: center;
     position:sticky;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Amneties() {
+function Amneties({data}:any) {
   return (
     <div>Amneties</div>
   )

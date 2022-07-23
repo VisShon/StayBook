@@ -1,0 +1,12 @@
+.photoSlider{
+    display: flex;
+    overflow-y: scroll;
+    height:65vh;
+    width: screen;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+
+.image{
+    margin-right:1rem;
+}

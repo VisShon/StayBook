@@ -19,10 +19,10 @@ function App() {
         <>
           <p className="description">
               <span className="detail">PHONE:
-                <span style={{color: 'black'}}>{hotel.phone}</span>
+                <span style={{color: 'black', fontWeight: '400'}}>{hotel.phone}</span>
               </span>
               <span className="detail">EMAIL:
-                <span style={{color: 'black'}}>{hotel.email}</span>
+                <span style={{color: 'black', fontWeight: '400'}}>{hotel.email}</span>
               </span>
           </p>
           <p className="description">
@@ -31,8 +31,9 @@ function App() {
         </>
 
         <Amneties data={hotel.amenities}/>
-        <h1 className="title">Choose your room</h1>
-        <RoomCard/>
+        
+        <h1 className="heading">{"Choose your room(s)"}</h1>
+        <RoomCard room={hotel.rooms[0]}/>
         <BookingCard/>
       </div>
     </>

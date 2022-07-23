@@ -11,8 +11,22 @@
 }
 
 .button{
+    @extend .noselect;
     background-color: $main;
     color: white;
     border-radius: 0.5rem;
     padding: 1rem;
+    cursor: pointer;
 }
+.button:hover{
+    background-color: #a06f1a;
+}
+.button:active{
+    box-shadow: inset 0 0 10px #7c5616;
+}
+.noselect {
+    -webkit-touch-callout: none; 
+      -webkit-user-select: none; 
+          -ms-user-select: none;
+              user-select: none;
+  }

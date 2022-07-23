@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/RoomCard.scss'
-import PalnCard from './PlanCard'
+import PlanCard from './PlanCard'
 
 function RoomCard({room}:any) {
   return (
@@ -12,8 +12,7 @@ function RoomCard({room}:any) {
         </h2>
         <img src={require("../images/"+room.image)} className="roomImage"/>
       </div>
-
-      <PalnCard/>
+      {room.plans.map((plan:any, i:number) =>(<PlanCard plan={plan}/>))}
     </div>
   )
 }

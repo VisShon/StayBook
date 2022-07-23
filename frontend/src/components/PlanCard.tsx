@@ -1,8 +1,17 @@
 import React from 'react'
+import '../styles/PlanCard.scss'
 
-function PlanCard() {
+function PlanCard({plan}:any) {
   return (
-    <div>PlanCard</div>
+    <div className="planCard">
+      <div>
+        <h2>{plan.title}</h2>
+        <p>{plan.info}</p>
+      </div>
+      <p>Cancellation Policies</p>
+      <h2>{plan.price}</h2>
+      <div className="button">Add</div>
+    </div>
   )
 }
 

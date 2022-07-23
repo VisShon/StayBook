@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/App.scss';
-import Amneties from '../components/Amneties';
+import Amneties from '../components/Ameneties';
 import BookingCard from '../components/BookingCard';
 import NavBar from '../components/NavBar';
 import Photos from '../components/PhotoSlider'
@@ -30,8 +30,8 @@ function App() {
           </p>
         </>
 
-        <Amneties data={hotel.amneties}/>
-        <h1>Choose your room</h1>
+        <Amneties data={hotel.amenities}/>
+        <h1 className="title">Choose your room</h1>
         <RoomCard/>
         <BookingCard/>
       </div>

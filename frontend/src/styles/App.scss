@@ -1,9 +1,9 @@
 @import 'colors';
 .title{
-  font-size:3rem;
+  font-size:2.5rem;
   letter-spacing: .5px;
   font-family: "Maven Pro",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   color:$main
 
 }
@@ -12,6 +12,8 @@
   font-size: 2rem;
 }
 .container{
+  display:flex;
+  justify-content: space-between;
   margin: 1rem;
   margin-left: 5em;
   margin-right: 5em;

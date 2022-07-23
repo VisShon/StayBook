@@ -12,30 +12,32 @@ function App() {
   return (
     <>
       <NavBar/>
+      <Photos data={hotel.images}/>
       <div className="container">
-        <Photos data={hotel.images}/>
-        <h1 className="title">{hotel.name}</h1>
+        <div>
+          <h1 className="title">{hotel.name}</h1>
+          <>
+            <p className="description">
+                <span className="detail">PHONE:
+                  <span style={{color: 'black', fontWeight: '400'}}>{hotel.phone}</span>
+                </span>
+                <span className="detail">EMAIL:
+                  <span style={{color: 'black', fontWeight: '400'}}>{hotel.email}</span>
+                </span>
+            </p>
+            <p className="description">
+                {hotel.address}
+            </p>
+          </>
 
-        <>
-          <p className="description">
-              <span className="detail">PHONE:
-                <span style={{color: 'black', fontWeight: '400'}}>{hotel.phone}</span>
-              </span>
-              <span className="detail">EMAIL:
-                <span style={{color: 'black', fontWeight: '400'}}>{hotel.email}</span>
-              </span>
-          </p>
-          <p className="description">
-              {hotel.address}
-          </p>
-        </>
-
-        <Amneties data={hotel.amenities}/>
-        
-        <h1 className="heading">{"Choose your room(s)"}</h1>
-        <RoomCard room={hotel.rooms[0]}/>
+          <Amneties data={hotel.amenities}/>
+          
+          <h1 className="heading">{"Choose your room(s)"}</h1>
+          <RoomCard room={hotel.rooms[0]}/>
+        </div>
         <BookingCard/>
       </div>
+      
     </>
   );
 }

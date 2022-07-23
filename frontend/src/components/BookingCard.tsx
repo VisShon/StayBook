@@ -1,8 +1,11 @@
 import React from 'react'
+import '../styles/BookingCard.scss'
 
 function BookingCard() {
   return (
-    <div>BookingCard</div>
+    <div className="bookingCard">
+
+    </div>
   )
 }
 

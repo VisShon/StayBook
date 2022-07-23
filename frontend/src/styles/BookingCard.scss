@@ -1,8 +1,18 @@
 @import 'colors';
-.roomCard{
+
+
+.bookingCard{
+    position: sticky;
+    top: 5rem;
+    right: 5rem;
+    margin-top:1rem;
+    margin-left:0.5rem;
+    width: 40%;
+    z-index: 10;
     border-radius: 0.5rem;
-    width: 90%;
+    height: 50vh;
     padding: 1rem;
+    background-color: $background;
     box-shadow: 0 0 10px $shadow;
 
     h2{
@@ -15,15 +25,4 @@
         font-weight: 400;
         color: grey;
     }
-}
-.roomImage{
-    border-radius:0.5rem ;
-    object-fit: cover;
-    height: 10rem;
-    width: 50%;
-}
-
-.roomInfo{
-    display: flex;
-    justify-content: space-between;
 }

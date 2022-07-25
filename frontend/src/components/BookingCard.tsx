@@ -4,6 +4,8 @@ import AmountCard from './AmountCard'
 import SelectedPlan from './SelectedPlan'
 import { DatePicker,TimePicker } from 'react-rainbow-components';
 
+
+
 function BookingCard({price,setPrice}:any) {
   const [checkIn,setCheckIn] =useState();
   const [checkOut,setCheckOut] =useState();

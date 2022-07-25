@@ -8,7 +8,7 @@
     margin-top:1rem;
     margin-left:0.5rem;
     width: 30vw;
-    height: 50vh;
+    height: 60vh;
     z-index: 10;
     border-radius: 0.5rem;
     padding: 1rem;
@@ -45,7 +45,6 @@
 }
 
 .input{
-    padding: 0.5rem;
     display: flex;
     justify-content: space-between;
 }
@@ -58,4 +57,16 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+}
+
+.amountCard{
+    @extend .calendar;
+    margin-top: 1rem;
+    text-align: left;
 }

@@ -6,15 +6,15 @@ function AmountCard({}:any) {
     <div className="amountCard">
       <div className="wrapper">
         <span>Room Price</span>
-        <span>{}</span>
+        <span>{0}</span>
       </div> 
       <div className="wrapper">
         <span>Tax</span>
-        <span>{}</span>
+        <span>{0}</span>
       </div> 
       <div className="wrapper">
         <span>Total Price</span>
-        <span>{}</span>
+        <span>{0}</span>
       </div> 
 
     </div>

@@ -11,8 +11,8 @@ function SelectedPlan({selectedRooms,setSelectedRooms}:any) {
   return (
     <div className="selectedPlan">
       <div className="wrapper">
-          <span>Name</span>
-          <a>button</a>
+          <span style={{color: 'black'}}>Name</span>
+          <a className="cancel">X</a>
       </div>
 
       <div className="wrapper">

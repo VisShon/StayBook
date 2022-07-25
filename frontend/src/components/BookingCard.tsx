@@ -41,7 +41,6 @@ function BookingCard({price,setPrice}:any) {
 
       </div>
       <p>{numberOfRooms} rooms</p>
-      <SelectedPlan/>
       <AmountCard/>
     </div>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '../styles/App.scss';
 import Amneties from '../components/Ameneties';
 import BookingCard from '../components/BookingCard';
@@ -8,6 +8,9 @@ import RoomCard from '../components/RoomCard';
 import HotelsData from '../data/HotelData.json';
 
 function App() {
+
+  const[price,setPrice] = useState(0);
+
   const hotel:any = HotelsData.jyotimahal;
   return (
     <>
@@ -35,7 +38,7 @@ function App() {
           <h1 className="heading">{"Choose your room(s)"}</h1>
           <RoomCard room={hotel.rooms[0]}/>
         </div>
-        <BookingCard/>
+        <BookingCard price={price} setPrice={setPrice}/>
       </div>
       
     </>

@@ -81,10 +81,26 @@
                 "totalRooms" : 10 , 
                 "bookedDates" : [] , 
                 "plans" : [ 
-                    {"Standard Plan" : 3599.00} ,
-                    {"CP" : 3999.00} , 
-                    {"MAP" : 6199.00 }, 
-                    {"AP" : 6999.00} 
+                    {
+                        "info":"Room only",
+                        "title":"Standard Plan" ,
+                        "price": 3599.00
+                    } ,
+                    {
+                        "info":"Room with Breakfast",
+                        "title":"CP" ,
+                        "price": 3999.00
+                    } , 
+                    {
+                        "info":"Room with Breakfast and Lunch or Dinner",
+                        "title":"MAP" ,
+                        "price": 6199.00 
+                    }, 
+                    {
+                        "info":"Room with all three meals",
+                        "title":"AP" ,
+                        "price": 6999.00
+                    } 
                 ]
 
             },
@@ -96,11 +112,26 @@
                 "totalRooms" : 10 , 
                 "bookedDates" : [] , 
                 "plans" : [ 
-                    {"Weekly Rate" : 4084.05},
-                    {"Standard Plan" : 4299.00},
-                    {"CP" : 4499.00},
-                    {"MAP" : 5099.00},
-                    {"AP" : 5539.00} 
+                    {   
+                        "info":"Monthy Rate Plan",
+                        "title":"Weekly Rate" ,
+                        "price": 4084.05},
+                    {   
+                        "info":"Room only",
+                        "title":"Standard Plan" ,
+                        "price": 4299.00},
+                    {   
+                        "info":"Room with Breakfast",
+                        "title":"CP" ,
+                        "price": 4499.00},
+                    {   
+                        "info":"Room with Breakfast and Lunch or Dinner",
+                        "title":"MAP" ,
+                        "price": 5099.00},
+                    {   
+                        "info":"Room with all three meals",
+                        "title":"AP" ,
+                        "price": 5539.00} 
                 ]
             }
         ]

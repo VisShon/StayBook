@@ -36,7 +36,7 @@ function App() {
           <Amneties data={hotel.amenities}/>
           
           <h1 className="heading">{"Choose your room(s)"}</h1>
-          <RoomCard room={hotel.rooms[0]}/>
+          {hotel.rooms.map((room:any,i:number) =>(<RoomCard room={room} key={i}/>))}
         </div>
         <BookingCard price={price} setPrice={setPrice}/>
       </div>

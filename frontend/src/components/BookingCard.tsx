@@ -4,6 +4,9 @@ import AmountCard from './AmountCard'
 import SelectedPlan from './SelectedPlan'
 import { DatePicker,TimePicker } from 'react-rainbow-components';
 
+const style = {
+  width: '10rem',
+};
 
 
 function BookingCard({price,setPrice}:any) {
@@ -18,11 +21,11 @@ function BookingCard({price,setPrice}:any) {
         <div className="input">
           <div>
             Check In
-            <DatePicker style={{marginRight:'10px'}}/>
+            <DatePicker style={style}/>
           </div>
           <div>
             Check Out
-            <DatePicker/>
+            <DatePicker style={style}/>
           </div>
         </div>
 

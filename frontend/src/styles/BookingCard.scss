@@ -8,7 +8,8 @@
     margin-top:1rem;
     margin-left:0.5rem;
     width: 30vw;
-    height: 60vh;
+    max-height: 70vh;
+    overflow-y: scroll;
     z-index: 10;
     border-radius: 0.5rem;
     padding: 1rem;
@@ -33,6 +34,7 @@
 }
 
 .calendar{
+    height: 4rem;
     border: 1px solid $main;
     border-radius: 0.5rem;
     display: flex;
@@ -46,11 +48,14 @@
 
 .input{
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .selectedPlan{
     @extend .calendar;
+    height: 4rem;
+    margin-bottom: 1rem;
 
 }
 .wrapper{
@@ -60,13 +65,10 @@
     align-items: center;
 }
 
-.input{
-    display: flex;
-    align-items: center;
-}
 
 .amountCard{
     @extend .calendar;
     margin-top: 1rem;
     text-align: left;
+    height: 4rem;
 }

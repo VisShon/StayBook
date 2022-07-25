@@ -4,15 +4,15 @@ import '../styles/BookingCard.scss';
 function AmountCard({}:any) {
   return (
     <div className="amountCard">
-      <div className="input">
+      <div className="wrapper">
         <span>Room Price</span>
         <span>{}</span>
       </div> 
-      <div className="input">
+      <div className="wrapper">
         <span>Tax</span>
         <span>{}</span>
       </div> 
-      <div className="input">
+      <div className="wrapper">
         <span>Total Price</span>
         <span>{}</span>
       </div> 

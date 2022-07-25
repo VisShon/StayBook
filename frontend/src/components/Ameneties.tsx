@@ -2,27 +2,27 @@ import React, {useState , useEffect} from 'react';
 import '../styles/Amneties.scss';
 
 function Ameneties({data}:any) {
-
-  // const [items , setItems]  = useState([]);
   
-  const [visible , setVisible]  = useState(3);
-
+  const [visible , setVisible]  = useState(5);
    const showMoreItems = () => {
-
-
-    setVisible((prevValue) => prevValue +20);
+    setVisible((prevValue) => prevValue +data.length);
    }
-
-
+   const showLessItems = () => {
+    setVisible(5);
+   }
   return (
-    <div className="details">Amenities:
-
-      {
-      data.slice(0 , visible).map((item:any,index:number) => (
-        <h1 className="amenities" key={index}>{index + 1} {item}</h1>
-      ))}
-    <button onClick={showMoreItems}>Load More</button>
-    </div>
+    <>
+      <h2>Ameneties:</h2>
+        <div className="details">
+          {
+          data.slice(0 , visible).map((item:any,index:number) => (
+            <h1 className="amenities" key={index}>• {item}</h1>
+          ))}
+        {visible<data.length?
+          <div style={{cursor:'pointer',fontSize:'2rem'}} onClick={showMoreItems}>+</div>:
+          <div style={{cursor:'pointer', fontSize:'1rem'}} onClick={showLessItems}>Less...</div>}
+        </div>
+    </>
 
 
   )

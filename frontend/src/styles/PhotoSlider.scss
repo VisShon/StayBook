@@ -12,3 +12,16 @@
 .image{
     margin-right:1rem;
 }
+
+.leftIcon{
+    position: absolute;
+    top: 20rem;
+    left: 5rem;
+    cursor: pointer;
+}
+.rightIcon{
+    position: absolute;
+    top: 20rem;
+    right: 5rem;
+    cursor: pointer;
+}

@@ -12,11 +12,7 @@
     "@types/react-dom": "^18.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-    "react-icons": "^4.4.0",
-=======
     "react-rainbow-components": "^1.30.1",
->>>>>>> 1836a1cfd27b9a542232d41e304702bf013d221c
     "react-scripts": "5.0.1",
     "sass": "^1.54.0",
     "typescript": "^4.7.4",

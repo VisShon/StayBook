@@ -26,8 +26,9 @@
     }
     p{
         margin-top:10px;
-        font-weight: 400;
-        color: grey;
+        font-weight: 500;
+        font-size:1.25rem;
+        color: black;
     }
 }
 
@@ -44,6 +45,7 @@
 }
 
 .input{
+    padding: 0.5rem;
     display: flex;
     justify-content: space-between;
 }

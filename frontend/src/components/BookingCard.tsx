@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import '../styles/BookingCard.scss'
-import DatePicker from 'react-date-picker'
 import AmountCard from './AmountCard'
 import SelectedPlan from './SelectedPlan'
+import { DatePicker,TimePicker } from 'react-rainbow-components';
 
 function BookingCard({price,setPrice}:any) {
   const [checkIn,setCheckIn] =useState();
   const [checkOut,setCheckOut] =useState();
+  const [numberOfRooms,setNumberOfRooms] =useState(0);
 
   return (
     <div className="bookingCard">
@@ -15,7 +16,7 @@ function BookingCard({price,setPrice}:any) {
         <div className="input">
           <div>
             Check In
-            <DatePicker/>
+            <DatePicker style={{marginRight:'10px'}}/>
           </div>
           <div>
             Check Out
@@ -23,16 +24,18 @@ function BookingCard({price,setPrice}:any) {
           </div>
         </div>
 
-        <div className="input">
+        {/* <div className="input">
           <div>
-            <div/>
+            <TimePicker style={{marginRight:'10px'}}/>
           </div>
           <div>
-            <div/>
+            <TimePicker/>
           </div>
-        </div>
+        </div> */}
+
+
       </div>
-      <p>number of rooms</p>
+      <p>{numberOfRooms} rooms</p>
       <SelectedPlan/>
       <AmountCard/>
     </div>

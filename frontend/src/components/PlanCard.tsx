@@ -1,13 +1,12 @@
 import React from 'react'
 import '../styles/PlanCard.scss'
+import { useAppDispatch } from '../app/hooks'
+import { addPlan } from '../app/planSlice';
+function PlanCard({plan}:any) {
 
-function PlanCard({plan,setSelectedPlans}:any) {
-
-  const addPlan = () =>{
-    setSelectedPlans((prevValue:any)=> {prevValue.push(plan)
-    })
-    
-    
+  const dispatch = useAppDispatch();
+  const onClickHandler = () =>{
+    dispatch(addPlan({payload:plan}))
   }
 
   return (
@@ -18,7 +17,7 @@ function PlanCard({plan,setSelectedPlans}:any) {
       </div>
       <p>Cancellation Policies</p>
       <h2>₹{plan.price}</h2>
-      <div className="button" onClick={addPlan}>Add</div>
+      <div className="button" onClick={onClickHandler}>Add</div>
     </div>
   )
 }

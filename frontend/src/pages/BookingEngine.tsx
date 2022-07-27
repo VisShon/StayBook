@@ -9,8 +9,6 @@ import HotelsData from '../data/HotelData.json';
 
 function App() {
 
-  const[selectedPlans,setSelectedPlans] =useState([]);
-
   const hotel:any = HotelsData.jyotimahal;
   return (
     <>
@@ -36,9 +34,9 @@ function App() {
           <Amneties data={hotel.amenities}/>
           
           <h1 className="heading">{"Choose your room(s)"}</h1>
-          {hotel.rooms.map((room:any,i:number) =>(<RoomCard room={room} key={i} setSelectedPlans={setSelectedPlans}/>))}
+          {hotel.rooms.map((room:any,i:number) =>(<RoomCard room={room} key={i}/>))}
         </div>
-        <BookingCard selectedPlans={selectedPlans}/>
+        <BookingCard/>
       </div>
       
     </>

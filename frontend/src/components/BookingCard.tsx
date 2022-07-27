@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../styles/BookingCard.scss'
 import AmountCard from './AmountCard'
 import SelectedPlan from './SelectedPlan'
+import { useAppSelector} from '../app/hooks'
 import { DatePicker,TimePicker } from 'react-rainbow-components';
 
 const style = {
@@ -13,7 +14,9 @@ const style = {
 function BookingCard({selectedPlans}:any) {
   const [checkIn,setCheckIn] =useState();
   const [checkOut,setCheckOut] =useState();
-  const[netPrice,setNetPrice] = useState(0);
+
+  const netPrice = useAppSelector(state => state.price.value)
+  const Plans = useAppSelector(state => state.plans.selectedPlans);
 
   return (
     <div className="bookingCard">
@@ -38,10 +41,10 @@ function BookingCard({selectedPlans}:any) {
             <TimePicker style={style}/>
           </div>
         </div>
-
-
       </div>
-      {/* <p>{selectedPlans} rooms</p> */}
+      <p>{Plans.length} rooms</p>
+
+      {Plans.map((item,index) => (<SelectedPlan title={item.title} key={index}/>))}
       <AmountCard/>
     </div>
 

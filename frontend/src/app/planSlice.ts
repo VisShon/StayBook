@@ -1,9 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
 export const planSlice = createSlice({
     name:'selectedPlans',
     initialState:{
-        selectedPlans:[]
+        selectedPlans:[{
+            "title":"Monthly Rate", 
+            "info":"Monthy Rate Plan",
+            "price": 3419.10 
+        }]
     },
     reducers:{
         addPlan: (state:any,action:any) =>{

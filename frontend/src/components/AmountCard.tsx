@@ -1,14 +1,20 @@
 import React from 'react'
 import '../styles/BookingCard.scss';
+import { useAppSelector, useAppDispatch } from '../app/hooks'
+import { updatePrice } from '../app/priceSlice';
 
-function AmountCard({selectedPlans,setNetPrice,netPrice}:any) {
+function AmountCard() {
+
+  const plans = useAppSelector(state => state.plans.selectedPlans)
+  const dispatch = useAppDispatch();
+
   var roomPrice:number=0;
-  selectedPlans.forEach((plan:any)=>{
+  plans.forEach((plan:any)=>{
       roomPrice+=parseInt(plan.price,10);
   })
-  console.log(selectedPlans)
   var tax:number= roomPrice*(10/100); 
-  // setNetPrice(roomPrice+tax)
+  var netPrice:number = roomPrice+tax;
+  dispatch(updatePrice({payload:netPrice}))
 
   return (
     <div className="amountCard">

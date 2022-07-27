@@ -42,7 +42,7 @@ function BookingCard({selectedPlans}:any) {
 
       </div>
       {/* <p>{selectedPlans} rooms</p> */}
-      <AmountCard setNetPrice ={setNetPrice} netPrice={netPrice} selectedPlans={selectedPlans}/>
+      <AmountCard/>
     </div>
 
   )

@@ -7,11 +7,11 @@ const dropdown = {
 };
 
 
-function SelectedPlan({selectedRooms,setSelectedRooms}:any) {
+function SelectedPlan({title}:any) {
   return (
     <div className="selectedPlan">
       <div className="wrapper">
-          <span style={{color: 'black'}}>Name</span>
+          <span style={{color: 'black'}}>{title}</span>
           <a className="cancel">X</a>
       </div>
 

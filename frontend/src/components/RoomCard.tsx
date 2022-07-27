@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/RoomCard.scss'
 import PlanCard from './PlanCard'
 
-function RoomCard({room}:any) {
+function RoomCard({room,setSelectedPlans}:any) {
   return (
     <div className="roomCard">
       <div className="roomInfo">
@@ -12,7 +12,7 @@ function RoomCard({room}:any) {
         </h2>
         <img src={require("../images/"+room.image)} className="roomImage"/>
       </div>
-      {room.plans.map((plan:any, i:number) =>(<PlanCard plan={plan} key={i}/>))}
+      {room.plans.map((plan:any, i:number) =>(<PlanCard plan={plan} key={i} setSelectedPlans={setSelectedPlans}/>))}
     </div>
   )
 }

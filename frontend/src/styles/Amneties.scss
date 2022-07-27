@@ -7,7 +7,9 @@
     width:100%;
     font-family: "Maven Pro",sans-serif;
     font-weight: 500;
-    color:$main;
+    background: $gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size:1.5rem;
     margin-right: 1rem;
 }

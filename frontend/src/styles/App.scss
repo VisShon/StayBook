@@ -35,5 +35,7 @@
 }
 
 h2{
-  color:$main
+  background: $gradient;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

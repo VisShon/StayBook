@@ -1,7 +1,15 @@
 import React from 'react'
 import '../styles/PlanCard.scss'
 
-function PlanCard({plan}:any) {
+function PlanCard({plan,setSelectedPlans}:any) {
+
+  const addPlan = () =>{
+    setSelectedPlans((prevValue:any)=> {prevValue.push(plan)
+    })
+    
+    
+  }
+
   return (
     <div className="planCard">
       <div style={{width:'30%'}}>
@@ -10,7 +18,7 @@ function PlanCard({plan}:any) {
       </div>
       <p>Cancellation Policies</p>
       <h2>₹{plan.price}</h2>
-      <div className="button">Add</div>
+      <div className="button" onClick={addPlan}>Add</div>
     </div>
   )
 }

@@ -10,8 +10,6 @@ const dropdown = {
 
 
 function SelectedPlan({title}:any) {
-
-
   
   const dispatch = useAppDispatch();
   const onClickHandler = () =>{

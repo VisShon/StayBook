@@ -5,8 +5,9 @@ import { useAppSelector } from '../app/hooks';
 
 function Button() {
 
-  var orderAmount = useAppSelector(state => state.price.value)
-
+  var price = useAppSelector(state => state.price.value)
+  var orderAmount = (price*10).toString()+'0'
+  console.log(orderAmount,price)
   const loadRazorPay = () =>{
     const script = document.createElement('script');
       script.src = 'https://checkout.razorpay.com/v1/checkout.js';
@@ -16,14 +17,15 @@ function Button() {
 
     script.onload = async () => {
       try {
-        const result = await axios.post('http://localhost:8000/create-order', {
-          amount: orderAmount + '00',
+        const result = await axios.post(`http://localhost:8000/create-order`, {
+          amount: orderAmount,
         });
+        console.log('poop')
         const { amount, id: order_id, currency } = result.data;
         const {
           data: { key: razorpayKey },
         } = await axios.get('http://localhost:8000/get-razorpay-key');
-
+        
         const options = {
           key: razorpayKey,
           amount: amount.toString(),
@@ -53,11 +55,8 @@ function Button() {
     document.body.appendChild(script);
   }
 
-  const onclickHandler = () => {
-    loadRazorPay();
-  }
   return (
-    <div className="Button" onClick={onclickHandler}>Porceed to chekout!</div>
+    <div className="Button" onClick={loadRazorPay}>Porceed to chekout!</div>
   )
 }
 

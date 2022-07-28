@@ -23,5 +23,5 @@
   },
   "include": [
     "src"
-, "src/app/razorPay.ts", "../backend/config/razorPayInitialize.ts", "../backend/makePayment.ts"  ]
+, "src/config/razorPay.tskendsrc/config/razorPayInitialize.tskend/makePayment.ts"  ]
 }

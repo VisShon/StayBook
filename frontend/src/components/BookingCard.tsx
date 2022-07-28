@@ -4,6 +4,7 @@ import AmountCard from './AmountCard'
 import SelectedPlan from './SelectedPlan'
 import { useAppSelector} from '../app/hooks'
 import { DatePicker,TimePicker } from 'react-rainbow-components';
+import Button from './Button'
 
 const style = {
   width: '10rem',
@@ -46,6 +47,7 @@ function BookingCard({selectedPlans}:any) {
 
       {Plans.map((item,index) => (<SelectedPlan title={item.title} key={index}/>))}
       <AmountCard/>
+      <Button/>
     </div>
 
   )

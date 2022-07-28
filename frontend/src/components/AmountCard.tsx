@@ -30,7 +30,6 @@ function AmountCard() {
         <span>Total Price</span>
         <span>₹{netPrice}</span>
       </div> 
-
     </div>
   )
 }

@@ -1,6 +1,8 @@
 import React from 'react'
 import '../styles/BookingCard.scss'
 import { Picklist,Option } from 'react-rainbow-components';
+import { useAppDispatch } from '../app/hooks';
+import { removePlan } from '../app/planSlice';
 const dropdown = {
   width: '4rem',
   marginLeft: '0.5rem'
@@ -8,11 +10,18 @@ const dropdown = {
 
 
 function SelectedPlan({title}:any) {
+
+  const dispatch = useAppDispatch();
+
+  const onClickHandler = () =>{
+    dispatch(removePlan(title));
+  }
+
   return (
     <div className="selectedPlan">
       <div className="wrapper">
           <span style={{color: 'black'}}>{title}</span>
-          <a className="cancel">X</a>
+          <a onClick={onClickHandler} className="cancel">X</a>
       </div>
 
       <div className="wrapper">

@@ -12,7 +12,7 @@ function AmountCard() {
   plans.forEach((plan:any)=>{
       roomPrice+=parseInt(plan.price,10);
   })
-  var tax:number= roomPrice*(10/100); 
+  var tax:number= parseFloat((roomPrice*(10/100)).toFixed(3)); 
   var netPrice:number = roomPrice+tax;
   dispatch(updatePrice(netPrice))
 

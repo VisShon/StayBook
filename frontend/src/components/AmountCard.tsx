@@ -7,14 +7,14 @@ function AmountCard() {
 
   const plans = useAppSelector(state => state.plans.selectedPlans)
   const dispatch = useAppDispatch();
-
   var roomPrice:number=0;
+  console.log(plans)
   plans.forEach((plan:any)=>{
       roomPrice+=parseInt(plan.price,10);
   })
   var tax:number= roomPrice*(10/100); 
   var netPrice:number = roomPrice+tax;
-  dispatch(updatePrice({payload:netPrice}))
+  dispatch(updatePrice(netPrice))
 
   return (
     <div className="amountCard">

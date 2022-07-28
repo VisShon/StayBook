@@ -6,7 +6,7 @@ function PlanCard({plan}:any) {
 
   const dispatch = useAppDispatch();
   const onClickHandler = () =>{
-    dispatch(addPlan({payload:plan}))
+    dispatch(addPlan(plan))
   }
 
   return (

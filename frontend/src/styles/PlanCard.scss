@@ -1,13 +1,13 @@
 @import 'colors';
 
 .planCard{
-    border: 1px solid $main;
+    box-shadow: 0 0 10px $shadow;
     border-radius: 0.5rem;
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:0.5rem;
+    padding:1rem;
 }
 
 .button{

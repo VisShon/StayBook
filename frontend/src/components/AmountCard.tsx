@@ -7,6 +7,7 @@ function AmountCard() {
 
   const plans = useAppSelector(state => state.plans.selectedPlans)
   const dispatch = useAppDispatch();
+  
   var roomPrice:number=0;
   console.log(plans)
   plans.forEach((plan:any)=>{

@@ -36,7 +36,7 @@
 
 .calendar{
     height: 100%;
-    border: 1px solid $main;
+    box-shadow: 0 0 10px $shadow;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;

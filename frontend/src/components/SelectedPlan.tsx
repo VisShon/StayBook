@@ -43,7 +43,7 @@ function SelectedPlan({title}:any) {
       <div className="wrapper">
           <div className="input">
             Adults
-            <FormControl sx={{ m: 1, minWidth: 50,  }} size="small">
+            <FormControl sx={{ m: 1, minWidth: 50  }} size="small">
                 <Select
                   value={adults}
                   onChange={adultsChange}

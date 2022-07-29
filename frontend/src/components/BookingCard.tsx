@@ -3,8 +3,15 @@ import '../styles/BookingCard.scss'
 import AmountCard from './AmountCard'
 import SelectedPlan from './SelectedPlan'
 import { useAppSelector} from '../app/hooks'
-import { DatePicker,TimePicker } from 'react-rainbow-components';
+
 import Button from './Button'
+
+import TextField from '@mui/material/TextField';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+
+
 
 const style = {
   width: '10rem',
@@ -12,9 +19,10 @@ const style = {
 };
 
 
-function BookingCard({selectedPlans}:any) {
-  const [checkIn,setCheckIn] =useState();
-  const [checkOut,setCheckOut] =useState();
+function BookingCard() {
+  const [checkIn, setCheckIn] = React.useState<Date | null>(null);
+  const [checkOut, setCheckOut] = React.useState<Date | null>(null);
+
 
   const netPrice = useAppSelector(state => state.price.value)
   const Plans = useAppSelector(state => state.plans.selectedPlans);
@@ -24,22 +32,30 @@ function BookingCard({selectedPlans}:any) {
       <h1>₹{netPrice}</h1>
       <div className="calendar">
         <div className="input">
-          <div>
-            Check In
-            <DatePicker style={style} />
+          <div style={{marginRight: '0.5rem'}}>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DateTimePicker
+                label="Check In"
+                value={checkIn}
+                onChange={(newValue:any) => {
+                  setCheckIn(newValue);
+                }}
+                renderInput={(params:any) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
           </div>
           <div>
-            Check Out
-            <DatePicker style={style}/>
-          </div>
-        </div>
-
-        <div className="input">
-          <div>
-            <TimePicker style={style}/>
-          </div>
-          <div>
-            <TimePicker style={style}/>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <DateTimePicker
+                  views={['day','month']}
+                  label="Check Out"
+                  value={checkOut}
+                  onChange={(newValue:any) => {
+                    setCheckOut(newValue);
+                  }}
+                  renderInput={(params:any) => <TextField {...params} />}
+                />
+            </LocalizationProvider>
           </div>
         </div>
       </div>

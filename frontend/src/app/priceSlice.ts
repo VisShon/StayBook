@@ -10,14 +10,18 @@ export const priceSlice = createSlice({
         updatePrice: (state:any,action:any) => {
             state.value = action.payload;
         },
-        addChild: (state:any) => {
-            state.children += 1;
-            state.value += state.children*500;
+        numberOfChildren: (state:any, action:any) => {
+            if(state.children==0 && action.payload =='0' ) {
+                state.children = 0;
+            }
+            else{
+                action.payload=='1'?state.children++:state.children--;
+            }
         }
     }
     
 })
 
-export const {updatePrice,addChild} = priceSlice.actions;
+export const {updatePrice,numberOfChildren} = priceSlice.actions;
 
 export default priceSlice.reducer;

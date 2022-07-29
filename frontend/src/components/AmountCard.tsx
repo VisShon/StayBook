@@ -5,14 +5,16 @@ import { updatePrice } from '../app/priceSlice';
 
 function AmountCard() {
 
-  const plans = useAppSelector(state => state.plans.selectedPlans)
+  const plans = useAppSelector(state => state.plans.selectedPlans);
+  const children = useAppSelector(state => state.price.children);
   const dispatch = useAppDispatch();
   
   var roomPrice:number=0;
-  console.log(plans)
   plans.forEach((plan:any)=>{
       roomPrice+=parseInt(plan.price,10);
-  })
+  });
+  roomPrice+=children*500;
+  
   var tax:number= parseFloat((roomPrice*(10/100)).toFixed(3)); 
   var netPrice:number = roomPrice+tax;
   dispatch(updatePrice(netPrice))

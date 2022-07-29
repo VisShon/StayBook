@@ -7,7 +7,6 @@ function Button() {
 
   var price = useAppSelector(state => state.price.value)
   var orderAmount = (price*10).toString()+'0'
-  console.log(orderAmount,price)
   const loadRazorPay = () =>{
     const script = document.createElement('script');
       script.src = 'https://checkout.razorpay.com/v1/checkout.js';

@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import '../styles/BookingCard.scss'
 import { useAppDispatch } from '../app/hooks';
 import { removePlan } from '../app/planSlice';
-import { addChild } from '../app/priceSlice';
+import { numberOfChildren } from '../app/priceSlice';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
@@ -23,7 +23,7 @@ function SelectedPlan({title}:any) {
 
   const childChange = (event: SelectChangeEvent) => {
     setChildren(event.target.value as string);
-    dispatch(addChild())
+    dispatch(numberOfChildren(event.target.value as string))
   };
   const adultsChange = (event: SelectChangeEvent) => {
     setAdults(event.target.value as string);
@@ -31,6 +31,7 @@ function SelectedPlan({title}:any) {
 
   const onClickHandler = () =>{
     dispatch(removePlan(title));
+    dispatch(numberOfChildren('0'))
   }
 
   return (

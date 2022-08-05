@@ -10,13 +10,30 @@ function Ameneties({data}:any) {
    const showLessItems = () => {
     setVisible(5);
    }
+
+   const tryRequire = (path:any) => {
+      try{
+        return 1;
+      }
+      catch(err){
+        console.log('notfound')
+        return null;
+      }
+   }
+
+
   return (
     <>
       <h2>Ameneties:</h2>
         <div className="details">
           {
           data.slice(0 , visible).map((item:any,index:number) => (
-            <h1 className="amenities" key={index}>• {item}</h1>
+            <h1 className="amenities" key={index}>
+              {tryRequire("../images/staybookAmenities/On Premise Parking.svg")?
+               <img src={require("../images/staybookAmenities/Spa.svg")}/>:<>•</>
+              }
+               {item}
+            </h1>
           ))}
         {visible<data.length?
           <div style={{cursor:'pointer',fontSize:'2rem'}} onClick={showMoreItems}>+</div>:

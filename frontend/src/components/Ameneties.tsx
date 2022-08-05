@@ -1,6 +1,7 @@
 import React, {useState , useEffect} from 'react';
 import '../styles/Amneties.scss';
 
+
 function Ameneties({data}:any) {
   
   const [visible , setVisible]  = useState(5);
@@ -11,9 +12,9 @@ function Ameneties({data}:any) {
     setVisible(5);
    }
 
-   const tryRequire = (path:any) => {
+   const tryRequire = (item:any) => {
       try{
-        return 1;
+        return require("../images/staybookAmenities/"+item+".svg");
       }
       catch(err){
         console.log('notfound')
@@ -28,11 +29,12 @@ function Ameneties({data}:any) {
         <div className="details">
           {
           data.slice(0 , visible).map((item:any,index:number) => (
-            <h1 className="amenities" key={index}>
-              {tryRequire("../images/staybookAmenities/On Premise Parking.svg")?
-               <img src={require("../images/staybookAmenities/Spa.svg")}/>:<>•</>
+            <h1 className="amenities" key={index} style={{display: 'flex', alignItems: 'center'}}>
+              {
+                tryRequire(item)?
+                <img src={require("../images/staybookAmenities/"+item+".svg")} style={{width:'2rem'}}/>:<>•</>
               }
-               {item}
+              {item}
             </h1>
           ))}
         {visible<data.length?

@@ -15,7 +15,6 @@ function App() {
       <NavBar/>
       <Photos data={hotel.images}/>
       <div className="container">
-        <img src={(require('../images/staybookAmenities/Spa.svg'))}/>
         <div>
           <h1 className="title">{hotel.name}</h1>
           <>

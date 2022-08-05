@@ -7,7 +7,7 @@
         "address"  : "2488 Central Delhi, Delhi, India - 110055" ,
         "images": ["JyotiMahal/img1.jpg", "JyotiMahal/img2.jpg", "JyotiMahal/img3.jpg", "JyotiMahal/img4.jpg", "JyotiMahal/img5.jpg"],
         "amenities" : ["Internet or Wi-Fi" , 
-                        "On Premise Parking" , 
+                        "Parking" , 
                         "24-hour front desk service Bar" ,
                         "Restaurant" ,
                         "Coffee or tea in lobby" , 
@@ -32,7 +32,7 @@
                         "Airport transfer" ,
                         "Rental car" ,
                         "Valet parking" , 
-                        "Tours"
+                        "Tour"
                         ], 
         
         "rooms" :[

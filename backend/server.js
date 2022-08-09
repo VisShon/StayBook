@@ -4,8 +4,8 @@ const express = require('express');
 var cors = require('cors')
 const path = require('path');
 const app = express();
-const {configFireBase} = require('./config/firebase');
-const{errorHandler} = require('./middlewares/errorMiddleware');
+const {configFireBase} = require('./config/firebase.ts');
+const{errorHandler} = require('./middleware/errorMiddleWare.js');
 
 app.use(cors());
 app.use(express.json());
@@ -40,7 +40,7 @@ app.post('/create-order', async (req, res) => {
 
 const port = process.env.PORT || 8000;
 
-app.use('/api',require('./routes/bookingRoutes'))
+app.use('/api',require('./routes/bookingRoutes.js'))
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.get('*',  (req, res) => {

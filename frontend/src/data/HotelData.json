@@ -136,10 +136,344 @@
             }
         ]
     },
-    "others":{
+
+    "HotelAiraXing":{   
+        "name" : "Hotel Aira Xing" , 
+        "phone" : "+918373929299" ,
+        "email" : "booking@staybook.in" , 
+        "address"  : "1/5, Desh Bandhu Gupta Rd, opposite Police Station, Motia Khan, Paharganj, New Delhi, Delhi 110055 New Delhi, Delhi, India - 110055rrh" ,
+        "images": ["JyotiMahal/img1.jpg", "JyotiMahal/img2.jpg", "JyotiMahal/img3.jpg", "JyotiMahal/img4.jpg", "JyotiMahal/img5.jpg"],
+        "amenities" : ["Internet or Wi-Fi" , 
+                        "Parking" , 
+                        "24-hour front desk service Bar" ,
+                        "Restaurant" ,
+                        "Coffee or tea in lobby" , 
+                        "Vending Machine" ,
+                        "Room Service" , 
+                        "Spa" ,
+                        "Sauna" ,
+                        "Hot Tub/Jacuzzi" ,
+                        "Gym" ,
+                        "Breakfast" ,
+                        "Shuttle Service" ,
+                        "Currency Exchange" ,
+                        "Dry Cleaning" ,
+                        "Laundry" ,
+                        "Meeting or Banquet Facilities" ,
+                        "ATM On Site" ,
+                        "24 Hours Power Backup" ,
+                        "Luggage storage" ,
+                        "Safety deposit boxes" ,
+                        "Elevator" , 
+                        "Concierge" ,
+                        "Airport transfer" ,
+                        "Rental car" ,
+                        "Valet parking" , 
+                        "Tour"
+                        ], 
         
+        "rooms" :[
+            {
+                "type":"Deluxe Room",
+                "image":"JyotiMahal/img2.jpg",
+                "info":"1 room, 3 guests",
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "cancellationPolicy":"",
+                "plans" : [
+                    {
+                        "title":"Non Refundable Rate", 
+                        "info":"Non Refundable - Room Only",
+                        "price": 3798.10 
+                    },
+
+                    {
+                        "title":"Standard Plan",
+                        "info":"Room only", 
+                        "price": 3998.00
+                    },
+                    {
+                        "title":"CP", 
+                        "info":"Room with Breakfast",
+                        "price": 2400.00
+                    },  
+                  
+                    {
+                        "title":"MAP", 
+                        "info":"Room with Breakfast and Lunch or Dinner",
+                        "price": 5998.00
+                    }
+                ]
+
+            }, 
+
+            {
+                "type":"Deluxe King Room",
+                "image":"JyotiMahal/img4.jpg",
+                "info":"1 room, 3 guests",
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "plans" : [ 
+                    {
+                        "info":"Room only",
+                        "title":"Standard" ,
+                        "price": 5198.00
+                    } ,
+                    {
+                        "info":"CP Rate Plan",
+                        "title":"CP" ,
+                        "price": 2880.00
+                    } , 
+                    {
+                        "info":"Room with Breakfast and Lunch or Dinner",
+                        "title":"MAP" ,
+                        "price": 7798.00
+                    }, 
+                    {
+                        "info":"Non Refundable - Room Only",
+                        "title":"Non Refundable Rate" ,
+                        "price": 4938.10
+                    } 
+                ]
+
+            },
+
+            {
+                "type":"Family Room",
+                "image":"JyotiMahal/img3.jpg",
+                "info":"1 room, 5 guests",
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "plans" : [ 
+                    {   
+                        "info":"Weekly Rate Plan ( 7 Days )",
+                        "title":"Weekly Rate Plan" ,
+                        "price": 4180.00},
+                    {   
+                        "info":"Room only",
+                        "title":"Standard Plan" ,
+                        "price": 8598.00},
+                    {   
+                        "info":"Room with Breakfast",
+                        "title":"CP" ,
+                        "price": 5280.00},
+                    {   
+                        "info":"Room with Breakfast and Lunch or Dinner",
+                        "title":"MAP" ,
+                        "price": 11198.00},
+                    {   
+                        "info":"Non Refundable - Room Only",
+                        "title":"Non Refundable Rate" ,
+                        "price": 8168.10} 
+                ]
+            } , 
+            {
+                "type":"Day Use Room Strictly for 5 hours ( 12PM to 7 PM )",
+                "image":"JyotiMahal/img4.jpg",
+                "info":"1 room, 2 guests",
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "plans" : [ 
+                    {
+                        "info":"Room only",
+                        "title":"Standard" ,
+                        "price": 1998.00
+                    } ,
+                    {
+                        "info":"CP Rate Plan",
+                        "title":"CP" ,
+                        "price": 2400.00
+                    } , 
+                    {
+                        "info":"Room with Breakfast and Lunch or Dinner",
+                        "title":"MAP" ,
+                        "price": 7798.00
+                    }, 
+                    {
+                        "info":"Non Refundable - Room Only",
+                        "title":"Non Refundable Rate" ,
+                        "price": 1898.10
+                    } 
+                ]
+
+            }
+        ]
     }
 
+    ,
+    "HotelJaiBalaji":{   
+        "name" : "hotel jai bala ji" , 
+        "phone" : "+919211262749" ,
+        "email" : "booking@staybook.in" , 
+        "address"  : "9918, Plot No. 9918, Street, Multani Dhanda, Paharganj, Delhi, 110055 New Delhi, Delhi, India - 110055" ,
+        "images": ["JyotiMahal/img1.jpg", "JyotiMahal/img2.jpg", "JyotiMahal/img3.jpg", "JyotiMahal/img4.jpg", "JyotiMahal/img5.jpg"],
+        "amenities" : ["Internet or Wi-Fi" , 
+                        "Parking" , 
+                        "24-hour front desk service Bar" ,
+                        "Restaurant" ,
+                        "Coffee or tea in lobby" , 
+                        "Vending Machine" ,
+                        "Room Service" , 
+                        "Spa" ,
+                        "Sauna" ,
+                        "Hot Tub/Jacuzzi" ,
+                        "Gym" ,
+                        "Breakfast" ,
+                        "Shuttle Service" ,
+                        "Currency Exchange" ,
+                        "Dry Cleaning" ,
+                        "Laundry" ,
+                        "Meeting or Banquet Facilities" ,
+                        "ATM On Site" ,
+                        "24 Hours Power Backup" ,
+                        "Luggage storage" ,
+                        "Safety deposit boxes" ,
+                        "Elevator" , 
+                        "Concierge" ,
+                        "Airport transfer" ,
+                        "Rental car" ,
+                        "Valet parking" , 
+                        "Tour"
+                        ], 
+        
+        "rooms" :[
+            {
+                "type":"Economy Double Room",
+                "image":"JyotiMahal/img2.jpg",
+                "info":"1 room, 3 guests",
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "cancellationPolicy":"",
+                "plans" : [
+               
+
+                    {
+                        "title":"Standard Plan",
+                        "info":"Standard Plan", 
+                        "price": 935.22
+                    },
+                    {
+                        "title":"CP", 
+                        "info":"Room with Breakfast",
+                        "price": 1299.00
+                    }
+                ]
+
+            }, 
+
+            {
+                "type":"deluxe double room",
+                "image":"JyotiMahal/img4.jpg",
+                "info":"1 room, 3 guests",
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "plans" : [ 
+                    {
+                        "info":"Room only",
+                        "title":"Standard Plan" ,
+                        "price": 1403.22
+                    } ,
+                    {
+                        "info":"Room with Breakfast",
+                        "title":"CP" ,
+                        "price": 2000.00
+                    } 
+                ]
+
+            },
+
+            {
+                "type":"Quadruple Room with Bathroom",
+                "image":"JyotiMahal/img3.jpg",
+                "info":"1 room, 5 guests",
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "plans" : [ 
+                  
+                    {   
+                        "info":"Room only",
+                        "title":"Standard Plan" ,
+                        "price": 1793.22},
+                    {   
+                        "info":"Room with Breakfast",
+                        "title":"CP" ,
+                        "price": 2000.00}
+                ]
+            }
+        ]
+    }
+
+    ,
+    "HotelPinkyVilla":{   
+        "name" : "Staybook Hotel Pinky Villa" , 
+        "phone" : "+918373929299" ,
+        "email" : "booking@staybook.in" , 
+        "address"  : "XV-2463-N, Nalwa St, Chuna Mandi, Paharganj, New Delhi, Delhi 110055 Central Delhi, Delhi, India - 110055" ,
+        "images": ["JyotiMahal/img1.jpg", "JyotiMahal/img2.jpg", "JyotiMahal/img3.jpg", "JyotiMahal/img4.jpg", "JyotiMahal/img5.jpg"],
+        "amenities" : ["Internet or Wi-Fi" , 
+                        "Parking" , 
+                        "24-hour front desk service Bar" ,
+                        "Restaurant" ,
+                        "Coffee or tea in lobby" , 
+                        "Vending Machine" ,
+                        "Room Service" , 
+                        "Spa" ,
+                        "Sauna" ,
+                        "Hot Tub/Jacuzzi" ,
+                        "Gym" ,
+                        "Breakfast" ,
+                        "Shuttle Service" ,
+                        "Currency Exchange" ,
+                        "Dry Cleaning" ,
+                        "Laundry" ,
+                        "Meeting or Banquet Facilities" ,
+                        "ATM On Site" ,
+                        "24 Hours Power Backup" ,
+                        "Luggage storage" ,
+                        "Safety deposit boxes" ,
+                        "Elevator" , 
+                        "Concierge" ,
+                        "Airport transfer" ,
+                        "Rental car" ,
+                        "Valet parking" , 
+                        "Tour"
+                        ], 
+        
+        "rooms" :[
+            {
+                "type":"DeluxHeritageRoom",
+                "image":"JyotiMahal/img2.jpg",
+                "info":"1 room, 3 guests",
+                "totalRooms" : 10 , 
+                "bookedDates" : [] , 
+                "cancellationPolicy":"",
+                "plans" : [
+               
+
+                    {
+                        "title":"Standard Plan",
+                        "info":"Standard Plan", 
+                        "price": 3200.00
+                    },
+                    {
+                        "title":"Weekly Rate", 
+                        "info":"Weekly Rate Plan ( 7 Days )",
+                        "price": 3724.00
+                    }
+                    ,
+                    {
+                        "title":"Monthly Rate", 
+                        "info":"Monthly Rate Plan",
+                        "price": 3724.00
+                    }
+                ]
+
+            }
+
+            
+        ]
+    }
+
+   
+
 }
-    
-    

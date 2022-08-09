@@ -8,3 +8,4 @@ router.route('/isRoomAvailable').get(isRoomAvailable);
 router.route('/:hotelname/getReservations').get(getReservations);
 
 
+module.exports = router;

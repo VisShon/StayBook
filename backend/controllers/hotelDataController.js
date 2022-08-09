@@ -1,5 +1,5 @@
 const asyncHandler = require('express-async-handler');
-import { getDatabase, ref, child, get } from "firebase/database";
+const{ getDatabase, ref, child, get }=require("firebase/database");
 
 
 const db = ref(getDatabase());

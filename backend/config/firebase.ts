@@ -19,7 +19,6 @@ const configFireBase = () => {
           
           const app = initializeApp(firebaseConfig);
           const database = getDatabase(app);
-          const analytics = getAnalytics(app);
           console.log('Firebase connected')
     }
     catch(err){

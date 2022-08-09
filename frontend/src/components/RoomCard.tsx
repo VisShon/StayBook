@@ -12,7 +12,7 @@ function RoomCard({room}:any) {
         </h2>
         <img src={require("../images/"+room.image)} className="roomImage"/>
       </div>
-      {room.plans.map((plan:any, i:number) =>(<PlanCard plan={plan} key={i}/>))}
+      {Object.values(room.plans).map((plan:any, i:number) =>(<PlanCard plan={plan} key={i}/>))}
     </div>
   )
 }

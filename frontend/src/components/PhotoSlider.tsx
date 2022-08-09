@@ -4,7 +4,6 @@ import left from '../images/left.png'
 import right from '../images/right.png'
 
 function PhotoSlider({data}:any) {
-  
   const ref = useRef<HTMLDivElement>(document.createElement("div"));
   const scrollRight = () => {
     ref.current.scrollBy({left: 750, behavior: 'smooth'});

@@ -5,6 +5,6 @@ const {getHotelData, isRoomAvailable, getReservations} = require('../controllers
 
 router.route('/:hotelname/getHotelData').get(getHotelData);
 router.route('/isRoomAvailable').get(isRoomAvailable);
-router.route('/getReservations').get(getReservations);
+router.route('/:hotelname/getReservations').get(getReservations);
 
 

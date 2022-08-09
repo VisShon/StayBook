@@ -5,6 +5,7 @@ var cors = require('cors')
 const path = require('path');
 const app = express();
 const {configFireBase} = require('./config/firebase');
+const{errorHandler} = require('./middlewares/errorMiddleware');
 
 app.use(cors());
 app.use(express.json());
@@ -39,10 +40,14 @@ app.post('/create-order', async (req, res) => {
 
 const port = process.env.PORT || 8000;
 
+app.use('/api',require('./routes/bookingRoutes'))
+
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.get('*',  (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
+
+app.use(errorHandler);
 
 app.listen(port, () =>
   console.log(`server started on http://localhost:${port}`)

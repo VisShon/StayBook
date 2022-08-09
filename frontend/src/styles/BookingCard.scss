@@ -34,6 +34,10 @@
     }
 }
 
+.bookingCard::-webkit-scrollbar {
+    display:none;
+}
+
 .calendar{
     height: 100%;
     box-shadow: 0 0 10px $shadow;

@@ -2,13 +2,15 @@ const Razorpay = require('razorpay');
 const dotenv = require('dotenv').config();
 const express = require('express');
 var cors = require('cors')
-
+const path = require('path');
 const app = express();
+const {configFireBase} = require('./config/firebase');
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
+configFireBase();
 
 app.get('/get-razorpay-key', (req, res) => {
     res.send({ key: process.env.RAZORPAY_KEY });
@@ -36,6 +38,11 @@ app.post('/create-order', async (req, res) => {
 });
 
 const port = process.env.PORT || 8000;
+
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.get('*',  (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
 
 app.listen(port, () =>
   console.log(`server started on http://localhost:${port}`)

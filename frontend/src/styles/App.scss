@@ -17,6 +17,11 @@
   margin: 1rem;
   margin-left: 5em;
   margin-right: 5em;
+
+}
+
+.container::-webkit-scrollbar {
+  display:none;
 }
 
 .description{

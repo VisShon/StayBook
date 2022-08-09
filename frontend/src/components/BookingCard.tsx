@@ -27,6 +27,13 @@ function BookingCard() {
   const netPrice = useAppSelector(state => state.price.value)
   const Plans = useAppSelector(state => state.plans.selectedPlans);
 
+  const checkAvailability = (checkIn:Date,checkOut:Date) => {
+    let isAvailable:boolean=false;
+    
+    return isAvailable?<></>:<></>
+
+  }
+
   return (
     <div className="bookingCard">
       <h1>₹{netPrice}</h1>

@@ -2,6 +2,9 @@
 const { initializeApp } = require("firebase/app");
 const { getAnalytics } = require("firebase/analytics");
 const { getDatabase } = require("firebase/database");
+const { GoogleAuthProvider } = require("firebase/auth");
+
+
 const dotenv = require('dotenv').config();
 
 const configFireBase = () => {

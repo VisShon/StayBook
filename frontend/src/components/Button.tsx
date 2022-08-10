@@ -3,10 +3,14 @@ import '../styles/Button.scss'
 import axios from 'axios';
 import { useAppSelector } from '../app/hooks';
 
-function Button() {
+function Button({user,checkIn,checkOut}:any){
+
+  const hotelName:string = new URL(window.location.href).pathname;
 
   var price = useAppSelector(state => state.price.value)
   var orderAmount = (price*10).toString()+'0'
+
+
   const loadRazorPay = () =>{
     const script = document.createElement('script');
       script.src = 'https://checkout.razorpay.com/v1/checkout.js';
@@ -30,6 +34,15 @@ function Button() {
           amount: amount.toString(),
           currency: currency,
           name: 'example name',
+          handler: async function(response:any){
+            await axios.post(`http://localhost:8000/api${hotelName}/setReservations`,{
+              username: user.username,
+              email: user.email,
+              checkIn: checkIn,
+              checkOut: checkOut,
+              amountPaid: price
+            })
+          },
           description: 'example transaction',
           order_id: order_id,
           prefill: {

@@ -65,12 +65,13 @@ function BookingCard() {
             </LocalizationProvider>
           </div>
         </div>
+        
       </div>
       <p>{Plans.length} rooms</p>
 
       {Plans.map((item,index) => (<SelectedPlan title={item.title} key={index}/>))}
       <AmountCard/>
-      <Button/>
+      <Button user={""} checkOut={checkOut} checkIn={checkIn}/>
     </div>
 
   )

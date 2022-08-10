@@ -32,6 +32,7 @@ app.post('/create-order', async (req, res) => {
         console.log(order);
         if (!order) return res.status(500).send('Some error occured');
         res.send(order);
+        
       });
     } catch (error) {
       res.status(500).send(error);

@@ -1,5 +1,5 @@
 const asyncHandler = require('express-async-handler');
-const{ getDatabase, ref, child, get }=require("firebase/database");
+const{ getDatabase, ref, child, get,set }=require("firebase/database");
 
 
 const db = ref(getDatabase());
@@ -17,7 +17,8 @@ const getHotelData = asyncHandler(async(req, res, next) => {
 });
 
 const isRoomAvailable = asyncHandler(async(req, res, next) =>{
-    var len = req.body.list.length;
+    let list = Object.values(req.body.reservations)
+    var len = list.length;
     var resultList = []
     for (let i = 0; i < len; i++) {
         resultList.push(list[i] < req.body.max);
@@ -39,8 +40,20 @@ const getReservations = asyncHandler(async(req, res, next) =>{
 
 })
 
+const setReservations = asyncHandler(async(req, res, next)=>{
+  const db = getDatabase();
+  set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+req.body.checkIn.slice('/',2)}`), {
+    username: req.body.username,
+    email: req.body.email,
+    checkIn: req.body.checkIn,
+    checkOut: req.body.checkOut,
+    amountPaid: req.body.amountPaid
+  });
+})
+
 module.exports ={
     getHotelData,
     isRoomAvailable,
-    getReservations
+    getReservations,
+    setReservations
 }

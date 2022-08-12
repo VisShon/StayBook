@@ -18,7 +18,7 @@ function App() {
       const result = await axios.get(`http://localhost:8000/api${hotelName}/gethoteldata`).then(value => {
         setHotel(value.data)
       });
-      
+      const x = await axios.get(`http://localhost:8000/api/login`)
     }
     getHotelData();
   },[])

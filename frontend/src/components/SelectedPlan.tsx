@@ -16,8 +16,8 @@ const dropdown = {
 
 function SelectedPlan({title}:any) {
   
-  const [children, setChildren] = React.useState('0');
-  const [adults, setAdults] = React.useState('0');
+  const [children, setChildren] = useState('0');
+  const [adults, setAdults] = useState('0');
 
   const dispatch = useAppDispatch();
 

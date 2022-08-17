@@ -17,14 +17,25 @@ const getHotelData = asyncHandler(async(req, res, next) => {
 });
 
 const isRoomAvailable = asyncHandler(async(req, res, next) =>{
-    let list = Object.values(req.body.reservations)
-    var len = list.length;
-    var resultList = []
-    for (let i = 0; i < len; i++) {
-        resultList.push(list[i] < req.body.max);
+    const checkAvailability = (array,checkIn,checkOut,maxCap) => {
+      //CODE
     }
 
-    res.json(resultList)
+    get(child(db, `/reservations/${req.params.hotelname}`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        const particularReservations = Object.values(snapshot.val()).map(
+          ({selectedPlans,checkIn,checkOut})=>({selectedPlans:selectedPlans.filter(
+            plans=>plans.roomType==req.body.roomType),checkIn,checkOut}))
+
+        const array = particularReservations.map(({selectedPlans,checkIn,checkOut})=>({selectedPlans:selectedPlans.length,checkIn,checkOut}))
+        const isAvailable = checkAvailability(array,req.body.checkIn,req.body.checkOut,req.body.maxCap)
+
+        res.json(isAvailable)
+
+      } else {
+        console.log("No data available");
+      }
+    })
 });
 
 

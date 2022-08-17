@@ -17,6 +17,7 @@ const dropdown = {
 
 function SelectedPlan({title,roomType,checkIn,checkOut}:any) {
   
+  const hotelName:string = new URL(window.location.href).pathname;
 
   const [isRoomAvailable,setIsRoomAvailable] = useState(true)
   const [children, setChildren] = useState('0');
@@ -24,8 +25,8 @@ function SelectedPlan({title,roomType,checkIn,checkOut}:any) {
 
   useEffect(()=>{
     const checkAvailability = async() => {
-      const result = await axios.post(`http://localhost:8000/`)
-      
+      const result = await axios.post(`http://localhost:8000/api${hotelName}/isRoomAvailable`)
+
     }
     checkAvailability();
   },[])

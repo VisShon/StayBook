@@ -2,10 +2,11 @@ import React from 'react'
 import '../styles/PlanCard.scss'
 import { useAppDispatch } from '../app/hooks'
 import { addPlan } from '../app/planSlice';
-function PlanCard({plan}:any) {
+function PlanCard({plan,room}:any) {
 
   const dispatch = useAppDispatch();
   const onClickHandler = () =>{
+    plan["roomType"]=room;
     dispatch(addPlan(plan))
   }
 

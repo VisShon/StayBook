@@ -10,14 +10,14 @@ const dotenv = require('dotenv').config();
 const configFireBase = () => {
     try{
         const firebaseConfig = {
-            apiKey:process.env.apiKey,
-            authDomain:process.env.authDomain,
-            databaseURL:process.env.databaseURL,
-            projectId:process.env.projectId,
-            storageBucket:process.env.storageBucket,
-            messagingSenderId:process.env.messagingSenderId,
-            appId:process.env.appId,
-            measurementId:process.env.measurementId,
+            apiKey: "AIzaSyBg3QZs7XNtzzp8nfzYOaVr2tpgXRhSMwM",
+            authDomain: "staybook-7d6bb.firebaseapp.com",
+            databaseURL: "https://staybook-7d6bb-default-rtdb.firebaseio.com",
+            projectId: "staybook-7d6bb",
+            storageBucket: "staybook-7d6bb.appspot.com",
+            messagingSenderId: "620990788027",
+            appId: "1:620990788027:web:ae862bfd5fb02aebc9549e",
+            measurementId: "G-EBW2DWVQNT"
           };
           
           const app = initializeApp(firebaseConfig);

@@ -19,12 +19,13 @@ const getReservations = asyncHandler(async(req, res, next) =>{
 
 const setReservations = asyncHandler(async(req, res, next)=>{
   const db = getDatabase();
-  set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+req.body.checkIn.slice('/',2)}`), {
+  set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+Math.trunc(req.body.amountPaid).toString()}`), {
     username: req.body.username,
     email: req.body.email,
     checkIn: req.body.checkIn,
     checkOut: req.body.checkOut,
-    amountPaid: req.body.amountPaid
+    amountPaid: req.body.amountPaid,
+    selectedPlans: req.body.selectedPlans,
   });
 })
 

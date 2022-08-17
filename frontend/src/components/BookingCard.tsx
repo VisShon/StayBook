@@ -69,9 +69,10 @@ function BookingCard() {
       </div>
       <p>{Plans.length} rooms</p>
 
-      {Plans.map((item,index) => (<SelectedPlan title={item.title} key={index}/>))}
-      <AmountCard/>
-      <Button user={""} checkOut={checkOut} checkIn={checkIn}/>
+      {Plans.map((item,index) => (<SelectedPlan roomType={item.roomType} title={item.title} checkOut={checkOut} checkIn={checkIn} key={index}/>))}
+      
+      <AmountCard checkOut={checkOut} checkIn={checkIn}/>
+      <Button checkOut={checkOut} checkIn={checkIn} />
     </div>
 
   )

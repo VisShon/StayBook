@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import '../styles/BookingCard.scss'
 import { useAppDispatch } from '../app/hooks';
 import { removePlan } from '../app/planSlice';
@@ -6,6 +6,7 @@ import { numberOfChildren } from '../app/priceSlice';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import axios from 'axios';
 
 const dropdown = {
   width: '4.5rem',
@@ -14,10 +15,21 @@ const dropdown = {
 
 
 
-function SelectedPlan({title}:any) {
+function SelectedPlan({title,roomType,checkIn,checkOut}:any) {
   
+
+  const [isRoomAvailable,setIsRoomAvailable] = useState(true)
   const [children, setChildren] = useState('0');
   const [adults, setAdults] = useState('0');
+
+  useEffect(()=>{
+    const checkAvailability = async() => {
+      const result = await axios.post(`http://localhost:8000/`)
+      
+    }
+    checkAvailability();
+  },[])
+
 
   const dispatch = useAppDispatch();
 
@@ -35,9 +47,10 @@ function SelectedPlan({title}:any) {
   }
 
   return (
-    <div className="selectedPlan">
+    <div className={isRoomAvailable ? 'selectedPlan':'selectedPlan-unavailable'}>
       <div className="wrapper">
-          <span style={{color: 'black'}}>{title}</span>
+          <span style={{color: 'black'}}>{roomType}({title})</span>
+          {!isRoomAvailable&&<h3 style={{color: 'red',margin:'1px'}}>Unavailable</h3>}
           <a onClick={onClickHandler} className="cancel">X</a>
       </div>
 
@@ -70,6 +83,7 @@ function SelectedPlan({title}:any) {
             Room 1
           </div>
       </div>
+      
     </div>
   )
 }

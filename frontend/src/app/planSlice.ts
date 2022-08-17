@@ -7,7 +7,8 @@ export const planSlice = createSlice({
         selectedPlans:[{
             "title":"Monthly Rate", 
             "info":"Monthy Rate Plan",
-            "price": 3419.10 
+            "price": 3419.10,
+            "roomType":"Deluxe Suite" 
         }]
     },
     reducers:{

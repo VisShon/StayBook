@@ -1,17 +1,26 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../styles/Button.scss'
 import axios from 'axios';
 import { useAppSelector } from '../app/hooks';
+import {Login} from '../app/firebase'
 
-function Button({user,checkIn,checkOut}:any){
+function Button({checkIn,checkOut}:any){
 
   const hotelName:string = new URL(window.location.href).pathname;
+  let price = useAppSelector(state => state.price.value)
+  let orderAmount = (price*10).toString()+'0'
+  
+  const plans = useAppSelector(state => state.plans.selectedPlans);
+  const children = useAppSelector(state => state.price.children);
 
-  var price = useAppSelector(state => state.price.value)
-  var orderAmount = (price*10).toString()+'0'
 
+  const onClickHandler = async () =>{
+    console.log('logging in')
+    
+    !localStorage.getItem('email')&&(await Login())
 
-  const loadRazorPay = () =>{
+    console.log('login done')
+    
     const script = document.createElement('script');
       script.src = 'https://checkout.razorpay.com/v1/checkout.js';
       script.onerror = () => {
@@ -23,7 +32,6 @@ function Button({user,checkIn,checkOut}:any){
         const result = await axios.post(`http://localhost:8000/create-order`, {
           amount: orderAmount,
         });
-        console.log('poop')
         const { amount, id: order_id, currency } = result.data;
         const {
           data: { key: razorpayKey },
@@ -35,13 +43,15 @@ function Button({user,checkIn,checkOut}:any){
           currency: currency,
           name: 'example name',
           handler: async function(response:any){
-            await axios.post(`http://localhost:8000/api${hotelName}/setReservations`,{
-              username: user.username,
-              email: user.email,
+            const result = await axios.post(`http://localhost:8000/api${hotelName}/setReservations`,{
+              username: localStorage.getItem('name'),
+              email: localStorage.getItem('email'),
               checkIn: checkIn,
               checkOut: checkOut,
-              amountPaid: price
+              amountPaid: price,
+              selectedPlans:plans,
             })
+            console.log(result)
           },
           description: 'example transaction',
           order_id: order_id,
@@ -68,7 +78,7 @@ function Button({user,checkIn,checkOut}:any){
   }
 
   return (
-    <div className="Button" onClick={loadRazorPay}>Porceed to chekout!</div>
+    <div className="Button" onClick={onClickHandler}>Proceed to chekout!</div>
   )
 }
 

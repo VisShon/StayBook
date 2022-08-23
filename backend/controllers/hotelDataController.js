@@ -16,10 +16,36 @@ const getHotelData = asyncHandler(async(req, res, next) => {
       });      
 });
 
+const getMax = asyncHandler(async(req, res, next) =>{
+    get(child(db, `/hotelData/${req.params.hotelname}`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        const roomMaxCap=Object.values(snapshot.val().rooms).filter(item => item.type===req.body.roomType)[0].totalRooms
+        res.json(roomMaxCap)
+
+      } else {
+        console.log("No data available");
+      }
+    })
+});
+
+
+
+
 const isRoomAvailable = asyncHandler(async(req, res, next) =>{
-    const checkAvailability = (array,checkIn,checkOut,maxCap) => {
-      //CODE
+  const checkAvailability = (array,checkIn,checkOut,maxCap) =>{
+
+    let start  = new Date(checkIn).getTime();
+    let end = new Date(checkOut).getTime();
+    let count =0;
+    for (var i = 0; i < array.length; i++) {
+        let wt = array[i]["selectedPlans"];
+        let cIn = new Date(array[i]["checkIn"]).getTime();
+        let cOut = new Date(array[i]["checkOut"]).getTime();
+        if(cOut < start || cIn > end)continue;
+        count+=wt;
     }
+    return (count + 1)<=maxCap;
+  }
 
     get(child(db, `/reservations/${req.params.hotelname}`)).then((snapshot) => {
       if (snapshot.exists()) {
@@ -42,4 +68,5 @@ const isRoomAvailable = asyncHandler(async(req, res, next) =>{
 module.exports ={
     getHotelData,
     isRoomAvailable,
+    getMax,
 }

@@ -13,12 +13,6 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 
 
-const style = {
-  width: '10rem',
-  marginTop: '1rem',
-};
-
-
 function BookingCard() {
   const [checkIn, setCheckIn] = React.useState<Date | null>(null);
   const [checkOut, setCheckOut] = React.useState<Date | null>(null);

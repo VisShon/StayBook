@@ -41,10 +41,10 @@ app.post('/create-order', async (req, res) => {
 
 const port = process.env.PORT || 8000;
 
-app.use('/api',require('./routes/bookingRoutes.js'))
+app.use('/api', require('./routes/bookingRoutes.js'))
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));
-app.get('/*',  (req, res) => {
+app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 

@@ -22,11 +22,19 @@ function SelectedPlan({title,roomType,checkIn,checkOut}:any) {
   const [isRoomAvailable,setIsRoomAvailable] = useState(true)
   const [children, setChildren] = useState('0');
   const [adults, setAdults] = useState('0');
+  var maxCap:number;
 
   useEffect(()=>{
-    const checkAvailability = async() => {
-      const result = await axios.post(`http://localhost:8000/api${hotelName}/isRoomAvailable`)
 
+    const checkAvailability = async() => {
+      const req = await axios.post(`http://localhost:8000/api${hotelName}/getMax`,{roomType:roomType}).then(res=>{maxCap = res.data})
+      const re2 = await axios.post(`http://localhost:8000/api${hotelName}/isRoomAvailable`,{
+          checkIn:checkIn,
+          checkOut:checkOut,
+          roomType:roomType,
+          maxCap:maxCap,
+          // maxCap:0,
+      }).then(res=>setIsRoomAvailable(res.data))
     }
     checkAvailability();
   },[])

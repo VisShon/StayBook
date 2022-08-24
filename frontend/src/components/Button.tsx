@@ -3,6 +3,7 @@ import '../styles/Button.scss'
 import axios from 'axios';
 import { useAppSelector } from '../app/hooks';
 import {Login} from '../app/firebase'
+import emailjs from '@emailjs/browser' 
 
 function Button({checkIn,checkOut}:any){
 
@@ -43,6 +44,15 @@ function Button({checkIn,checkOut}:any){
           currency: currency,
           name: 'example name',
           handler: async function(response:any){
+            let templateParams = {
+              to_name:localStorage.getItem('email'),
+            }
+            const mail = await emailjs.send('service_mv03hwf','template_dysx4ir',templateParams,'6HGQvyzipY4qgGkWm')
+            .then(function(response) {
+              console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+              console.log('FAILED...', error);
+            });
             const result = await axios.post(`http://localhost:8000/api${hotelName}/setReservations`,{
               username: localStorage.getItem('name'),
               email: localStorage.getItem('email'),
@@ -51,7 +61,6 @@ function Button({checkIn,checkOut}:any){
               amountPaid: price,
               selectedPlans:plans,
             })
-            console.log(result)
           },
           description: 'example transaction',
           order_id: order_id,

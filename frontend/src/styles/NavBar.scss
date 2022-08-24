@@ -7,12 +7,65 @@
     box-shadow: 0 0 10px $shadow;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     position:sticky;
     z-index: 10;
     top: 0;
 }
-
 .logo{
     height: 80%;
-    margin-left: 5em;
+    margin-left: 1em;
 }
+.Book {
+    font-family: "Maven Pro",sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid $main;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition-duration: 0.5s;
+    font-size: 20px;
+    margin-right: 1rem;
+}
+
+.Book:hover{
+    color: white;
+    background: $gradient;
+}
+
+.item::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.item:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.item::before {
+    content: " ";
+    position: absolute;
+    inset: 0 0 0 0;
+    background: $main;
+    z-index: -1;
+    transition: transform .3s ease;
+    border-radius: 0.25rem;
+}
+.item{
+    position: relative;
+    padding: 0.5rem;
+}
+.item:hover{
+    color:white;
+}
+
+.TourPackage {
+    font-family: "Maven Pro",sans-serif;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+}
+    

@@ -4,6 +4,18 @@ const{ getDatabase, ref, child, get }=require("firebase/database");
 
 const db = ref(getDatabase());
 
+const getAllData = asyncHandler(async(req, res, next) => {
+  get(child(db, `/hotelData`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        res.json(snapshot)
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });      
+});
+
 const getHotelData = asyncHandler(async(req, res, next) => {
     get(child(db, `/hotelData/${req.params.hotelname}`)).then((snapshot) => {
         if (snapshot.exists()) {
@@ -69,4 +81,5 @@ module.exports ={
     getHotelData,
     isRoomAvailable,
     getMax,
+    getAllData
 }

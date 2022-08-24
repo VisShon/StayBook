@@ -1,0 +1,69 @@
+@import '../colors';
+
+.textTitle{
+    font-family: 'Maven',sans-serif;
+    color: $main;
+    font-size:2rem;
+    font-weight: 700;
+    text-align: right;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textParagraph{
+    text-align: center;
+    color: grey;
+    font-family: 'Maven',sans-serif;
+    font-size: 1.25rem;
+    margin-top:-2rem;
+    width: 50%;
+}
+
+.hotelImage{
+    height:20rem;
+    width: 60%;
+    border-radius: 0.75rem;
+}
+
+.amenetiesHotel{
+    border-radius: 2rem;
+    height: 20rem;
+    width: 60vw;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    padding-right: 2rem;
+    flex-direction: row;
+    box-shadow: 0 0 10px $shadow;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width:30%;
+}
+
+.textRow{
+    text-align:right;
+    font-size:1rem;
+    color:grey;
+    font-weight: 500;
+
+}
+    
+.allCards{
+    display: flex;
+    width:screen;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding:1rem;
+}
+    

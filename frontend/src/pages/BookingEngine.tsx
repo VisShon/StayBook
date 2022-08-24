@@ -28,7 +28,7 @@ function App() {
       {hotel?
       <>
         <Photos data={Object.values(hotel.images)}/>
-        <div className="container">
+        <div className="Maincontainer">
           <div>
             <h1 className="title">{hotel.name}</h1>
             <>

@@ -31,8 +31,13 @@ const getHotelData = asyncHandler(async(req, res, next) => {
 const getMax = asyncHandler(async(req, res, next) =>{
     get(child(db, `/hotelData/${req.params.hotelname}`)).then((snapshot) => {
       if (snapshot.exists()) {
-        const roomMaxCap=Object.values(snapshot.val().rooms).filter(item => item.type===req.body.roomType)[0].totalRooms
-        res.json(roomMaxCap)
+        try{
+          const roomMaxCap=Object.values(snapshot.val().rooms).filter(item => item.type===req.body.roomType)[0].totalRooms
+          res.json(roomMaxCap)
+        }
+        catch(error) {
+          res.json(0);
+        }
 
       } else {
         console.log("No data available");

@@ -20,12 +20,14 @@
     font-family: "Maven Pro",sans-serif;
     font-size: 1rem;
     padding: 0.5rem;
+    text-decoration: none;
     border: 1px solid $main;
     border-radius: 0.5rem;
     text-align: center;
     transition-duration: 0.5s;
     font-size: 20px;
     margin-right: 1rem;
+    color: black;
 }
 
 .Book:hover{

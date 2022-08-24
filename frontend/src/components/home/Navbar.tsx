@@ -21,7 +21,7 @@ return (
       <Dropdown/>
     </div>
 
-    <div className = "Book">Book</div>
+    <a href='/jyotimahal' className = "Book">Book</a>
   </div>
 
 )

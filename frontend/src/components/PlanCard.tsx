@@ -6,9 +6,8 @@ function PlanCard({plan,room}:any) {
 
   const dispatch = useAppDispatch();
   const onClickHandler = () =>{
-    console.log(room);
-    plan["roomType"]=room;
-    dispatch(addPlan(plan))
+    let newPlan = {...plan , roomType: room}
+    dispatch(addPlan(newPlan))
   }
 
   return (

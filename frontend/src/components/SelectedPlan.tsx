@@ -51,7 +51,7 @@ function SelectedPlan({title,roomType,checkIn,checkOut}:any) {
   };
 
   const onClickHandler = () =>{
-    dispatch(removePlan(title));
+    dispatch(removePlan({title:title,roomType:roomType}));
     dispatch(numberOfChildren('0'))
   }
 

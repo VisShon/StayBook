@@ -16,7 +16,7 @@ export const planSlice = createSlice({
             state.selectedPlans.push(action.payload);
         },
         removePlan: (state:any,action:any) =>{
-           state.selectedPlans=state.selectedPlans.filter((item:any) => item.title !== action.payload)
+           state.selectedPlans=state.selectedPlans.filter((item:any) => item.title !== action.payload.title || item.roomType !== action.payload.roomType)
         }
     }
     

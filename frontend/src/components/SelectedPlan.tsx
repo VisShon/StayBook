@@ -21,7 +21,7 @@ function SelectedPlan({title,roomType,checkIn,checkOut}:any) {
 
   const [isRoomAvailable,setIsRoomAvailable] = useState(true)
   const [children, setChildren] = useState('0');
-  const [adults, setAdults] = useState('0');
+
   var maxCap:number;
 
   useEffect(()=>{
@@ -46,9 +46,7 @@ function SelectedPlan({title,roomType,checkIn,checkOut}:any) {
     setChildren(event.target.value as string);
     dispatch(numberOfChildren(event.target.value as string))
   };
-  const adultsChange = (event: SelectChangeEvent) => {
-    setAdults(event.target.value as string);
-  };
+
 
   const onClickHandler = () =>{
     dispatch(removePlan({title:title,roomType:roomType}));
@@ -64,18 +62,6 @@ function SelectedPlan({title,roomType,checkIn,checkOut}:any) {
       </div>
 
       <div className="wrapper">
-          <div className="input">
-            Adults
-            <FormControl sx={{ m: 1, minWidth: 50  }} size="small">
-                <Select
-                  value={adults}
-                  onChange={adultsChange}
-                >
-                  <MenuItem value={0}>0</MenuItem>
-                  <MenuItem value={1}>1</MenuItem>
-                </Select>
-            </FormControl>
-          </div>
           <div className="input">
             Child
             <FormControl sx={{ m: 1, minWidth: 50 }} size="small">

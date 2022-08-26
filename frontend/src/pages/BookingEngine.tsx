@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import '../styles/App.scss';
 import Amneties from '../components/Ameneties';
 import BookingCard from '../components/BookingCard';
-import NavBar from '../components/NavBar';
+import NavBar from '../components/home/Navbar';
 import Photos from '../components/PhotoSlider'
 import RoomCard from '../components/RoomCard';
 import axios from 'axios';

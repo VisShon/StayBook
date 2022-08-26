@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../styles/home/AmenetiesAndFacalities.scss';
-import AriaXingImage from "../../images/AiraXing/img1.png";
+import AriaXingImage from "../../images/AiraXing/img1.jpg";
 import JaiBalajiImage from "../../images/JaiBalaji/img1.jpg";
 import JyotiMahalImage from "../../images/JyotiMahal/img1.jpg";
 

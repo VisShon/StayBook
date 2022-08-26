@@ -16,12 +16,8 @@ function Button({checkIn,checkOut}:any){
 
 
   const onClickHandler = async () =>{
-    console.log('logging in')
     
-    !localStorage.getItem('email')&&(await Login())
-
-    console.log('login done')
-    
+    !localStorage.getItem('email')&&(await Login())    
     const script = document.createElement('script');
       script.src = 'https://checkout.razorpay.com/v1/checkout.js';
       script.onerror = () => {
@@ -49,9 +45,8 @@ function Button({checkIn,checkOut}:any){
             }
             const mail = await emailjs.send('service_mv03hwf','template_dysx4ir',templateParams,'6HGQvyzipY4qgGkWm')
             .then(function(response) {
-              console.log('SUCCESS!', response.status, response.text);
             }, function(error) {
-              console.log('FAILED...', error);
+              console.log(error)
             });
             const result = await axios.post(`http://localhost:8000/api${hotelName}/setReservations`,{
               username: localStorage.getItem('name'),

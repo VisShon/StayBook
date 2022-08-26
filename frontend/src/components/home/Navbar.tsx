@@ -10,8 +10,7 @@ function Navbar(){
 return (
 
   <div className="navbar">
-    <img src={logo} className="logo"/>
-
+    <a href="/" className="logo"><img src={logo} className="logo"/></a>
     <div className="TourPackage">
       <p className="item">Tour Packages</p>
       <p className="item">Membership Program</p>
@@ -21,7 +20,7 @@ return (
       <Dropdown/>
     </div>
 
-    <a href='/jyotimahal' className = "Book">Book</a>
+    <a href='/HotelJyotiMahal' className = "Book">Book</a>
   </div>
 
 )

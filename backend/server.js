@@ -29,7 +29,6 @@ app.post('/create-order', async (req, res) => {
         currency: 'INR',
       };
       instance.orders.create(options, function(err, order) {
-        console.log(order);
         if (!order) return res.status(500).send('Some error occured');
         res.send(order);
         
@@ -50,9 +49,7 @@ app.get('/*', (req, res) => {
 
 app.use(errorHandler);
 
-app.listen(port, () =>
-  console.log(`server started on http://localhost:${port}`)
-);
+app.listen(port);
 
 
 

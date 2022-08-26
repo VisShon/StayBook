@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/PlanCard.scss'
 import { useAppDispatch } from '../app/hooks'
 import { addPlan } from '../app/planSlice';
-function PlanCard({plan,room}:any) {
+function PlanCard({plan,room,amenities}:any) {
 
   const dispatch = useAppDispatch();
   const onClickHandler = () =>{
@@ -16,7 +16,10 @@ function PlanCard({plan,room}:any) {
         <h2>{plan.title}</h2>
         <p>{plan.info}</p>
       </div>
-      <p>Cancellation Policies</p>
+      <div className="tooltip">Amenities
+        <div className="tooltiptext">{amenities}</div>
+      </div>
+      
       <h2>₹{plan.price}</h2>
       <div className="button" onClick={onClickHandler}>Add</div>
     </div>

@@ -1,5 +1,26 @@
 @import 'colors';
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 15rem;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
 .planCard{
     box-shadow: 0 0 10px $shadow;
     border-radius: 0.5rem;

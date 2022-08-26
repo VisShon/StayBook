@@ -9,7 +9,7 @@ import Button from './Button'
 import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
 
@@ -35,7 +35,7 @@ function BookingCard() {
         <div className="input">
           <div style={{marginRight: '0.5rem'}}>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <DateTimePicker
+              <DatePicker
                 label="Check In"
                 value={checkIn}
                 onChange={(newValue:any) => {
@@ -47,7 +47,7 @@ function BookingCard() {
           </div>
           <div>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <DateTimePicker
+                <DatePicker
                   views={['day','month']}
                   label="Check Out"
                   value={checkOut}

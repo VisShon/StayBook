@@ -26,13 +26,13 @@ function Button({checkIn,checkOut}:any){
 
     script.onload = async () => {
       try {
-        const result = await axios.post(`http://localhost:8000/create-order`, {
+        const result = await axios.post(`/create-order`, {
           amount: orderAmount,
         });
         const { amount, id: order_id, currency } = result.data;
         const {
           data: { key: razorpayKey },
-        } = await axios.get('http://localhost:8000/get-razorpay-key');
+        } = await axios.get('/get-razorpay-key');
         
         const options = {
           key: razorpayKey,
@@ -48,7 +48,7 @@ function Button({checkIn,checkOut}:any){
             }, function(error) {
               console.log(error)
             });
-            const result = await axios.post(`http://localhost:8000/api${hotelName}/setReservations`,{
+            const result = await axios.post(`/api${hotelName}/setReservations`,{
               username: localStorage.getItem('name'),
               email: localStorage.getItem('email'),
               checkIn: checkIn,

@@ -9,7 +9,7 @@ function AllHotels() {
 
   useEffect(() => {
     const getHotelData = async () => {
-      const result = await axios.get(`http://localhost:8000/api/getAllData`).then(value => setHotel(value.data));
+      const result = await axios.get(`/api/getAllData`).then(value => setHotel(value.data));
     }
     getHotelData();
   },[])

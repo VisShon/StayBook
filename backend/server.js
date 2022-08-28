@@ -48,7 +48,7 @@ app.get('/*', (req, res) => {
 });
 
 app.use(errorHandler);
-
+console.log('Starting')
 app.listen(port);
 
 

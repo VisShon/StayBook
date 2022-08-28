@@ -22,8 +22,8 @@
     height: 90%;
     margin-left: 0.5em;
     @media screen and (max-width: 800px) {
-        height:80%;
-    }
+        height: 80%;
+     }
     
 }
 .Book {
@@ -93,23 +93,3 @@
     }
 }
     
-
-@media only screen and (max-width: 450px) {
-   
-    .item{
-     font-size: 0.5rem;
-     cursor: pointer;
-     position: relative;
-     padding: 0.3rem;
-   }
- 
-   .logo{
- 
-    height: 60%;
-    margin-top: 0.3rem;
-    margin-left: 0.1rem;
-   }
-
-
- 
- }

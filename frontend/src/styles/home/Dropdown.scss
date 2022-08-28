@@ -67,3 +67,33 @@
   border-radius:0rem;
   background: $gradient;
 }
+
+
+@media only screen and (max-width: 450px) {
+   
+  li {
+    padding: 0.4rem;
+    height: 100%;
+    position: relative;
+    transition-duration: 0.5s;
+    font-size: 0.6rem;
+  }
+
+  .Book {
+    font-family: "Maven Pro", sans-serif;
+    font-size: 1rem;
+    margin-left: 1.5rem;
+    padding: 0.2rem;
+    text-decoration: none;
+    border: 0.5px solid #CF8F24;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition-duration: 0.5s;
+    font-size: 0.7rem;
+    margin-right: 1rem;
+    color: black;
+}
+    
+
+
+}

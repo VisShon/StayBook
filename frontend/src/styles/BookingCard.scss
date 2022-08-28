@@ -7,7 +7,7 @@
     right: 5rem;
     margin-top:1rem;
     margin-left:2rem;
-    min-width: 30vw;
+    min-width: 40vh;
     height:100%;
     max-height: 80vh;
     overflow-y: scroll;
@@ -16,6 +16,8 @@
     padding: 1rem;
     background-color: $background;
     box-shadow: 0 0 10px $shadow;
+
+    
 
     h1{
         font-family: "Maven Pro",sans-serif;
@@ -31,6 +33,11 @@
         font-weight: 500;
         font-size:1.25rem;
         color: black;
+    }
+
+    @media screen and (max-width: 800px){
+        margin-left:0rem;
+        width: 10rem;
     }
 }
 

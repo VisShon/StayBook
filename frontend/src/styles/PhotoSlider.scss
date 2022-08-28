@@ -8,7 +8,11 @@
     margin: 1rem;
     margin-left: 5em;
     margin-right: 5em;
-    
+    @media screen and (max-width: 800px) {
+        height:40vh;
+        margin: 1rem 0.5rem 0rem 0.5rem;
+        border-radius: 0.5rem;
+    }
 }
 
 .photoSlider::-webkit-scrollbar {
@@ -25,10 +29,18 @@
     top: 20rem;
     left: 6rem;
     cursor: pointer;
+    @media screen and (max-width: 800px) {
+        top:15rem;
+        left: 2rem;
+    }
 }
 .rightIcon{
     position: absolute;
     top: 20rem;
     right: 6rem;
     cursor: pointer;
+    @media screen and (max-width: 800px) {
+        top:15rem;
+        right: 2rem;
+    }
 }

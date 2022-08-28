@@ -11,6 +11,10 @@
     height:100%;
     position: relative;
     transition-duration: 0.5s;
+    @media screen and (max-width: 800px){
+      border: 1px solid $main;
+      border-radius: 0.5rem;
+    }
   }
     
   li:hover{
@@ -19,6 +23,7 @@
     height:1rem;
     background-color: $main;
     cursor: pointer;
+    
   }
   
   ul li ul {
@@ -27,6 +32,7 @@
     left:0;
     transition: all 0.5s ease;
     display: none;
+    
   }
   
   ul li:hover > ul,
@@ -41,6 +47,10 @@
     clear: both;
     font-family: "Maven Pro",sans-serif;
     font-size: 1rem;
+    @media screen and (max-width: 800px) {
+      border: none;
+      border-radius: 0rem;
+    }
   }
 
 .hotels{
@@ -48,6 +58,9 @@
   color:black;
   background-color:bisque;
   font-size: 0.75rem;
+  @media screen and (max-width: 800px) {
+    width:4.25rem;
+  }
  }
 
 .hotels:hover{

@@ -11,10 +11,17 @@
     position:sticky;
     z-index: 10;
     top: 0;
+    @media screen and (max-width: 800px) {
+       align-items: center;
+    }
 }
 .logo{
     height: 90%;
     margin-left: 0.5em;
+    @media screen and (max-width: 800px) {
+        height:80%;
+    }
+    
 }
 .Book {
     font-family: "Maven Pro",sans-serif;
@@ -28,6 +35,9 @@
     font-size: 20px;
     margin-right: 1rem;
     color: black;
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
 }
 
 .Book:hover{
@@ -58,6 +68,9 @@
     cursor: pointer;
     position: relative;
     padding: 0.5rem;
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
 }
 .item:hover{
     color:white;
@@ -70,5 +83,10 @@
     align-items: center;
     width: 50%;
     justify-content: space-between;
+    @media screen and (max-width: 800px) {
+        justify-content: flex-end;
+        padding-right: 1rem;
+
+    }
 }
     

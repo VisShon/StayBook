@@ -5,6 +5,9 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  @media screen and (max-width:800px) {
+    text-align: center;
+ }
 }
 
 .normalText{
@@ -13,6 +16,10 @@
   margin-top: 5rem;
   font-size:5rem;
   font-family: 'Maven',sans-serif;
+  @media screen and (max-width:800px) {
+    font-size: 3rem;
+    margin-top: 2rem;
+ }
 }
 
 .line{
@@ -28,6 +35,11 @@
   border-radius: 2rem;
   margin-top: 3rem;
   box-shadow: 0 0 10px $shadow;
+  @media screen and (max-width:800px) {
+     height:20rem; 
+     width: 95%;
+     border-radius: 1rem;
+  }
 }
 
 .centered {
@@ -47,4 +59,9 @@
   0 0 90px #0ff,
   0 0 100px #0ff,
   0 0 150px #0ff;
+
+  @media screen and (max-width:800px) {
+    top: 25%;
+    font-size: 2rem;
+ }
 }

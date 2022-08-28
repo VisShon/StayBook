@@ -5,6 +5,10 @@
     height: 40rem;
     border-radius: 3rem;
     box-shadow: 0 0 10px $shadow;
+    @media screen and (max-width:800px) {
+        border-radius: 1rem;
+        height: 35rem;
+    }
 
 }
 .MainDiv{

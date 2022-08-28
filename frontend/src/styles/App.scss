@@ -18,8 +18,17 @@
   margin-left: 5em;
   max-width: 70%;
   margin-right: 5em;
-
+  @media screen and (max-width:800px) {
+    padding:1rem;
+    margin: 0 0 0 0;
+    display:block;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    max-width: 100%;
+  }
 }
+
 
 .container::-webkit-scrollbar {
   display:none;
@@ -30,6 +39,10 @@
   font-family: "Maven Pro",sans-serif;
   font-weight: 400;
   font-size:1.5rem;
+  @media screen and (max-width:800px) {
+    width:100%;
+    font-size:1rem;
+  }
 }
 
 .detail{
@@ -38,6 +51,13 @@
   color:$main;
   font-size:1.5rem;
   margin-right: 1rem;
+  @media screen and (max-width:800px) {
+    font-size:1.25rem;
+    display:flex;
+    margin-left: 1rem;
+    margin-right: 0rem;
+    flex-direction: column;
+  }
 }
 
 h2{

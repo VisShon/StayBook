@@ -4,12 +4,19 @@ import left from '../images/left.png'
 import right from '../images/right.png'
 
 function PhotoSlider({data}:any) {
+
+  const wind = window.matchMedia('(max-width: 800px)');
+
   const ref = useRef<HTMLDivElement>(document.createElement("div"));
   const scrollRight = () => {
-    ref.current.scrollBy({left: 750, behavior: 'smooth'});
+    !wind.matches?
+    ref.current.scrollBy({left: 1000, behavior: 'smooth'}):
+    ref.current.scrollBy({left: 555, behavior: 'smooth'});
   };
   const scrollLeft = () => {
-    ref.current.scrollBy({left: -750, behavior: 'smooth'});
+    !wind.matches?
+    ref.current.scrollBy({left: -1000, behavior: 'smooth'}):
+    ref.current.scrollBy({left: -555, behavior: 'smooth'});
   };
 
   return (
@@ -17,8 +24,8 @@ function PhotoSlider({data}:any) {
         {data.map((item:any,index:number) => (
             <img className="image" src={require("../images/"+item)} key={index}/>
         ))}
-        <a onClick={scrollLeft} className="leftIcon"><img style={{width:'5rem'}} src={left}/></a>
-        <a onClick={scrollRight} className="rightIcon"><img style={{width:'5rem'}} src={right}/></a>
+        <a onClick={scrollLeft} className="leftIcon"><img style={!wind.matches?{width:'5rem'}:{width:'3rem'}} src={left}/></a>
+        <a onClick={scrollRight} className="rightIcon"><img style={!wind.matches?{width:'5rem'}:{width:'3rem'}}src={right}/></a>
       </div>
   )
 }

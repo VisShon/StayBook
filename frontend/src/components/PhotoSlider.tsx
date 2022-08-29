@@ -10,12 +10,12 @@ function PhotoSlider({data}:any) {
   const ref = useRef<HTMLDivElement>(document.createElement("div"));
   const scrollRight = () => {
     !wind.matches?
-    ref.current.scrollBy({left: 1000, behavior: 'smooth'}):
+    ref.current.scrollBy({left: 816, behavior: 'smooth'}):
     ref.current.scrollBy({left: 555, behavior: 'smooth'});
   };
   const scrollLeft = () => {
     !wind.matches?
-    ref.current.scrollBy({left: -1000, behavior: 'smooth'}):
+    ref.current.scrollBy({left: -816, behavior: 'smooth'}):
     ref.current.scrollBy({left: -555, behavior: 'smooth'});
   };
 

@@ -1,9 +1,10 @@
 @import '../colors';
 
 .main{
-    position: relative;
+    width: 100%;
     overflow-x: scroll;
     display: flex;
+    
 }
 
 .main img{
@@ -23,13 +24,16 @@
     border: solid 1px $main;
     border-radius: 0.5rem;
     height: 40rem;
-    width: 20rem;
+    min-width: 20rem;
     margin: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
     box-shadow: 0 0 10px $shadow;
+    @media screen and (max-width:800px){
+        margin: 2rem;
+    }
 }
 
 .hotelName{

@@ -56,7 +56,7 @@ function SelectedPlan({title,roomType,checkIn,checkOut}:any) {
   return (
     <div className={isRoomAvailable ? 'selectedPlan':'selectedPlan-unavailable'}>
       <div className="wrapper">
-          <span style={{color: 'black'}}>{roomType}({title})</span>
+          <span style={{color: 'black',textAlign: 'left'}}>{roomType}({title})</span>
           {!isRoomAvailable&&<h3 style={{color: 'red',margin:'1px'}}>Unavailable</h3>}
           <a onClick={onClickHandler} className="cancel">X</a>
       </div>

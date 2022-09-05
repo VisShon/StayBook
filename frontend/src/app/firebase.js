@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
-import {getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {getAuth} from "firebase/auth";
 
 
 
@@ -17,18 +17,9 @@ const firebaseConfig = {
   
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
-  const auth = getAuth(app)
-  const provider = new GoogleAuthProvider()
+  export const auth = getAuth(app)
 
-export const Login = () => {signInWithPopup(auth,provider).then((res)=>{
-  const name = res.user.displayName;
-  const email = res.user.email;
-  const phone = res.user.phoneNumber;
-
-  localStorage.setItem('name',name)
-  localStorage.setItem('email',email)
-  localStorage.setItem('phone',phone)
-})}
+// export const Login = () => {return signInWithPopup(auth,provider)}
 
 export const listAllUsers = () => {
   getAuth().listUsers().then((listUsersResult) => {

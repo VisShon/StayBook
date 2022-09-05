@@ -1,23 +1,25 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import '../styles/Button.scss'
 import axios from 'axios';
 import { useAppSelector } from '../app/hooks';
-import {Login} from '../app/firebase'
 import emailjs from '@emailjs/browser' 
+import {AuthContext,AuthContextProps} from '../context/AuthContext'
 
 function Button({checkIn,checkOut}:any){
-
-  const hotelName:string = new URL(window.location.href).pathname;
   let price = useAppSelector(state => state.price.value)
   let orderAmount = (price*10).toString()+'0'
-  
-  const plans = useAppSelector(state => state.plans.selectedPlans);
+  const[isLoading,setIsLoading] = useState(false);
+  const {username,email,phone,Login} = useContext<AuthContextProps>(AuthContext);
+  const[error,setError] = useState(false)
+  const[isPaid,setIsPaid] = useState(false)
+
+  const hotelName:string = new URL(window.location.href).pathname;
   const children = useAppSelector(state => state.price.children);
-
-
-  const onClickHandler = async () =>{
-    
-    !localStorage.getItem('email')&&(await Login())    
+  const plans = useAppSelector(state => state.plans.selectedPlans);
+  
+  const onClickHandler = async () =>{   
+    setIsLoading(true)
+    if(!username){await Login()};
     const script = document.createElement('script');
       script.src = 'https://checkout.razorpay.com/v1/checkout.js';
       script.onerror = () => {
@@ -40,6 +42,7 @@ function Button({checkIn,checkOut}:any){
           currency: currency,
           name: 'example name',
           handler: async function(response:any){
+            
             let templateParams = {
               to_name:localStorage.getItem('email'),
             }
@@ -48,9 +51,14 @@ function Button({checkIn,checkOut}:any){
             }, function(error) {
               console.log(error)
             });
+
+            if(!username){
+              setError(true);
+            }
+            setIsPaid(true)
             const result = await axios.post(`/api${hotelName}/setReservations`,{
-              username: localStorage.getItem('name'),
-              email: localStorage.getItem('email'),
+              username:username ,
+              email:email, 
               checkIn: checkIn,
               checkOut: checkOut,
               amountPaid: price,
@@ -79,10 +87,16 @@ function Button({checkIn,checkOut}:any){
       }
     };
     document.body.appendChild(script);
+    setIsLoading(false)
   }
 
   return (
-    <div className="Button" onClick={onClickHandler}>Proceed to chekout!</div>
+    <>
+      <div className={error?("Button-error"):("Button")} onClick={onClickHandler}>{error?"Error Refresh and Try Again":"Proceed to chekout!"}
+      </div>
+      {isLoading&&<div className="Button-Loading">Loading...</div>}
+      {isPaid&&<div className="Button-Loading">Booking Done</div>}
+    </>
   )
 }
 

@@ -4,7 +4,7 @@ export const priceSlice = createSlice({
     name:'totalPrice',
     initialState:{
         value:0,
-        children:0
+        children:0,
     },
     reducers:{
         updatePrice: (state:any,action:any) => {

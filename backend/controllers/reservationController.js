@@ -17,6 +17,11 @@ const getReservations = asyncHandler(async(req, res, next) =>{
 
 })
 
+const removeReservations = asyncHandler(async(req, res, next) =>{
+  const db = getDatabase();
+  set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+Math.trunc(req.body.amountPaid).toString()}`),null);
+})
+
 const setReservations = asyncHandler(async(req, res, next)=>{
   const db = getDatabase();
   set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+Math.trunc(req.body.amountPaid).toString()}`), {
@@ -32,5 +37,6 @@ const setReservations = asyncHandler(async(req, res, next)=>{
 
 module.exports ={
     getReservations,
-    setReservations
+    setReservations,
+    removeReservations
 }

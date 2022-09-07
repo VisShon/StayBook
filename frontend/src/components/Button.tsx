@@ -65,7 +65,7 @@ function Button({checkIn,checkOut}:any){
               checkOut: checkOut,
               amountPaid: price,
               selectedPlans:plans,
-            })
+            },{headers:{Authorization: `bearer ${sessionStorage['user']}`}})
           },
           description: 'example transaction',
           order_id: order_id,

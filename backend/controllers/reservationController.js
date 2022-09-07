@@ -1,6 +1,6 @@
 const asyncHandler = require('express-async-handler');
 const{ getDatabase, ref, child, get,set }=require("firebase/database");
-
+const {checkAuth} = require('../middleware/checkAuth')
 
 const db = ref(getDatabase());
 
@@ -20,13 +20,13 @@ const getReservations = asyncHandler(async(req, res, next) =>{
 
 const removeReservations = asyncHandler(async(req, res, next) =>{
   const db = getDatabase();
-
-  set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+Math.trunc(req.body.amountPaid).toString()}`),null);
+  checkAuth(req, res, next)?
+  set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+Math.trunc(req.body.amountPaid).toString()}`),null):{};
 })
 
 const setReservations = asyncHandler(async(req, res, next)=>{
   const db = getDatabase();
-  
+  checkAuth(req, res, next)?
   set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+Math.trunc(req.body.amountPaid).toString()}`), {
     username: req.body.username,
     email: req.body.email,
@@ -34,7 +34,7 @@ const setReservations = asyncHandler(async(req, res, next)=>{
     checkOut: req.body.checkOut,
     amountPaid: req.body.amountPaid,
     selectedPlans: req.body.selectedPlans,
-  });
+  }):{}
 })
 
 

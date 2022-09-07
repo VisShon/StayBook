@@ -5,6 +5,7 @@ const{ getDatabase, ref, child, get,set }=require("firebase/database");
 const db = ref(getDatabase());
 
 const getReservations = asyncHandler(async(req, res, next) =>{
+
     get(child(db, `/reservations/${req.params.hotelname}`)).then((snapshot) => {
         if (snapshot.exists()) {
           res.json(snapshot)
@@ -19,11 +20,13 @@ const getReservations = asyncHandler(async(req, res, next) =>{
 
 const removeReservations = asyncHandler(async(req, res, next) =>{
   const db = getDatabase();
+
   set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+Math.trunc(req.body.amountPaid).toString()}`),null);
 })
 
 const setReservations = asyncHandler(async(req, res, next)=>{
   const db = getDatabase();
+  
   set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+Math.trunc(req.body.amountPaid).toString()}`), {
     username: req.body.username,
     email: req.body.email,

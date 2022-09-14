@@ -1,0 +1,70 @@
+@import '../colors';
+
+.contactUsBody{
+    width:screen;
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    overflow: hidden;
+    .form{
+        position: absolute;
+        background-color: white;
+        border: 1px solid $main;
+        z-index: 10px;
+        padding: 2rem;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items:center;
+        border-radius: 0.5rem;
+        .input{
+            width: 53%;
+        }
+        h2{
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            -webkit-text-fill-color: $grey;
+            font-family:'Kraftan',sans-serif;
+        }
+        p{
+            color: $main;
+            margin-top: 0.25rem;
+            font-family: "Maven Pro",sans-serif;
+            font-weight: 200;
+            font-size:1.25rem;
+
+        }
+        input{
+            width: 100%;
+            padding: 1rem;
+            margin-top:1rem;
+            color: $main;
+            border: 1px solid $main;
+            border-radius: 0.25rem;
+
+        }
+        input::placeholder{
+            color: $main;
+            opacity: .5;
+        }
+        textarea{
+            width: 50%;
+            height: 10rem;
+            padding: 1rem;
+            margin-top:1rem;
+            color: $main;
+            border: 1px solid $main;
+            border-radius: 0.25rem;
+        }
+        textarea::placeholder{
+            color: $main;
+            opacity: .5;
+        }
+    }
+    img{
+        z-index: 0;
+        height:45rem;
+    }
+}

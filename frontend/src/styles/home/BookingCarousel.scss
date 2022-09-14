@@ -1,0 +1,43 @@
+@import '../colors';
+
+.carouselBody{
+    animation: Intro 1s ease-in-out forwards;
+    background-color:black;
+    border-radius:1rem;
+    width:98%;
+    height:80vh;
+    position: relative;
+    margin-bottom: 1rem;
+}
+.bookingBar{
+    position: absolute;
+    display: flex;
+    flex-direction:row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    bottom: -3rem;
+    box-shadow: 0 0 10px $shadow2;
+    left: 10%;
+    width: 80%;
+    height: 18%;
+    border-radius:.5rem;
+    background-color:$secondary;
+}
+.arrowButton{
+    background-color:white;
+    width: 10%;
+    border-radius:.5rem;
+    height: 90%;
+    margin-right: .5rem;
+}
+@keyframes Intro {
+    0%{
+        opacity: 0;
+        transform: translate(0,10vw);
+    }
+
+    100%{
+         opacity: 1;
+         transform: translate(0,0);
+    }
+}

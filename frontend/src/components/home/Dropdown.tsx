@@ -5,7 +5,7 @@ function Dropdown(){
 return(
     <ul>
       <li>
-        <span aria-haspopup="true">All Hotels</span>
+        <span aria-haspopup="true">Hotels</span>
         <ul className="dropdown" aria-label="submenu">
           <li  className = "hotels"><a style={{textDecoration:'none',color:'black'}} href='/HotelAiraXing'>Hotel Aira Xing</a></li>
           <li className = "hotels"><a style={{textDecoration:'none',color:'black'}} href='/HotelJyotiMahal'>Hotel Jyoti Mahal</a></li>

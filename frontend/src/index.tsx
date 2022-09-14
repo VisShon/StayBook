@@ -5,7 +5,7 @@ import {store} from './app/store'
 import { AuthProvider } from "./context/AuthContext"
 import { Provider } from 'react-redux'
 import './index.css';
-import Home from './pages/Landing';
+import Home from './pages/Home';
 import BookingEngine from './pages/BookingEngine';
 const rootElement = document.getElementById("root") as HTMLElement;
 const root = createRoot(rootElement);

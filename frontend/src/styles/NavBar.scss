@@ -2,25 +2,21 @@
 
 .navbar{
     background-color: $background;
-    width: screen;
-    height: 4rem;
-    box-shadow: 0 0 10px $shadow;
     display: flex;
     align-items: center;
+    width: screen;
     justify-content: space-between;
     position:sticky;
     z-index: 10;
+    padding:1rem;
     top: 0;
     @media screen and (max-width: 800px) {
        align-items: center;
     }
 }
-
-
-  
 .logo{
-    height: 90%;
-    margin-left: 0.5em;
+    height: 4rem;
+    cursor: pointer;
     @media screen and (max-width: 800px) {
         height: 80%;
      }
@@ -83,8 +79,9 @@
     font-family: "Maven Pro",sans-serif;
     font-size: 1rem;
     display: flex;
+    color:$main;
     align-items: center;
-    width: 50%;
+    width: 30%;
     justify-content: space-between;
     @media screen and (max-width: 800px) {
         justify-content: flex-end;

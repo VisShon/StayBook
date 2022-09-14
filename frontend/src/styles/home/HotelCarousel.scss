@@ -1,0 +1,20 @@
+@import '../colors';
+
+.carouselBody-hotel{
+    animation: Intro 1s ease-in-out forwards;
+    border-radius:1rem;
+    width:screen;
+    position: relative;
+}
+
+@keyframes Intro {
+    0%{
+        opacity: 0;
+        transform: translate(0,10vw);
+    }
+
+    100%{
+         opacity: 1;
+         transform: translate(0,0);
+    }
+}

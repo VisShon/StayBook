@@ -18,7 +18,7 @@
     height: 4rem;
     cursor: pointer;
     @media screen and (max-width: 800px) {
-        height: 80%;
+        height: 3rem;
      }
     
 }
@@ -66,6 +66,8 @@
 .item{
     cursor: pointer;
     position: relative;
+    text-decoration: none;
+    color: $main;
     padding: 0.5rem;
     @media screen and (max-width: 800px) {
         display: none;
@@ -90,3 +92,73 @@
     }
 }
     
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+  } 
+   
+  li {
+    padding:10px;
+    height:100%;
+    position: relative;
+    transition-duration: 0.5s;
+    @media screen and (max-width: 800px){
+      border: 1px solid $main;
+      border-radius: 0.5rem;
+    }
+  }
+    
+  li:hover{
+    border-radius: 0.5rem;
+    color:white;
+    height:1rem;
+    background-color: $main;
+    cursor: pointer;
+    
+  }
+  
+  ul li ul {
+    visibility: hidden;
+    position: absolute;
+    left:0;
+    transition: all 0.5s ease;
+    display: none;
+    
+  }
+  
+  ul li:hover > ul,
+  ul li ul:hover,
+  ul li ul:focus {
+    margin-top: 0.5rem;
+     visibility: visible;
+     opacity: 1;
+     display: block;
+  }
+  ul li ul li {
+    clear: both;
+    font-family: "Maven Pro",sans-serif;
+    font-size: 1rem;
+    @media screen and (max-width: 800px) {
+      border: none;
+      border-radius: 0rem;
+    }
+  }
+
+.hotels{
+  width:7rem;
+  color:black;
+  background-color:bisque;
+  font-size: 0.75rem;
+  @media screen and (max-width: 800px) {
+    width:4.25rem;
+  }
+ }
+
+.hotels:hover{
+  border-radius:0rem;
+  background: $gradient;
+}

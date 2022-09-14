@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../../styles/home/Dropdown.scss';
+import '../../styles/NavBar.scss';
 function Dropdown(){
 
 return(

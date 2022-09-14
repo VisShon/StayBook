@@ -1,0 +1,32 @@
+@import '../colors';
+
+.toursImage{
+    width:100vw;
+    margin-top: 5rem;
+    @media screen and (max-width: 800px) {
+    }
+}
+
+.toursContent{
+
+    .title{
+
+    }
+
+    .description{
+
+    }
+
+}
+
+@keyframes Intro {
+    0%{
+        opacity: 0;
+        transform: translate(0,10vw);
+    }
+
+    100%{
+         opacity: 1;
+         transform: translate(0,0);
+    }
+}

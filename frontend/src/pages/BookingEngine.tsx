@@ -24,7 +24,6 @@ function App() {
 
   return (
     <>
-      <NavBar/>
       {hotel?
       <>
         <Photos data={Object.values(hotel.images)}/>

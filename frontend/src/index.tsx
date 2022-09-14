@@ -6,6 +6,7 @@ import { AuthProvider } from "./context/AuthContext"
 import { Provider } from 'react-redux'
 
 import './index.css';
+import './styles/fonts/kraftan.otf'
 
 import Home from './pages/Home';
 import NavBar from './components/home/Navbar'

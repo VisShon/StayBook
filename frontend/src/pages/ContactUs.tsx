@@ -6,22 +6,22 @@ function ContactUs() {
   const[name,setName] = useState<string>('');
   const[email,setEmail] = useState<string>('');
   const[message,setMessage] = useState<string>('');
+  const[sent,isSent] = useState<boolean>(false)
+  const[error,setError] = useState<boolean>(false)
 
   const sendMail = async () => {
-    
-    let templateParams = {
-      to_name:localStorage.getItem('email'),
+    setError(false)
+    if(!name||!email) {
+      setError(true);
     }
-    const mail = await emailjs.send('service_mv03hwf','template_dysx4ir',templateParams,'6HGQvyzipY4qgGkWm')
-    .then(function(response) {
-    }, function(error) {
-      console.log(error)
-    });
-
+    else{
+      let templateParams = {
+        to_name:localStorage.getItem('email'),
+      }
+      const mail = await emailjs.send('service_mv03hwf','template_dysx4ir',templateParams,'6HGQvyzipY4qgGkWm')
+      .then(()=>isSent(true));
+    }
   }
-
-
-
   return (
     <div className="contactUsBody">
       <img src={tours} />
@@ -43,10 +43,14 @@ function ContactUs() {
                   style={{marginLeft:'1rem'}}
                   placeholder="Email *"/>
         </div>
+
+          {error&&<p className="error">Enter email and name</p>}
+
         <textarea value={message}
               onChange={(e) => setMessage(e.target.value)} 
               placeholder="Message"/>
-        <div className='button'>Submit</div>
+        {!sent?<div onClick={sendMail} className='button'>Submit</div>:
+        <a href="/" className='button'>Done</a>}
       </div>
     </div>
   )

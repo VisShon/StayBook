@@ -1,7 +1,6 @@
 @import '../colors';
 
 .carouselBody{
-    animation: Intro 1s ease-in-out forwards;
     background-color:black;
     border-radius:1rem;
     width:98%;
@@ -35,15 +34,4 @@
     border-radius:.5rem;
     height: 90%;
     margin-right: .5rem;
-}
-@keyframes Intro {
-    0%{
-        opacity: 0;
-        transform: translate(0,10vw);
-    }
-
-    100%{
-         opacity: 1;
-         transform: translate(0,0);
-    }
 }

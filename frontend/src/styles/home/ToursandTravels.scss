@@ -3,18 +3,38 @@
 .toursImage{
     width:100vw;
     margin-top: 5rem;
+    
     @media screen and (max-width: 800px) {
     }
 }
 
 .toursContent{
+    text-align:center;
+    width:80%;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    animation: Intro 1s ease-in-out forwards;
+    margin-bottom: 7rem;
 
-    .title{
-
+    h2{
+        margin: -5rem 0 .25rem 0 ;
+        font-size: 5rem;
+        margin-bottom: 1rem;
+        font-weight:200;
+        -webkit-text-fill-color: $grey;
+        font-family:'Kraftan',sans-serif;
     }
 
-    .description{
-
+    p{
+        margin-top: .25rem;
+        color: $main;
+        font-family: "Maven Pro",sans-serif;
+        font-weight:400;
+        font-size: 1rem;
+    }
+    .button{
+        width: 20%;
     }
 
 }

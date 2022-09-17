@@ -5,7 +5,7 @@ import {motion,useAnimation} from 'framer-motion'
 import { useInView } from "react-intersection-observer";
 
 const boxVariant = {
-  visible: { opacity: 1, translateX: 0, transition: { duration: 2 } },
+  visible: { opacity: 1, translateX: 0, transition: { duration: 1 } },
   hidden: { opacity: 0, translateX: '10vw' }
 };
 

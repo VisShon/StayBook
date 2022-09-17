@@ -1,12 +1,14 @@
 @import '../colors';
 
 .carouselBody{
+
     background-color:black;
     border-radius:1rem;
     width:98%;
-    height:80vh;
+    height:75vh;
     position: relative;
     margin-bottom: 1rem;
+    margin-top: 2rem;
     @media screen and (max-width: 800px) {
         height:80vh;
     }

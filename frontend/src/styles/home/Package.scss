@@ -1,0 +1,85 @@
+@import '../colors';
+
+
+.packagePageBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.packageBody{
+    border: 1px solid $main;
+    width: 70%;
+    border-radius:.5rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:2rem;
+    margin-top: 10rem;
+    img{
+        width: 70%;
+        border-radius:2rem;
+        margin-top: -10rem;
+    }
+    h2{
+        width: 80%;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 200;
+        margin-bottom: 1rem;
+        -webkit-text-fill-color: $grey;
+        font-family:'Kraftan',sans-serif;
+    }
+    h1{
+        text-align: center;
+        width: 80%;
+        font-size: 2rem;
+        font-weight: 200;
+        margin-bottom: 1rem;
+        -webkit-text-fill-color: $main;
+        font-family:'Kraftan',sans-serif;
+    }
+    p{
+        width: 80%;
+        color: $main;
+        font-size: 1rem;
+
+    }
+    .button{
+
+    }
+
+    .locationBody{
+        margin-top: 1rem;
+        box-shadow: 0 0 10px $shadow;
+        border: 1px solid $main;
+        border-radius: .5rem;
+        width: 50%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .title{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+        }
+        img{
+            width:auto;
+            border-radius:0px;
+            margin-top:auto;
+        }
+        h2{
+            text-align: left;
+            font-size: 2rem;
+        }
+        h1{
+            text-align: left;
+            font-size: 1rem;
+        }
+        p{
+            font-size: .75rem;
+        }
+    }
+}

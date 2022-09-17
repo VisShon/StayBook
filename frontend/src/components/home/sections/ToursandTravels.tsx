@@ -35,7 +35,7 @@ function ToursandTravels() {
                 to the needs of any family, large or small, with youngsters or the 
                 elderly. It's a fantastic chance to spend quality time together in a fantastic 
                 location.</p>
-                <div className='button'>Find more</div>
+                <a className='button' href='/packages'>Find more</a>
         </motion.div>
     </>
   )

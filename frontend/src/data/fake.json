@@ -1,0 +1,467 @@
+{
+    "HotelAiraXing": {
+      "address": "1/5, Desh Bandhu Gupta Rd, opposite Police Station, Motia Khan, Paharganj, New Delhi, Delhi 110055 New Delhi, Delhi, India - 110055rrh",
+      "amenities": {
+        "0": "Internet or Wi-Fi",
+        "1": "Parking",
+        "2": "24-hour front desk service Bar",
+        "3": "Restaurant",
+        "4": "Coffee or tea in lobby",
+        "5": "Vending Machine",
+        "6": "Room Service",
+        "7": "Spa",
+        "8": "Sauna",
+        "9": "Hot Tub/Jacuzzi",
+        "10": "Gym",
+        "11": "Breakfast",
+        "12": "Shuttle Service",
+        "13": "Currency Exchange",
+        "14": "Dry Cleaning",
+        "15": "Laundry",
+        "16": "Meeting or Banquet Facilities",
+        "17": "ATM On Site",
+        "18": "24 Hours Power Backup",
+        "19": "Luggage storage",
+        "20": "Safety deposit boxes",
+        "21": "Elevator",
+        "22": "Concierge",
+        "23": "Airport transfer",
+        "24": "Rental car",
+        "25": "Valet parking",
+        "26": "Tour"
+      },
+      "description": "Airport pick-up/drop-off, room service, and complimentary Wi-Fi are all available at Hotel Aira Xing. The budget hotel Aira Xing is a 10-minute drive from the New Delhi Railway Station and the Jhandewalan Metro Station",
+      "email": "booking@staybook.in",
+      "images": {
+        "0": "AiraXing/img1.jpg",
+        "1": "AiraXing/img2.jpg",
+        "2": "AiraXing/img3.jpg",
+        "3": "AiraXing/img4.jpg",
+        "4": "AiraXing/img5.jpg",
+        "5": "AiraXing/img6.jpg",
+        "6": "AiraXing/img7.jpg",
+        "7": "AiraXing/img8.jpg",
+        "8": "AiraXing/img9.jpg",
+        "9": "AiraXing/img10.jpg"
+      },
+      "link": "/HotelAiraXing",
+      "name": "Hotel Aira Xing",
+      "phone": "+918373929299",
+      "rooms": {
+        "0": {
+          "amenities": "1 Double Bed, Private bathroom, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "AiraXing/img5.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1300,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 1800,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 5,
+          "type": "Deluxe Room"
+        },
+        "1": {
+          "amenities": "19 m2, 1Large Double Bed, City view, Air conditioning, Private bathroom, Tea/coffee maker machine, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "AiraXing/img6.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1500,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 2000,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 5,
+          "type": "Deluxe King Room"
+        },
+        "2": {
+          "amenities": "21 m2,1 single bed, 1 Large Double Bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "AiraXing/img10.jpg",
+          "info": "1 room, 4 guests",
+          "plans": {
+            "0": {
+              "info": "3 guests",
+              "price": 1800,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "4 guests",
+              "price": 2800,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 5,
+          "type": "Deluxe Triple Room"
+        },
+        "3": {
+          "amenities": "23 m2, 2 Large Double Bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "JyotiMahal/img4.jpg",
+          "info": "1 room, 5 guests",
+          "plans": {
+            "0": {
+              "info": "4 guests",
+              "price": 2100,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "5 guests",
+              "price": 3100,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 5,
+          "type": "Deluxe Family Room"
+        }
+      }
+    },
+    "HotelJaiBalaji": {
+      "address": "9918, Plot No. 9918, Street, Multani Dhanda, Paharganj, Delhi, 110055 New Delhi, Delhi, India - 110055",
+      "amenities": {
+        "0": "Internet or Wi-Fi",
+        "1": "Parking",
+        "2": "24-hour front desk service Bar",
+        "3": "Restaurant",
+        "4": "Coffee or tea in lobby",
+        "5": "Vending Machine",
+        "6": "Room Service",
+        "7": "Spa",
+        "8": "Sauna",
+        "9": "Hot Tub/Jacuzzi",
+        "10": "Gym",
+        "11": "Breakfast",
+        "12": "Shuttle Service",
+        "13": "Currency Exchange",
+        "14": "Dry Cleaning",
+        "15": "Laundry",
+        "16": "Meeting or Banquet Facilities",
+        "17": "ATM On Site",
+        "18": "24 Hours Power Backup",
+        "19": "Luggage storage",
+        "20": "Safety deposit boxes",
+        "21": "Elevator",
+        "22": "Concierge",
+        "23": "Airport transfer",
+        "24": "Rental car",
+        "25": "Valet parking",
+        "26": "Tour"
+      },
+      "description": "Air - conditioned rooms include a desk, a flat-screen TV, a private bathroom, as well as bed linen and towels. Each room at Hotel Jai Balaji includes a seating space. A continental or à la carte breakfast is available at the hotel.",
+      "email": "booking@staybook.in",
+      "images": {
+        "0": "JaiBalaji/img1.jpg",
+        "1": "JaiBalaji/img2.jpg",
+        "2": "JaiBalaji/img3.jpg",
+        "3": "JaiBalaji/img4.jpg",
+        "4": "JaiBalaji/img5.jpg",
+        "5": "JaiBalaji/img6.jpg",
+        "6": "JaiBalaji/img7.jpg",
+        "7": "JaiBalaji/img8.jpg",
+        "8": "JaiBalaji/img9.jpg",
+        "9": "JaiBalaji/img10.jpg"
+      },
+      "link": "/HotelJaiBalaji",
+      "name": "Hotel Jai BalaJi",
+      "phone": "+919211262749",
+      "rooms": {
+        "0": {
+          "amenities": "1 Double Bed, Private bathroom, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "JaiBalaji/img7.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1300,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 1800,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 8,
+          "type": "Economy Double Room"
+        },
+        "1": {
+          "amenities": "1 Large Double Bed, City view, Private bathroom, Air Conditioning, Tea/coffee maker machine, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "JaiBalaji/img1.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1500,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 2000,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 6,
+          "type": "Deluxe Double room"
+        },
+        "2": {
+          "amenities": "23 m2, 2 Large Double Bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "JaiBalaji/img2.jpg",
+          "info": "1 room, 5 guests",
+          "plans": {
+            "0": {
+              "info": "4 guests",
+              "price": 2100,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "5 guests",
+              "price": 3100,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 5,
+          "type": "Deluxe Family Room"
+        }
+      }
+    },
+    "HotelJyotiMahal": {
+      "address": "2488 Central Delhi, Delhi, India - 110055",
+      "amenities": {
+        "0": "Internet or Wi-Fi",
+        "1": "Parking",
+        "2": "24-hour front desk service Bar",
+        "3": "Restaurant",
+        "4": "Coffee or tea in lobby",
+        "5": "Vending Machine",
+        "6": "Room Service",
+        "7": "Spa",
+        "8": "Sauna",
+        "9": "Hot Tub/Jacuzzi",
+        "10": "Gym",
+        "11": "Breakfast",
+        "12": "Shuttle Service",
+        "13": "Currency Exchange",
+        "14": "Dry Cleaning",
+        "15": "Laundry",
+        "16": "Meeting or Banquet Facilities",
+        "17": "ATM On Site",
+        "18": "24 Hours Power Backup",
+        "19": "Luggage storage",
+        "20": "Safety deposit boxes",
+        "21": "Elevator",
+        "22": "Concierge",
+        "23": "Airport transfer",
+        "24": "Rental car",
+        "25": "Valet parking",
+        "26": "Tour"
+      },
+      "description": "The rooms have king-size beds, cable TV, and a large bathroom with hot and cold water 24 hours a day. A balcony is available in some rooms. The Hotel Jyoti Mahal is located little over half a kilometre from Connaught Place.",
+      "email": "booking@staybook.in",
+      "images": {
+        "0": "JyotiMahal/img1.jpg",
+        "1": "JyotiMahal/img2.jpg",
+        "2": "JyotiMahal/img3.jpg",
+        "3": "JyotiMahal/img4.jpg",
+        "4": "JyotiMahal/img5.jpg"
+      },
+      "link": "/HotelJyotiMahal",
+      "name": "Staybook Jyoti Mahal",
+      "phone": "+918373929299",
+      "rooms": {
+        "0": {
+          "amenities": "1 Double Bed 19 m2, City view, Private bathroom, flat-screen TV, Safe & Free Wifi, Free Toiletries, Shower, Linen, Bathroom amenities, Toilet paper, soundproofing,",
+          "image": "JyotiMahal/img6.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1300,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 1800,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 10,
+          "type": "Standard Double Room"
+        },
+        "1": {
+          "amenities": "20 m2, 2 Single bed Or 1 Large Bed, Air conditioning, City view, Private bathroom, flat-screen TV, Safe & Free Wifi, Free Toiletries, Shower, Linen, Bathroom amenities, Toilet paper, soundproofing, Terrace",
+          "image": "JyotiMahal/img3.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1600,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 2100,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 9,
+          "type": "Deluxe Double room"
+        },
+        "2": {
+          "amenities": "23 m2, 2 Large Double Bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "JyotiMahal/img2.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1800,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 2800,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 9,
+          "type": "Suite Room"
+        },
+        "3": {
+          "amenities": "24 m2, 1 Large Bed or 1 Single bed, Air conditioning, City view, Garden View, Private bathroom, flat-screen TV, Safe & Free Wifi, Free Toiletries, Shower, Linen, Bathroom amenities, Toilet paper, soundproofing, Terrace.",
+          "image": "JyotiMahal/img7.jpg",
+          "info": "1 room, 4 guests",
+          "plans": {
+            "0": {
+              "info": "3 guests",
+              "price": 2200,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "4 guests",
+              "price": 3200,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 7,
+          "type": "Luxury Triple Room"
+        },
+        "4": {
+          "amenities": "24 m2, 1 Large Bed or 1 Single bed, Air conditioning, City view, Garden View, Private bathroom, flat-screen TV, Safe & Free Wifi, Free Toiletries, Shower, Linen, Bathroom amenities, Toilet paper, soundproofing, Terrace.",
+          "image": "JyotiMahal/img4.jpg",
+          "info": "1 room, 5 guests",
+          "plans": {
+            "0": {
+              "info": "4 guests",
+              "price": 2500,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "5 guests",
+              "price": 3500,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 8,
+          "type": "Deluxe Family Room"
+        }
+      }
+    },
+    "HotelPinkyVilla": {
+      "address": "XV-2463-N, Nalwa St, Chuna Mandi, Paharganj, New Delhi, Delhi 110055 Central Delhi, Delhi, India - 110055",
+      "amenities": {
+        "0": "Internet or Wi-Fi",
+        "1": "Parking",
+        "2": "24-hour front desk service Bar",
+        "3": "Restaurant",
+        "4": "Coffee or tea in lobby",
+        "5": "Vending Machine",
+        "6": "Room Service",
+        "7": "Spa",
+        "8": "Sauna",
+        "9": "Hot Tub/Jacuzzi",
+        "10": "Gym",
+        "11": "Breakfast",
+        "12": "Shuttle Service",
+        "13": "Currency Exchange",
+        "14": "Dry Cleaning",
+        "15": "Laundry",
+        "16": "Meeting or Banquet Facilities",
+        "17": "ATM On Site",
+        "18": "24 Hours Power Backup",
+        "19": "Luggage storage",
+        "20": "Safety deposit boxes",
+        "21": "Elevator",
+        "22": "Concierge",
+        "23": "Airport transfer",
+        "24": "Rental car",
+        "25": "Valet parking",
+        "26": "Tour"
+      },
+      "description": "Air conditioning, a flat-screen TV with satellite channels, a fridge, a kettle, a shower, a hairdryer, and a desk are included in all guest rooms. Every room in the hotel has a closet and a private bathroom.",
+      "email": "booking@staybook.in",
+      "images": {
+        "0": "PinkyVilla/img1.jpg",
+        "1": "PinkyVilla/img2.jpg",
+        "2": "PinkyVilla/img3.jpg",
+        "3": "PinkyVilla/img4.jpg",
+        "4": "PinkyVilla/img5.jpg",
+        "5": "PinkyVilla/img6.jpg",
+        "6": "PinkyVilla/img7.jpg",
+        "7": "PinkyVilla/img8.jpg",
+        "8": "PinkyVilla/img9.jpg",
+        "9": "PinkyVilla/img10.jpg"
+      },
+      "link": "/HotelPinkyVilla",
+      "name": "Staybook Hotel Pinky Villa",
+      "phone": "+918373929299",
+      "rooms": {
+        "0": {
+          "amenities": "9 m2, 1 Double Bed, Private bathroom, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "PinkyVilla/img1.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1200,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 1700,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 12,
+          "type": "Standard Double Room"
+        },
+        "1": {
+          "amenities": "19 m2, 1 Double Bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "JyotiMahal/img2.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1500,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 2000,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 5,
+          "type": "Deluxe Double Room"
+        }
+      }
+    }
+  }

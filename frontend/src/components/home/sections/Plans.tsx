@@ -20,6 +20,7 @@ function Plans() {
       control.start("hidden");
     }
   }, [control, inView]);
+  
   return (
     <motion.div className="plansBody"
               initial='hidden'

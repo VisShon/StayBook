@@ -2,9 +2,111 @@
 
 
 .body{
-
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.progress{
+.hotelCarouselBody{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    height:90vh;
 
+    .image{
+        box-shadow: none;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 0;
+        background-color:$secondary;
+        border-radius: 2rem;
+        width:35%;
+        height:52%;
+        img{
+            margin-left: -7rem;
+            z-index: 10px;
+            height:20rem;
+            width:30rem;
+            border-radius: 0.5rem;
+        }
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40%;
+        height:100%;
+        h2{
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 200;
+            -webkit-text-fill-color: $grey;
+            font-family:'Kraftan',sans-serif;
+
+        }
+        p{
+            color:$main;
+            font-size: .75rem;
+        }
+        .button{
+            text-align: center;
+            margin-top:2rem;
+            width: 5rem;
+        }
+    }
+}
+.progress{
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    .progress-segment{
+        display: flex;
+        align-items: center;
+        .circle{
+            width:1rem;
+            height:1rem;
+            border-radius:10rem;
+            position: absolute;
+            z-index: 10px;
+            background-color:$main;
+        }
+        .line{
+            margin-left:1rem;
+            margin-right:1rem;
+            width:5rem;
+            height:2px;
+            background-color:$main;
+        }
+        .outline{
+            background-color:$main;
+            width:2rem;
+            height:2rem;
+            border-radius:10rem;
+            background-color:white;
+            border: 2px solid $main;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            z-index: 0px;
+            position: relative;
+        }
+
+    }
+}
+
+.arrows{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 70%;
+    right: 20%;
+    img{
+        margin-left: 1rem;
+        cursor: pointer;
+    }
 }

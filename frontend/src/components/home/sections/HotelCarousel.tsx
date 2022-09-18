@@ -38,19 +38,6 @@ function HotelCarousel() {
 
   return (
     <div className='body'>
-      {/* <div className='body'>
-        <div className='image'>
-          <img src ={require('../../../images/'+(Object.values(data[n].images))[1])}/>
-          <div className='image-background'></div>
-        </div>
-
-
-        <div className='content'>
-          <h2>{data[n].name}</h2>
-          <p>{data[n].description}</p>
-          <a href={data[n].link} className='button'>Book Now</a>
-        </div>
-      </div> */}
 
       <motion.div className='hotelCarouselBody'
                   initial='hidden'

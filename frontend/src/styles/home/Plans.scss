@@ -8,6 +8,9 @@
     justify-content:center;
     align-items:center;
     overflow: hidden;
+    @media screen and (max-width: 800px) {
+        width: 100%;
+    }
     .centerCard{
         position: absolute;
         background-color: white;
@@ -20,12 +23,22 @@
         text-align: center;
         align-items:center;
         border-radius: 0.5rem;
+        @media screen and (max-width: 800px) {
+            font-size: 2rem;
+            width: 80%;
+            padding: 1rem;
+        }
         h2{
             font-size: 3rem;
             font-weight: 200;
             margin-bottom: 1rem;
             -webkit-text-fill-color: $grey;
             font-family:'Kraftan',sans-serif;
+            @media screen and (max-width: 800px) {
+                font-size: 2rem;
+                width: 90%;
+            }
+            
         }
         p{
             color: $main;
@@ -33,6 +46,9 @@
             font-family: "Maven Pro",sans-serif;
             font-weight: 200;
             font-size:1.25rem;
+            @media screen and (max-width: 800px) {
+                font-size: 1rem;
+            }
 
         }
     }

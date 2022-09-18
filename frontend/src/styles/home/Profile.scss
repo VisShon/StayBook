@@ -21,6 +21,9 @@
         flex-direction: column;
         align-items: center;
         box-shadow: 0 0 10px $shadow;
+        @media screen and (max-width:800px) {
+            padding: 3rem 4rem 1rem 4rem;
+        }
         img{
             position: absolute;
             background-color:rgb(0, 0, 0);
@@ -28,6 +31,9 @@
             padding: 20%;
             top:-8rem;
             border: 1px solid $main;
+            @media screen and (max-width:800px) {
+                top:-4rem;
+            }
         }
         h2{
             font-size: 2rem;
@@ -73,6 +79,13 @@
         justify-content: space-between;
         padding:1rem;
         align-items:end;
+
+        @media screen and (max-width:800px) {
+            flex-direction: column;
+            align-items: center;
+            padding:0rem;
+        }
+        
         h2{
             -webkit-text-fill-color: $main;
             font-size: 3rem;

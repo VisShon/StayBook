@@ -19,8 +19,15 @@
         text-align: center;
         align-items:center;
         border-radius: 0.5rem;
+        @media screen and (max-width:800px) {
+            width: 80%;
+            padding: 1rem;
+        }
         .input{
             width: 53%;
+            @media screen and (max-width:800px) {
+                width: 100%;
+            }
         }
         .error{
             margin-top:1rem;
@@ -32,6 +39,9 @@
             margin-bottom: 1rem;
             -webkit-text-fill-color: $grey;
             font-family:'Kraftan',sans-serif;
+            @media screen and (max-width:800px) {
+                font-size: 2rem;
+            }
         }
         p{
             color: $main;
@@ -39,6 +49,9 @@
             font-family: "Maven Pro",sans-serif;
             font-weight: 200;
             font-size:1.25rem;
+            @media screen and (max-width:800px) {
+                font-size: .75rem;
+            }
 
         }
         input{
@@ -48,6 +61,9 @@
             color: $main;
             border: 1px solid $main;
             border-radius: 0.25rem;
+            @media screen and (max-width:800px) {
+                width: 100%;
+            }
 
         }
         input::placeholder{
@@ -62,6 +78,9 @@
             color: $main;
             border: 1px solid $main;
             border-radius: 0.25rem;
+            @media screen and (max-width:800px) {
+                width: 90%;
+            }
         }
         textarea::placeholder{
             color: $main;

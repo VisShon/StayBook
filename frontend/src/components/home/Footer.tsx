@@ -34,16 +34,16 @@ export default function Footer(){
 
         <div className="heading">
           <h2>Blogs:</h2>
-          <a href='/'>Travel Packages</a>
-          <a href='/'>Other Facilities</a>
+          <a href='/packages'>Travel Packages</a>
+          <a href='/contactUs'>Other Facilities</a>
         </div>
 
         <div className="heading">
           <h2>Misc:</h2>
-          <a href='/'>Registration</a>
-          <a href='/'>Support</a>
-          <a href='/'>Offers</a>
-          <a href='/'>Feedback</a>
+          <a href='/contactUs'>Contact Us</a>
+          <a href='/packages'>Tours and Packages</a>
+          <a href='/blogs'>Blogs</a>
+          <a href='/contactUs'>Feedback</a>
         </div>
       </div>
     </div>

@@ -16,6 +16,7 @@ import Packages from './pages/Packages';
 import ContactUs from './pages/ContactUs';
 import Profile from './pages/Profile';
 import Blog from './pages/Blog';
+import SinglePost from './pages/SinglePost';
 
 
 const rootElement = document.getElementById("root") as HTMLElement;
@@ -33,6 +34,7 @@ root.render(
             <Route path="/packages" element={<Packages/>}/>
             <Route path="/contactus" element={<ContactUs/>}/>
             <Route path="/blogs" element={<Blog/>}/>
+            <Route path="/blogs/:slug" element={<SinglePost/>}/>
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/*" element={<BookingEngine/>}/>
           </Routes>

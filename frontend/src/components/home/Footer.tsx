@@ -26,10 +26,9 @@ export default function Footer(){
 
         <div className="heading">
           <h2>Socials:</h2>
-          <a href='/'>Instagram</a>
-          <a href='/'>Trip Advisor</a>
-          <a href='/'>Facebook</a>
-          <a href='/'>Twitter</a>
+          <a href='https://www.instagram.com/staybook_1/'>Instagram</a>
+          <a href='https://www.facebook.com/budgetfriendlyhotel?paipv=0&eav=AfZ-waWz6OajACPaAqHeTptaNS9Rt4i4iwbdVK0jE5KwoQfbZ6GsLkTVHLjTpMMeyxk'>Facebook</a>
+          <a href='https://twitter.com/stayboook'>Twitter</a>
         </div>
 
         <div className="heading">

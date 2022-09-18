@@ -1,10 +1,11 @@
 import React from 'react';
 import '../styles/home/Blogs.scss';
 
-function Blog() {
+
+function SinglePost() {
   return (
-    <div>Blog</div>
+    <div>SinglePost</div>
   )
 }
 
-export default Blog;
+export default SinglePost;

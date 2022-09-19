@@ -1,15 +1,15 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import '../../styles/home/Profile.scss'
+import data from '../../data/fake.json'
 
-function ProfileHistory() {
+function ProfileHistory({hotel}: any) {
+  const hotelData = Object.values(data).filter(item => item.link == '/'+hotel)[0]
   return (
     <div className="history">
-        <img/>
+        <img src ={require('../../images/'+(Object.values(hotelData.images))[1])}/>
         <div className="historyInfo">
-            <h2>Aira
-                <h1>New Delhi</h1>
-            </h2>
-            <div className='button'>Book Again</div>
+            <h2>{hotelData.name}</h2>
+            <a href={hotelData.link} className='button'>Book Again</a>
         </div>
     </div>
   )

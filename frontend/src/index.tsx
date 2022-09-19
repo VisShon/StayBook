@@ -24,7 +24,6 @@ const root = createRoot(rootElement);
 
 
 root.render(
-  <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
         <AuthProvider>
@@ -42,5 +41,5 @@ root.render(
         </AuthProvider>
       </BrowserRouter>
     </Provider>
-  </StrictMode>
+
 );

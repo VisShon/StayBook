@@ -16,9 +16,11 @@ function ContactUs() {
     }
     else{
       let templateParams = {
-        to_name:localStorage.getItem('email'),
+        from_name:name,
+        from_email:email,
+        message:message,
       }
-      const mail = await emailjs.send('service_mv03hwf','template_dysx4ir',templateParams,'6HGQvyzipY4qgGkWm')
+      const mail = await emailjs.send('service_mv03hwf','template_v3pqjwl',templateParams,'6HGQvyzipY4qgGkWm')
       .then(()=>isSent(true));
     }
   }

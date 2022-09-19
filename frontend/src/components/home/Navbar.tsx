@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useJwt } from "react-jwt";
 import logo from "../../images/logo.png";
 import '../../styles/NavBar.scss';
 import  Dropdown  from './Dropdown'
@@ -7,6 +7,8 @@ import user from '../../images/user.svg'
 import {Link} from 'react-router-dom'
 
 function Navbar(){
+  const userToken = sessionStorage.getItem('user');
+  const {decodedToken, isExpired }:any = useJwt(userToken!);
 
 return (
 
@@ -18,7 +20,7 @@ return (
       <Link to="/blogs" className="item">Blogs</Link>
       <Link to="/contactus"className="item">Contact Us</Link>
     </div>
-    <Link to="/profile" className="logo"><img src={user} className="logo"/></Link>
+    <Link to="/profile" className="logo"><img src={decodedToken?decodedToken.picture:user} className="profilepic"/></Link>
   </div>
 
 )

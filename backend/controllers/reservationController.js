@@ -4,6 +4,22 @@ const {checkAuth} = require('../middleware/checkAuth')
 
 const db = ref(getDatabase());
 
+const getAllreservations = asyncHandler(async(req, res, next) => {
+
+  get(child(db, `/reservations`)).then((snapshot)=>{
+    if (snapshot.exists()) {
+      const reservations = Object.keys(snapshot.val())
+      .filter(item => Object.values(snapshot.val()[item]).filter(item => item.email==req.body.email).length!==0)
+      res.json(reservations);
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+
+})
+
 const getReservations = asyncHandler(async(req, res, next) =>{
 
     get(child(db, `/reservations/${req.params.hotelname}`)).then((snapshot) => {
@@ -39,6 +55,7 @@ const setReservations = asyncHandler(async(req, res, next)=>{
 
 
 module.exports ={
+  getAllreservations,
     getReservations,
     setReservations,
     removeReservations

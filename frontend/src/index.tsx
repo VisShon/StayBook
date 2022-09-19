@@ -16,7 +16,7 @@ import Packages from './pages/Packages';
 import ContactUs from './pages/ContactUs';
 import Profile from './pages/Profile';
 import Blog from './pages/Blog';
-import SinglePost from './pages/SinglePost';
+import SinglePost from './pages/SinglePost.jsx';
 
 
 const rootElement = document.getElementById("root") as HTMLElement;

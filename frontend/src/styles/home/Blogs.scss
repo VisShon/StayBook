@@ -1,1 +1,116 @@
 @import '../colors';
+
+.heading{
+    font-family: "Kraftan",sans-serif;
+    color: $grey;
+    font-size:3rem;
+    width: 100%;
+    text-align: center;
+}
+
+.blogsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 40vh;
+    @media screen and (max-width:800px) {
+        justify-content: center;
+    }
+
+    article{
+        width: 30%;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        margin-left: 1rem;
+        @media screen and (max-width:800px) {
+            width:80%;
+        }
+    }
+    
+    
+    article:hover::after{
+        content: '';
+        background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.43043154761904767) 100%);
+        height: 87%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        border-radius:1rem;
+        z-index: 0;
+        @media screen and (max-width:800px) {
+            height: 50%;
+        }
+    }
+    img{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -10;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px $shadow;
+    }
+    .button{
+        margin-top: 1rem;
+        position: relative;
+        z-index: 10;
+    }
+    h4{
+        font-family: 'Kraftan',sans-serif;
+        color: white;
+        font-size:2rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        position: relative;
+        z-index: 10;
+    }
+
+}
+
+
+.postBody{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    h1{
+        font-family: 'Kraftan',sans-serif;
+        color: white;
+        font-size:4rem;
+        margin-bottom: 1rem;
+        margin-top: 5rem;
+        position: absolute;
+        align-self: center;
+        z-index: 10;
+    }
+    .background{
+        background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.43043154761904767) 100%);
+        width: 100vw;
+        height:50vh;
+        position:absolute;
+    }
+    img{
+        width: 100vw;
+        height:50vh;
+    }
+    .content{
+        width:50%;
+        @media screen and (max-width:800px) {
+            width:80%;
+        }
+        img{
+            width:100%;
+            border:1px solid $main;
+            border-radius: .5rem;
+            @media screen and (max-width:800px) {
+                height:15rem;
+            }
+        }
+        padding: 2rem;
+        @media screen and (max-width:800px) {
+            padding: 0rem;
+        }
+    }
+}

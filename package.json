@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "sanity": "cd frontend/blogs && sanity start",
     "frontend": "npm run start --prefix frontend ",
     "build": "npm run build --prefix frontend",
     "start": "npm run start --prefix backend",

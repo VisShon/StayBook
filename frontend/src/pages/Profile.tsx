@@ -29,7 +29,7 @@ function Profile() {
           {/* <div className="credits">Credits: 700</div> */}
         </div>
 
-        <h2>History with Us</h2>
+        <h2>Your Registrations</h2>
 
         <div className="historyContainer">
             {history.map((item,index)=>(

@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import '../../styles/home/Profile.scss'
-import data from '../../data/fake.json'
+import data from '../../data/hotelData.json'
 
 function ProfileHistory({hotel}: any) {
   const hotelData = Object.values(data).filter(item => item.link == '/'+hotel)[0]

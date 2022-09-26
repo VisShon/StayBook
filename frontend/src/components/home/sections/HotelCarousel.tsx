@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react'
 import '../../../styles/home/HotelCarousel.scss';
 import {useAnimation,motion} from 'framer-motion';
 import axios from 'axios';
-import Hotels from '../../../data/fake.json'
+import Hotels from '../../../data/hotelData.json'
 import leftArrow from '../../../images/leftArrow.svg'
 import rightArrow from '../../../images/rightArrow.svg'
 

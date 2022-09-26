@@ -1,7 +1,7 @@
 import React,{ useEffect,useState } from 'react'
 import '../../../styles/home/BookingCarousel.scss'
 import {motion,useAnimation} from 'framer-motion'
-import Hotels from '../../../data/fake.json'
+import Hotels from '../../../data/hotelData.json'
 import leftArrow from '../../../images/leftArrow2.svg'
 import rightArrow from '../../../images/rightArrow2.svg'
 import arrow from '../../../images/arrowVector.svg'

@@ -2,6 +2,7 @@ import React from 'react'
 import '../../styles/Footer.scss';
 import footerBg from '../../images/footerBg.svg'
 import logo from '../../images/logo.png'
+import data from '../../data/hotelData.json';
 
 export default function Footer(){
   return (
@@ -18,10 +19,8 @@ export default function Footer(){
       <div className="linkCard">
         <div className="heading">
           <h2>Hotels:</h2>
-          <a href='/HotelAiraXing'>Hotel Aira Xing</a>
-          <a href='/HotelJyotiMahal'>Hotel Jyoti Mahal</a>
-          <a href='/HotelPinkyVilla'>Hotel Pinky Villa</a>
-          <a href='/HotelJaiBalaji'>Hotel Jai Balaji</a>
+          {Object.values(data).map((item:any,i:any)=>
+          (<a href={item.link}>{item.name}</a>))}
         </div>
 
         <div className="heading">

@@ -107,7 +107,7 @@
         },
         "3": {
           "amenities": "23 m2, 2 Large Double Bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
-          "image": "JyotiMahal/img4.jpg",
+          "image": "AiraXing/img4.jpg",
           "info": "1 room, 5 guests",
           "plans": {
             "0": {
@@ -445,7 +445,7 @@
         },
         "1": {
           "amenities": "19 m2, 1 Double Bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
-          "image": "JyotiMahal/img2.jpg",
+          "image": "PinkyVilla/img2.jpg",
           "info": "1 room, 3 guests",
           "plans": {
             "0": {
@@ -461,6 +461,531 @@
           },
           "totalRooms": 5,
           "type": "Deluxe Double Room"
+        }
+      }
+    },
+    "HotelGeeson": {
+      "address": "New Delhi Railway Station features a restaurant, free private parking, a bar, and a patio in New Delhi, 2 kilometers from Jama Masjid.",
+      "amenities": {
+        "0": "Internet or Wi-Fi",
+        "1": "Parking",
+        "2": "24-hour front desk service Bar",
+        "3": "Restaurant",
+        "4": "Coffee or tea in lobby",
+        "5": "Vending Machine",
+        "6": "Room Service",
+        "7": "Spa",
+        "8": "Sauna",
+        "9": "Hot Tub/Jacuzzi",
+        "10": "Gym",
+        "11": "Breakfast",
+        "12": "Shuttle Service",
+        "13": "Currency Exchange",
+        "14": "Dry Cleaning",
+        "15": "Laundry",
+        "16": "Meeting or Banquet Facilities",
+        "17": "ATM On Site",
+        "18": "24 Hours Power Backup",
+        "19": "Luggage storage",
+        "20": "Safety deposit boxes",
+        "21": "Elevator",
+        "22": "Concierge",
+        "23": "Airport transfer",
+        "24": "Rental car",
+        "25": "Valet parking",
+        "26": "Tour"
+      },
+      "description": "All of the rooms in this 3-star hotel have city views and free WiFi. A 24-hour front desk, room service, and currency exchange are available to hotel guests. In the business centre, there is a tour desk and car rentals, as well as a fax machine, photocopier, and ATM machine. Each room in the hotel has a desk. Guest rooms at the Hotel Geeson- New include a seating area and a flat-screen TV with satellite channels. The hotel serves breakfast every day, with both continental and à la carte options.",
+      "email": "booking@staybook.in",
+      "images": {
+        "0": "Geeson/img1.jpg",
+        "1": "Geeson/img2.jpg",
+        "2": "Geeson/img3.jpg",
+        "3": "Geeson/img4.jpg",
+        "4": "Geeson/img5.jpg",
+        "5": "Geeson/img6.jpg",
+        "6": "Geeson/img7.jpg",
+        "7": "Geeson/img8.jpg",
+        "8": "Geeson/img9.jpg",
+        "9": "Geeson/img10.jpg"
+      },
+      "link": "/HotelGeeson",
+      "name": "Staybook Hotel Geeson",
+      "phone": "+918373929299",
+      "rooms": {
+        "0": {
+          "amenities": "1 Double Bed, Private bathroom, Flat-screen TV, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Cleaning product, Toilet paper, terrace.",
+          "image": "PinkyVilla/img30.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1300,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 1800,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 12,
+          "type": "Deluxe Double Room"
+        },
+        "1": {
+          "amenities": "20 m2, 1 Double Bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing.",
+          "image": "Geeson/img8.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1500,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 2000,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 5,
+          "type": "Superior Double Room"
+        },
+        "2":{
+          "amenities": "20 m2, 1 Double Bed & 1 single Bed, 1 Sofa, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, Private kitchenette, Mini Bar, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "Geeson/img4.jpg",
+          "info": "1 room,4 guests",
+          "plans": {
+            "0": {
+              "info": "3 guests",
+              "price": 1800,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "4 guests",
+              "price": 2800,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 5,
+          "type": "Deluxe Triple Room"
+        },
+        "3":{
+          "amenities": "23m2, 2 Large Double Bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, Balcony, Landmark View Private kitchenette, MiniBar, Balcony, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "Geeson/img6.jpg",
+          "info": "1 room, 5 guests",
+          "plans": {
+            "0": {
+              "info": "4 guests",
+              "price": 2200,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "5 guests",
+              "price": 3200,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 5,
+          "type": "Family Suite"
+        },
+        "4":{
+          "amenities": "23 m2, 2 Double Bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, Private kitchenette, Mini Bar, Balcony, Landmark View, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "Geeson/img3.jpg",
+          "info": "1 room, 5 guests",
+          "plans": {
+            "0": {
+              "info": "4 guests",
+              "price": 2500,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "5 guests",
+              "price": 3500,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 5,
+          "type": "Deluxe Family Room"
+        }
+      }
+    },
+    "StaybookSouthDelhi": {
+      "address": "B-14 East Of Kailash New Delhi - 110065, 110065 New Delhi, India",
+      "amenities": {
+        "0": "Internet or Wi-Fi",
+        "1": "Parking",
+        "2": "24-hour front desk service Bar",
+        "3": "Restaurant",
+        "4": "Coffee or tea in lobby",
+        "5": "Vending Machine",
+        "6": "Room Service",
+        "7": "Spa",
+        "8": "Sauna",
+        "9": "Hot Tub/Jacuzzi",
+        "10": "Gym",
+        "11": "Breakfast",
+        "12": "Shuttle Service",
+        "13": "Currency Exchange",
+        "14": "Dry Cleaning",
+        "15": "Laundry",
+        "16": "Meeting or Banquet Facilities",
+        "17": "ATM On Site",
+        "18": "24 Hours Power Backup",
+        "19": "Luggage storage",
+        "20": "Safety deposit boxes",
+        "21": "Elevator",
+        "22": "Concierge",
+        "23": "Airport transfer",
+        "24": "Rental car",
+        "25": "Valet parking",
+        "26": "Tour"
+      },
+      "description": "South Delhi provides a restaurant, free private parking, a bar, and a community lounge in New Delhi, 1.7 km from Lotus Temple. This 4-star hotel offers room service as well as a tour desk. Visitors can take advantage of a 24-hour front desk, a shared kitchen, and currency exchange.",
+      "email": "booking@staybook.in",
+      "images": {
+        "0": "PinkyVilla/img1.jpg",
+        "1": "PinkyVilla/img2.jpg",
+        "2": "PinkyVilla/img3.jpg",
+        "3": "PinkyVilla/img4.jpg",
+        "4": "PinkyVilla/img5.jpg",
+        "5": "PinkyVilla/img6.jpg",
+        "6": "PinkyVilla/img7.jpg",
+        "7": "PinkyVilla/img8.jpg",
+        "8": "PinkyVilla/img9.jpg",
+        "9": "PinkyVilla/img10.jpg"
+      },
+      "link": "/StaybookSouthDelhi",
+      "name": "Staybook South Delhi",
+      "phone": "+918373929299",
+      "rooms": {
+        "0": {
+          "amenities": "1 Double Bed or 2 single bed,1 Sofa, Air conditioning, Private Kitchenette, Patio, Private bathroom, Flat-screen, Mini Bar, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Cleaning product, Toilet paper, terrace.",
+          "image": "PinkyVilla/img1.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1800,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 2300,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 20,
+          "type": "Superior Double Room"
+        },
+        "1": {
+          "amenities": "23 m2, 2 Large Double Bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, Private kitchenette, Mini Bar, Balcony, Landmark View, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "JyotiMahal/img2.jpg",
+          "info": "1 room, 5 guests",
+          "plans": {
+            "0": {
+              "info": "4 guests",
+              "price": 2200,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "5 guests",
+              "price": 3200,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 5,
+          "type": "Deluxe Double Room With Balcony "
+        }
+      }
+    },
+    "StaybookWoodsView": {
+      "address": "Camels Back Rd, near Ambedkar Chowk Library, The Mall Road, Mussoorie, Uttarakhand 24817",
+      "amenities": {
+        "0": "Internet or Wi-Fi",
+        "1": "Parking",
+        "2": "24-hour front desk service Bar",
+        "3": "Restaurant",
+        "4": "Coffee or tea in lobby",
+        "5": "Vending Machine",
+        "6": "Room Service",
+        "7": "Spa",
+        "8": "Sauna",
+        "9": "Hot Tub/Jacuzzi",
+        "10": "Gym",
+        "11": "Breakfast",
+        "12": "Shuttle Service",
+        "13": "Currency Exchange",
+        "14": "Dry Cleaning",
+        "15": "Laundry",
+        "16": "Meeting or Banquet Facilities",
+        "17": "ATM On Site",
+        "18": "24 Hours Power Backup",
+        "19": "Luggage storage",
+        "20": "Safety deposit boxes",
+        "21": "Elevator",
+        "22": "Concierge",
+        "23": "Airport transfer",
+        "24": "Rental car",
+        "25": "Valet parking",
+        "26": "Tour"
+      },
+      "description": "Staybook-WoodsView Mall Road Mussorie offers 3-star accomodation and is located in Mussoorie, 500 metres from Camel's Back Road and 600 metres from Mussoorie Mall Road. This hotel offers family rooms as well as a terrace for visitors. The hotel has room service and a front desk that is open around-the-clock.",
+      "email": "booking@staybook.in",
+      "images": {
+        "0": "WoodsView/img1.jpg",
+        "1": "WoodsView/img2.jpg",
+        "2": "WoodsView/img3.jpg",
+        "3": "WoodsView/img4.jpg",
+        "4": "WoodsView/img5.jpg",
+        "5": "WoodsView/img6.jpg",
+        "6": "WoodsView/img7.jpg",
+        "7": "WoodsView/img8.jpg",
+        "8": "WoodsView/img9.jpg",
+        "9": "WoodsView/img10.jpg"
+      },
+      "link": "/StaybookWoodsView",
+      "name": "Staybook Woods View",
+      "phone": "+918373929299",
+      "rooms": {
+        "0": {
+          "amenities": "Amenities - 1 Double Bed 19 m2, City view, Private bathroom, flat-screen TV, Safe & Free Wifi, Free Toiletries, Shower, Linen, Bathroom amenities, Toilet paper, soundproofing, Terrace",
+          "image": "WoodsView/img10.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1800,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 2300,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 18,
+          "type": "Superior Non View Room"
+        },
+        "1": {
+          "amenities": "20 m2, 2 Single bed Or 1 Large Bed, Air conditioning, City view, Private bathroom, flat-screen TV, Safe & Free Wifi, Free Toiletries, Shower, Linen, Bathroom amenities, Toilet paper, soundproofing, Terrace",
+          "image": "WoodsView/img9.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 2100,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 2600,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 14,
+          "type": "Superior Himalayan View Room"
+        }
+      }
+    },
+    "ShivDevInternational": {
+      "address": "851822 Arakashan Road, Behind Sheila Cinema, Arya Nagar, Paharganj, Delhi, 110055",
+      "amenities": {
+        "0": "Internet or Wi-Fi",
+        "1": "Parking",
+        "2": "24-hour front desk service Bar",
+        "3": "Restaurant",
+        "4": "Coffee or tea in lobby",
+        "5": "Vending Machine",
+        "6": "Room Service",
+        "7": "Spa",
+        "8": "Sauna",
+        "9": "Hot Tub/Jacuzzi",
+        "10": "Gym",
+        "11": "Breakfast",
+        "12": "Shuttle Service",
+        "13": "Currency Exchange",
+        "14": "Dry Cleaning",
+        "15": "Laundry",
+        "16": "Meeting or Banquet Facilities",
+        "17": "ATM On Site",
+        "18": "24 Hours Power Backup",
+        "19": "Luggage storage",
+        "20": "Safety deposit boxes",
+        "21": "Elevator",
+        "22": "Concierge",
+        "23": "Airport transfer",
+        "24": "Rental car",
+        "25": "Valet parking",
+        "26": "Tour"
+      },
+      "description": "ShivDev International New Delhi is in close proximity to Delhi's commercial and entertainment district. It offers big rooms with cable television and free Wi-Fi. All of the rooms at ShivDev International New Delhi have wooden floors and air conditioning. In the room, there are private toilets and slippers. Guests get access to a minibar and a work desk.",
+      "email": "booking@staybook.in",
+      "images": {
+        "0": "PinkyVilla/img1.jpg",
+        "1": "PinkyVilla/img2.jpg",
+        "2": "PinkyVilla/img3.jpg",
+        "3": "PinkyVilla/img4.jpg",
+        "4": "PinkyVilla/img5.jpg",
+        "5": "PinkyVilla/img6.jpg",
+        "6": "PinkyVilla/img7.jpg",
+        "7": "PinkyVilla/img8.jpg",
+        "8": "PinkyVilla/img9.jpg",
+        "9": "PinkyVilla/img10.jpg"
+      },
+      "link": "/ShivDevInternational",
+      "name": "Shiv Dev International",
+      "phone": "+918373929299",
+      "rooms": {
+        "0": {
+          "amenities": "1 Double Bed, Private bathroom, Flat-screen TV, Soundproofing, free wifi, free toiletries, shower, Linen, bathroom amenities, Cleaning product, Toilet paper, terrace.",
+          "image": "PinkyVilla/img1.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1300,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 1800,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 10,
+          "type": "Deluxe Double Room"
+        },
+        "1": {
+          "amenities": "19 m2, 1 Double Bed, 1 Sofa, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, Mini Bar, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "JyotiMahal/img2.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 1500,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 2000,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms":5,
+          "type": "Executive Double Room"
+        },
+        "2": {
+          "amenities": "20 m2, 1 Large Double Bed, 1 Sofa, Bathtub, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, Private kitchenette, Mini Bar, Balcony, Landmark View, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "JyotiMahal/img2.jpg",
+          "info": "1 room, 3 guests",
+          "plans": {
+            "0": {
+              "info": "2 guests",
+              "price": 2000,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "3 guests",
+              "price": 3000,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms":5,
+          "type": "Superior Double Room with Bathtub"
+        },
+        "3": {
+          "amenities": "20m2, 1 Large Double Bed or 1 Single bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, Private kitchenette, Mini Bar, Balcony, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "JyotiMahal/img2.jpg",
+          "info": "1 room, 4 guests",
+          "plans": {
+            "0": {
+              "info": "3 guests",
+              "price": 2200,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "4 guests",
+              "price": 3200,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms":5,
+          "type": "Deluxe Triple Room"
+        },
+        "4": {
+          "amenities": "23 m2, 2 Large Double Bed, City view, Air conditioning, Private bathroom, Flat-screen, Soundproofing, free wifi, Private kitchenette, Mini Bar, Balcony, Landmark View, free toiletries, shower, Linen, bathroom amenities, Toilet paper, soundproofing, terrace.",
+          "image": "JyotiMahal/img2.jpg",
+          "info": "1 room, 5 guests",
+          "plans": {
+            "0": {
+              "info": "4 guests",
+              "price": 2500,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "5 guests",
+              "price": 3500,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms":5,
+          "type": "Deluxe Family Room"
+        }
+      }
+    },
+    "StaybookBlueSkyCamp": {
+      "address": "Nagger Road, Chotipatlikul Sarsai, Haripur, Aleo, 175136 Manāli, India",
+      "amenities": {
+        "0": "Internet or Wi-Fi",
+        "1": "Parking",
+        "2": "Restaurant",
+        "3": "Room Service",
+        "4": "Breakfast",
+        "5": "Shuttle Service",
+        "6": "Laundry",
+        "7": "24 Hours Power Backup",
+        "8": "Luggage storage",
+        "9": "Airport transfer",
+        "10": "Rental car",
+        "11": "Tour"
+      },
+      "description": "Staybook-Manali BlueSky Camp offers accommodation with a restaurant, a garden, and a 24-hour front desk for your convenience. It is situated 2.2 km from Hidimba Devi Temple.",
+      "email": "booking@staybook.in",
+      "images": {
+        "0": "BlueSkyCamp/img1.jpg",
+        "1": "BlueSkyCamp/img2.jpg",
+        "2": "BlueSkyCamp/img3.jpg",
+        "3": "BlueSkyCamp/img4.jpg",
+        "4": "BlueSkyCamp/img5.jpg",
+        "5": "BlueSkyCamp/img6.jpg",
+        "6": "BlueSkyCamp/img7.jpg",
+        "7": "BlueSkyCamp/img8.jpg",
+        "8": "BlueSkyCamp/img9.jpg",
+        "9": "BlueSkyCamp/img10.jpg"
+      },
+      "link": "/StaybookBlueSkyCamp",
+      "name": "Staybook Blue Sky Camp",
+      "phone": "+918373929299",
+      "rooms": {
+        "0": {
+          "amenities": "Amenities - 4 Single Bed 24 m2, City view, Private bathroom, Safe & Free Wifi, Free Toiletries, Shower, Linen, Bathroom amenities, Toilet paper, soundproofing, Terrace",
+          "image": "BlueSkyCamp/img3.jpg",
+          "info": "1 room, 5 guests",
+          "plans": {
+            "0": {
+              "info": "4 guests",
+              "price": 2100,
+              "title": "Base Occupancy"
+            },
+            "1": {
+              "info": "5 guests",
+              "price": 2600,
+              "title": "Max Occupancy"
+            }
+          },
+          "totalRooms": 30,
+          "type": "Economy Quadruple Room with Shared bathroom"
         }
       }
     }

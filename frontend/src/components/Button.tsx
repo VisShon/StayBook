@@ -67,12 +67,12 @@ function Button({checkIn,checkOut}:any){
               selectedPlans:plans,
             },{headers:{Authorization: `bearer ${sessionStorage['user']}`}})
           },
-          description: 'example transaction',
+          description: 'Hotel Booking',
           order_id: order_id,
           prefill: {
-            name: 'StayBook',
-            email: 'vshon447@gmail.com',
-            contact: '7017495876',
+            name: 'Mohit Khanna',
+            email: 'staybookhost@gmail.com',
+            contact: '8527703312',
           },
           notes: {
             address: 'StayBook',

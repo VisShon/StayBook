@@ -45,7 +45,7 @@ function Button({checkIn,checkOut}:any){
           handler: async function(response:any){
             
             let templateParams = {
-              to_name:localStorage.getItem('email'),
+              to_name:sessionStorage.getItem('email'),
             }
             const mail = await emailjs.send('service_pz9e3th','template_i78ka1b',templateParams,'bE7FBsdP5YFb4U6LK')
             .then(function(response) {

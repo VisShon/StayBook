@@ -20,7 +20,7 @@ function ContactUs() {
         from_email:email,
         message:message,
       }
-      const mail = await emailjs.send('service_mv03hwf','template_v3pqjwl',templateParams,'6HGQvyzipY4qgGkWm')
+      const mail = await emailjs.send('service_pz9e3th','template_nrpx7uj',templateParams,'bE7FBsdP5YFb4U6LK')
       .then(()=>isSent(true));
     }
   }

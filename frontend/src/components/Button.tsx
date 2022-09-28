@@ -58,7 +58,7 @@ function Button({checkIn,checkOut}:any){
             }
             setIsPaid(true)
             
-            const result = await axios.post(`http://localhost:8000/api${hotelName}/setReservations`,{
+            const result = await axios.post(`/api${hotelName}/setReservations`,{
               username:username ,
               email:email, 
               checkIn: checkIn,

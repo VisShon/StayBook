@@ -27,8 +27,8 @@ function SelectedPlan({title,roomType,checkIn,checkOut}:any) {
   useEffect(()=>{
 
     const checkAvailability = async() => {
-      const req = await axios.post(`http://localhost:8000/api${hotelName}/getMax`,{roomType:roomType}).then(res=>{maxCap = res.data})
-      const re2 = await axios.post(`http://localhost:8000/api${hotelName}/isRoomAvailable`,{
+      const req = await axios.post(`/api${hotelName}/getMax`,{roomType:roomType}).then(res=>{maxCap = res.data})
+      const re2 = await axios.post(`/api${hotelName}/isRoomAvailable`,{
           checkIn:checkIn,
           checkOut:checkOut,
           roomType:roomType,

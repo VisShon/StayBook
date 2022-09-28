@@ -13,7 +13,7 @@ function Profile() {
   useEffect(() =>{
     const checkAuth = async () =>{
       if(!userToken){await Login()};
-      const result = await axios.post('http://localhost:8000/api/getAllReservations',{email:sessionStorage.getItem('email')}).then((response) => setHistory(response.data))
+      const result = await axios.post('/api/getAllReservations',{email:sessionStorage.getItem('email')}).then((response) => setHistory(response.data))
     }
     checkAuth();
   },[])

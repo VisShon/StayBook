@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     const getHotelData = async () => {
-      const result = await axios.get(`http://localhost:8000/api${hotelName}/gethoteldata`).then(value => {
+      const result = await axios.get(`/api${hotelName}/gethoteldata`).then(value => {
         setHotel(value.data)
       });
     }

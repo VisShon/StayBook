@@ -69,6 +69,9 @@
     display : flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width:800px) {
+        width:90vw;
+    }
     img{
         background-color:black;
         border-radius: .5rem;

@@ -9,6 +9,10 @@
         margin-bottom: 1rem;
         -webkit-text-fill-color: $grey;
         font-family:'Kraftan',sans-serif;
+        @media screen and (max-width:800px) {
+            font-size: 2rem;
+            text-align: center;
+        }
     }
     .userInfo{
         margin-top: 8rem;
@@ -22,7 +26,7 @@
         align-items: center;
         box-shadow: 0 0 10px $shadow;
         @media screen and (max-width:800px) {
-            padding: 3rem 4rem 1rem 4rem;
+            padding: 3rem .5rem 1rem .5rem;
         }
         img{
             position: absolute;
@@ -31,9 +35,6 @@
             width:10rem;
             top:-8rem;
             border: 1px solid $main;
-            @media screen and (max-width:800px) {
-                top:-4rem;
-            }
         }
         h2{
             font-size: 2rem;
@@ -95,6 +96,10 @@
             text-align: center;
             font-weight:200;
             margin: 0 0 0 0;
+            @media screen and (max-width:800px) {
+                font-size: 1.5rem;
+                width: 98%;
+            }
         }
 
     }

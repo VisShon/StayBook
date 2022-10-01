@@ -91,7 +91,7 @@
 .progress{
     display: flex;
     align-items: center;
-    margin-top: 0.5rem;
+    margin-top: -1rem;
     .progress-segment{
         display: flex;
         align-items: center;
@@ -102,6 +102,10 @@
             position: absolute;
             z-index: 10px;
             background-color:$main;
+            @media screen and (max-width: 800px) {
+                width:.5rem;
+                height:.5rem;
+            }
         }
         .line{
             margin-left:1rem;
@@ -110,9 +114,9 @@
             height:2px;
             background-color:$main;
             @media screen and (max-width: 800px) {
-                width:2rem;
-                margin-left:.5rem;
-                margin-right:.5rem;
+                width:1rem;
+                margin-left:.1rem;
+                margin-right:.1rem;
             }
         }
         .outline{
@@ -127,6 +131,10 @@
             justify-content:center;
             z-index: 0px;
             position: relative;
+            @media screen and (max-width: 800px) {
+                width:1rem;
+                height:1rem;
+            }
         }
 
     }

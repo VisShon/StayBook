@@ -5,10 +5,14 @@ export const priceSlice = createSlice({
     initialState:{
         value:0,
         children:0,
+        withoutTax:0,
     },
     reducers:{
         updatePrice: (state:any,action:any) => {
             state.value = action.payload;
+        },
+        updateWithoutTaxPrice: (state:any,action:any) => {
+            state.withoutTax = action.payload;
         },
         numberOfChildren: (state:any, action:any) => {
             if(state.children==0 && action.payload =='0' ) {
@@ -22,6 +26,6 @@ export const priceSlice = createSlice({
     
 })
 
-export const {updatePrice,numberOfChildren} = priceSlice.actions;
+export const {updatePrice,updateWithoutTaxPrice,numberOfChildren} = priceSlice.actions;
 
 export default priceSlice.reducer;

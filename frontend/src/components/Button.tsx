@@ -94,7 +94,7 @@ function Button({checkIn,checkOut}:any){
 
   return (
     <>
-      <div className={error?("Button-error"):("Button")} onClick={onClickHandler}>{error?"Error Refresh and Try Again":"Proceed to chekout!"}
+      <div className={error?("Button-error"):("Button")} onClick={onClickHandler}>{error?"Error Refresh and Try Again":"Proceed to checkout!"}
       </div>
       {isLoading&&<div className="Button-Loading">Loading...</div>}
       {isPaid&&<div className="Button-Loading">Booking Done</div>}

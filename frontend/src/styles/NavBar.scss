@@ -155,6 +155,7 @@ ul {
 
 .hotels{
   width:7rem;
+  height:1.5rem;
   color:black;
   background-color:bisque;
   font-size: 0.75rem;
@@ -165,5 +166,6 @@ ul {
 
 .hotels:hover{
   border-radius:0rem;
+  height:1.5rem;
   background: $gradient;
 }

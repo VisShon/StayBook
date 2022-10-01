@@ -10,6 +10,7 @@ export type AuthContextProps = {
     email: string | undefined;
 	phone: string | undefined;
 	Login: Function;
+	Logout: Function;
 };
 
 
@@ -24,6 +25,10 @@ export const AuthProvider = ({children}:props) =>{
 	const Login = () => {
 		const provider = new GoogleAuthProvider();
 		return signInWithPopup(auth,provider)
+	}
+
+	const Logout = () => {
+		return auth.signOut()
 	}
 
 	const[username,setUsername] = useState<string|undefined>()
@@ -49,7 +54,7 @@ export const AuthProvider = ({children}:props) =>{
 
 
 	return (
-		<AuthContext.Provider value={{username,email,phone,Login,profilePicture,userToken}}>
+		<AuthContext.Provider value={{username,email,phone,Login,Logout,profilePicture,userToken}}>
 			{children}
 		</AuthContext.Provider>
   )

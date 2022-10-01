@@ -14,16 +14,20 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
 function BookingCard() {
-  const [checkIn, setCheckIn] = React.useState<Date | null>(null);
-  const [checkOut, setCheckOut] = React.useState<Date | null>(null);
+
+  const CheckOutDate = sessionStorage.getItem('checkOut')
+  const CheckInDate = sessionStorage.getItem('checkIn')
+
+  const [checkIn, setCheckIn] = React.useState<Date | null>(new Date(CheckInDate!));
+  const [checkOut, setCheckOut] = React.useState<Date | null>(new Date(CheckOutDate!));
 
 
-  const netPrice = useAppSelector(state => state.price.value)
+  const withoutTax = useAppSelector(state => state.price.withoutTax)
   const Plans = useAppSelector(state => state.plans.selectedPlans);
   
   return (
     <div className="bookingCard">
-      <h1>₹{netPrice}</h1>
+      <h1>₹{withoutTax}</h1>
       <div className="calendar">
         <div className="input">
           <div style={{marginRight: '0.5rem'}}>

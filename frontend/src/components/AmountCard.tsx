@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/BookingCard.scss';
 import { useAppSelector, useAppDispatch } from '../app/hooks'
-import { updatePrice } from '../app/priceSlice';
+import { updatePrice,updateWithoutTaxPrice } from '../app/priceSlice';
 
 function AmountCard({checkIn, checkOut}:any) {
 
@@ -16,6 +16,8 @@ function AmountCard({checkIn, checkOut}:any) {
   roomPrice+=children*500;
   if(checkIn&&checkOut){roomPrice*=Math.ceil(Math.abs(checkIn!.getTime() - checkOut!.getTime())/ (1000 * 60 * 60 * 24))}
   var tax:number= parseFloat((roomPrice*(10/100)).toFixed(3)); 
+
+  dispatch(updateWithoutTaxPrice(roomPrice));
   var netPrice:number = roomPrice+tax;
   dispatch(updatePrice(netPrice))
 

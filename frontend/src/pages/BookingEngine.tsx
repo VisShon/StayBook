@@ -39,9 +39,9 @@ function App() {
                     <span style={{color: 'black', fontWeight: '400'}}>{hotel.email}</span>
                   </span>
               </p>
-              <p className="description">
+              <a href={hotel.map} className="description">
                   {hotel.address}
-              </p>
+              </a>
             </>
             <Amneties data={Object.values(hotel.amenities)}/>
             <h1 className="heading">{"Choose your room(s)"}</h1>

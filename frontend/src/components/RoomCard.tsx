@@ -3,6 +3,7 @@ import '../styles/RoomCard.scss'
 import PlanCard from './PlanCard'
 
 function RoomCard({room}:any) {
+
   return (
     <div className="roomCard">
       <div className="roomInfo">

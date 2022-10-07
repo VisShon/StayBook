@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
+import { useAppDispatch } from '../app/hooks'
+import { removePlan } from '../app/planSlice';
 import '../styles/BookingCard.scss'
 import AmountCard from './AmountCard'
 import SelectedPlan from './SelectedPlan'
@@ -21,9 +23,14 @@ function BookingCard() {
   const [checkIn, setCheckIn] = React.useState<Date | null>(new Date(CheckInDate!));
   const [checkOut, setCheckOut] = React.useState<Date | null>(new Date(CheckOutDate!));
 
+  const dispatch = useAppDispatch();
 
   const withoutTax = useAppSelector(state => state.price.withoutTax)
   const Plans = useAppSelector(state => state.plans.selectedPlans);
+
+  useEffect(() => {
+    dispatch(removePlan({title:"Monthly Rate",roomType:"Deluxe Suite"}))
+  },[])
   
   return (
     <div className="bookingCard">

@@ -1,6 +1,9 @@
 import React,{ useEffect,useState } from 'react'
-import '../../../styles/home/BookingCarousel.scss'
 import {motion,useAnimation} from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
+import '../../../styles/home/BookingCarousel.scss'
+
+
 import Hotels from '../../../data/hotelData.json'
 import leftArrow from '../../../images/leftArrow2.svg'
 import rightArrow from '../../../images/rightArrow2.svg'
@@ -22,14 +25,17 @@ function BookingCarousel() {
 
   const [checkIn, setCheckIn] = useState<Date | null>(null);
   const [checkOut, setCheckOut] = useState<Date | null>(null);
-  const [guests, setGuests] = useState(0);
+  const [guests, setGuests] = useState(2);
+  const [n,setN] = useState(0);
 
   const control = useAnimation();
-  const [n,setN] = useState(0);
+  const nav = useNavigate();
   const data = Object.values(Hotels);
 
-  const setHotel=() => {
 
+  const onSubmit = () => {
+    sessionStorage.setItem('guests',guests.toString());
+    nav(data[n].link);
   }
   
   useEffect(() => {
@@ -53,22 +59,22 @@ function BookingCarousel() {
           <h2>Book Your Stay</h2>
 
           <div className='bookingBar'>
-              <a href={data[n].link} className='arrowButton'>
+              <div onClick={onSubmit} className='arrowButton'>
                 <img src={arrow}/>
-              </a>
+              </div>
 
               <div className='line'></div>
 
               <div className='guests'>
-                  <input type='number' value={guests} min='0' max='3'/>
+                  <input type='number' value={guests} min='2' max='3'/>
                   <div className='change'>
-                    <a onClick={()=>{guests==0?setGuests(0):setGuests(prev=>--prev)}} 
+                    <a onClick={()=>{guests==2?setGuests(2):setGuests(prev=>--prev)}} 
                        className='changeValue' 
-                       style={guests==0?{color: 'grey'}:{color: 'black'}}>-</a>
+                       style={guests==2?{color: 'grey'}:{color: 'black'}}>-</a>
                     <img src={guest} style={{height: '1.5rem'}}/>
-                    <a onClick={()=>{guests==3?setGuests(3):setGuests(prev=>++prev)}} 
+                    <a onClick={()=>{guests==4?setGuests(4):setGuests(prev=>++prev)}} 
                        className='changeValue' 
-                       style={guests==3?{color: 'grey'}:{color: 'black'}}>+</a>
+                       style={guests==4?{color: 'grey'}:{color: 'black'}}>+</a>
                   </div>
               </div>
 
@@ -116,7 +122,15 @@ function BookingCarousel() {
 
               <div className="search">
                     <img src={hotel} style={{height: '1.5rem'}}/>
-                    <input type="text" value={data[n].name}/>
+                    <input onKeyUp={(e)=>{
+                            const d = data.filter(item=>(item.name.toLowerCase()).includes(e.target.value.toLowerCase()));
+                            const n = data.indexOf(d[0])
+                              if(n!=-1){
+                                setN(n)
+                              }
+                            }} 
+                           type="text" 
+                           placeholder='Search hotel'/>
               </div>
           </div>
 

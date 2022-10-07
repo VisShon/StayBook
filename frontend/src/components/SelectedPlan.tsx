@@ -49,6 +49,7 @@ function SelectedPlan({title,roomType,checkIn,checkOut}:any) {
 
 
   const onClickHandler = () =>{
+    sessionStorage.removeItem('guests');
     dispatch(removePlan({title:title,roomType:roomType}));
     dispatch(numberOfChildren('0'))
   }

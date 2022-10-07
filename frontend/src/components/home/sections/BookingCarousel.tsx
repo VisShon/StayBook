@@ -5,9 +5,11 @@ import Hotels from '../../../data/hotelData.json'
 import leftArrow from '../../../images/leftArrow2.svg'
 import rightArrow from '../../../images/rightArrow2.svg'
 import arrow from '../../../images/arrowVector.svg'
+import guest from '../../../images/guests.svg'
+import hotel from '../../../images/hotel.svg'
 
-import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import Box from '@mui/material/Box';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
@@ -18,13 +20,17 @@ const boxVariant = {
 
 function BookingCarousel() {
 
-  const [checkIn, setCheckIn] = React.useState<Date | null>(null);
-  const [checkOut, setCheckOut] = React.useState<Date | null>(null);
+  const [checkIn, setCheckIn] = useState<Date | null>(null);
+  const [checkOut, setCheckOut] = useState<Date | null>(null);
+  const [guests, setGuests] = useState(0);
 
   const control = useAnimation();
   const [n,setN] = useState(0);
   const data = Object.values(Hotels);
 
+  const setHotel=() => {
+
+  }
   
   useEffect(() => {
     control.start("hidden");
@@ -51,7 +57,24 @@ function BookingCarousel() {
                 <img src={arrow}/>
               </a>
 
-              <div style={{marginRight: '1rem'}}>
+              <div className='line'></div>
+
+              <div className='guests'>
+                  <input type='number' value={guests} min='0' max='3'/>
+                  <div className='change'>
+                    <a onClick={()=>{guests==0?setGuests(0):setGuests(prev=>--prev)}} 
+                       className='changeValue' 
+                       style={guests==0?{color: 'grey'}:{color: 'black'}}>-</a>
+                    <img src={guest} style={{height: '1.5rem'}}/>
+                    <a onClick={()=>{guests==3?setGuests(3):setGuests(prev=>++prev)}} 
+                       className='changeValue' 
+                       style={guests==3?{color: 'grey'}:{color: 'black'}}>+</a>
+                  </div>
+              </div>
+
+              <div className='line'></div>
+
+              <div className='input'>
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <DatePicker
                       views={['day','month']}
@@ -61,11 +84,15 @@ function BookingCarousel() {
                         setCheckOut(newValue);
                         sessionStorage.setItem('checkOut',newValue);
                       }}
-                      renderInput={(params:any) => <TextField {...params} />}
+                      renderInput={({ inputRef, inputProps, InputProps }) => (
+                        <Box sx={{alignItems:'center',display:'flex',width:'8rem',flexDirection:'column'}}>
+                          <input  ref={inputRef} {...inputProps}  
+                          placeholder='Check Out'/>
+                          {InputProps?.endAdornment}
+                        </Box>
+                      )}
                     />
                 </LocalizationProvider>
-              </div>
-              <div style={{marginLeft: '1rem',marginRight: '1rem'}}>
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                   <DatePicker
                     label="Check In"
@@ -74,17 +101,32 @@ function BookingCarousel() {
                       setCheckIn(newValue);
                       sessionStorage.setItem('checkIn',newValue);
                     }}
-                    renderInput={(params:any) => <TextField {...params} />}
+                    renderInput={({ inputRef, inputProps, InputProps }) => (
+                      <Box sx={{alignItems:'center',display:'flex',width:'8rem',flexDirection:'column'}}>
+                        <input ref={inputRef} {...inputProps} 
+                        placeholder="Check In" />
+                        {InputProps?.endAdornment}
+                      </Box>
+                    )}
                   />
                 </LocalizationProvider>
+              </div>
+
+              <div className='line'></div>
+
+              <div className="search">
+                    <img src={hotel} style={{height: '1.5rem'}}/>
+                    <input type="text" value={data[n].name}/>
               </div>
           </div>
 
 
           <div className='carouselArrows'>
-            <img src={leftArrow} onClick={()=>{setN(prev=>prev==0?prev:--prev);
+            <img src={leftArrow} 
+                 onClick={()=>{setN(prev=>prev==0?prev:--prev);
                 n!==0?control.set('hidden'):control.set('visible');}}/>
-            <img src={rightArrow} onClick={()=>{setN(prev=>prev==data.length-1?prev:++prev);
+            <img src={rightArrow} 
+                 onClick={()=>{setN(prev=>prev==data.length-1?prev:++prev);
                 n!==data.length-1?control.set('hidden'):control.set('visible');;}}/>
           </div>
       </div>

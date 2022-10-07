@@ -15,7 +15,6 @@
     }
     .profilepic{
       @extend .logo;
-      border: 1px solid $main;
       border-radius: 10rem;
     }
 }

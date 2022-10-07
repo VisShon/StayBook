@@ -61,6 +61,81 @@
     border-radius:.5rem;
     background-color:$secondary;
 
+    .line{
+        background: #937749;
+        width: 1px;
+        height: 70%;
+    }
+
+    .guests{
+        display: flex;
+        flex-direction:column;
+        width: 10rem;
+        justify-content:center;
+
+        input{
+            margin-bottom: 0;
+            margin-left: 0;
+            text-align: center;
+            width: 10rem;
+        }
+        .change{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom:-.5rem;
+            .changeValue{
+                color: #937749;
+                text-align: center;
+                font-size:1.5rem;
+                cursor: pointer;
+            }
+            .changeValue::selection{
+                display:none;
+            }
+        }
+    }
+
+    .search{
+        display: flex;
+        width: 15rem;
+        justify-content:center;
+        align-items: center;
+        margin-left: 2rem;
+        input{
+            margin-bottom: 0;
+            margin-left: 0;
+            text-align: center;
+            width: 11rem;
+            border: 1px solid #937749;
+            padding: .5rem;
+            border-radius: .5rem;
+        }
+    }
+
+    .input{
+        display: flex;
+        width: 30%;
+        justify-content: space-between;
+    }
+    input{
+        color: #937749;
+        font-family: 'Mada',sans-serif;
+        font-size:1.5rem;
+        font-weight: 200;
+        border:none;
+        background:$secondary;
+        width: 8rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+    input::placeholder{
+        color: #937749;
+    }
+    input:focus {
+        outline-width: 0;
+    }
     div{
         @media screen and (max-width: 800px) {
             font-size:.5rem;
@@ -80,6 +155,9 @@
             width: 3rem;
             margin-right:1rem;
         }
+    }
+    .arrowButton:hover{
+        box-shadow: 0 0 10px $shadow;
     }
     img{
         position: relative;

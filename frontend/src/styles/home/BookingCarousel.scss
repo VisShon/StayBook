@@ -45,6 +45,10 @@
             font-size:2rem;
         }
     }
+    @media screen and (max-width: 800px) {
+        height: auto;
+        background-color:transparent;
+    }
 }
 .bookingBar{
     position: absolute;
@@ -60,11 +64,23 @@
     height: 18%;
     border-radius:.5rem;
     background-color:$secondary;
+    @media screen and (max-width: 800px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        height: 20rem;
+        padding-top:1.5rem;
+        padding-bottom: 1.5rem;
+        position: relative;
+    }
 
     .line{
         background: #937749;
         width: 1px;
         height: 70%;
+        @media screen and (max-width: 800px) {
+            width: 70%;
+            height: 1px;
+        }
     }
 
     .guests{
@@ -72,12 +88,15 @@
         flex-direction:column;
         width: 10rem;
         justify-content:center;
-
+        
         input{
             margin-bottom: 0;
-            margin-left: 0;
+            margin-left: 0rem;
             text-align: center;
             width: 10rem;
+            @media screen and (max-width: 800px) {
+                margin-left: -.25rem;
+            }
         }
         .change{
             display:flex;
@@ -102,6 +121,9 @@
         justify-content:center;
         align-items: center;
         margin-left: 2rem;
+        @media screen and (max-width: 800px) {
+            margin-left: 0rem;
+        }
         input{
             margin-bottom: 0;
             margin-left: 0;
@@ -111,12 +133,20 @@
             padding: .5rem;
             border-radius: .5rem;
         }
+        img{
+            @media screen and (max-width: 800px) {
+                display:none;
+            }
+        }
     }
 
     .input{
         display: flex;
         width: 30%;
         justify-content: space-between;
+        @media screen and (max-width: 800px) {
+            width: 90%;
+        }
     }
     input{
         color: #937749;
@@ -152,8 +182,8 @@
         margin-right:2rem;
         @media screen and (max-width: 800px) {
             height: 3rem;
-            width: 3rem;
-            margin-right:1rem;
+            width: 90%;
+            margin-right:0rem;
         }
     }
     .arrowButton:hover{

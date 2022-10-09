@@ -1,8 +1,8 @@
 @import 'colors';
 .photoSlider{
     display: flex;
-    overflow-x: scroll;
-    height:65vh;
+    align-items: center;
+    flex-direction: column;
     width: screen;
     border-radius: 1rem;
     margin: 1rem;
@@ -13,16 +13,48 @@
         margin: 1rem 0.5rem 0rem 0.5rem;
         border-radius: 0.5rem;
     }
-}
-
-.photoSlider::-webkit-scrollbar {
-    display:none;
-}
-
-.image{
-    width: 816px;
-    margin-right:1rem;
-    box-shadow: 0 0 10px $shadow;
+    .mainImage{
+        width: 816px;
+        margin-right:1rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px $shadow;
+        object-fit: cover;
+        @media screen and (max-width: 800px) {
+            width: 95vw;
+            border-radius: .5rem;
+            margin-right:0rem;
+        }
+    }
+    .gallery{
+        width: 100%;
+        display:flex;
+        border-radius: 1rem;
+        overflow-x: scroll;
+        margin-top: 1rem;
+        @media screen and (max-width: 800px) {
+            border-radius: .5rem;
+        }
+        .image{
+            width: 10rem;
+            height: 5.5rem;
+            opacity: 50%;
+            margin-right:1rem;
+            box-shadow: 0 0 10px $shadow;
+            cursor: pointer;
+            object-fit: cover;
+            @media screen and (max-width: 800px) {
+                width: 5rem;
+            }
+        }
+        .image-selected{
+            @extend .image;
+            opacity: 100%;
+        }
+        .image:hover{
+            opacity: 80%;
+            box-shadow: 0 0 10px $grey;
+        }
+    }
 }
 
 .leftIcon{
@@ -43,5 +75,56 @@
     @media screen and (max-width: 800px) {
         top:15rem;
         right: 2rem;
+    }
+}
+
+
+.photoGrid{
+    display: flex;
+    justify-content: space-between;
+    overflow-x: hidden;
+    height:65vh;
+    width: screen;
+    border-radius: 1rem;
+    margin: 1rem;
+    margin-left: 5em;
+    margin-right: 5em;
+    @media screen and (max-width: 800px) {
+        height:40vh;
+        margin: 1rem 0.5rem 0rem 0.5rem;
+        border-radius: 0.5rem;
+    }
+    .image{
+        width: 60%;
+        margin-right:0rem;
+        box-shadow: 0 0 10px $shadow;
+        object-fit: cover;
+        @media screen and (max-width: 800px) {
+            width: 70%;
+        }
+    }
+    .grid{
+        display:flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        overflow-y: hidden;
+        width: 40%;
+        @media screen and (max-width: 800px) {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            width: 30%;
+        }
+        .image{
+            width: 48%;
+            margin-left:.25rem;
+            margin-right:0rem;
+            box-shadow: 0 0 10px $shadow;
+            object-fit: cover;
+            @media screen and (max-width: 800px) {
+                width: 100%;
+            }
+        }
+        
     }
 }

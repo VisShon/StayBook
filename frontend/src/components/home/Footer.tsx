@@ -20,7 +20,7 @@ export default function Footer(){
         <div className="heading">
           <h2>Hotels:</h2>
           {Object.values(data).map((item:any,i:any)=>
-          (<a href={item.link}>{item.name}</a>))}
+          (<a key={i} href={item.link}>{item.name}</a>))}
         </div>
 
         <div className="heading">

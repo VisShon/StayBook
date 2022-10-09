@@ -10,7 +10,7 @@ function PlanCard({plan,room,amenities}:any) {
   const n = sessionStorage.getItem('guests');
 
   useEffect(() => {
-    if(n && plan.info.substring(0,1)==n) {
+    if(n && plan.info.substring(0,1)==n && plan.title.substring(0,3)!='Max') {
       if(Plans.length==0){
         let newPlan = {...plan , roomType: room}
         dispatch(addPlan(newPlan))

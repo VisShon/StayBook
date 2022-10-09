@@ -16,16 +16,19 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
 function BookingCard() {
+  let today = new Date();
+  let tomorrow =  new Date();
+  tomorrow.setDate(today.getDate() + 1);
 
-  const CheckOutDate = sessionStorage.getItem('checkOut')
-  const CheckInDate = sessionStorage.getItem('checkIn')
+  const CheckOutDate = sessionStorage.getItem('checkOut');
+  const CheckInDate = sessionStorage.getItem('checkIn');
 
-  const [checkIn, setCheckIn] = React.useState<Date | null>(new Date(CheckInDate!));
-  const [checkOut, setCheckOut] = React.useState<Date | null>(new Date(CheckOutDate!));
+  const [checkIn, setCheckIn] = React.useState<Date | null>(CheckInDate?new Date(CheckInDate):today);
+  const [checkOut, setCheckOut] = React.useState<Date | null>(CheckOutDate?new Date(CheckOutDate):tomorrow);
 
   const dispatch = useAppDispatch();
 
-  const withoutTax = useAppSelector(state => state.price.withoutTax)
+  const withoutTax = useAppSelector(state => state.price.withoutTax);
   const Plans = useAppSelector(state => state.plans.selectedPlans);
 
   useEffect(() => {
@@ -42,6 +45,7 @@ function BookingCard() {
               <DatePicker
                 label="Check In"
                 value={checkIn}
+                minDate={new Date()}
                 onChange={(newValue:any) => {
                   setCheckIn(newValue);
                 }}
@@ -55,6 +59,7 @@ function BookingCard() {
                   views={['day','month']}
                   label="Check Out"
                   value={checkOut}
+                  minDate={new Date()}
                   onChange={(newValue:any) => {
                     setCheckOut(newValue);
                   }}
@@ -67,7 +72,11 @@ function BookingCard() {
       </div>
       <p>{Plans.length} rooms</p>
 
-      {Plans.map((item,index) => (<SelectedPlan roomType={item.roomType} title={item.title} checkOut={checkOut} checkIn={checkIn} key={index}/>))}
+
+      <div className="selectedPlans">
+        {Plans.map((item,index) => (<SelectedPlan roomType={item.roomType} title={item.title} checkOut={checkOut} checkIn={checkIn} key={index}/>))}
+      </div>
+
       
       <AmountCard checkOut={checkOut} checkIn={checkIn}/>
       <Button checkOut={checkOut} checkIn={checkIn} />

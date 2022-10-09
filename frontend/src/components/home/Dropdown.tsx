@@ -9,7 +9,7 @@ return(
         <span aria-haspopup="true">Hotels</span>
         <ul className="dropdown" aria-label="submenu">
           {Object.values(data).map((item:any,i:any)=>
-          (<li  className = "hotels">
+          (<li  className = "hotels" key={i}>
                 <a style={{textDecoration:'none',color:'black'}} 
                    href={item.link}>{item.name}</a>
             </li>))}

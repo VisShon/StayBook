@@ -9,6 +9,7 @@
     position:sticky;
     z-index: 50;
     padding:1rem;
+    box-shadow: 0 0 10px $shadow;
     top: 0;
     @media screen and (max-width: 800px) {
        align-items: center;

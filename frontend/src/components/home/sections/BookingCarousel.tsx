@@ -27,11 +27,10 @@ function BookingCarousel() {
   const [checkOut, setCheckOut] = useState<Date | null>(null);
   const [guests, setGuests] = useState(2);
   const [n,setN] = useState(0);
-
+  const [suggestions,setSuggestions] = useState<any[]>([]);
   const control = useAnimation();
   const nav = useNavigate();
   const data = Object.values(Hotels);
-
 
   const onSubmit = () => {
     sessionStorage.setItem('guests',guests.toString());
@@ -86,6 +85,7 @@ function BookingCarousel() {
                       views={['day','month']}
                       label="Check Out"
                       value={checkOut}
+                      minDate={new Date()}
                       onChange={(newValue:any) => {
                         setCheckOut(newValue);
                         sessionStorage.setItem('checkOut',newValue);
@@ -103,6 +103,7 @@ function BookingCarousel() {
                   <DatePicker
                     label="Check In"
                     value={checkIn}
+                    minDate={new Date()}
                     onChange={(newValue:any) => {
                       setCheckIn(newValue);
                       sessionStorage.setItem('checkIn',newValue);
@@ -110,7 +111,7 @@ function BookingCarousel() {
                     renderInput={({ inputRef, inputProps, InputProps }) => (
                       <Box sx={{alignItems:'center',display:'flex',width:'8rem',flexDirection:'column'}}>
                         <input ref={inputRef} {...inputProps} 
-                        placeholder="Check In" />
+                        placeholder="Check In"/>
                         {InputProps?.endAdornment}
                       </Box>
                     )}
@@ -122,15 +123,20 @@ function BookingCarousel() {
 
               <div className="search">
                     <img src={hotel} style={{height: '1.5rem'}}/>
-                    <input onKeyUp={(e)=>{
+                    <input onChange={(e)=>{
                             const d = data.filter(item=>(item.name.toLowerCase()).includes(e.target.value.toLowerCase()));
+                            setSuggestions(d);
                             const n = data.indexOf(d[0])
                               if(n!=-1){
                                 setN(n)
                               }
                             }} 
+                           list="browse"
                            type="text" 
                            placeholder='Search hotel'/>
+                    <datalist id="browse">
+                        {suggestions.map((hotel,i)=>(<option key={i} value={hotel.name}/>))}
+                    </datalist>
               </div>
           </div>
 

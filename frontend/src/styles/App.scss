@@ -7,6 +7,30 @@
   color:$main
 
 }
+.galleryButton{
+  background: #000;
+  text-align: center;
+  width: 5rem;
+  font-family: 'kraftan',sans-serif;
+  color:#ffffff;
+  padding: 1rem;
+  border-radius: .5rem;
+  position: absolute;
+  cursor: pointer;
+  height: 3rem;
+  bottom:25%;
+  right:10%;
+  @media screen and (max-width:800px) {
+    height: 2rem;
+    width: 2rem;
+    font-size:.75rem;
+    right:5%;
+    top:42vh;
+  }
+}
+.galleryButton:hover{
+  background: rgb(53, 53, 53);
+}
 .heading{
   @extend .title;
   font-size: 2rem;

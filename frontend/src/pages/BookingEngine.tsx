@@ -4,12 +4,13 @@ import Amneties from '../components/Ameneties';
 import BookingCard from '../components/BookingCard';
 import NavBar from '../components/home/Navbar';
 import Photos from '../components/PhotoSlider'
+import PhotoGrid from '../components/PhotoGrid'
 import RoomCard from '../components/RoomCard';
 import axios from 'axios';
 
 function App() {
   const [hotel,setHotel] = useState<any>(null) 
-
+  const [gallery,setGallery] = useState<boolean>(false)
   const hotelName:string = new URL(window.location.href).pathname;
 
 
@@ -26,7 +27,9 @@ function App() {
     <>
       {hotel?
       <>
-        <Photos data={Object.values(hotel.images)}/>
+        {gallery?<Photos data={Object.values(hotel.images)}/>:<PhotoGrid data={Object.values(hotel.images)}/>}
+        <div className="galleryButton"
+              onClick={()=>setGallery(prev=>!prev)}>{!gallery?('Open Gallery'):('Close Gallery')}</div>
         <div className="Maincontainer">
           <div className="sideContainer">
             <h1 className="title">{hotel.name}</h1>

@@ -1,4 +1,4 @@
-import React, {useState , useRef} from 'react';
+import React, {useState} from 'react';
 import '../styles/PhotoSlider.scss'
 import left from '../images/left.png'
 import right from '../images/right.png'
@@ -6,26 +6,25 @@ import right from '../images/right.png'
 function PhotoSlider({data}:any) {
 
   const wind = window.matchMedia('(max-width: 800px)');
-
-  const ref = useRef<HTMLDivElement>(document.createElement("div"));
-  const scrollRight = () => {
-    !wind.matches?
-    ref.current.scrollBy({left: 816, behavior: 'smooth'}):
-    ref.current.scrollBy({left: 555, behavior: 'smooth'});
-  };
-  const scrollLeft = () => {
-    !wind.matches?
-    ref.current.scrollBy({left: -816, behavior: 'smooth'}):
-    ref.current.scrollBy({left: -555, behavior: 'smooth'});
-  };
+  const[n,setN] = useState(0)
 
   return (
-      <div ref={ref} className="photoSlider" >
-        {data.map((item:any,index:number) => (
-            <img className="image" src={require("../images/"+item)} key={index}/>
-        ))}
-        <a onClick={scrollLeft} className="leftIcon"><img style={!wind.matches?{width:'5rem'}:{width:'3rem'}} src={left}/></a>
-        <a onClick={scrollRight} className="rightIcon"><img style={!wind.matches?{width:'5rem'}:{width:'3rem'}}src={right}/></a>
+      <div className="photoSlider" >
+        <img className="mainImage" src={require("../images/"+data[n])}/>
+        <div className='gallery'>
+          {data.map((item:any,index:number) => (
+              <img onClick={()=>setN(index)}
+                   className={n!=index?("image"):("image-selected")} 
+                   src={require("../images/"+item)} 
+                   key={index}/>
+          ))}
+        </div>
+        <a onClick={()=>{n==0?setN(0):setN(prev=>--prev)}} 
+           className="leftIcon"><img style={!wind.matches?{width:'5rem'}:{width:'3rem'}} 
+           src={left}/></a>
+        <a onClick={()=>{n==data.length-1?setN(data.length-1):setN(prev=>++prev)}} 
+           className="rightIcon"><img style={!wind.matches?{width:'5rem'}:{width:'3rem'}}
+           src={right}/></a>
       </div>
   )
 }

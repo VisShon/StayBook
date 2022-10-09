@@ -18,7 +18,6 @@ import Profile from './pages/Profile';
 import Blog from './pages/Blog';
 import SinglePost from './pages/SinglePost.jsx';
 
-
 const rootElement = document.getElementById("root") as HTMLElement;
 const root = createRoot(rootElement);
 
@@ -41,5 +40,4 @@ root.render(
         </AuthProvider>
       </BrowserRouter>
     </Provider>
-
 );

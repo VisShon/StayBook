@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.960aab7c.css",
-    "main.js": "/static/js/main.7d46099a.js",
+    "main.css": "/static/css/main.6dcf3e22.css",
+    "main.js": "/static/js/main.726068fe.js",
     "static/media/img7.jpg": "/static/media/img7.d721a1fcf0c0f85915d2.jpg",
     "static/media/img6.jpg": "/static/media/img6.8313a46e2876744ab8d2.jpg",
     "static/media/img5.jpg": "/static/media/img5.8c8b0f6d1d47d862468f.jpg",
@@ -27,7 +27,9 @@
     "static/media/Parking.svg": "/static/media/Parking.ec6fb5bc259f0cabb97c.svg",
     "static/media/Spa.svg": "/static/media/Spa.a6cdb8625cf5a7ae934c.svg",
     "static/media/Valet parking.svg": "/static/media/Valet parking.05f1556bcb2c91155f85.svg",
+    "static/media/Sauna.svg": "/static/media/Sauna.83a1f75cf58c4e0a7e8c.svg",
     "static/media/Currency Exchange.svg": "/static/media/Currency Exchange.19bcc110f05db4a19da2.svg",
+    "static/media/hot tub.svg": "/static/media/hot tub.4562adc8eceb6e114e74.svg",
     "static/media/Restaurant.svg": "/static/media/Restaurant.4474da02a372c12e7f6f.svg",
     "static/media/Shuttle Service.svg": "/static/media/Shuttle Service.361e8b0867fd59802dfe.svg",
     "static/media/Bathroom.svg": "/static/media/Bathroom.4c328086313bb52fb064.svg",
@@ -40,10 +42,13 @@
     "static/media/24-hour front desk service Bar.svg": "/static/media/24-hour front desk service Bar.47ef2c84a6e1d62b2507.svg",
     "static/media/Concierge.svg": "/static/media/Concierge.0996aac7aafb0e48976d.svg",
     "static/media/Soundproofing.svg": "/static/media/Soundproofing.fa4ddd446d1e2ad698cd.svg",
+    "static/media/Elevator.svg": "/static/media/Elevator.40ee92c8c682f10489e1.svg",
     "static/media/Laundry.svg": "/static/media/Laundry.89220e4c1dbb21b8e0cc.svg",
     "static/media/Vending Machine.svg": "/static/media/Vending Machine.c73e6dda21532d7bc0e5.svg",
     "static/media/Flat Screen TV.svg": "/static/media/Flat Screen TV.d20cf191371b8599b24b.svg",
+    "static/media/Internet or Wi-Fi.svg": "/static/media/Internet or Wi-Fi.dce1e74bfe01ee875835.svg",
     "static/media/guests.svg": "/static/media/guests.85b69a355c56c3090d45ed009d754a65.svg",
+    "static/media/Meeting or Banquet Facilities.svg": "/static/media/Meeting or Banquet Facilities.64f1a511b96d1c98612e.svg",
     "static/media/Airport transfer.svg": "/static/media/Airport transfer.6e977195f3b02a0df434.svg",
     "static/media/Tour.svg": "/static/media/Tour.6a0798079e6142ba3955.svg",
     "static/media/Breakfast.svg": "/static/media/Breakfast.0ce5c2993cf3c6544893.svg",
@@ -51,6 +56,7 @@
     "static/media/Room Service.svg": "/static/media/Room Service.4a0939c10fa9d3c3a9fd.svg",
     "static/media/Triple Occupancy.svg": "/static/media/Triple Occupancy.fae6bec4752b389463c3.svg",
     "static/media/hotel.svg": "/static/media/hotel.4056180fe1ec338e21492ddf4a8bbe2a.svg",
+    "static/media/ATM On Site.svg": "/static/media/ATM On Site.68e97abe02f00088f295.svg",
     "static/media/Air Con.svg": "/static/media/Air Con.06b486e4a6a3e005a0fd.svg",
     "static/media/24 Hours Power Backup.svg": "/static/media/24 Hours Power Backup.1bd7c7047b6cf9300e3d.svg",
     "static/media/Coffee or tea in lobby.svg": "/static/media/Coffee or tea in lobby.0ba22317fcb7eab609ec.svg",
@@ -62,11 +68,11 @@
     "static/media/leftArrow2.svg": "/static/media/leftArrow2.b7a21f184528ce9b3e3ae5e4966306f3.svg",
     "static/media/rightArrow.svg": "/static/media/rightArrow.939a1d08b4e03e04d23e8a9d9ee52d95.svg",
     "static/media/rightArrow2.svg": "/static/media/rightArrow2.54d2d44713e6a6cb9888c823806e9cfb.svg",
-    "main.960aab7c.css.map": "/static/css/main.960aab7c.css.map",
-    "main.7d46099a.js.map": "/static/js/main.7d46099a.js.map"
+    "main.6dcf3e22.css.map": "/static/css/main.6dcf3e22.css.map",
+    "main.726068fe.js.map": "/static/js/main.726068fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.960aab7c.css",
-    "static/js/main.7d46099a.js"
+    "static/css/main.6dcf3e22.css",
+    "static/js/main.726068fe.js"
   ]
 }

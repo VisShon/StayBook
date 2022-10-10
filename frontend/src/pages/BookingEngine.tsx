@@ -49,6 +49,8 @@ function App() {
             </>
             <Amneties data={Object.values(hotel.amenities)}/>
             <h1 className="heading">{"Choose your room(s)"}</h1>
+
+            
             {Object.values(hotel.rooms).filter((item:any) => item.info.substring(8,9)==guests||!guests).map((room:any,i:number) =>(<RoomCard room={room} key={i}/>))}
           </div>
           <BookingCard/>

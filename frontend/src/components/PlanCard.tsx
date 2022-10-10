@@ -5,21 +5,7 @@ import '../styles/PlanCard.scss'
 
 function PlanCard({plan,room,amenities}:any) {
 
-  const Plans = useAppSelector(state => state.plans.selectedPlans);
   const dispatch = useAppDispatch();
-  const n = sessionStorage.getItem('guests');
-
-  useEffect(() => {
-    if(n && plan.info.substring(0,1)==n && plan.title.substring(0,3)!='Max') {
-      if(Plans.length==0){
-        let newPlan = {...plan , roomType: room}
-        dispatch(addPlan(newPlan))
-      }
-    }
-  },[Plans])
-
-  
-
   const wind = window.matchMedia('(max-width: 800px)');
 
   const onClickHandler = () =>{

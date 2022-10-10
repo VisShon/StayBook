@@ -97,6 +97,7 @@
     .image{
         width: 60%;
         margin-right:0rem;
+        margin-bottom:.5rem;
         box-shadow: 0 0 10px $shadow;
         object-fit: cover;
         @media screen and (max-width: 800px) {
@@ -117,7 +118,8 @@
         }
         .image{
             width: 48%;
-            margin-left:.25rem;
+            margin-left:.5rem;
+            margin-bottom:.5rem;
             margin-right:0rem;
             box-shadow: 0 0 10px $shadow;
             object-fit: cover;

@@ -9,9 +9,10 @@ import RoomCard from '../components/RoomCard';
 import axios from 'axios';
 
 function App() {
-  const [hotel,setHotel] = useState<any>(null) 
-  const [gallery,setGallery] = useState<boolean>(false)
+  const [hotel,setHotel] = useState<any>(null) ;
+  const [gallery,setGallery] = useState<boolean>(false);
   const hotelName:string = new URL(window.location.href).pathname;
+  const guests = sessionStorage.getItem('guests');
 
 
   useEffect(() => {
@@ -48,7 +49,7 @@ function App() {
             </>
             <Amneties data={Object.values(hotel.amenities)}/>
             <h1 className="heading">{"Choose your room(s)"}</h1>
-            {Object.values(hotel.rooms).map((room:any,i:number) =>(<RoomCard room={room} key={i}/>))}
+            {Object.values(hotel.rooms).filter((item:any) => item.info.substring(8,9)==guests||!guests).map((room:any,i:number) =>(<RoomCard room={room} key={i}/>))}
           </div>
           <BookingCard/>
         </div>

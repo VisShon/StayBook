@@ -4,6 +4,7 @@ import BookingCarousel from '../components/home/sections/BookingCarousel'
 import HotelCarousel from '../components/home/sections/HotelCarousel'
 import Plans from '../components/home/sections/Plans'
 import ToursandTravels from '../components/home/sections/ToursandTravels'
+import MapSection from '../components/home/sections/MapSection'
 
 import '../styles/home/App.scss'
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
       <Ameneties/>
       <ToursandTravels/>
       <Plans/>
+      <MapSection/>
     </div>
   )
 }

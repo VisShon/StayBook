@@ -37,6 +37,7 @@ function BookingCard() {
   
   return (
     <div className="bookingCard">
+      <a href={''}>Terms and Conditions</a>
       <h1>₹{withoutTax}</h1>
       <div className="calendar">
         <div className="input">
@@ -80,6 +81,7 @@ function BookingCard() {
       
       <AmountCard checkOut={checkOut} checkIn={checkIn}/>
       <Button checkOut={checkOut} checkIn={checkIn} />
+      
     </div>
 
   )

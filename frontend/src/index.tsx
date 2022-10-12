@@ -1,11 +1,10 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {store} from './app/store'
 import { AuthProvider } from "./context/AuthContext"
 import { Provider } from 'react-redux'
 
-import './index.css';
+import './index.scss';
 import './styles/fonts/kraftan.otf'
 
 import Home from './pages/Home';
@@ -17,16 +16,17 @@ import ContactUs from './pages/ContactUs';
 import Profile from './pages/Profile';
 import Blog from './pages/Blog';
 import SinglePost from './pages/SinglePost.jsx';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const rootElement = document.getElementById("root") as HTMLElement;
 const root = createRoot(rootElement);
-
 
 root.render(
     <Provider store={store}>
       <BrowserRouter>
         <AuthProvider>
           <NavBar/>
+          <MessengerCustomerChat pageId="100629571333388" appId="787838355835224"/>
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/packages" element={<Packages/>}/>

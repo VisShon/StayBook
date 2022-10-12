@@ -107,7 +107,7 @@
                 color: #937749;
                 text-align: center;
                 font-size:1.5rem;
-                cursor: pointer;
+                cursor: none;
             }
             .changeValue::selection{
                 display:none;
@@ -172,6 +172,7 @@
         }
     }
     .arrowButton{
+        transition: all ease-in 500ms;
         background-color:white;
         border-radius: .5rem;
         display:flex;
@@ -180,6 +181,9 @@
         height: 5rem;
         width: 5rem;
         margin-right:2rem;
+        p{
+            display: none;
+        }
         @media screen and (max-width: 800px) {
             height: 3rem;
             width: 90%;
@@ -187,12 +191,26 @@
         }
     }
     .arrowButton:hover{
+        transition: all ease-in 500ms;
+        background-color: #937749;
         box-shadow: 0 0 10px $shadow;
+        img{
+            display: none;
+        }
+        p{
+            font-family: 'kraftan',sans-serif;
+            width: 50%;
+            color: white;
+            animation:ease-in 500ms;
+            transition: all ease-in 1000ms;
+            display: block;
+        }
     }
+
     img{
         position: relative;
         z-index: 30;
-        cursor: pointer;
+        cursor: none;
         height: 30%;
         width:30%;
         box-shadow: none;
@@ -212,12 +230,18 @@
         width: 90%;
     }
     img{
-        cursor: pointer;
+        transition: transform ease-in 500ms;
+        transform: rotateZ(0deg);
+        cursor: none;
         width: 10rem;
         box-shadow: none;
         @media screen and (max-width: 800px) {
             width: 6rem;
             height: 2rem;
         }
+    }
+    img:hover{
+        transition: transform ease-in 500ms;
+        transform: rotate3d(1, 0, 0, 45deg)
     }
 }

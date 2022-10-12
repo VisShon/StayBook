@@ -12,5 +12,8 @@
     "install": "npm ci --prefix frontend"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react-messenger-customer-chat": "^0.8.0"
+  }
 }

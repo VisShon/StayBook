@@ -60,6 +60,7 @@ function BookingCarousel() {
           <div className='bookingBar'>
               <div onClick={onSubmit} className='arrowButton'>
                 <img src={arrow}/>
+                <p>Book Now</p>
               </div>
 
               <div className='line'></div>

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.455a7afe.css",
-    "main.js": "/static/js/main.44a9f514.js",
+    "main.css": "/static/css/main.63a0644d.css",
+    "main.js": "/static/js/main.e0a84cb9.js",
     "static/media/img7.jpg": "/static/media/img7.d721a1fcf0c0f85915d2.jpg",
     "static/media/img6.jpg": "/static/media/img6.8313a46e2876744ab8d2.jpg",
     "static/media/img5.jpg": "/static/media/img5.8c8b0f6d1d47d862468f.jpg",
@@ -16,13 +16,16 @@
     "static/media/BestofSouth.png": "/static/media/BestofSouth.36b012954b2181584a81.png",
     "static/media/DelhiToMumbai.png": "/static/media/DelhiToMumbai.9ef4e7744edaa5b366ca.png",
     "static/media/GoldenTriangle.png": "/static/media/GoldenTriangle.5531fdb6ee759d5a1af9.png",
+    "static/media/bc.svg": "/static/media/bc.78fa5f5a1721c7e914e49d694ec9bdfc.svg",
     "static/media/travel.svg": "/static/media/travel.74ec31801e2c5f52c1f7d8e4040ec00d.svg",
     "static/media/kraftan.otf": "/static/media/kraftan.06843398dd85b1237d55.otf",
+    "static/media/tra.svg": "/static/media/tra.5cbbc7fbc521ec420aa140efe2a0fc5e.svg",
     "static/media/plan.svg": "/static/media/plan.3a15f7502e27c87d4718a13a9a39e903.svg",
     "static/media/footerBg.svg": "/static/media/footerBg.aaa71d94b907bc6544bfd6c5f92ec726.svg",
     "static/media/logo.png": "/static/media/logo.e689314f89211ddc5032.png",
     "static/media/right.png": "/static/media/right.7a8eb891b78e1a9a5a9f.png",
     "static/media/left.png": "/static/media/left.2aad3fad72b24c23004c.png",
+    "static/media/mmt.svg": "/static/media/mmt.1897770468bc8c35630cefbd296966e7.svg",
     "static/media/Rental car.svg": "/static/media/Rental car.2712e9a477aabe67c81b.svg",
     "static/media/Parking.svg": "/static/media/Parking.ec6fb5bc259f0cabb97c.svg",
     "static/media/Spa.svg": "/static/media/Spa.a6cdb8625cf5a7ae934c.svg",
@@ -68,11 +71,11 @@
     "static/media/leftArrow2.svg": "/static/media/leftArrow2.b7a21f184528ce9b3e3ae5e4966306f3.svg",
     "static/media/rightArrow.svg": "/static/media/rightArrow.939a1d08b4e03e04d23e8a9d9ee52d95.svg",
     "static/media/rightArrow2.svg": "/static/media/rightArrow2.54d2d44713e6a6cb9888c823806e9cfb.svg",
-    "main.455a7afe.css.map": "/static/css/main.455a7afe.css.map",
-    "main.44a9f514.js.map": "/static/js/main.44a9f514.js.map"
+    "main.63a0644d.css.map": "/static/css/main.63a0644d.css.map",
+    "main.e0a84cb9.js.map": "/static/js/main.e0a84cb9.js.map"
   },
   "entrypoints": [
-    "static/css/main.455a7afe.css",
-    "static/js/main.44a9f514.js"
+    "static/css/main.63a0644d.css",
+    "static/js/main.e0a84cb9.js"
   ]
 }

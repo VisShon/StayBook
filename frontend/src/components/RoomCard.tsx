@@ -7,7 +7,7 @@ function RoomCard({room}:any) {
   return (
     <div className="roomCard">
       <div className="roomInfo">
-        <h2 style={{}}>
+        <h2>
           {room.type}
           <p>{room.info}</p>
         </h2>

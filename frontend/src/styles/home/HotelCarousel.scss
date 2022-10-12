@@ -78,6 +78,7 @@
         }
         .button{
             text-align: center;
+            cursor: none;
             margin-top:2rem;
             width: 5rem;
             @media screen and (max-width: 800px) {
@@ -152,7 +153,14 @@
         top: 90%;
     }
     img{
+        transition: transform ease-in 500ms;
+        transform: scaleX(100%);
         margin-left: 1rem;
-        cursor: pointer;
+        object-fit: fill;
+        cursor:  none;
+    }
+    img:hover{
+        transition: transform ease-in 500ms;
+        transform: scaleX(60%);
     }
 }

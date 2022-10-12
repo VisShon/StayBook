@@ -29,7 +29,6 @@ function Home() {
 
   return (
     <>
-    v
       <div className='ring' ref={ring}></div>
       <div className='cursor' ref={cursor}></div>
       <div className="body" ref={body}>

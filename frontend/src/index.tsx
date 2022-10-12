@@ -16,7 +16,6 @@ import ContactUs from './pages/ContactUs';
 import Profile from './pages/Profile';
 import Blog from './pages/Blog';
 import SinglePost from './pages/SinglePost.jsx';
-import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const rootElement = document.getElementById("root") as HTMLElement;
 const root = createRoot(rootElement);
@@ -26,7 +25,6 @@ root.render(
       <BrowserRouter>
         <AuthProvider>
           <NavBar/>
-          <MessengerCustomerChat pageId="100629571333388" appId="787838355835224"/>
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/packages" element={<Packages/>}/>

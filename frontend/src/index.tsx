@@ -17,6 +17,10 @@ import Profile from './pages/Profile';
 import Blog from './pages/Blog';
 import SinglePost from './pages/SinglePost.jsx';
 
+import { WhatsAppWidget } from 'react-whatsapp-widget';
+import 'react-whatsapp-widget/dist/index.css';
+import {ReactComponent as Logo} from './images/user.svg';
+
 const rootElement = document.getElementById("root") as HTMLElement;
 const root = createRoot(rootElement);
 
@@ -34,6 +38,7 @@ root.render(
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/*" element={<BookingEngine/>}/>
           </Routes>
+          <WhatsAppWidget CompanyIcon={Logo} phoneNumber="917017495876" />
           <Footer/>
         </AuthProvider>
       </BrowserRouter>

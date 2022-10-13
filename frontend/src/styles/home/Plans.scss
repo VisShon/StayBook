@@ -1,66 +1,120 @@
 @import '../colors';
 
+.container{
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    .observer{
+        height:1px;
+        position: absolute;
+        top: 0;
+        margin-top:-10rem;
+    }
+
+    .bgImageFull{
+        animation: outro forwards  ease-in 1000ms;
+        position:relative;
+        object-fit: cover;
+        z-index: 10;
+    }
+    .bgImageNew{
+        animation:entry forwards ease-in 1000ms;
+        position:absolute;
+        object-fit: cover;
+        z-index: 10;
+    }
+    @keyframes entry {
+        0%{
+            width: 100vw;
+            height: 90vh;
+            right:0rem;
+        }
+        50%{right:2rem;top:0;}
+        100%{
+            right:2rem;
+            top:8rem;
+            width:30.5rem;
+            height: 8rem;
+        }
+    }
+    @keyframes outro {
+        0%{position:absolute;
+            right:2rem;
+            top:8rem;
+            width:30.5rem;
+            height: 8rem;
+        }
+        50%{position:absolute;right:1rem;top:0;}
+        95%{ position:relative;}
+        100%{
+            width: 100vw;
+            height: 90vh;
+            right:0rem;
+        }
+    }
+}
 
 .plansBody{
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
+    z-index: 0;
     width:screen;
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content:center;
-    align-items:center;
-    overflow: hidden;
+    height: 85vh;
     @media screen and (max-width: 800px) {
         width: 100%;
     }
-    .centerCard{
-        position: absolute;
-        background-color: white;
-        border: 1px solid $main;
-        z-index: 10px;
-        padding: 2rem;
-        width: 60%;
+    div{
+        font-family: 'Kraftan',sans-serif;
+        font-weight: 200;
+        font-size:5rem;
+        color: rgb(137, 137, 137);
         display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items:center;
-        border-radius: 0.5rem;
-        @media screen and (max-width: 800px) {
-            font-size: 2rem;
-            width: 80%;
-            padding: 1rem;
-        }
-        h2{
-            font-size: 3rem;
-            font-weight: 200;
-            margin-bottom: 1rem;
-            -webkit-text-fill-color: $grey;
-            font-family:'Kraftan',sans-serif;
-            @media screen and (max-width: 800px) {
-                font-size: 2rem;
-                width: 90%;
-            }
-            
-        }
-        p{
-            color: $main;
-            margin-top: 0.25rem;
-            font-family: "Maven Pro",sans-serif;
-            font-weight: 200;
-            font-size:1.25rem;
-            @media screen and (max-width: 800px) {
-                font-size: 1rem;
-            }
+        align-items: flex-end;
+        height: 25%;
+        justify-content:center;
+        width: 100%;
 
+        div{
+            margin-bottom:-1.25rem;
         }
+        div:nth-child(2){
+            text-align: right;
+            width: auto;
+            font-size:4rem;
+            color: rgb(211, 211, 211);
+            padding-right:15rem;
+            padding-left:2rem;
+        }
+        img{
+            width: 50rem !important;
+            object-fit: cover;
+            height: 8rem;
+            border-radius:.25rem;
+            opacity: 0;
+        }
+        img:nth-child(1){
+            opacity: 1;
+            position: relative;
+            width: 70vw;
+            margin-left:-10rem;
+            height: 10rem;
+        }
+        
     }
-    img{
-        z-index: 0;
-        height:45rem;
-    }
-    .contact{
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        text-decoration: none;
-        -webkit-text-fill-color: $main;
-        font-family:'Kraftan',sans-serif;
+    h2{
+        font-family: 'Kraftan',sans-serif;
+        font-weight: 200;
+        font-size:5rem;
+        -webkit-text-fill-color: rgb(146, 146, 146);
+        margin-top:0rem;
     }
 }

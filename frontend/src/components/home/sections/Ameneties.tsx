@@ -2,7 +2,7 @@ import React,{useEffect} from 'react'
 import '../../../styles/home/Ameneties.scss'
 import {motion,useAnimation} from 'framer-motion'
 import { useInView } from "react-intersection-observer";
-
+import Tilt from 'react-parallax-tilt';
 
 const boxVariant = {
   visible: { opacity: 1, translateY: 0, transition: { duration: 1 } },
@@ -22,7 +22,7 @@ function Ameneties() {
     }
   }, [control, inView]);
 
-  const data =['Parking','Room Service','Tour','Breakfast', 'Concierge']
+  const data =['Parking','Room Service','Tour','Breakfast', 'Concierge','Internet or Wi-Fi']
 
   return (
     <>
@@ -31,14 +31,13 @@ function Ameneties() {
               variants={boxVariant}
               initial="hidden"
               animate={control}>
-                <h2>Full Service Hotels, offering</h2>
+                <h2>Discover Benefits</h2>
                 <div>
                     {data.map((item,i)=>(
-                    <div key={i} 
-                         className="amenety">
+                    <Tilt className="amenety" perspective={500} key={i} tiltAngleYInitial={10} tiltAngleXInitial={5}>
                             <img src={require("../../../images/staybookAmenities/"+item+".svg")}/>
                             <p>{item}</p>
-                    </div>))}
+                    </Tilt>))}
                 </div>
         </motion.div>
     </>

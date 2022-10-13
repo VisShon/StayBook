@@ -1,11 +1,12 @@
 @import '../colors';
 
+
 .amenContent{
     text-align:center;
     width:80%;
     display: flex;
     margin-top:10rem;
-    margin-bottom:5rem;
+    margin-bottom:2rem;
     flex-direction:column;
     align-items:center;
     margin-bottom: 7rem;
@@ -16,7 +17,7 @@
     h2{
         margin: -5rem 0 .25rem 0 ;
         font-size: 5rem;
-        margin-bottom: 1rem;
+        margin-bottom: rem;
         font-weight:200;
         -webkit-text-fill-color: $grey;
         font-family:'Kraftan',sans-serif;
@@ -28,6 +29,8 @@
     div{
         margin-top: .25rem;
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         color: $main;
         font-family: "Maven Pro",sans-serif;
         font-weight:400;
@@ -38,23 +41,54 @@
             justify-content:center;
         }
     }
-    img{
-        width: 10rem;
-        @media screen and (max-width: 800px) {
-            width:5rem;
-        }
-    }
     .amenety{
+        transform: scale(120%);
+        box-shadow: 0 0 10px $shadow;
+        padding: 1rem ;
+        background-color: white;
+        border:.2rem solid $main;
+        border-radius: 2rem;
         display: flex;
-        flex-direction: column;
+        justify-content:space-between;
+        width: 19rem;
+        justify-content:center;
+        flex-direction: row;
         justify-content: flex-end;
-        height:12rem;
+        height:20rem;
         margin-right: 2rem;
+        margin-bottom:-5%;
+        position: relative;
+        transform-style: preserve-3d;
+        @media screen and (max-width: 800px) {
+           flex-direction: column;
+           width: 15rem;
+        }
+        img{
+            width: 10rem;
+            background-color: white;
+            transform: translateZ(60px);
+            @media screen and (max-width: 800px) {
+                width:5rem;
+            }
+        }
+        p{
+            font-family: 'kraftan',sans-serif;
+            font-size:2.25rem;
+            writing-mode: vertical-rl;
+            @media screen and (max-width: 800px) {
+                writing-mode: horizontal-tb;
+                font-size:1.75rem;
+                width: 60%;
+            }
+        }
+        
         @media screen and (max-width: 800px) {
             height:9rem;
             flex-direction: column;
         }
     }
-    
+    .amenety:nth-child(odd){
+        box-shadow: 0 0 10px $shadow2;
+    }
 
 }

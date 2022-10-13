@@ -96,7 +96,10 @@ h2{
 }
 
 .comparator{
-  background-color: rgb(214, 214, 214);
+  transition: all ease-in 300ms;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 0 10px $shadow;
   width: 12vw;
   height: 10vw;
   border-radius: 1rem;

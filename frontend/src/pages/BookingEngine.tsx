@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import '../styles/App.scss';
 import Amneties from '../components/Ameneties';
 import mmt from '../images/mmt.svg';
@@ -18,6 +18,7 @@ function App() {
   const hotelName:string = new URL(window.location.href).pathname;
   const guests = sessionStorage.getItem('guests');
   const prices = [150,160,90];
+  const comparator = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const getHotelData = async () => {
@@ -26,6 +27,13 @@ function App() {
       });
     }
     getHotelData();
+
+    window.addEventListener("scroll", () => {
+      comparator.current!.style.opacity = '0';
+    })
+    window.addEventListener("mousemove", () => {
+      comparator.current!.style.opacity = '1';
+    })
   },[])
 
   const MinPrice = () => {
@@ -42,16 +50,16 @@ function App() {
     <>
       {hotel?
       <>
-        <div className='comparator'>
-          <h2>Other Sites</h2>
-          <div className='site'>Booking.com<img src={bc}/>
-            <p>{MinPrice()+prices[Math.floor(Math.random()*3)]}</p>
+        <div className='comparator' ref={comparator}>
+          <h2>Direct Price ₹{MinPrice()}</h2>
+          <div className='site'><img src={bc}/>Booking.com
+            <p>₹{MinPrice()+prices[Math.floor(Math.random()*3)]}</p>
           </div>
-          <div className='site'>Make My Trip<img src={mmt}/>
-            <p>{MinPrice()+prices[Math.floor(Math.random()*3)]}</p>
+          <div className='site'><img src={mmt}/>Make My Trip
+            <p>₹{MinPrice()+prices[Math.floor(Math.random()*3)]}</p>
           </div>
-          <div className='site'>Trip Advisor<img src={tra}/>
-            <p>{MinPrice()+prices[Math.floor(Math.random()*3)]}</p>            
+          <div className='site'><img src={tra}/>Trip Advisor
+            <p>₹{MinPrice()+prices[Math.floor(Math.random()*3)]}</p>            
           </div>
         </div>
 

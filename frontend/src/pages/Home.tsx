@@ -10,13 +10,12 @@ function Home() {
 
   const cursor = useRef<HTMLDivElement>(null);
   const ring = useRef<HTMLDivElement>(null);
-  const body = useRef<HTMLDivElement>(null);
 
 
   useEffect(() => {
     sessionStorage.removeItem('guests')
 
-    body.current?.addEventListener("mousemove",(e)=>{
+    window.addEventListener("mousemove",(e)=>{
       cursor.current!.style.left = e.clientX + "px";
       cursor.current!.style.top = e.clientY + "px";
       ring.current!.style.left = e.clientX + "px";
@@ -31,7 +30,7 @@ function Home() {
     <>
       <div className='ring' ref={ring}></div>
       <div className='cursor' ref={cursor}></div>
-      <div className="body" ref={body}>
+      <div className="body">
         <BookingCarousel/>
         <HotelCarousel/>
         <Ameneties/>

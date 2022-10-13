@@ -46,19 +46,17 @@
     .amenety{
         transform: scale(120%);
         box-shadow: 0 0 10px $shadow;
-        padding: 1rem ;
         background-color: white;
         border:.2rem solid $main;
         border-radius: 2rem;
         display: flex;
+        flex-direction: column;
         justify-content:space-between;
         width: 19rem;
         justify-content:center;
-        flex-direction: row;
-        justify-content: flex-end;
         height:20rem;
         margin-right: 2rem;
-        margin-bottom:-5%;
+        margin-bottom:-2%;
         position: relative;
         transform-style: preserve-3d;
         @media screen and (max-width: 800px) {
@@ -76,7 +74,6 @@
         p{
             font-family: 'kraftan',sans-serif;
             font-size:2.25rem;
-            writing-mode: vertical-rl;
             @media screen and (max-width: 800px) {
                 writing-mode: horizontal-tb;
                 font-size:1.75rem;

@@ -66,8 +66,9 @@ function HotelCarousel() {
       <div className='progress'>
         {data.map((item, index)=>
           (<div className='progress-segment' key={index}>
-            <div className='outline' onClick={()=>setN(index)}
+            <div className='outline tooltip' onClick={()=>setN(index)}
                  style={index!==n?{borderColor:'white'}:{borderColor:'#CF8F24'}}>
+              <div className='tooltiptext'>{data[index].name}</div>
               <div className='circle'></div>
             </div>
            {index!==data.length-1&&<div className='line'></div>}

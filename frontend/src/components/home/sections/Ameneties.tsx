@@ -34,9 +34,9 @@ function Ameneties() {
                 <h2>Discover Benefits</h2>
                 <div>
                     {data.map((item,i)=>(
-                    <Tilt className="amenety" perspective={500} key={i} tiltAngleYInitial={10} tiltAngleXInitial={5}>
-                            <img src={require("../../../images/staybookAmenities/"+item+".svg")}/>
+                    <Tilt className="amenety" perspective={500} key={i}>
                             <p>{item}</p>
+                            <img src={require("../../../images/staybookAmenities/"+item+".svg")}/>
                     </Tilt>))}
                 </div>
         </motion.div>

@@ -3,7 +3,6 @@ import '../styles/RoomCard.scss'
 import PlanCard from './PlanCard'
 
 function RoomCard({room}:any) {
-
   return (
     <div className="roomCard">
       <div className="roomInfo">
@@ -11,9 +10,9 @@ function RoomCard({room}:any) {
           {room.type}
           <p>{room.info}</p>
         </h2>
-        <img src={require("../images/"+room.image)} className="roomImage"/>
+        <img src={room.image.asset.url} className="roomImage"/>
       </div>
-      {Object.values(room.plans).map((plan:any, i:number) =>(<PlanCard room={room.type} plan={plan} amenities={room.amenities} key={i}/>))}
+      {room.plans.map((plan:any, i:number) =>(<PlanCard maxCap={room.totalRooms} room={room.type} plan={plan} amenities={room.ameneties} key={i}/>))}
     </div>
   )
 }

@@ -5,10 +5,10 @@ import '../styles/PhotoSlider.scss'
 function PhotoGrid({data}:any) {
   return (
     <div className='photoGrid'>
-        <img className="image" src={require("../images/"+data[0])}/>
+        <img className="image" src={data[0].asset.url}/>
         <div className='grid'>
-            {data.slice(1 , 5).map((item:string, i:number) =>(
-                <img className="image" src={require("../images/"+item)}/>
+            {data.slice(1 , 5).map((item:any, i:number) =>(
+                <img className="image" src={item.asset.url}/>
             ))}
         </div>
     </div>

@@ -97,11 +97,11 @@ h2{
 
 .comparator{
   transition: all ease-in 300ms;
+  cursor: pointer;
   text-align: center;
   background-color: white;
   box-shadow: 0 0 10px $shadow;
-  width: 12vw;
-  height: 10vw;
+  max-width: 12vw;
   border-radius: 1rem;
   font-family: 'kraftan',sans-serif;
   font-weight: 600;

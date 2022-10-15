@@ -1,15 +1,13 @@
-import React,{ useEffect,useState } from 'react'
-import {motion,useAnimation} from 'framer-motion'
-import { useNavigate } from 'react-router-dom'
-import '../../../styles/home/BookingCarousel.scss'
-
-
-import Hotels from '../../../data/hotelData.json'
-import leftArrow from '../../../images/leftArrow2.svg'
-import rightArrow from '../../../images/rightArrow2.svg'
-import arrow from '../../../images/arrowVector.svg'
-import guest from '../../../images/guests.svg'
-import hotel from '../../../images/hotel.svg'
+import React,{ useEffect,useState } from 'react';
+import {motion,useAnimation} from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import '../../../styles/home/BookingCarousel.scss';
+import client from '../../../client';
+import leftArrow from '../../../images/leftArrow2.svg';
+import rightArrow from '../../../images/rightArrow2.svg';
+import arrow from '../../../images/arrowVector.svg';
+import guest from '../../../images/guests.svg';
+import hotel from '../../../images/hotel.svg';
 
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import Box from '@mui/material/Box';
@@ -23,6 +21,8 @@ const boxVariant = {
 
 function BookingCarousel() {
 
+  const [data, setData] = useState<any[]>([])
+  const [loading,setLoading] = useState(false);
   const [checkIn, setCheckIn] = useState<Date | null>(null);
   const [checkOut, setCheckOut] = useState<Date | null>(null);
   const [guests, setGuests] = useState(2);
@@ -30,11 +30,10 @@ function BookingCarousel() {
   const [suggestions,setSuggestions] = useState<any[]>([]);
   const control = useAnimation();
   const nav = useNavigate();
-  const data = Object.values(Hotels);
 
   const onSubmit = () => {
     sessionStorage.setItem('guests',guests.toString());
-    nav(data[n].link);
+    nav(`/${data[n].slug.current}`);
   }
   
   useEffect(() => {
@@ -42,16 +41,36 @@ function BookingCarousel() {
     control.start("visible");
 }, [control, n]);
 
+  useEffect(() => {
+    const fetchedData = async () =>{
+    await client
+      .fetch(
+        `*[_type == "hotel"] {
+        name,
+        slug,
+        description,
+        images[]{
+          asset -> {url},
+        }
+      }`
+      )
+      .then((data) => setData(data))
+      .then(()=>{control.start("visible");setLoading(true);})
+    }
+    fetchedData()
+  }, [])
+
   
   return (
       <div className='carouselBody'>
 
-          <motion.div
+          {loading&&<>
+            <motion.div
             className='imageCard'
-            initial='hidden'
+            initial='visible'
             variants={boxVariant}
             animate={control}>
-            <img src={require('../../../images/'+(Object.values(data[n].images))[4])}/>
+            <img src={data[n].images[5].asset.url}/>
           </motion.div>
 
           <h1>{data[n].name}</h1>
@@ -149,7 +168,7 @@ function BookingCarousel() {
             <img src={rightArrow} 
                  onClick={()=>{setN(prev=>prev==data.length-1?prev:++prev);
                 n!==data.length-1?control.set('hidden'):control.set('visible');;}}/>
-          </div>
+          </div></>}
       </div>
   )
 }

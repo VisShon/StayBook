@@ -15,19 +15,16 @@ const dropdown = {
 
 
 
-function SelectedPlan({title,roomType,checkIn,checkOut}:any) {
+function SelectedPlan({maxCap,title,roomType,checkIn,checkOut}:any) {
   
   const hotelName:string = new URL(window.location.href).pathname;
 
   const [isRoomAvailable,setIsRoomAvailable] = useState(true)
   const [children, setChildren] = useState('0');
 
-  var maxCap:number;
-
   useEffect(()=>{
 
     const checkAvailability = async() => {
-      const req = await axios.post(`/api${hotelName}/getMax`,{roomType:roomType}).then(res=>{maxCap = res.data})
       const re2 = await axios.post(`/api${hotelName}/isRoomAvailable`,{
           checkIn:checkIn,
           checkOut:checkOut,

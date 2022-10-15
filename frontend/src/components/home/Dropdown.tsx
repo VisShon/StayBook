@@ -1,8 +1,24 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import '../../styles/NavBar.scss';
-import data from '../../data/hotelData.json';
 import { useNavigate } from "react-router-dom";
+import client from '../../client';
+
 function Dropdown(){
+  const [data, setData] = useState<any[]>([])
+  useEffect(() => {
+      client
+      .fetch(
+        `*[_type == "hotel"] {
+        name,
+        slug,
+        description,
+        images[]{
+          asset -> {url},
+        }
+      }`
+      )
+      .then((data) => setData(data))
+  }, [])
 
 const nav = useNavigate();
 return(
@@ -11,9 +27,9 @@ return(
         <span aria-haspopup="true">Hotels</span>
         <ul className="dropdown" aria-label="submenu">
           {Object.values(data).map((item:any,i:any)=>
-          (<li className = "hotels" key={i} onClick={()=>nav(item.link)}>
+          (<li className = "hotels" key={i} onClick={()=>nav(`/${item.slug.current}`)}>
                 <a style={{textDecoration:'none',color:'black'}} 
-                   href={item.link}>{item.name}</a>
+                   href={`/${item.slug.current}`}>{item.name}</a>
             </li>))}
         </ul>
       </li> 

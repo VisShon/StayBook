@@ -16,7 +16,7 @@ function Package({name, image, time, description, highlight}:props) {
 
   return (
     <div className='packageBody'>
-        <img src ={require('../../images'+image)}/>
+        <img src ={image}/>
         <h2>{name}</h2>
         <h1>{time}</h1>
         <a href='/contactus' className='button'>Enquire</a>

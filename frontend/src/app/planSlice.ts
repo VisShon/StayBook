@@ -8,6 +8,7 @@ export const planSlice = createSlice({
             "title":"Monthly Rate", 
             "info":"Monthy Rate Plan",
             "price": 3419.10,
+            "maxCap":10,
             "roomType":"Deluxe Suite"
         }]
     },

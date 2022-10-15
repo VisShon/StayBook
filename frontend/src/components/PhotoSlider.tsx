@@ -10,12 +10,12 @@ function PhotoSlider({data}:any) {
 
   return (
       <div className="photoSlider" >
-        <img className="mainImage" src={require("../images/"+data[n])}/>
+        <img className="mainImage" src={data[n].asset.url}/>
         <div className='gallery'>
           {data.map((item:any,index:number) => (
               <img onClick={()=>setN(index)}
                    className={n!=index?("image"):("image-selected")} 
-                   src={require("../images/"+item)} 
+                   src={item.asset.url} 
                    key={index}/>
           ))}
         </div>

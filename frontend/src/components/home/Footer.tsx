@@ -1,10 +1,26 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react';
 import '../../styles/Footer.scss';
-import footerBg from '../../images/footerBg.svg'
-import logo from '../../images/logo.png'
-import data from '../../data/hotelData.json';
+import footerBg from '../../images/footerBg.svg';
+import logo from '../../images/logo.png';
+import client from '../../client';
 
 export default function Footer(){
+  const [data, setData] = useState<any[]>([])
+  useEffect(() => {
+     client
+      .fetch(
+        `*[_type == "hotel"] {
+        name,
+        slug,
+        description,
+        images[]{
+          asset -> {url},
+        }
+      }`
+      )
+      .then((data) => setData(data))
+  }, [])
+
   return (
     <div className="footerBody">
       <img src={footerBg}/>
@@ -20,7 +36,7 @@ export default function Footer(){
         <div className="heading">
           <h2>Hotels:</h2>
           {Object.values(data).map((item:any,i:any)=>
-          (<a key={i} href={item.link}>{item.name}</a>))}
+          (<a key={i} href={`/${item.slug.current}`}>{item.name}</a>))}
         </div>
 
         <div className="heading">

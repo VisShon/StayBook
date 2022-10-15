@@ -75,7 +75,7 @@ function BookingCard() {
 
 
       <div className="selectedPlans">
-        {Plans.map((item,index) => (<SelectedPlan roomType={item.roomType} title={item.title} checkOut={checkOut} checkIn={checkIn} key={index}/>))}
+        {Plans.map((item,index) => (<SelectedPlan maxCap={item.maxCap} roomType={item.roomType} title={item.title} checkOut={checkOut} checkIn={checkIn} key={index}/>))}
       </div>
 
       

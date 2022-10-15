@@ -1,45 +1,79 @@
-import React,{useState,useEffect,useRef} from 'react';
+import React,{useState,useEffect} from 'react';
 import '../styles/App.scss';
 import Amneties from '../components/Ameneties';
 import mmt from '../images/mmt.svg';
 import bc from '../images/bc.svg';
 import tra from '../images/tra.svg';
+import light from '../images/light.png';
 import BookingCard from '../components/BookingCard';
 import Photos from '../components/PhotoSlider'
 import PhotoGrid from '../components/PhotoGrid'
 import RoomCard from '../components/RoomCard';
-import axios from 'axios';
+import { useParams } from "react-router-dom"
+import client from '../client';
 
 
 
 function App() {
   const [hotel,setHotel] = useState<any>(null);
+  const { slug } = useParams();
   const [gallery,setGallery] = useState<boolean>(false);
-  const hotelName:string = new URL(window.location.href).pathname;
+  const [isMinimized,setIsMinimized] = useState<boolean>(false);
   const guests = sessionStorage.getItem('guests');
   const prices = [150,160,90];
-  const comparator = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
-    const getHotelData = async () => {
-      const result = await axios.get(`/api${hotelName}/gethoteldata`).then(value => {
-        setHotel(value.data)
-      });
-    }
-    getHotelData();
-
-    window.addEventListener("scroll", () => {
-      comparator.current!.style.opacity = '0';
-    })
-    window.addEventListener("mousemove", () => {
-      comparator.current!.style.opacity = '1';
-    })
-  },[])
+      client
+      .fetch(
+        `*[slug.current == "${slug}"]{
+          name,
+          phone,
+          address,
+          rooms[]{
+            type,
+            totalRooms,
+            guests,
+            info,
+            plans,
+            ameneties,
+            image{
+              asset -> {
+                _id,
+                url
+              },
+              alt
+            },
+          },
+          email,
+          map,
+          amenities[]{
+            "item":*[_type=='amenety' && _id ==^._ref][0]{
+              name,
+              image{asset -> {
+                    _id,
+                    url
+                  },
+                  alt
+              },
+            }
+          },
+          images[]{
+            asset -> {
+              _id,
+              url
+            },
+            alt
+          },
+        }`
+      )
+      .then((data) => setHotel(data[0]))
+  }, [])
 
   const MinPrice = () => {
     let MinPrice:number=0;
-    let room:any =Object.values(hotel.rooms)
-                        .filter((item:any) => item.info.substring(8,9)==guests||!guests)[0];
+    let room:any =hotel.rooms
+                        .filter((item:any) => item.guests==guests||!guests)[0];
     if(room){
       MinPrice = room.plans[0].price;
     }
@@ -50,8 +84,11 @@ function App() {
     <>
       {hotel?
       <>
-        <div className='comparator' ref={comparator}>
-          <h2>Direct Price ₹{MinPrice()}</h2>
+        {!isMinimized?<div className='comparator'>
+          <div style={{display: 'flex',width: '100%',justifyContent:'space-between',alignItems:'center'}}>
+            <h2>Direct Price ₹{MinPrice()}</h2>
+            <div onClick={()=>setIsMinimized(true)}>X</div>
+          </div>
           <div className='site'><img src={bc}/>Booking.com
             <p>₹{MinPrice()+prices[Math.floor(Math.random()*3)]}</p>
           </div>
@@ -61,9 +98,9 @@ function App() {
           <div className='site'><img src={tra}/>Trip Advisor
             <p>₹{MinPrice()+prices[Math.floor(Math.random()*3)]}</p>            
           </div>
-        </div>
+        </div>:<div className='comparator' onClick={()=>setIsMinimized(false)}><img src={light} style={{width:'1.5rem',objectFit:'cover'}}/></div>}
 
-        {gallery?<Photos data={Object.values(hotel.images)}/>:<PhotoGrid data={Object.values(hotel.images)}/>}
+        {gallery?<Photos data={hotel.images}/>:<PhotoGrid data={hotel.images}/>}
         <div className="galleryButton"
               onClick={()=>setGallery(prev=>!prev)}>{!gallery?('Open Gallery'):('Close Gallery')}</div>
         <div className="Maincontainer">
@@ -82,15 +119,14 @@ function App() {
                   {hotel.address}
               </a>
             </>
-            <Amneties data={Object.values(hotel.amenities)}/>
-            <h1 className="heading">{"Choose your room(s)"}</h1>
+            <Amneties data={hotel.amenities}/>
 
-            
-            {Object.values(hotel.rooms).filter((item:any) => item.info.substring(8,9)==guests||!guests).map((room:any,i:number) =>(<RoomCard room={room} key={i}/>))}
+            <h1 className="heading">{"Choose your room(s)"}</h1>
+            {hotel.rooms.filter((item:any) => item.guests==guests||!guests).map((room:any,i:number) =>(<RoomCard room={room} key={i}/>))}
           </div>
           <BookingCard/>
         </div>
-      </>:<div>404</div>}
+      </>:<div>Loading...</div>}
     </>
   );
 }

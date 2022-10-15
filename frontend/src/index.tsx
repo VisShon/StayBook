@@ -36,7 +36,7 @@ root.render(
             <Route path="/blogs" element={<Blog/>}/>
             <Route path="/blogs/:slug" element={<SinglePost/>}/>
             <Route path="/profile" element={<Profile/>}/>
-            <Route path="/*" element={<BookingEngine/>}/>
+            <Route path="/:slug" element={<BookingEngine/>}/>
           </Routes>
           <WhatsAppWidget CompanyIcon={Logo} phoneNumber="917017495876" />
           <Footer/>

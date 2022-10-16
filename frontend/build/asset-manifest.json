@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.16f38759.css",
-    "main.js": "/static/js/main.acac51b2.js",
+    "main.js": "/static/js/main.8d706cd6.js",
     "static/media/bc.svg": "/static/media/bc.78fa5f5a1721c7e914e49d694ec9bdfc.svg",
     "static/media/travel.svg": "/static/media/travel.74ec31801e2c5f52c1f7d8e4040ec00d.svg",
     "static/media/kraftan.otf": "/static/media/kraftan.06843398dd85b1237d55.otf",
-    "static/media/TermsAndConditions.pdf": "/static/media/TermsAndConditions.73a9a88ca1dde14e1bd7.pdf",
+    "static/media/TermsAndConditions.pdf": "/static/media/TermsAndConditions.5e15d76b69840f53e908.pdf",
     "static/media/tra.svg": "/static/media/tra.5cbbc7fbc521ec420aa140efe2a0fc5e.svg",
     "static/media/plan.svg": "/static/media/plan.3a15f7502e27c87d4718a13a9a39e903.svg",
     "static/media/footerBg.svg": "/static/media/footerBg.aaa71d94b907bc6544bfd6c5f92ec726.svg",
@@ -31,10 +31,10 @@
     "static/media/rightArrow.svg": "/static/media/rightArrow.939a1d08b4e03e04d23e8a9d9ee52d95.svg",
     "static/media/rightArrow2.svg": "/static/media/rightArrow2.54d2d44713e6a6cb9888c823806e9cfb.svg",
     "main.16f38759.css.map": "/static/css/main.16f38759.css.map",
-    "main.acac51b2.js.map": "/static/js/main.acac51b2.js.map"
+    "main.8d706cd6.js.map": "/static/js/main.8d706cd6.js.map"
   },
   "entrypoints": [
     "static/css/main.16f38759.css",
-    "static/js/main.acac51b2.js"
+    "static/js/main.8d706cd6.js"
   ]
 }

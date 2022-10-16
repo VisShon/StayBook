@@ -28,6 +28,7 @@ function App() {
       .fetch(
         `*[slug.current == "${slug}"]{
           name,
+          description,
           phone,
           address,
           rooms[]{
@@ -118,6 +119,9 @@ function App() {
               <a href={hotel.map} className="description">
                   {hotel.address}
               </a>
+              <p className="description">
+                {hotel.description}
+              </p>
             </>
             <Amneties data={hotel.amenities}/>
 

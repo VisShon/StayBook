@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react';
 import '../../styles/Footer.scss';
 import footerBg from '../../images/footerBg.svg';
 import logo from '../../images/logo.png';
+import pdf from '../../pdf/TermsAndConditions.pdf';
 import client from '../../client';
 
 export default function Footer(){
@@ -54,6 +55,7 @@ export default function Footer(){
 
         <div className="heading">
           <h2>Misc:</h2>
+          <a href={pdf}>Terms and Conditions</a>
           <a href='/contactUs'>Contact Us</a>
           <a href='/packages'>Tours and Packages</a>
           <a href='/blogs'>Blogs</a>

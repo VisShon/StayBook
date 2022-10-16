@@ -21,9 +21,6 @@
     "noEmit": true,
     "jsx": "preserve"
   },
-  "files": [
-    "@types/block-content-to-react.d.ts"
-  ],
   "include": [
     "src"
 , "src/config/razorPay.tskendsrc/config/razorPayInitialize.tskend/makePayment.ts"  ]

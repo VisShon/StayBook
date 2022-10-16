@@ -70,7 +70,7 @@ function BookingCarousel() {
             initial='visible'
             variants={boxVariant}
             animate={control}>
-            <img src={data[n].images[5].asset.url}/>
+            <img src={data[n].images[1].asset.url}/>
           </motion.div>
 
           <h1>{data[n].name}</h1>

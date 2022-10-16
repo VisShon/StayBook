@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.16f38759.css",
-    "main.js": "/static/js/main.8d706cd6.js",
+    "main.css": "/static/css/main.41c19a30.css",
+    "main.js": "/static/js/main.af8875c5.js",
     "static/media/bc.svg": "/static/media/bc.78fa5f5a1721c7e914e49d694ec9bdfc.svg",
     "static/media/travel.svg": "/static/media/travel.74ec31801e2c5f52c1f7d8e4040ec00d.svg",
     "static/media/kraftan.otf": "/static/media/kraftan.06843398dd85b1237d55.otf",
@@ -30,11 +30,11 @@
     "static/media/leftArrow2.svg": "/static/media/leftArrow2.b7a21f184528ce9b3e3ae5e4966306f3.svg",
     "static/media/rightArrow.svg": "/static/media/rightArrow.939a1d08b4e03e04d23e8a9d9ee52d95.svg",
     "static/media/rightArrow2.svg": "/static/media/rightArrow2.54d2d44713e6a6cb9888c823806e9cfb.svg",
-    "main.16f38759.css.map": "/static/css/main.16f38759.css.map",
-    "main.8d706cd6.js.map": "/static/js/main.8d706cd6.js.map"
+    "main.41c19a30.css.map": "/static/css/main.41c19a30.css.map",
+    "main.af8875c5.js.map": "/static/js/main.af8875c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.16f38759.css",
-    "static/js/main.8d706cd6.js"
+    "static/css/main.41c19a30.css",
+    "static/js/main.af8875c5.js"
   ]
 }

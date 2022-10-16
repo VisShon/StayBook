@@ -108,7 +108,7 @@ function App() {
           <div className="sideContainer">
             <h1 className="title">{hotel.name}</h1>
             <>
-              <p className="description">
+              <p className="contact">
                   <span className="detail">PHONE:
                     <span style={{color: 'black', fontWeight: '400'}}>{hotel.phone}</span>
                   </span>

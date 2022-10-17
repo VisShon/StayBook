@@ -101,6 +101,24 @@ function BookingCarousel() {
 
               <div className='input'>
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <DatePicker
+                    label="Check In"
+                    value={checkIn}
+                    minDate={new Date()}
+                    onChange={(newValue:any) => {
+                      setCheckIn(newValue);
+                      sessionStorage.setItem('checkIn',newValue);
+                    }}
+                    renderInput={({ inputRef, inputProps, InputProps }) => (
+                      <Box sx={{alignItems:'center',display:'flex',width:'8rem',flexDirection:'column'}}>
+                        <input ref={inputRef} {...inputProps} 
+                        placeholder="Check In"/>
+                        {InputProps?.endAdornment}
+                      </Box>
+                    )}
+                  />
+                </LocalizationProvider>
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <DatePicker
                       views={['day','month']}
                       label="Check Out"
@@ -118,24 +136,6 @@ function BookingCarousel() {
                         </Box>
                       )}
                     />
-                </LocalizationProvider>
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                  <DatePicker
-                    label="Check In"
-                    value={checkIn}
-                    minDate={new Date()}
-                    onChange={(newValue:any) => {
-                      setCheckIn(newValue);
-                      sessionStorage.setItem('checkIn',newValue);
-                    }}
-                    renderInput={({ inputRef, inputProps, InputProps }) => (
-                      <Box sx={{alignItems:'center',display:'flex',width:'8rem',flexDirection:'column'}}>
-                        <input ref={inputRef} {...inputProps} 
-                        placeholder="Check In"/>
-                        {InputProps?.endAdornment}
-                      </Box>
-                    )}
-                  />
                 </LocalizationProvider>
               </div>
 

@@ -4,10 +4,10 @@ import priceReducer from './priceSlice'
 
 export const store = configureStore({
     reducer: {
-      plans:planReducer,
-      price:priceReducer
-    }
-  })
+        plans: planReducer,
+        price: priceReducer,
+    },
+})
 
-export type RootState = ReturnType <typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch

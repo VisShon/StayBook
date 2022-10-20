@@ -1,5 +1,5 @@
 @import 'colors';
-.photoSlider{
+.photoSlider {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -9,37 +9,37 @@
     margin-left: 5em;
     margin-right: 5em;
     @media screen and (max-width: 800px) {
-        height:40vh;
+        height: 40vh;
         margin: 1rem 0.5rem 0rem 0.5rem;
         border-radius: 0.5rem;
     }
-    .mainImage{
+    .mainImage {
         width: 816px;
         height: 35rem;
-        margin-right:1rem;
+        margin-right: 1rem;
         border-radius: 1rem;
         box-shadow: 0 0 10px $shadow;
         object-fit: cover;
         @media screen and (max-width: 800px) {
             width: 95vw;
-            border-radius: .5rem;
-            margin-right:0rem;
+            border-radius: 0.5rem;
+            margin-right: 0rem;
         }
     }
-    .gallery{
+    .gallery {
         width: 100%;
-        display:flex;
+        display: flex;
         border-radius: 1rem;
         overflow-x: scroll;
         margin-top: 1rem;
         @media screen and (max-width: 800px) {
-            border-radius: .5rem;
+            border-radius: 0.5rem;
         }
-        .image{
+        .image {
             width: 10rem;
             height: 5.5rem;
             opacity: 50%;
-            margin-right:1rem;
+            margin-right: 1rem;
             box-shadow: 0 0 10px $shadow;
             cursor: pointer;
             object-fit: cover;
@@ -47,66 +47,65 @@
                 width: 5rem;
             }
         }
-        .image-selected{
+        .image-selected {
             @extend .image;
             opacity: 100%;
         }
-        .image:hover{
+        .image:hover {
             opacity: 80%;
             box-shadow: 0 0 10px $grey;
         }
     }
 }
 
-.leftIcon{
+.leftIcon {
     position: absolute;
     top: 20rem;
     left: 6rem;
     cursor: pointer;
     @media screen and (max-width: 800px) {
-        top:15rem;
+        top: 15rem;
         left: 2rem;
     }
 }
-.rightIcon{
+.rightIcon {
     position: absolute;
     top: 20rem;
     right: 6rem;
     cursor: pointer;
     @media screen and (max-width: 800px) {
-        top:15rem;
+        top: 15rem;
         right: 2rem;
     }
 }
 
-
-.photoGrid{
+.photoGrid {
     display: flex;
     justify-content: space-between;
     overflow-x: hidden;
-    height:65vh;
+    height: 65vh;
     width: screen;
     border-radius: 1rem;
     margin: 1rem;
     margin-left: 5em;
     margin-right: 5em;
     @media screen and (max-width: 800px) {
-        height:40vh;
+        height: 40vh;
         margin: 1rem 0.5rem 0rem 0.5rem;
         border-radius: 0.5rem;
     }
-    .image{
+    .image {
         width: 60%;
-        margin-right:0rem;
-        margin-bottom:.5rem;
+        margin-right: 0rem;
+        margin-bottom: 0.5rem;
         box-shadow: 0 0 10px $shadow;
         object-fit: cover;
         @media screen and (max-width: 800px) {
             width: 70%;
         }
     }
-    .grid{
-        display:flex;
+    .grid {
+        display: flex;
         justify-content: flex-end;
         flex-wrap: wrap;
         overflow-y: hidden;
@@ -117,17 +116,16 @@
             justify-content: space-between;
             width: 30%;
         }
-        .image{
+        .image {
             width: 48%;
-            margin-left:.5rem;
-            margin-bottom:.5rem;
-            margin-right:0rem;
+            margin-left: 0.5rem;
+            margin-bottom: 0.5rem;
+            margin-right: 0rem;
             box-shadow: 0 0 10px $shadow;
             object-fit: cover;
             @media screen and (max-width: 800px) {
                 width: 100%;
             }
         }
-        
     }
 }

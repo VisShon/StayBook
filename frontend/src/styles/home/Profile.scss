@@ -1,20 +1,20 @@
 @import '../colors';
 
-.profileBody{
+.profileBody {
     display: flex;
     flex-direction: column;
     align-items: center;
-    h2{
+    h2 {
         font-size: 3rem;
         margin-bottom: 1rem;
         -webkit-text-fill-color: $grey;
-        font-family:'Kraftan',sans-serif;
-        @media screen and (max-width:800px) {
+        font-family: 'Kraftan', sans-serif;
+        @media screen and (max-width: 800px) {
             font-size: 2rem;
             text-align: center;
         }
     }
-    .userInfo{
+    .userInfo {
         margin-top: 8rem;
         background-color: white;
         position: relative;
@@ -25,87 +25,86 @@
         flex-direction: column;
         align-items: center;
         box-shadow: 0 0 10px $shadow;
-        @media screen and (max-width:800px) {
-            padding: 3rem .5rem 1rem .5rem;
+        @media screen and (max-width: 800px) {
+            padding: 3rem 0.5rem 1rem 0.5rem;
         }
-        img{
+        img {
             position: absolute;
-            background-color:rgb(0, 0, 0);
+            background-color: rgb(0, 0, 0);
             border-radius: 10rem;
-            width:10rem;
-            top:-8rem;
+            width: 10rem;
+            top: -8rem;
             border: 1px solid $main;
         }
-        h2{
+        h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
             -webkit-text-fill-color: $grey;
-            font-family:'Kraftan',sans-serif;
+            font-family: 'Kraftan', sans-serif;
         }
-        p{
+        p {
             color: $main;
         }
-        .credits{
+        .credits {
             border: 1px solid $main;
             border-radius: 2rem;
             color: $main;
-            padding: .5rem;
+            padding: 0.5rem;
         }
     }
-    .historyContainer{
+    .historyContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 }
 
-.history{
+.history {
     margin-top: 1rem;
     padding: 2rem;
-    width:60vw;
-    height:30vh;
+    width: 60vw;
+    height: 30vh;
     border: 1px solid $main;
-    border-radius: .5rem;
-    display : flex;
+    border-radius: 0.5rem;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    @media screen and (max-width:800px) {
-        width:80vw;
+    @media screen and (max-width: 800px) {
+        width: 80vw;
         margin-top: 2rem;
-        justify-content:space-around;
+        justify-content: space-around;
     }
-    img{
-        background-color:black;
-        border-radius: .5rem;
+    img {
+        background-color: black;
+        border-radius: 0.5rem;
         width: 90%;
-        height:60%;
+        height: 60%;
         object-fit: cover;
     }
-    .historyInfo{
+    .historyInfo {
         display: flex;
         width: 70%;
         justify-content: space-between;
-        padding:1rem;
-        align-items:center;
+        padding: 1rem;
+        align-items: center;
 
-        @media screen and (max-width:800px) {
+        @media screen and (max-width: 800px) {
             flex-direction: column;
             align-items: center;
-            padding:0rem;
+            padding: 0rem;
         }
-        
-        h2{
+
+        h2 {
             width: 50%;
             -webkit-text-fill-color: $main;
             font-size: 2.5rem;
             text-align: center;
-            font-weight:200;
+            font-weight: 200;
             margin: 0 0 0 0;
-            @media screen and (max-width:800px) {
+            @media screen and (max-width: 800px) {
                 font-size: 1.5rem;
                 width: 98%;
             }
         }
-
     }
 }

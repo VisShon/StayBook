@@ -1,113 +1,111 @@
 @import '../colors';
 
-
-.packagePageBody{
+.packagePageBody {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.packageBody{
+.packageBody {
     border: 1px solid $main;
     width: 70%;
-    border-radius:.5rem;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding:2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
     margin-top: 10rem;
-    img{
+    img {
         width: 70%;
-        border-radius:2rem;
+        border-radius: 2rem;
         margin-top: -10rem;
-        @media screen and (max-width:800px) {
+        @media screen and (max-width: 800px) {
             width: 100%;
             margin-top: -8rem;
         }
     }
-    h2{
+    h2 {
         width: 80%;
         text-align: center;
         font-size: 3rem;
         font-weight: 200;
         margin-bottom: 1rem;
         -webkit-text-fill-color: $grey;
-        font-family:'Kraftan',sans-serif;
-        @media screen and (max-width:800px) {
+        font-family: 'Kraftan', sans-serif;
+        @media screen and (max-width: 800px) {
             width: 100%;
             font-size: 2rem;
         }
     }
-    h1{
+    h1 {
         text-align: center;
         width: 80%;
         font-size: 2rem;
         font-weight: 200;
         margin-bottom: 1rem;
         -webkit-text-fill-color: $main;
-        font-family:'Kraftan',sans-serif;
-        @media screen and (max-width:800px) {
+        font-family: 'Kraftan', sans-serif;
+        @media screen and (max-width: 800px) {
             width: 100%;
             font-size: 1.5rem;
         }
     }
-    p{
+    p {
         width: 80%;
         color: $main;
         font-size: 1rem;
-        @media screen and (max-width:800px) {
+        @media screen and (max-width: 800px) {
             width: 100%;
-            font-size: .75rem;
+            font-size: 0.75rem;
             text-align: center;
         }
-
     }
 
-    .locationBody{
+    .locationBody {
         margin-top: 1rem;
         box-shadow: 0 0 10px $shadow;
         border: 1px solid $main;
-        border-radius: .5rem;
+        border-radius: 0.5rem;
         width: 50%;
         padding: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        @media screen and (max-width:800px) {
+        @media screen and (max-width: 800px) {
             width: 80%;
             text-align: center;
         }
 
-        .title{
+        .title {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 80%;
-            @media screen and (max-width:800px) {
+            @media screen and (max-width: 800px) {
                 flex-direction: column-reverse;
             }
         }
-        img{
-            width:auto;
-            border-radius:0px;
-            margin-top:auto;
+        img {
+            width: auto;
+            border-radius: 0px;
+            margin-top: auto;
         }
-        h2{
+        h2 {
             text-align: left;
             font-size: 2rem;
-            @media screen and (max-width:800px) {
+            @media screen and (max-width: 800px) {
                 text-align: center;
-            }    
+            }
         }
-        h1{
+        h1 {
             text-align: left;
             font-size: 1rem;
-            @media screen and (max-width:800px) {
+            @media screen and (max-width: 800px) {
                 text-align: center;
-            }  
+            }
         }
-        p{
-            font-size: .75rem;
+        p {
+            font-size: 0.75rem;
         }
     }
 }

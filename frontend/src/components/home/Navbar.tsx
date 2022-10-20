@@ -1,31 +1,56 @@
-import React from 'react';
-import { useJwt } from "react-jwt";
-import logo from "../../images/logo.png";
+import React, {useState, useEffect,useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { useJwt } from 'react-jwt';
+import logo from '../../images/logo.png';
 import '../../styles/NavBar.scss';
-import  Dropdown  from './Dropdown'
-import user from '../../images/user.svg'
-import {Link} from 'react-router-dom'
+import Dropdown from './Dropdown';
+import user from '../../images/user.svg';
+import { useScroll } from 'framer-motion';
 
-function Navbar(){
-  const userToken = sessionStorage.getItem('user');
-  const {decodedToken, isExpired }:any = useJwt(userToken!);
+function Navbar() {
 
-return (
+    const {scrollYProgress} = useScroll()
+    const navbar = useRef<HTMLDivElement>(null)
+    const userToken = sessionStorage.getItem('user');
+    const { decodedToken, isExpired }: any = useJwt(userToken!);
 
-  <div className="navbar">
-    <Link to="/" className="logo"><img src={logo} className="logo"/></Link>
-    <div className="TourPackage">
-      <Dropdown/>
-      <Link to="/packages" className="item">Tour Packages</Link>
-      <Link to="/blogs" className="item">Blogs</Link>
-      <Link to="/contactus"className="item">Contact Us</Link>
-    </div>
-    <Link to="/profile" className="logo"><img src={decodedToken?decodedToken.picture:user} className="profilepic"/></Link>
-  </div>
-
-)
+    useEffect(() => {
+        scrollYProgress.onChange((latest) => {
+            if(latest<scrollYProgress.getPrevious()){
+                navbar.current!.className='navbar';
+            }
+            else{
+                navbar.current!.className='navbar-mini';
+            };
+        })
+    },[])
 
 
+    return (
+        <div className="navbar" ref={navbar}>
+            <Link to="/" className="logo">
+                <img src={logo} className="logo" />
+            </Link>
+            <div className="TourPackage">
+                <Dropdown />
+                <Link to="/packages" className="item">
+                    Tour Packages
+                </Link>
+                <Link to="/blogs" className="item">
+                    Blogs
+                </Link>
+                <Link to="/contactus" className="item">
+                    Contact Us
+                </Link>
+            </div>
+            <Link to="/profile" className="logo">
+                <img
+                    src={decodedToken ? decodedToken.picture : user}
+                    className="profilepic"
+                />
+            </Link>
+        </div>
+    )
 }
 
-export default Navbar;
+export default Navbar

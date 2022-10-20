@@ -1,17 +1,16 @@
 @import '../colors';
 
-
-.plansBody{
-    width:screen;
+.plansBody {
+    width: screen;
     position: relative;
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     @media screen and (max-width: 800px) {
         width: 100%;
     }
-    .centerCard{
+    .centerCard {
         position: absolute;
         background-color: white;
         border: 1px solid $main;
@@ -21,46 +20,44 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        align-items:center;
+        align-items: center;
         border-radius: 0.5rem;
         @media screen and (max-width: 800px) {
             font-size: 2rem;
             width: 80%;
             padding: 1rem;
         }
-        h2{
+        h2 {
             font-size: 3rem;
             font-weight: 200;
             margin-bottom: 1rem;
             -webkit-text-fill-color: $grey;
-            font-family:'Kraftan',sans-serif;
+            font-family: 'Kraftan', sans-serif;
             @media screen and (max-width: 800px) {
                 font-size: 2rem;
                 width: 90%;
             }
-            
         }
-        p{
+        p {
             color: $main;
             margin-top: 0.25rem;
-            font-family: "Maven Pro",sans-serif;
+            font-family: 'Maven Pro', sans-serif;
             font-weight: 200;
-            font-size:1.25rem;
+            font-size: 1.25rem;
             @media screen and (max-width: 800px) {
                 font-size: 1rem;
             }
-
         }
     }
-    img{
+    img {
         z-index: 0;
-        height:45rem;
+        height: 45rem;
     }
-    .contact{
+    .contact {
         font-size: 2rem;
         margin-bottom: 1rem;
         text-decoration: none;
         -webkit-text-fill-color: $main;
-        font-family:'Kraftan',sans-serif;
+        font-family: 'Kraftan', sans-serif;
     }
 }

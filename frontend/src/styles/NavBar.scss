@@ -1,34 +1,60 @@
 @import 'colors';
 
-.navbar{
+.navbar {
+    transition: all 100ms ease-in;
     background-color: $background;
     display: flex;
     align-items: center;
     width: screen;
     justify-content: space-between;
-    position:sticky;
+    position: sticky;
     z-index: 50;
-    padding:1rem;
+    padding: 1rem;
     box-shadow: 0 0 10px $shadow;
     top: 0;
     @media screen and (max-width: 800px) {
-       align-items: center;
+        align-items: center;
     }
-    .profilepic{
-      @extend .logo;
-      border-radius: 10rem;
+    .profilepic {
+        transition: all 100ms ease-in-out linear; 
+        @extend .logo;
+        border-radius: 10rem;
+    }
+    .navbar-bcg{
+        display: hidden;
     }
 }
-.logo{
+
+.navbar-mini{
+    @extend .navbar;
+    transition: all 500ms ease-out;
+    box-shadow: none;
+    justify-content: center;
+    background-color: transparent;
+    align-items: flex-start;
+    height: 4rem;
+    .logo{
+        display: none;
+    }
+    .profilepic{
+        display: none;   
+    }
+    .TourPackage{
+        display: none;
+    }
+}
+
+
+.logo {
+    transition: all 500ms ease-in-out linear;
     height: 4rem;
     cursor: pointer;
     @media screen and (max-width: 800px) {
         height: 3rem;
-     }
-    
+    }
 }
 .Book {
-    font-family: "Maven Pro",sans-serif;
+    font-family: 'Maven Pro', sans-serif;
     font-size: 1rem;
     padding: 0.5rem;
     text-decoration: none;
@@ -44,12 +70,12 @@
     }
 }
 
-.Book:hover{
+.Book:hover {
     color: white;
     background: $gradient;
 }
 
-.item::before {  
+.item::before {
     transform: scaleX(0);
     transform-origin: bottom right;
 }
@@ -60,15 +86,15 @@
 }
 
 .item::before {
-    content: " ";
+    content: ' ';
     position: absolute;
     inset: 0 0 0 0;
     background: $main;
     z-index: -1;
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
     border-radius: 0.25rem;
 }
-.item{
+.item {
     cursor: pointer;
     position: relative;
     text-decoration: none;
@@ -78,94 +104,89 @@
         display: none;
     }
 }
-.item:hover{
-    color:white;
+.item:hover {
+    color: white;
 }
 
 .TourPackage {
-    font-family: "Maven Pro",sans-serif;
+    transition: all 500ms ease-in-out linear;
+    font-family: 'Maven Pro', sans-serif;
     font-size: 1rem;
     display: flex;
-    color:$main;
+    color: $main;
     align-items: center;
     width: 30%;
     justify-content: space-between;
     @media screen and (max-width: 800px) {
         justify-content: flex-end;
         padding-right: 1rem;
-
     }
 }
-    
-
 
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    
-  } 
-   
-  li {
-    padding:10px;
-    height:100%;
+}
+
+li {
+    padding: 10px;
+    height: 100%;
     position: relative;
     transition-duration: 0.5s;
-    @media screen and (max-width: 800px){
-      border: 1px solid $main;
-      border-radius: 0.5rem;
+    @media screen and (max-width: 800px) {
+        border: 1px solid $main;
+        border-radius: 0.5rem;
     }
-  }
-    
-  li:hover{
+}
+
+li:hover {
     border-radius: 0.5rem;
-    color:white;
-    height:1rem;
+    color: white;
+    height: 1rem;
     background-color: $main;
     cursor: pointer;
-    
-  }
-  
-  ul li ul {
+}
+
+ul li ul {
     visibility: hidden;
     position: absolute;
-    left:0;
+    left: 0;
     transition: all 0.5s ease;
     display: none;
-    
-  }
-  
-  ul li:hover > ul,
-  ul li ul:hover,
-  ul li ul:focus {
+}
+
+ul li:hover > ul,
+ul li ul:hover,
+ul li ul:focus {
     margin-top: 0.5rem;
-     visibility: visible;
-     opacity: 1;
-     display: block;
-  }
-  ul li ul li {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+ul li ul li {
     clear: both;
-    font-family: "Maven Pro",sans-serif;
+    font-family: 'Maven Pro', sans-serif;
     font-size: 1rem;
     @media screen and (max-width: 800px) {
-      border: none;
-      border-radius: 0rem;
+        border: none;
+        border-radius: 0rem;
     }
-  }
+}
 
-.hotels{
-  width:7rem;
-  height:1.5rem;
-  color:black;
-  background-color:bisque;
-  font-size: 0.75rem;
-  @media screen and (max-width: 800px) {
-    width:4.25rem;
-  }
- }
+.hotels {
+    width: 7rem;
+    height: 1.5rem;
+    color: black;
+    background-color: bisque;
+    font-size: 0.75rem;
+    @media screen and (max-width: 800px) {
+        width: 4.25rem;
+    }
+}
 
-.hotels:hover{
-  border-radius:0rem;
-  height:1.5rem;
-  background: $gradient;
+.hotels:hover {
+    border-radius: 0rem;
+    height: 1.5rem;
+    background: $gradient;
 }

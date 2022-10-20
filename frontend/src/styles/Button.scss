@@ -1,6 +1,14 @@
 @import 'colors';
-.Button{
-    background: linear-gradient(-45deg, $color1, $color2,$color1, $color2,$color1, $color2);
+.Button {
+    background: linear-gradient(
+        -45deg,
+        $color1,
+        $color2,
+        $color1,
+        $color2,
+        $color1,
+        $color2
+    );
     background-size: 400% 400%;
     height: 3rem;
     width: 100%;
@@ -9,41 +17,52 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    margin-top:1rem;
+    margin-top: 1rem;
     position: relative;
     color: #ffffff;
-    font-family: "Maven Pro",sans-serif;
+    font-family: 'Maven Pro', sans-serif;
     font-weight: 600;
     animation: gradient forwards ease 15s infinite;
 }
-.Button-error{
+.Button-error {
     @extend .Button;
     border: 1px solid red;
-    color:red;
+    color: red;
 }
-.Button-Loading{
+.Button-Loading {
     @extend .Button;
     background: White;
-    color:$main;
+    color: $main;
 }
 
-.Button-Loading:before{
+.Button-Loading:before {
     content: '';
-    background: linear-gradient(45deg, $main, #ff7300, #fffb00, $main, $main, $color2, $color1, #ff00c8, #ff0000);
+    background: linear-gradient(
+        45deg,
+        $main,
+        #ff7300,
+        #fffb00,
+        $main,
+        $main,
+        $color2,
+        $color1,
+        #ff00c8,
+        #ff0000
+    );
     position: absolute;
     top: -2px;
-    left:-2px;
+    left: -2px;
     background-size: 400%;
     z-index: -1;
     filter: blur(5px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
     animation: glowing 20s linear infinite;
-    transition: opacity .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
 }
 
-.Button-Loading:after{
+.Button-Loading:after {
     z-index: -1;
     content: '';
     position: absolute;
@@ -55,24 +74,28 @@
     border-radius: 10px;
 }
 
-.Button:hover{
+.Button:hover {
     box-shadow: 0px 0px 10px rgb(177, 177, 177);
 }
 @keyframes gradient {
-
     0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-    
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
 }

@@ -1,4 +1,4 @@
-export default{
+export default {
     name: 'amenety',
     title: 'Amenety',
     type: 'document',
@@ -15,15 +15,15 @@ export default{
             options: {
                 hotspot: true,
             },
-        }
+        },
     ],
     preview: {
         select: {
-          title: 'name',
-          media: 'image',
+            title: 'name',
+            media: 'image',
         },
         prepare(selection) {
-          return Object.assign({}, selection)
+            return Object.assign({}, selection)
         },
     },
 }

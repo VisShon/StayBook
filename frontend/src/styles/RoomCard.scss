@@ -1,36 +1,36 @@
 @import 'colors';
-.roomCard{
+.roomCard {
     border-radius: 0.5rem;
     width: 50vw;
-    padding: 1rem;;
+    padding: 1rem;
     border: 1px solid $main;
     margin-bottom: 2rem;
 
-    h2{
-        font-family: "Maven Pro",sans-serif;
+    h2 {
+        font-family: 'Maven Pro', sans-serif;
         font-weight: 500;
-        font-size:1.25rem;
-        @media screen and (max-width:800px) {
+        font-size: 1.25rem;
+        @media screen and (max-width: 800px) {
             font-size: 1rem;
         }
     }
-    p{
-        margin-top:10px;
+    p {
+        margin-top: 10px;
         font-weight: 400;
         color: grey;
     }
-    @media screen and (max-width:800px) {
+    @media screen and (max-width: 800px) {
         width: 90%;
-      }
+    }
 }
-.roomImage{
-    border-radius:0.5rem ;
+.roomImage {
+    border-radius: 0.5rem;
     object-fit: cover;
     height: 10rem;
     width: 50%;
 }
 
-.roomInfo{
+.roomInfo {
     display: flex;
     justify-content: space-between;
 }

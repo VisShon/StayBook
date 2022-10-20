@@ -14,6 +14,22 @@
     background-color: $background;
     box-shadow: 0 0 10px $shadow;
 
+    .phone{
+        font-family: 'mada', sans-serif;
+        width:100%;
+        padding: .5rem;
+    }    
+    .payAtHotel{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 1rem;
+        .button{
+            display: flex;
+            justify-content:center;
+            width: 98%;
+        }
+    }
     .selectedPlans {
         padding: 0.25rem;
         overflow-y: scroll;

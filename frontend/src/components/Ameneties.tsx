@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import client from '../client'
 import '../styles/Amneties.scss'
 
 function Ameneties({ data }: any) {
+    console.log(data);
     const [visible, setVisible] = useState(5)
     const showMoreItems = () => {
         setVisible((prevValue) => prevValue + data.length)
@@ -22,8 +22,9 @@ function Ameneties({ data }: any) {
                         style={{ display: 'flex', alignItems: 'center' }}
                     >
                         <img
-                            src={amenety.item.image.asset.url}
+                            src={amenety.item.image?.asset.url}
                             style={{ width: '2rem' }}
+                            alt={'no image'}
                         />
                         {amenety.item.name}
                     </h1>

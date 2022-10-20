@@ -56,7 +56,7 @@ function HotelCarousel() {
                     >
                         <div className="image">
                             <img src={data[n].images[0].asset.url} />
-                            <div className="image-background"></div>
+                            <img className="image-second" src={data[n].images[1].asset.url}/>
                         </div>
 
                         <div className="content">

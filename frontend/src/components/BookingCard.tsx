@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useAppDispatch } from '../app/hooks'
 import { removePlan } from '../app/planSlice'
 import '../styles/BookingCard.scss'
@@ -21,17 +21,19 @@ function BookingCard() {
     const CheckOutDate = sessionStorage.getItem('checkOut')
     const CheckInDate = sessionStorage.getItem('checkIn')
 
-    const [checkIn, setCheckIn] = React.useState<Date | null>(
+    const [checkIn, setCheckIn] = useState<Date | null>(
         CheckInDate ? new Date(CheckInDate) : today
     )
-    const [checkOut, setCheckOut] = React.useState<Date | null>(
+    const [checkOut, setCheckOut] = useState<Date | null>(
         CheckOutDate ? new Date(CheckOutDate) : tomorrow
     )
 
     const dispatch = useAppDispatch()
-
     const withoutTax = useAppSelector((state) => state.price.withoutTax)
     const Plans = useAppSelector((state) => state.plans.selectedPlans)
+
+    const [payAtHotel,setPayAtHote] = useState<boolean>(false);
+    const [contact,setContact] = useState<string|undefined>();
 
     useEffect(() => {
         dispatch(
@@ -93,7 +95,26 @@ function BookingCard() {
             </div>
 
             <AmountCard checkOut={checkOut} checkIn={checkIn} />
-            <Button checkOut={checkOut} checkIn={checkIn} />
+
+            <input type='checkbox' 
+                   name='input' 
+                   style={{marginTop: '10px'}}
+                   onChange={()=>setPayAtHote(prev=>!prev)}/>
+            <label> Pay at hotel </label>
+
+            {payAtHotel&&<>
+                <div className="payAtHotel">
+                    <input type='text' 
+                           value={contact} 
+                           onChange={(e)=>setContact(e.target.value)} 
+                           className='phone' 
+                           placeholder='Phone number'/>
+                    <div className='button'>Continue</div>
+                </div>
+            </>}
+
+            
+            {!payAtHotel&&<Button checkOut={checkOut} checkIn={checkIn} />}
         </div>
     )
 }

@@ -1,4 +1,5 @@
 @import 'colors';
+@import '../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';
 
 .navbar {
     transition: all 100ms ease-in;
@@ -41,6 +42,12 @@
     }
     .TourPackage{
         display: none;
+    }
+    .navMobile{
+        display: none;
+    }
+    .navMobile-box{
+        display:none;
     }
 }
 
@@ -100,9 +107,6 @@
     text-decoration: none;
     color: $main;
     padding: 0.5rem;
-    @media screen and (max-width: 800px) {
-        display: none;
-    }
 }
 .item:hover {
     color: white;
@@ -118,6 +122,7 @@
     width: 30%;
     justify-content: space-between;
     @media screen and (max-width: 800px) {
+        display:none;
         justify-content: flex-end;
         padding-right: 1rem;
     }
@@ -154,6 +159,9 @@ ul li ul {
     left: 0;
     transition: all 0.5s ease;
     display: none;
+    @media screen and (max-width: 800px) {
+        left: -1.5rem;
+    }
 }
 
 ul li:hover > ul,
@@ -181,7 +189,7 @@ ul li ul li {
     background-color: bisque;
     font-size: 0.75rem;
     @media screen and (max-width: 800px) {
-        width: 4.25rem;
+        width: 6.25rem;
     }
 }
 
@@ -189,4 +197,25 @@ ul li ul li {
     border-radius: 0rem;
     height: 1.5rem;
     background: $gradient;
+}
+
+.navMobile{
+    display: none;
+    @media screen and (max-width: 800px) {
+        display: block;
+    }
+}
+.navMobile-box{
+    @extend .navMobile;
+    padding: 1rem;
+    position: absolute;
+    display: flex;
+    border: 1px solid $main;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    width: 90%;
+    background-color: white !important;
+    top: 5rem;
+    left:0;
 }

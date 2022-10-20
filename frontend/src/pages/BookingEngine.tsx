@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../styles/App.scss'
 import Amneties from '../components/Ameneties'
 import mmt from '../images/mmt.svg'
+import mapImage from '../images/map.svg'
 import bc from '../images/bc.svg'
 import tra from '../images/tra.svg'
 import light from '../images/light.png'
@@ -177,7 +178,8 @@ function App() {
                                         </span>
                                     </span>
                                 </p>
-                                <a href={hotel.map} className="description">
+                                <a href={hotel.map} className="description" style={{fontSize:'1rem'}}>
+                                    <img src={mapImage}/>
                                     {hotel.address}
                                 </a>
                                 <p className="description">

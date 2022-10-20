@@ -16,6 +16,10 @@ import ContactUs from './pages/ContactUs'
 import Profile from './pages/Profile'
 import Blog from './pages/Blog'
 import SinglePost from './pages/SinglePost.jsx'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsCondition from './pages/TermsCondition'
+import RefundPolicy from './pages/RefundPolicy'
+import GeneralPolicy from './pages/GeneralPolicy'
 
 import { WhatsAppWidget } from 'react-whatsapp-widget'
 import 'react-whatsapp-widget/dist/index.css'
@@ -36,10 +40,14 @@ root.render(
                     <Route path="/blogs" element={<Blog />} />
                     <Route path="/blogs/:slug" element={<SinglePost />} />
                     <Route path="/profile" element={<Profile />} />
+                    <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+                    <Route path="/termscondition" element={<TermsCondition />} />
+                    <Route path="/refundpolicy" element={<RefundPolicy />} />
+                    <Route path="/generalpolicy" element={<GeneralPolicy />} />
                     <Route path="/:slug" element={<BookingEngine />} />
                 </Routes>
-                <WhatsAppWidget CompanyIcon={Logo} phoneNumber="917017495876" />
                 <Footer />
+                <WhatsAppWidget CompanyIcon={Logo} phoneNumber="917017495876" />
             </AuthProvider>
         </BrowserRouter>
     </Provider>

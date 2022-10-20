@@ -30,17 +30,29 @@
         background-color: $secondary;
         border-radius: 2rem;
         width: 35%;
-        height: 52%;
+        height: 55%;
         @media screen and (max-width: 800px) {
-            width: 40%;
+            width: 60%;
             height: 30%;
+        }
+        .image-second {
+            position: absolute;
+            z-index: 0;
+            top:4rem;
+            right:3rem;
+            @media screen and (max-width: 800px) {
+                top:10%;
+                right:5%;
+            }
         }
         img {
             margin-left: -7rem;
-            z-index: 10px;
+            position: relative;
+            z-index: 10;
             height: 20rem;
             width: 30rem;
             border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(57, 57, 57, 0.359);
             @media screen and (max-width: 800px) {
                 height: 10rem;
                 width: 15rem;

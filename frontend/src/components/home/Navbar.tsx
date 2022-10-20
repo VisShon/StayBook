@@ -11,8 +11,10 @@ function Navbar() {
 
     const {scrollYProgress} = useScroll()
     const navbar = useRef<HTMLDivElement>(null)
+    const hamburger = useRef<HTMLButtonElement>(null)
     const userToken = sessionStorage.getItem('user');
     const { decodedToken, isExpired }: any = useJwt(userToken!);
+    const [isOpen,setIsOpen] = useState(false);
 
     useEffect(() => {
         scrollYProgress.onChange((latest) => {
@@ -24,6 +26,17 @@ function Navbar() {
             };
         })
     },[])
+
+    const collapse = () => {
+        if(hamburger.current!.classList.contains('is-active')){
+            hamburger.current!.classList.remove('is-active')
+            setIsOpen(false)
+        }
+        else{
+            hamburger.current!.classList.add('is-active')
+            setIsOpen(true)
+        }
+    }
 
 
     return (
@@ -43,12 +56,38 @@ function Navbar() {
                     Contact Us
                 </Link>
             </div>
+            
+
             <Link to="/profile" className="logo">
                 <img
                     src={decodedToken ? decodedToken.picture : user}
                     className="profilepic"
                 />
             </Link>
+
+            <div className="navMobile">
+                <button className="hamburger hamburger--collapse" 
+                        ref={hamburger}
+                        type="button" 
+                        onClick={collapse}>
+                    <span className="hamburger-box">
+                        <span className="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+
+            {isOpen&&<div className="navMobile-box">
+                <Link className='item' to="/packages">
+                    Tour Packages
+                </Link>
+                <Link className='item' to="/blogs">
+                    Blogs
+                </Link>
+                <Link className='item' to="/contactus">
+                    Contact Us
+                </Link>
+                <Dropdown/>
+            </div>}
         </div>
     )
 }

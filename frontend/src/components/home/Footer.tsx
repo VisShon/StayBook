@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import '../../styles/Footer.scss'
 import footerBg from '../../images/footerBg.svg'
 import logo from '../../images/logo.png'
-import pdf from '../../pdf/TermsAndConditions.pdf'
 import client from '../../client'
 
 export default function Footer() {
@@ -55,18 +54,18 @@ export default function Footer() {
                 </div>
 
                 <div className="heading">
-                    <h2>Blogs:</h2>
-                    <a href="/packages">Travel Packages</a>
-                    <a href="/contactUs">Other Facilities</a>
+                    <h2>Interests:</h2>
+                    <a href="/packages">Tours and Packages</a>
+                    <a href="/contactUs">Contact Us</a>
+                    <a href="/blogs">Blogs</a>
                 </div>
 
                 <div className="heading">
                     <h2>Misc:</h2>
-                    <a href={pdf}>Terms and Conditions</a>
-                    <a href="/contactUs">Contact Us</a>
-                    <a href="/packages">Tours and Packages</a>
-                    <a href="/blogs">Blogs</a>
-                    <a href="/contactUs">Feedback</a>
+                    <a href={'/termscondition'}>Terms and Conditions</a>
+                    <a href={'/privacypolicy'}>Privacy Policy</a>
+                    <a href={'/refundpolicy'}>Refund Policy</a>
+                    <a href={'/generalpolicy'}>General Policy</a>
                 </div>
             </div>
         </div>

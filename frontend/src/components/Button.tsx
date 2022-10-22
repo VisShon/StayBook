@@ -5,7 +5,7 @@ import { useAppSelector } from '../app/hooks'
 import emailjs from '@emailjs/browser'
 import { AuthContext, AuthContextProps } from '../context/AuthContext'
 
-function Button({ checkIn, checkOut }: any) {
+function Button({ checkIn, checkOut, hotel, address }: any) {
     let price = useAppSelector((state) => state.price.value)
     let orderAmount = (price * 10).toString() + '0'
     const { username, email, phone, Login } =
@@ -44,10 +44,20 @@ function Button({ checkIn, checkOut }: any) {
                     key: razorpayKey,
                     amount: amount.toString(),
                     currency: currency,
-                    name: 'example name',
+                    name: 'StayBook',
                     handler: async function (response: any) {
+                        let guests = 0;
+                        plans.forEach((plan) => {guests+=plan.guests});
+
                         let templateParams = {
                             to_name: sessionStorage.getItem('email'),
+                            hotelName: hotel,
+                            checkIn: checkIn.toString(),
+                            checkOut: checkOut.toString(),
+                            roomNumbers: plans.length.toString(),
+                            guests: guests.toString(),
+                            hotelContact: "+918373929299",
+                            address: address,
                         }
                         const mail = await emailjs
                             .send(

@@ -4,6 +4,7 @@ import { removePlan } from '../app/planSlice'
 import '../styles/BookingCard.scss'
 import AmountCard from './AmountCard'
 import SelectedPlan from './SelectedPlan'
+import emailjs from '@emailjs/browser'
 import { useAppSelector } from '../app/hooks'
 
 import Button from './Button'
@@ -13,7 +14,7 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
-function BookingCard() {
+function BookingCard({hotelName, address}:any) {
     let today = new Date()
     let tomorrow = new Date()
     tomorrow.setDate(today.getDate() + 1)
@@ -34,6 +35,29 @@ function BookingCard() {
 
     const [payAtHotel,setPayAtHote] = useState<boolean>(false);
     const [contact,setContact] = useState<string|undefined>();
+
+    const payOnHotel = async () => {
+
+        let guests = 0;
+        Plans.forEach((plan) => {guests+=plan.guests});
+        let templateParams = {
+            to_name: sessionStorage.getItem('email'),
+            hotelName: hotelName,
+            checkIn: checkIn!.toString(),
+            checkOut: checkOut!.toString(),
+            roomNumbers: Plans.length.toString(),
+            guests: guests.toString(),
+            hotelContact: "+918373929299",
+            address: address,
+        }
+        const mail = await emailjs
+                            .send(
+                                'service_pz9e3th',
+                                'template_i78ka1b',
+                                templateParams,
+                                'bE7FBsdP5YFb4U6LK'
+                            )
+    }
 
     useEffect(() => {
         dispatch(
@@ -96,13 +120,13 @@ function BookingCard() {
 
             <AmountCard checkOut={checkOut} checkIn={checkIn} />
 
-            <input type='checkbox' 
+            {/* <input type='checkbox' 
                    name='input' 
                    style={{marginTop: '10px'}}
                    onChange={()=>setPayAtHote(prev=>!prev)}/>
-            <label> Pay at hotel </label>
+            <label> Pay at hotel </label> */}
 
-            {payAtHotel&&<>
+            {/* {payAtHotel&&<>
                 <div className="payAtHotel">
                     <input type='text' 
                            value={contact} 
@@ -111,10 +135,10 @@ function BookingCard() {
                            placeholder='Phone number'/>
                     <div className='button'>Continue</div>
                 </div>
-            </>}
+            </>} */}
 
             
-            {!payAtHotel&&<Button checkOut={checkOut} checkIn={checkIn} />}
+            {!payAtHotel&&<Button checkOut={checkOut} checkIn={checkIn} hotel={hotelName} address={address}/>}
         </div>
     )
 }

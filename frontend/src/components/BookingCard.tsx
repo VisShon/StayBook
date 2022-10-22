@@ -31,13 +31,14 @@ function BookingCard({hotelName, address}:any) {
 
     const dispatch = useAppDispatch()
     const withoutTax = useAppSelector((state) => state.price.withoutTax)
+    const price = useAppSelector((state) => state.price.value)
     const Plans = useAppSelector((state) => state.plans.selectedPlans)
 
-    const [payAtHotel,setPayAtHote] = useState<boolean>(false);
     const [contact,setContact] = useState<string|undefined>();
+    const [payAtHotel,setPayAtHote] = useState<boolean>(false);
+    const [isPaid,setIsPaid] = useState<boolean>(false);
 
     const payOnHotel = async () => {
-
         let guests = 0;
         Plans.forEach((plan) => {guests+=plan.guests});
         let templateParams = {
@@ -49,6 +50,7 @@ function BookingCard({hotelName, address}:any) {
             guests: guests.toString(),
             hotelContact: "+918373929299",
             address: address,
+            status:`Amount due ₹${price}, Pay now to save extra ₹290-`
         }
         const mail = await emailjs
                             .send(
@@ -57,6 +59,7 @@ function BookingCard({hotelName, address}:any) {
                                 templateParams,
                                 'bE7FBsdP5YFb4U6LK'
                             )
+        setIsPaid(true);
     }
 
     useEffect(() => {
@@ -120,22 +123,22 @@ function BookingCard({hotelName, address}:any) {
 
             <AmountCard checkOut={checkOut} checkIn={checkIn} />
 
-            {/* <input type='checkbox' 
+            <input type='checkbox' 
                    name='input' 
                    style={{marginTop: '10px'}}
                    onChange={()=>setPayAtHote(prev=>!prev)}/>
-            <label> Pay at hotel </label> */}
+            <label> Pay at hotel </label>
 
-            {/* {payAtHotel&&<>
+            
                 <div className="payAtHotel">
-                    <input type='text' 
+                    {/* <input type='text' 
                            value={contact} 
                            onChange={(e)=>setContact(e.target.value)} 
                            className='phone' 
-                           placeholder='Phone number'/>
-                    <div className='button'>Continue</div>
+                           placeholder='Phone number'/> */}
+                    {!isPaid?(payAtHotel&&<div onClick={payOnHotel} className='button'>Continue</div>):
+                    (<div className="Button-Loading">Booking Done</div>)}
                 </div>
-            </>} */}
 
             
             {!payAtHotel&&<Button checkOut={checkOut} checkIn={checkIn} hotel={hotelName} address={address}/>}

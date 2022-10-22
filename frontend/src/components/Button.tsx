@@ -58,6 +58,7 @@ function Button({ checkIn, checkOut, hotel, address }: any) {
                             guests: guests.toString(),
                             hotelContact: "+918373929299",
                             address: address,
+                            status:`Paid ₹${price}/-`
                         }
                         const mail = await emailjs
                             .send(

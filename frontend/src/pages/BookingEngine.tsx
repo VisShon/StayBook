@@ -198,7 +198,7 @@ function App() {
                                     <RoomCard room={room} key={i} />
                                 ))}
                         </div>
-                        <BookingCard hotelName={hotel.name} address={hotel.address} />
+                        <BookingCard />
                     </div>
                 </>
             ) : (

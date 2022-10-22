@@ -18,7 +18,6 @@ function RoomCard({ room }: any) {
                     room={room.type}
                     plan={plan}
                     amenities={room.ameneties}
-                    guests={room.guests}
                     key={i}
                 />
             ))}

@@ -10,7 +10,6 @@ export const planSlice = createSlice({
                 price: 3419.1,
                 maxCap: 10,
                 roomType: 'Deluxe Suite',
-                guests: 0,
             },
         ],
     },

@@ -54,10 +54,10 @@ function HotelCarousel() {
                         variants={boxVariant}
                         animate={control}
                     >
-                        <div className="image">
+                        <a href={`/${data[n].slug.current}`} className="image">
                             <img src={data[n].images[0].asset.url} />
                             <img className="image-second" src={data[n].images[1].asset.url}/>
-                        </div>
+                        </a>
 
                         <div className="content">
                             <h2>{data[n].name}</h2>

@@ -1,15 +1,16 @@
-import React, { useState,useEffect } from 'react'
-import { useAppDispatch } from '../app/hooks'
-import { removePlan } from '../app/planSlice'
+import React, { useState,useEffect,useContext } from 'react'
 import '../styles/BookingCard.scss'
 import AmountCard from './AmountCard'
 import SelectedPlan from './SelectedPlan'
 import emailjs from '@emailjs/browser'
-import { useAppSelector } from '../app/hooks'
-
 import Button from './Button'
-
 import TextField from '@mui/material/TextField'
+import axios from 'axios'
+
+import { useAppSelector } from '../app/hooks'
+import { AuthContext, AuthContextProps } from '../context/AuthContext'
+import { useAppDispatch } from '../app/hooks'
+import { removePlan } from '../app/planSlice'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
@@ -38,7 +39,14 @@ function BookingCard({hotelName, address}:any) {
     const [payAtHotel,setPayAtHote] = useState<boolean>(false);
     const [isPaid,setIsPaid] = useState<boolean>(false);
 
+    const { username, email, phone, Login } =
+        useContext<AuthContextProps>(AuthContext)
+
+
     const payOnHotel = async () => {
+        if (!username) {
+            await Login()
+        }
         let guests = 0;
         Plans.forEach((plan) => {guests+=plan.guests});
         let templateParams = {
@@ -52,14 +60,65 @@ function BookingCard({hotelName, address}:any) {
             address: address,
             status:`Amount due ₹${price}, Pay now to save extra ₹290-`
         }
+        const res = await axios.post('https://graph.facebook.com/v14.0/101666639416328/messages/ ',
+        { "messaging_product": "whatsapp", 
+        "to": contact, 
+        "type": "template", 
+        "template": { 
+            "name": "orderconfirmation",
+            "language": { "code": "en" }, 
+            "components": [
+                {
+                  "type": "body",
+                  "parameters": [
+                    {
+                      "type": "text",
+                      "text": templateParams.checkIn
+                    },
+                    {
+                      "type": "text",
+                      "text": templateParams.checkOut
+                    },
+                    {
+                      "type": "text",
+                      "text": templateParams.roomNumbers
+                    },
+                    {
+                      "type": "text",
+                      "text": templateParams.guests
+                    },
+                    {
+                      "type": "text",
+                      "text": templateParams.hotelContact
+                    },
+                    {
+                      "type": "text",
+                      "text": templateParams.address
+                    },
+                    {
+                      "type": "text",
+                      "text": templateParams.status
+                    },
+                    {
+                      "type": "text",
+                      "text": templateParams.hotelName
+                    },
+                    ]
+                }
+            ]
+        } },
+        {headers:{"Content-Type": 'application/json',
+                  "Authorization": 'Bearer EAALMiOlXCVgBAGBdtuYgbwzySQeGqBiaBZAZCgZCmmWXSSP7qE0Pzgr9bZCZC9p297IpoeuV3Sf7w36z41xsOceOjxdZACq6JpkChS1ZBZBghqUFW8VQbQjxcKGwbUZCOjDFZAKhAEDO120yjepzy4rGQjWOZCdNZAjpKOZB3tY0rAIXJczfblukhAx5bK3ZAZBQXEpFobxZBclmHMEDLwZDZD'
+        }})
+
         const mail = await emailjs
                             .send(
                                 'service_pz9e3th',
                                 'template_i78ka1b',
                                 templateParams,
                                 'bE7FBsdP5YFb4U6LK'
-                            )
-        setIsPaid(true);
+                                ).then(()=>setIsPaid(true));
+
     }
 
     useEffect(() => {
@@ -131,12 +190,15 @@ function BookingCard({hotelName, address}:any) {
 
             
                 <div className="payAtHotel">
-                    {/* <input type='text' 
+                    
+                    {!isPaid?(payAtHotel&&<>
+                        <input type='text' 
                            value={contact} 
                            onChange={(e)=>setContact(e.target.value)} 
                            className='phone' 
-                           placeholder='Phone number'/> */}
-                    {!isPaid?(payAtHotel&&<div onClick={payOnHotel} className='button'>Continue</div>):
+                           placeholder='Phone number (eg: 917017495876)'/>
+                         <div onClick={payOnHotel} className='button'>Continue</div>
+                    </>):
                     (<div className="Button-Loading">Booking Done</div>)}
                 </div>
 

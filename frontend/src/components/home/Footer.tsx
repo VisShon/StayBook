@@ -28,6 +28,7 @@ export default function Footer() {
             <div className="logoCircle">
                 <img src={logo} />
                 <div className="line"></div>
+                <p>1/5, Desh Bandhu Gupta Rd, opposite paharganj, Motia Khan, Paharganj, New Delhi, Delhi 110055</p>
                 <a href="Tel: +91-8373929299">Ph. no: +91-8373929299</a>
                 <a href="mailto: booking@staybook.in">booking@staybook.in</a>
             </div>

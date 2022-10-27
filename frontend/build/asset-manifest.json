@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.cddcf81a.css",
-    "main.js": "/static/js/main.2e3cbfe8.js",
+    "main.css": "/static/css/main.25569243.css",
+    "main.js": "/static/js/main.1f3a7b9a.js",
     "static/media/bc.svg": "/static/media/bc.78fa5f5a1721c7e914e49d694ec9bdfc.svg",
     "static/media/travel.svg": "/static/media/travel.74ec31801e2c5f52c1f7d8e4040ec00d.svg",
     "static/media/kraftan.otf": "/static/media/kraftan.06843398dd85b1237d55.otf",
@@ -26,14 +26,12 @@
     "static/media/arrowVector.svg": "/static/media/arrowVector.43a4307ae23a42184ea728db16750b73.svg",
     "index.html": "/index.html",
     "static/media/leftArrow.svg": "/static/media/leftArrow.82b1d97a7125c22d6ca124992344d0fd.svg",
-    "static/media/leftArrow2.svg": "/static/media/leftArrow2.b7a21f184528ce9b3e3ae5e4966306f3.svg",
     "static/media/rightArrow.svg": "/static/media/rightArrow.939a1d08b4e03e04d23e8a9d9ee52d95.svg",
-    "static/media/rightArrow2.svg": "/static/media/rightArrow2.54d2d44713e6a6cb9888c823806e9cfb.svg",
-    "main.cddcf81a.css.map": "/static/css/main.cddcf81a.css.map",
-    "main.2e3cbfe8.js.map": "/static/js/main.2e3cbfe8.js.map"
+    "main.25569243.css.map": "/static/css/main.25569243.css.map",
+    "main.1f3a7b9a.js.map": "/static/js/main.1f3a7b9a.js.map"
   },
   "entrypoints": [
-    "static/css/main.cddcf81a.css",
-    "static/js/main.2e3cbfe8.js"
+    "static/css/main.25569243.css",
+    "static/js/main.1f3a7b9a.js"
   ]
 }

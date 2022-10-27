@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import Ameneties from '../components/home/sections/Ameneties'
-import BookingCarousel from '../components/home/sections/BookingCarousel'
+import BookingCarousel from '../components/home/sections/BookingCarousel.jsx'
 import HotelCarousel from '../components/home/sections/HotelCarousel'
 import Plans from '../components/home/sections/Plans'
 import ToursandTravels from '../components/home/sections/ToursandTravels'

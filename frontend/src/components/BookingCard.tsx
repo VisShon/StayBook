@@ -38,6 +38,8 @@ function BookingCard({hotelName, address}:any) {
     const [contact,setContact] = useState<string|undefined>();
     const [payAtHotel,setPayAtHote] = useState<boolean>(false);
     const [isPaid,setIsPaid] = useState<boolean>(false);
+    const [noSelected,setNoSelected] = useState<boolean>(false);
+    const [noContact,setNoContact] = useState<boolean>(false);
 
     const { username, email, phone, Login } =
         useContext<AuthContextProps>(AuthContext)
@@ -47,6 +49,16 @@ function BookingCard({hotelName, address}:any) {
         if (!username) {
             await Login()
         }
+        if(!contact){
+            setNoContact(true)
+            setTimeout(()=>{setNoContact(false)},2000)
+            return;
+        }
+        if(Plans.length==0){
+            setNoSelected(true)
+            setTimeout(()=>{setNoSelected(false)},2000)
+            return;
+        };
         let guests = 0;
         Plans.forEach((plan) => {guests+=plan.guests});
         let templateParams = {
@@ -60,7 +72,7 @@ function BookingCard({hotelName, address}:any) {
             address: address,
             status:`Amount due ₹${price}, Pay now to save extra ₹290-`
         }
-        const res = await axios.post('https://graph.facebook.com/v14.0/101666639416328/messages/ ',
+        const res = await axios.post('https://graph.facebook.com/v14.0/101666639416328/messages/',
         { "messaging_product": "whatsapp", 
         "to": contact, 
         "type": "template", 
@@ -108,7 +120,7 @@ function BookingCard({hotelName, address}:any) {
             ]
         } },
         {headers:{"Content-Type": 'application/json',
-                  "Authorization": 'Bearer EAALMiOlXCVgBAGBdtuYgbwzySQeGqBiaBZAZCgZCmmWXSSP7qE0Pzgr9bZCZC9p297IpoeuV3Sf7w36z41xsOceOjxdZACq6JpkChS1ZBZBghqUFW8VQbQjxcKGwbUZCOjDFZAKhAEDO120yjepzy4rGQjWOZCdNZAjpKOZB3tY0rAIXJczfblukhAx5bK3ZAZBQXEpFobxZBclmHMEDLwZDZD'
+                  "Authorization": 'Bearer EAALMiOlXCVgBAOjDBtqlN4BG0ZAKlpOgtRb0pj0iC7R5ubofWVZBeBiZC13md1u2KdWGZAwVvKKbdsrM02v0IIlFSjN0gAoRhT92Jy7SfV0mQybIYxtV6NwwkjlqN8xuLjlZBrtuxdLRfvS0ZB6zHmLSK4tHFJ6eIVFGhXskuYCD9ZCLSVbjzOZC0NPBfYWJ5L3pGOp8feGXdQZDZD'
         }})
 
         const mail = await emailjs
@@ -189,8 +201,9 @@ function BookingCard({hotelName, address}:any) {
             <label> Pay at hotel </label>
 
             
+            {noSelected&&<div className="unselected">Please select a plan to continue</div>}
+            {noContact&&<div className="unselected">Please enter contact details</div>}
                 <div className="payAtHotel">
-                    
                     {!isPaid?(payAtHotel&&<>
                         <input type='text' 
                            value={contact} 
@@ -202,7 +215,6 @@ function BookingCard({hotelName, address}:any) {
                     (<div className="Button-Loading">Booking Done</div>)}
                 </div>
 
-            
             {!payAtHotel&&<Button checkOut={checkOut} checkIn={checkIn} hotel={hotelName} address={address}/>}
         </div>
     )

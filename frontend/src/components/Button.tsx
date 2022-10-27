@@ -14,12 +14,18 @@ function Button({ checkIn, checkOut, hotel, address }: any) {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(false)
     const [isPaid, setIsPaid] = useState(false)
+    const [noSelected, setNoSelected] = useState(false)
 
     const hotelName: string = new URL(window.location.href).pathname
     const children = useAppSelector((state) => state.price.children)
     const plans = useAppSelector((state) => state.plans.selectedPlans)
 
     const onClickHandler = async () => {
+        if(plans.length==0){
+            setNoSelected(true)
+            setTimeout(()=>{setNoSelected(false)},2000)
+            return;
+        };
         setIsLoading(true)
         if (!username) {
             await Login()
@@ -123,6 +129,7 @@ function Button({ checkIn, checkOut, hotel, address }: any) {
 
     return (
         <>
+            {noSelected&&<div className='unselected'>Please select a plan to continue</div>}
             {!isPaid && (
                 <div
                     className={error ? 'Button-error' : 'Button'}

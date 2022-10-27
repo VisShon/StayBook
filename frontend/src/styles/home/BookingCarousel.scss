@@ -2,58 +2,84 @@
 
 .carouselBody {
     border-radius: 1rem;
-    background-color: black;
     width: 98%;
-    height: 75vh;
     position: relative;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
     z-index: 0;
     margin-bottom: 1rem;
-    margin-top: 2rem;
-    img {
-        position: relative;
-        z-index: -10;
-        width: 100%;
-        border-radius: 1rem;
-        height: 75vh;
-    }
-    h2 {
-        position: absolute;
-        top: 30%;
-        width: 100%;
+    margin-top: 4rem;
+    ul{
+        width:100%;
         text-align: center;
-        font-size: 8rem;
-        font-weight: 400;
-        -webkit-text-fill-color: white;
         font-family: 'Kraftan', sans-serif;
-        text-shadow: 0 0 10px $shadow;
-        @media screen and (max-width: 800px) {
-            font-size: 4rem;
-            top: 40%;
+        color: $main;
+        font-weight: 500;
+        font-size: 9rem;
+        li:hover{
+            color: $main;
+            background-color: white;
+            border-radius: none;
+            height: auto;
+            cursor: default;
+        }
+        li{
+            @media screen and (max-width: 800px) {
+                font-size: 3.5rem;
+                border: none !important
+            }
+        }
+
+    }
+
+    .bottle{
+        img{
+            top: 10%;
+            right:0%;
+            position: absolute;
+            z-index: 10;
+            width:25%;
+            @media screen and (max-width: 800px) {
+                top: 5%;
+                right:-20%;
+                width:40%;
+            }
+        }
+        .shadow{
+            z-index: 0;
+            top: 45%;
+            right:11%;
+            @media screen and (max-width: 800px) {
+                top: 22%;
+                right:0%;
+                width:40%;
+            }
         }
     }
-    h1 {
-        position: absolute;
-        top: 20%;
-        width: 100%;
-        text-align: center;
-        font-size: 3rem;
-        font-weight: 600;
-        -webkit-text-fill-color: white;
-        font-family: 'Kraftan', sans-serif;
-        text-shadow: 0 0 10px $shadow;
-        @media screen and (max-width: 800px) {
-            font-size: 2rem;
+    .dish{
+        img{
+            top: 32%;
+            left:4%;
+            position: absolute;
+            z-index: 10;
+            width:25%;
+            @media screen and (max-width: 800px) {
+                top: 18%;
+                left:-30%;
+                width:55%;
+            }
         }
-    }
-    @media screen and (max-width: 800px) {
-        height: auto;
-        background-color: transparent;
+        .shadow{
+            z-index: 0;
+            opacity: .25;
+        }
     }
 }
 .bookingBar {
-    position: absolute;
     z-index: 10;
     display: flex;
+    margin-top: 3rem;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
@@ -61,7 +87,7 @@
     box-shadow: 0 0 10px $shadow2;
     left: 10%;
     width: 80%;
-    height: 18%;
+    height: 15vh;
     border-radius: 0.5rem;
     background-color: $secondary;
     @media screen and (max-width: 800px) {
@@ -70,7 +96,6 @@
         height: 20rem;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
-        position: relative;
     }
 
     .line {
@@ -214,34 +239,5 @@
         height: 30%;
         width: 30%;
         box-shadow: none;
-    }
-}
-.carouselArrows {
-    width: 98%;
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    z-index: 5;
-    top: 10%;
-    @media screen and (max-width: 800px) {
-        top: 40%;
-        width: 90%;
-    }
-    img {
-        transition: transform ease-in 500ms;
-        transform: rotateZ(0deg);
-        cursor: none;
-        width: 10rem;
-        box-shadow: none;
-        @media screen and (max-width: 800px) {
-            width: 6rem;
-            height: 2rem;
-        }
-    }
-    img:hover {
-        transition: transform ease-in 500ms;
-        transform: rotate3d(1, 0, 0, 45deg);
     }
 }

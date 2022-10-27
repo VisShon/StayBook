@@ -60,7 +60,7 @@
         margin-top: 10px;
         font-weight: 500;
         font-size: 1.25rem;
-        color: black;
+        color: black !important;
     }
 
     @media screen and (max-width: 800px) {
@@ -117,4 +117,8 @@
     font-weight: 600;
     color: black;
     cursor: pointer;
+}
+.unselected{
+    color:red !important;
+    font-size:1rem;
 }

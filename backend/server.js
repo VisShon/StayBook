@@ -18,6 +18,9 @@ configFireBase();
 app.get('/get-razorpay-key', (req, res) => {
     res.send({ key: process.env.RAZORPAY_KEY });
 });
+app.get('/get-bearer', (req, res) => {
+    res.send({ key: process.env.META_BEARER });
+});
 
 app.post('/create-order', async (req, res) => {
 

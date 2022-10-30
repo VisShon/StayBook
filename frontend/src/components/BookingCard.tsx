@@ -61,6 +61,11 @@ function BookingCard({hotelName, address}:any) {
         };
         let guests = 0;
         Plans.forEach((plan) => {guests+=plan.guests});
+
+        const {
+            data: { key: bearer },
+        } = await axios.get('/get-bearer')
+
         let templateParams = {
             to_name: sessionStorage.getItem('email'),
             hotelName: hotelName,
@@ -120,7 +125,7 @@ function BookingCard({hotelName, address}:any) {
             ]
         } },
         {headers:{"Content-Type":'application/json',
-                  "Authorization":`Bearer ${process.env.REACT_APP_BEARER}`
+                  "Authorization":`Bearer ${bearer}`
         }})
 
         const mail = await emailjs

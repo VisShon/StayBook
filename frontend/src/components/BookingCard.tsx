@@ -120,7 +120,7 @@ function BookingCard({hotelName, address}:any) {
             ]
         } },
         {headers:{"Content-Type":'application/json',
-                  "Authorization":'Bearer EAAWZAVp5VHbwBABTo9dp0BCZBQdO37kdJaxKhcj6b9y7DMk8b3FoKI0m12STt4gZBRPlbZCVnNZBI531ebItkofZBzF0dPPblZAJaFAZCoq4Mx8XLfiEy1LkZCyZB4A02qAWvDqEBlEK46ZCMf5CsiIns6TrQNWpNJne8tOJTzfRIspws2ZB60RqlL4ZC'
+                  "Authorization":`Bearer ${process.env.REACT_APP_BEARER}`
         }})
 
         const mail = await emailjs

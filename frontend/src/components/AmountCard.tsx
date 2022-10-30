@@ -8,9 +8,8 @@ function AmountCard({ checkIn, checkOut }: any) {
     const children = useAppSelector((state) => state.price.children)
     const dispatch = useAppDispatch()
 
-    const [roomPrice,setRoomPrice] = useState<number>(0)
-    const [tax,setTax] = useState<number>(0)
-    const [netPrice,setNetPrice] = useState<number>(0)
+    const [roomPrice,setRoomPrice] = useState(0.0)
+    const [tax,setTax] = useState(0.0)
 
     useEffect(() => {
         var x: number = 0
@@ -25,13 +24,13 @@ function AmountCard({ checkIn, checkOut }: any) {
             )
         }
         setRoomPrice(x);
+        let taxPrice: number = parseFloat((x * (10 / 100)).toFixed(3));
+        setTax(taxPrice)
+
         dispatch(updateWithoutTaxPrice(x))
+        dispatch(updatePrice(x+taxPrice))
 
-        setTax(parseFloat((x * (10 / 100)).toFixed(3)))
-        setNetPrice(x + tax)
-        dispatch(updatePrice(netPrice))
-
-    },[plans,children]) 
+    },[plans.length,children]) 
     
     return (
         <div className="amountCard">
@@ -45,7 +44,7 @@ function AmountCard({ checkIn, checkOut }: any) {
             </div>
             <div className="wrapper">
                 <span>Total Price</span>
-                <span>₹{netPrice}</span>
+                <span>₹{roomPrice+tax}</span>
             </div>
         </div>
     )

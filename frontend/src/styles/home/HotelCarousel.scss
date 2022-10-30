@@ -37,11 +37,11 @@
         .image-second {
             position: absolute;
             z-index: 0;
-            top:4rem;
-            right:3rem;
+            top:6rem;
+            right:0rem;
             @media screen and (max-width: 800px) {
-                top:10%;
-                right:5%;
+                top:3rem;
+                right:-2rem;
             }
         }
         img {

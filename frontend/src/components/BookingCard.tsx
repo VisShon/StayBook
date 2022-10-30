@@ -35,7 +35,7 @@ function BookingCard({hotelName, address}:any) {
     const price = useAppSelector((state) => state.price.value)
     const Plans = useAppSelector((state) => state.plans.selectedPlans)
 
-    const [contact,setContact] = useState<string|undefined>();
+    const [contact,setContact] = useState<string>("");
     const [payAtHotel,setPayAtHote] = useState<boolean>(false);
     const [isPaid,setIsPaid] = useState<boolean>(false);
     const [noSelected,setNoSelected] = useState<boolean>(false);
@@ -72,12 +72,12 @@ function BookingCard({hotelName, address}:any) {
             address: address,
             status:`Amount due ₹${price}, Pay now to save extra ₹290-`
         }
-        const res = await axios.post('https://graph.facebook.com/v14.0/101666639416328/messages/',
+        const res = await axios.post('https://graph.facebook.com/v14.0/101365169455721/messages/',
         { "messaging_product": "whatsapp", 
         "to": contact, 
         "type": "template", 
         "template": { 
-            "name": "orderconfirmation",
+            "name": "hotelorder",
             "language": { "code": "en" }, 
             "components": [
                 {
@@ -119,8 +119,8 @@ function BookingCard({hotelName, address}:any) {
                 }
             ]
         } },
-        {headers:{"Content-Type": 'application/json',
-                  "Authorization": 'Bearer EAALMiOlXCVgBAOjDBtqlN4BG0ZAKlpOgtRb0pj0iC7R5ubofWVZBeBiZC13md1u2KdWGZAwVvKKbdsrM02v0IIlFSjN0gAoRhT92Jy7SfV0mQybIYxtV6NwwkjlqN8xuLjlZBrtuxdLRfvS0ZB6zHmLSK4tHFJ6eIVFGhXskuYCD9ZCLSVbjzOZC0NPBfYWJ5L3pGOp8feGXdQZDZD'
+        {headers:{"Content-Type":'application/json',
+                  "Authorization":'Bearer EAAWZAVp5VHbwBABTo9dp0BCZBQdO37kdJaxKhcj6b9y7DMk8b3FoKI0m12STt4gZBRPlbZCVnNZBI531ebItkofZBzF0dPPblZAJaFAZCoq4Mx8XLfiEy1LkZCyZB4A02qAWvDqEBlEK46ZCMf5CsiIns6TrQNWpNJne8tOJTzfRIspws2ZB60RqlL4ZC'
         }})
 
         const mail = await emailjs

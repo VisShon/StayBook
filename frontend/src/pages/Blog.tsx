@@ -5,7 +5,6 @@ import client from '../client'
 
 function Blog() {
     const [posts, setPosts] = useState([])
-    console.log(posts)
 
     useEffect(() => {
         client

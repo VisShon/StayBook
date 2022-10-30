@@ -47,7 +47,7 @@ root.render(
                     <Route path="/:slug" element={<BookingEngine />} />
                 </Routes>
                 <Footer />
-                <WhatsAppWidget CompanyIcon={Logo} phoneNumber="917017495876" />
+                <WhatsAppWidget CompanyIcon={Logo} phoneNumber="9192112749" />
             </AuthProvider>
         </BrowserRouter>
     </Provider>

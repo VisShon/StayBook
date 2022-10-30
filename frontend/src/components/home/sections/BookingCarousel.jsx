@@ -85,32 +85,6 @@ function BookingCarousel() {
         <div className="carouselBody">
             {loading && (
                 <>
-                    <ul>
-                        <li>Homely Stay</li>
-                        <li>Breakfast</li>
-                        <li>Lunch</li>
-                        <motion.li
-                                ref={ref}
-                                variants={boxVariant}
-                                initial="hidden"
-                                animate={control}>
-                           Dinner & Party</motion.li>
-                    </ul>
-                    
-                    <div className="dish">
-                        <img src ={'https://annajona.is/static/media/s1/0.png'} 
-                             className="shadow"/>
-                        <img style={{transform: 'rotateZ('+(translateY.current/20).toString()+'deg)'}} 
-                            src ={'https://annajona.is/static/media/s1/1.png'}/>
-                    </div>
-
-                    <div className="bottle">
-                        <img style={{transform:'translateY('+(translateY2.current/6).toString()+'px)'}} 
-                        src ={'https://annajona.is/static/media/s1/3.png'}/>
-                        <img style={{transform:'translateY('+(translateY2.current/6).toString()+'px)'}} 
-                        src ={'https://annajona.is/static/media/s1/2.png'} className="shadow"/>
-                    </div>
-
                     <div className="bookingBar">
                         <div onClick={onSubmit} className="arrowButton">
                             <img src={arrow} />
@@ -267,6 +241,32 @@ function BookingCarousel() {
                             </datalist>
                         </div>
                     </div>
+                    <ul>
+                        <li>Homely Stay</li>
+                        <li>Breakfast</li>
+                        <li>Lunch</li>
+                        <motion.li
+                                ref={ref}
+                                variants={boxVariant}
+                                initial="hidden"
+                                animate={control}>
+                           Dinner & Party</motion.li>
+                    </ul>
+                    
+                    <div className="dish">
+                        <img src ={'https://annajona.is/static/media/s1/0.png'} 
+                             className="shadow"/>
+                        <img style={{transform: 'rotateZ('+(translateY.current/20).toString()+'deg)'}} 
+                            src ={'https://annajona.is/static/media/s1/1.png'}/>
+                    </div>
+
+                    <div className="bottle">
+                        <img style={{transform:'translateY('+(translateY2.current/6).toString()+'px)'}} 
+                        src ={'https://annajona.is/static/media/s1/3.png'}/>
+                        <img style={{transform:'translateY('+(translateY2.current/6).toString()+'px)'}} 
+                        src ={'https://annajona.is/static/media/s1/2.png'} className="shadow"/>
+                    </div>
+
                 </>
             )}
         </div>

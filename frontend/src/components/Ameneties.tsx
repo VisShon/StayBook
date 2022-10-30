@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import '../styles/Amneties.scss'
 
 function Ameneties({ data }: any) {
-    console.log(data);
     const [visible, setVisible] = useState(5)
     const showMoreItems = () => {
         setVisible((prevValue) => prevValue + data.length)

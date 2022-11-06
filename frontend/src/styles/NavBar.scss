@@ -139,6 +139,10 @@ li {
     height: 100%;
     position: relative;
     transition-duration: 0.5s;
+    a{
+        height: 100%;
+        width: 100%;
+    }
     @media screen and (max-width: 800px) {
         border: 1px solid $main;
         border-radius: 0.5rem;

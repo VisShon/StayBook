@@ -6,6 +6,7 @@ import mapImage from '../images/map.svg'
 import bc from '../images/bc.svg'
 import tra from '../images/tra.svg'
 import light from '../images/light.png'
+import cross from '../images/cross.svg'
 import BookingCard from '../components/BookingCard'
 import Photos from '../components/PhotoSlider'
 import PhotoGrid from '../components/PhotoGrid'
@@ -144,16 +145,25 @@ function App() {
                     ) : (
                         <PhotoGrid data={hotel.images} />
                     )}
-                    <div
+                    {!gallery?<div
                         className="galleryButton"
                         onClick={() => setGallery((prev) => !prev)}
                     >
-                        {!gallery ? 'Open Gallery' : 'Close Gallery'}
-                    </div>
+                        Open gallery
+                    </div>:<img className="cross" 
+                                src={cross}
+                                onClick={() => setGallery((prev) => !prev)}/>}
                     <div className="Maincontainer">
                         <div className="sideContainer">
                             <h1 className="title">{hotel.name}</h1>
                             <>
+                                <p className="description">
+                                    {hotel.description}
+                                </p>
+                                <a href={hotel.map} className="description" style={{fontSize:'1rem'}}>
+                                    <img src={mapImage}/>
+                                    {hotel.address}
+                                </a>
                                 <p className="contact">
                                     <span className="detail">
                                         PHONE:
@@ -178,17 +188,10 @@ function App() {
                                         </span>
                                     </span>
                                 </p>
-                                <a href={hotel.map} className="description" style={{fontSize:'1rem'}}>
-                                    <img src={mapImage}/>
-                                    {hotel.address}
-                                </a>
-                                <p className="description">
-                                    {hotel.description}
-                                </p>
                             </>
                             <Amneties data={hotel.amenities} />
 
-                            <h1 className="heading">{'Choose your room(s)'}</h1>
+                            <h3 className="heading">{'Choose your room(s)'}</h3>
                             {hotel.rooms
                                 .filter(
                                     (item: any) =>
@@ -206,6 +209,7 @@ function App() {
             )}
         </>
     )
+    
 }
 
 export default App

@@ -232,7 +232,7 @@ function BookingCarousel() {
                                 }}
                                 list="browse"
                                 type="text"
-                                placeholder="Search hotel"
+                                placeholder="Search hotels in Delhi"
                             />
                             <datalist id="browse">
                                 {suggestions.map((hotel, i) => (

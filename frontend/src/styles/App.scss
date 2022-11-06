@@ -32,6 +32,18 @@
     transition: all ease-in 300ms;
     background: $main;
 }
+.cross{
+    position: absolute;
+    z-index: 40;
+    right: 8rem;
+    top: 8rem;
+    cursor: pointer;
+    width:1rem;
+    @media screen and (max-width: 800px) {
+        right: 2rem;
+        top: 9rem;
+    }
+}
 .heading {
     @extend .title;
     font-size: 2rem;

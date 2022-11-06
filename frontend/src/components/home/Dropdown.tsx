@@ -8,14 +8,10 @@ function Dropdown() {
     useEffect(() => {
         client
             .fetch(
-                `*[_type == "hotel"] {
-        name,
-        slug,
-        description,
-        images[]{
-          asset -> {url},
-        }
-      }`
+                `*[_type == "navoptions"] {
+                    name,
+                    slug,
+                }`
             )
             .then((data) => setData(data))
     }, [])
@@ -30,14 +26,14 @@ function Dropdown() {
                         <li
                             className="hotels"
                             key={i}
-                            onClick={() => nav(`/${item.slug.current}`)}
+                            onClick={() => nav(`/hotels/${item.slug.current}`)}
                         >
-                            <a
+                            <a 
+                                href={`/hotels/${item.slug.current}`}
                                 style={{
                                     textDecoration: 'none',
                                     color: 'black',
                                 }}
-                                href={`/${item.slug.current}`}
                             >
                                 {item.name}
                             </a>

@@ -33,7 +33,7 @@ function Blog() {
                 {posts.map((post: any) => (
                     <article key={post.slug.current}>
                         <img src={post.mainImage.asset.url} alt={post.title} />
-                        <h4>{post.title}</h4>
+                        <h3>{post.title}</h3>
                         <Link
                             className="button"
                             to={`/blogs/${post.slug.current}`}

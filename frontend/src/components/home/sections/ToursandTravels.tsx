@@ -31,7 +31,7 @@ function ToursandTravels() {
                 initial="hidden"
                 animate={control}
             >
-                <h2> Tours and Travels</h2>
+                <h1> Tours and Travels</h1>
                 <p>
                     Staybook offers customised family trips tailored to the
                     needs of any family, large or small, with youngsters or the

@@ -33,7 +33,7 @@ function ContactUs() {
         <div className="contactUsBody">
             <img src={tours} />
             <div className="form">
-                <h2>Contact Us</h2>
+                <h1>Contact Us</h1>
                 <p>
                     Do you want to enquire about our pricing, current offers and
                     arrangements we can help you with? Give us a call or send in

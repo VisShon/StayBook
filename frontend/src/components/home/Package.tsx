@@ -14,8 +14,8 @@ function Package({ name, image, time, description, highlight }: props) {
     return (
         <div className="packageBody">
             <img src={image} />
-            <h2>{name}</h2>
-            <h1>{time}</h1>
+            <h1>{name}</h1>
+            <h2>{time}</h2>
             <a href="/contactus" className="button">
                 Enquire
             </a>

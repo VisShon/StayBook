@@ -24,6 +24,7 @@ import GeneralPolicy from './pages/GeneralPolicy'
 import { WhatsAppWidget } from 'react-whatsapp-widget'
 import 'react-whatsapp-widget/dist/index.css'
 import { ReactComponent as Logo } from './images/user.svg'
+import Hotels from './pages/Hotels'
 
 const rootElement = document.getElementById('root') as HTMLElement
 const root = createRoot(rootElement)
@@ -45,6 +46,7 @@ root.render(
                     <Route path="/refundpolicy" element={<RefundPolicy />} />
                     <Route path="/generalpolicy" element={<GeneralPolicy />} />
                     <Route path="/:slug" element={<BookingEngine />} />
+                    <Route path="/hotels/:slug" element={<Hotels />} />
                 </Routes>
                 <Footer />
                 <WhatsAppWidget CompanyIcon={Logo} phoneNumber="9192112749" />

@@ -25,6 +25,9 @@ function Navbar() {
                 navbar.current!.className='navbar-mini';
             };
         })
+        window.addEventListener('mousemove',()=>{
+            navbar.current!.className='navbar';
+        })
     },[])
 
     const collapse = () => {

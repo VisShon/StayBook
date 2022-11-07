@@ -20,8 +20,12 @@
         display: flex;
         text-decoration: none;
         justify-content: space-between;
-        padding: 1rem;
         font-family: 'Mada', sans-serif;
+        padding: 1rem;
+        padding-left: 2rem;
+        @media screen and (max-width: 800px) {
+            flex-direction: column;
+        }
         cursor: pointer;
         h2{
             text-align:left;
@@ -38,13 +42,16 @@
         }
         p{
             width: 80%;
-            font-size: 1rem;
+            font-size: .85rem;
             color: $grey2;
         }
 
         img{
             border-radius: 0.35rem;
             width: 30%;
+            @media screen and (max-width: 800px) {
+                width: 90%;
+            }
         }
     }
     .hotelCard:hover{

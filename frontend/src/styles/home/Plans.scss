@@ -7,13 +7,14 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    margin-bottom: 5rem;
     @media screen and (max-width: 800px) {
         width: 100%;
     }
     .centerCard {
+        margin-bottom: -1rem;
         position: absolute;
         background-color: white;
-        border: 1px solid $main;
         z-index: 10px;
         padding: 2rem;
         width: 60%;
@@ -21,7 +22,7 @@
         flex-direction: column;
         text-align: center;
         align-items: center;
-        border-radius: 0.5rem;
+        border-radius: 2.5rem 2.5rem 2.5rem 2.5rem;
         @media screen and (max-width: 800px) {
             font-size: 2rem;
             width: 80%;
@@ -51,7 +52,10 @@
     }
     img {
         z-index: 0;
-        height: 45rem;
+        height: 80vh;
+        object-fit: cover;
+        width: 95vw;
+        border-radius: 1rem 1rem 1rem 1rem;
     }
     .contact {
         font-size: 2rem;

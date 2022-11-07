@@ -20,7 +20,7 @@ function PlanCard({ plan, room, amenities, maxCap, guests }: any) {
             </div>
             {!wind.matches && (
                 <div className="tooltip">
-                    Amenities
+                    Cancellation Policy
                     <div className="tooltiptext">{amenities}</div>
                 </div>
             )}

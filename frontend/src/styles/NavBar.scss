@@ -105,7 +105,7 @@
     cursor: pointer;
     position: relative;
     text-decoration: none;
-    color: $main;
+    color: $grey;
     padding: 0.5rem;
 }
 .item:hover {
@@ -117,7 +117,7 @@
     font-family: 'Maven Pro', sans-serif;
     font-size: 1rem;
     display: flex;
-    color: $main;
+    color: $grey;
     align-items: center;
     width: 30%;
     justify-content: space-between;
@@ -194,13 +194,17 @@ ul li ul li {
     font-size: 0.75rem;
     @media screen and (max-width: 800px) {
         width: 6.25rem;
+        height: 2.5rem;
     }
 }
 
 .hotels:hover {
     border-radius: 0rem;
-    height: 1.5rem;
     background: $gradient;
+    height: 1.5rem;
+    @media screen and (max-width: 800px) {
+        height: 2.5rem;
+    }
 }
 
 .navMobile{
@@ -218,7 +222,7 @@ ul li ul li {
     flex-direction: column;
     justify-content:center;
     align-items:center;
-    width: 90%;
+    width: 91.5%;
     background-color: white !important;
     top: 5rem;
     left:0;

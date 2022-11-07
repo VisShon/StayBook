@@ -18,7 +18,6 @@ function HotelCarousel() {
     const [n, setN] = useState(0)
 
     useEffect(() => {
-        control.start('hidden')
         control.start('visible')
     }, [control, n])
 
@@ -37,7 +36,6 @@ function HotelCarousel() {
                 )
                 .then((data) => setData(data))
                 .then(() => {
-                    control.start('visible')
                     setLoading(true)
                 })
         }
@@ -60,46 +58,18 @@ function HotelCarousel() {
                         </a>
 
                         <div className="content">
-                            <h2>{data[n].name}</h2>
+                            <a href={`/${data[n].slug.current}`}>{data[n].name}</a>
                             <p>{data[n].description}</p>
-                            <a
-                                href={`/${data[n].slug.current}`}
-                                className="button"
-                            >
-                                Book Now
-                            </a>
                         </div>
                     </motion.div>
-
-                    <div className="arrows">
-                        <img
-                            src={leftArrow}
-                            onClick={() => {
-                                setN((prev) => (prev == 0 ? prev : --prev))
-                                n !== 0
-                                    ? control.set('hidden')
-                                    : control.set('visible')
-                            }}
-                        />
-                        <img
-                            src={rightArrow}
-                            onClick={() => {
-                                setN((prev) =>
-                                    prev == data.length - 1 ? prev : ++prev
-                                )
-                                n !== data.length - 1
-                                    ? control.set('hidden')
-                                    : control.set('visible')
-                            }}
-                        />
-                    </div>
 
                     <div className="progress">
                         {data.map((item, index) => (
                             <div className="progress-segment" key={index}>
                                 <div
                                     className="outline tooltip"
-                                    onClick={() => setN(index)}
+                                    onClick={() => {setN(index);
+                                        control.set('hidden')}}
                                     style={
                                         index !== n
                                             ? { borderColor: 'white' }

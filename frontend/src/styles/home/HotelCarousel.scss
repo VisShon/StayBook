@@ -15,7 +15,7 @@
     height: 90vh;
     @media screen and (max-width: 800px) {
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         width: screen;
     }
 
@@ -41,7 +41,7 @@
             right:0rem;
             @media screen and (max-width: 800px) {
                 top:3rem;
-                right:-2rem;
+                right:-3rem;
             }
         }
         img {
@@ -53,8 +53,8 @@
             border-radius: 0.5rem;
             box-shadow: 0 0 10px rgba(57, 57, 57, 0.359);
             @media screen and (max-width: 800px) {
-                height: 10rem;
-                width: 15rem;
+                width: 18rem;
+                height: 15rem;
                 margin-left: 0rem;
             }
         }
@@ -71,9 +71,10 @@
             align-items: center;
             text-align: center;
         }
-        h2 {
-            font-size: 4rem;
+        a{
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            text-decoration: none;
             font-weight: 200;
             -webkit-text-fill-color: $grey;
             font-family: 'Kraftan', sans-serif;
@@ -82,19 +83,8 @@
             }
         }
         p {
-            color: $main;
+            color: $grey2;
             font-size: 0.75rem;
-        }
-        .button {
-            text-align: center;
-            cursor: none;
-            margin-top: 2rem;
-            width: 5rem;
-            @media screen and (max-width: 800px) {
-                font-size: 0.75rem;
-                width: 4rem;
-                margin-top: 1rem;
-            }
         }
     }
 }
@@ -172,26 +162,3 @@
     }
 }
 
-.arrows {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    top: 70%;
-    right: 20%;
-    @media screen and (max-width: 800px) {
-        align-self: center;
-        right: 25%;
-        top: 90%;
-    }
-    img {
-        transition: transform ease-in 500ms;
-        transform: scaleX(100%);
-        margin-left: 1rem;
-        object-fit: fill;
-        cursor: none;
-    }
-    img:hover {
-        transition: transform ease-in 500ms;
-        transform: scaleX(60%);
-    }
-}

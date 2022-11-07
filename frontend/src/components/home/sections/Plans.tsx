@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import plans from '../../../images/plan.svg'
+import plans from '../../../images/plan.png'
 import '../../../styles/home/Plans.scss'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 const boxVariant = {
-    visible: { opacity: 1, translateX: 0, transition: { duration: 2 } },
-    hidden: { opacity: 0, translateX: '10vw' },
+    visible: { opacity: 1, translateY: 0, transition: { duration: 2 } },
+    hidden: { opacity: 0, translateY: '10vw' },
 }
 
 function Plans() {

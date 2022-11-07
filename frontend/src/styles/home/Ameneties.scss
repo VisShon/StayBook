@@ -4,8 +4,7 @@
     text-align: center;
     width: 80%;
     display: flex;
-    margin-top: 10rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
     flex-direction: column;
     align-items: center;
     margin-bottom: 7rem;
@@ -14,10 +13,11 @@
     }
 
     h2 {
-        margin: -5rem 0 0.25rem 0;
         font-size: 5rem;
-        margin-bottom: rem;
         font-weight: 200;
+        margin-bottom: 1rem;
+        margin-top: 0rem;
+        width: 100%;
         -webkit-text-fill-color: $grey;
         font-family: 'Kraftan', sans-serif;
         @media screen and (max-width: 800px) {
@@ -30,7 +30,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 97.5%;
+        width: 90%;
         justify-content: center;
         color: $main;
         font-family: 'Maven Pro', sans-serif;
@@ -38,45 +38,48 @@
         font-size: 1rem;
         align-items: center;
         @media screen and (max-width: 800px) {
+            width: 100%;
             flex-wrap: wrap;
             justify-content: center;
         }
     }
     .amenety {
-        transform: scale(120%);
         padding-bottom: 2.5%;
-        box-shadow: 0 0 10px $shadow;
+        box-shadow: 0 0 20px $shadow2;
         background-color: white;
-        border: 0.2rem solid $main;
-        border-radius: 2rem;
+        border: 2px solid $main;
+        border-radius: 5rem 5rem 1rem 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 19rem;
+        width: 17rem;
         justify-content: center;
-        height: 20rem;
+        height: 18rem;
         margin-right: 2rem;
-        margin-bottom: -2%;
+        margin-bottom:2rem;
         position: relative;
         transform-style: preserve-3d;
         @media screen and (max-width: 800px) {
             flex-direction: column;
-            width: 15rem;
+            margin-right: 0rem;
+            width: 17rem;
             border-radius: 1rem;
-            padding-right: 5%;
+            height: 5rem;
+            padding-right: 10%;
+            padding-bottom: 0%;
             margin-bottom: 2%;
         }
         img {
-            width: 10rem;
+            width: 8rem;
             background-color: white;
             transform: translateZ(60px);
             @media screen and (max-width: 800px) {
-                width: 5rem;
+                width: 4rem;
             }
         }
         p {
             font-family: 'kraftan', sans-serif;
-            font-size: 2.25rem;
+            font-size: 2rem;
             @media screen and (max-width: 800px) {
                 writing-mode: horizontal-tb;
                 font-size: 1.75rem;
@@ -90,6 +93,11 @@
         }
     }
     .amenety:nth-child(odd) {
-        box-shadow: 0 0 10px $shadow2;
+        border-radius: 1rem 1rem 5rem 5rem;
+        @media screen and (max-width: 800px) {
+            padding-right: 5%;
+            height: 14rem;
+        }
+        
     }
 }

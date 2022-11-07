@@ -5,6 +5,7 @@
     position: relative;
     z-index: 0;
     display: flex;
+    margin-bottom: 1rem;
     justify-content: space-between;
     padding: 5rem 2rem 0 2rem;
 
@@ -55,6 +56,7 @@
             height: 1px;
         }
         a {
+            font-size: .75rem;
             color: black;
             text-decoration: none;
             margin-top: 0.5rem;
@@ -69,7 +71,7 @@
         padding: 1rem;
         display: flex;
         width: 60%;
-        justify-content: space-between;
+        justify-content: space-evenly;
         border-radius: 0.5rem;
         @media screen and (max-width: 800px) {
             flex-wrap: wrap;
@@ -94,7 +96,7 @@
             margin-top: 0.25rem;
             font-family: 'Maven Pro', sans-serif;
             font-weight: 200;
-            font-size: 1rem;
+            font-size: .85rem;
         }
     }
 }

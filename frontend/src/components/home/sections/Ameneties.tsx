@@ -39,16 +39,26 @@ function Ameneties() {
                 initial="hidden"
                 animate={control}
             >
-                <h2>Discover Benefits</h2>
                 <div>
-                    {data.map((item, i) => (
+                    {data.slice(0,3).map((item, i) => (
                         <Tilt className="amenety" perspective={500} key={i}>
                             <p>{item}</p>
                             <img
                                 src={require('../../../images/staybookAmenities/' +
-                                    item +
-                                    '.svg')}
-                            />
+                                item +
+                                '.svg')}
+                                />
+                        </Tilt>
+                    ))}
+                    <h2>Discover Benefits</h2>
+                    {data.slice(3,6).map((item, i) => (
+                        <Tilt className="amenety" perspective={500} key={i}>
+                            <p>{item}</p>
+                            <img
+                                src={require('../../../images/staybookAmenities/' +
+                                item +
+                                '.svg')}
+                                />
                         </Tilt>
                     ))}
                 </div>

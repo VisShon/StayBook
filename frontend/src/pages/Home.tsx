@@ -31,8 +31,8 @@ function Home() {
             <div className="body" ref={body}>
                 <BookingCarousel />
                 <HotelCarousel />
-                <Ameneties />
                 <ToursandTravels />
+                <Ameneties />
                 <Plans />
             </div>
         </>

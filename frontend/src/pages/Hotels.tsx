@@ -40,8 +40,9 @@ function Hotels() {
   return (
     <>
       {isLoading?<div>Loading...</div>:
+      <>
+      <h1>{data!.name}</h1>
       <div className="hotelContainer">
-        <h1>{data!.name}</h1>
         {data!.hotels.map(item=>item.hotel)
         .map((hotel:Props,index:number)=>(<HotelCard name={hotel!.name} 
           description={hotel!.description}
@@ -49,7 +50,8 @@ function Hotels() {
           images={hotel!.images}
           slug={hotel!.slug}
           key={index}/>))}
-      </div>}
+      </div>
+      </>}
     </>
   )
 }

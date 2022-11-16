@@ -49,7 +49,7 @@ root.render(
                     <Route path="/hotels/:slug" element={<Hotels />} />
                 </Routes>
                 <Footer />
-                <WhatsAppWidget CompanyIcon={Logo} phoneNumber="9192112749" />
+                <WhatsAppWidget CompanyIcon={Logo} phoneNumber="918527703312" />
             </AuthProvider>
         </BrowserRouter>
     </Provider>

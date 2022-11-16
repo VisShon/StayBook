@@ -27,6 +27,7 @@ function Packages() {
 
     return (
         <div className="packagePageBody">
+            <h1>Tour Packages</h1>
             {packages.map((p: any, i) => (
                 <Package
                     name={p.name}

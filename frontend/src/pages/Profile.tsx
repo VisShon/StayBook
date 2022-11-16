@@ -37,6 +37,7 @@ function Profile() {
 
     return (
         <>
+            <h1>Profile</h1>
             {!decodedToken && <div>Reload again</div>}
             {decodedToken && (
                 <div className="profileBody">

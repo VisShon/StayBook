@@ -30,7 +30,7 @@ function SinglePost() {
     return (
         <>
             {isLoading ? (
-                <h1>Loading...</h1>
+                <p>Loading...</p>
             ) : (
                 <section className="postBody">
                     <h1>{singlePost.title}</h1>

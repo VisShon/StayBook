@@ -14,25 +14,25 @@ const dropdown = {
 }
 
 function SelectedPlan({ maxCap, title, roomType, checkIn, checkOut }: any) {
-    const hotelName: string = new URL(window.location.href).pathname
+    // const hotelName: string = new URL(window.location.href).pathname
 
     const [isRoomAvailable, setIsRoomAvailable] = useState(true)
     const [children, setChildren] = useState('0')
 
-    useEffect(() => {
-        const checkAvailability = async () => {
-            const re2 = await axios
-                .post(`/api${hotelName}/isRoomAvailable`, {
-                    checkIn: checkIn,
-                    checkOut: checkOut,
-                    roomType: roomType,
-                    maxCap: maxCap,
-                    // maxCap:0,
-                })
-                .then((res) => setIsRoomAvailable(res.data))
-        }
-        checkAvailability()
-    }, [])
+    // useEffect(() => {
+    //     const checkAvailability = async () => {
+    //         const re2 = await axios
+    //             .post(`/api${hotelName}/isRoomAvailable`, {
+    //                 checkIn: checkIn,
+    //                 checkOut: checkOut,
+    //                 roomType: roomType,
+    //                 maxCap: maxCap,
+    //                 // maxCap:0,
+    //             })
+    //             .then((res) => setIsRoomAvailable(res.data))
+    //     }
+    //     checkAvailability()
+    // }, [])
 
     const dispatch = useAppDispatch()
 

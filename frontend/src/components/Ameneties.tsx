@@ -12,7 +12,7 @@ function Ameneties({ data }: any) {
 
     return (
         <>
-            <h2>Ameneties:</h2>
+            <h2>Amenities</h2>
             <div className="details">
                 {data.slice(0, visible).map((amenety: any, index: number) => (
                     <h1

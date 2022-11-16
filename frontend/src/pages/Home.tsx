@@ -31,6 +31,7 @@ function Home() {
             <div className="body" ref={body}>
                 <BookingCarousel />
                 <HotelCarousel />
+                <h1 style={{opacity:'0'}}>StayBook Hotels</h1>
                 <ToursandTravels />
                 <Ameneties />
                 <Plans />

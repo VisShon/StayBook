@@ -1,9 +1,14 @@
 import React from 'react'
 import '../styles/Misc.scss'
-
+import {Helmet} from 'react-helmet'
 
 function TermsCondition() {
   return (
+    <>
+    <Helmet>
+        <title>Terms and Condition</title>
+        <meta name="description" content="StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels" />
+    </Helmet>
     <div className="Misc">
         <h1>Terms and Condition</h1>
         <h2>Check In Check Out</h2>
@@ -66,6 +71,7 @@ function TermsCondition() {
           We promise that we provide the rooms after satisfy the above three points if in case guest feels the bed sheets are not cleaned then we’ll change the bed sheets and then provide the <b>rooms</b> to the guest or somehow guest see the visible dust in the room we’ll change the room or even as per availability we’ll upgrade the <b>room</b> free of cost, only in a condition if guest tells our staff in just 1 hour of the check in if they complain these after this time limit then we’ll not consider  those as <b>StayBook Hotels</b> fault.
         </p>
     </div>
+    </>
   )
 }
 

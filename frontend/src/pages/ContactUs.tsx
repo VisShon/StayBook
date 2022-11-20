@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../styles/home/ContactUs.scss'
 import tours from '../images/travel.svg'
 import emailjs from '@emailjs/browser'
+import {Helmet} from 'react-helmet'
 function ContactUs() {
     const [name, setName] = useState<string>('')
     const [email, setEmail] = useState<string>('')
@@ -30,6 +31,11 @@ function ContactUs() {
         }
     }
     return (
+        <>
+        <Helmet>
+            <title>StayBook - Contact Us</title>
+            <meta name="description" content="StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels" />
+        </Helmet>
         <div className="contactUsBody">
             <img src={tours} alt={'Staybook Hotels and Tours'}/>
             <div className="form">
@@ -75,6 +81,7 @@ function ContactUs() {
                 )}
             </div>
         </div>
+        </>
     )
 }
 

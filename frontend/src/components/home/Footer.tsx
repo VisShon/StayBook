@@ -28,6 +28,7 @@ export default function Footer() {
             <div className="logoCircle">
                 <img src={logo} alt={'StayBook'}/>
                 <div className="line"></div>
+                <p>2022 © StayBook, New Delhi. All rights reserved</p>
                 <p>1/5, Desh Bandhu Gupta Rd, opposite paharganj, Motia Khan, Paharganj, New Delhi, Delhi 110055</p>
                 <a href="Tel: +91-8373929299">Ph. no: +91-8373929299</a>
                 <a href="mailto: booking@staybook.in">booking@staybook.in</a>
@@ -45,13 +46,13 @@ export default function Footer() {
 
                 <div className="heading">
                     <h2>Socials:</h2>
-                    <a href="https://www.instagram.com/staybook_1/">
+                    <a href="https://www.instagram.com/staybook_1/" target="_blank">
                         Instagram
                     </a>
-                    <a href="https://www.facebook.com/budgetfriendlyhotel?paipv=0&eav=AfZ-waWz6OajACPaAqHeTptaNS9Rt4i4iwbdVK0jE5KwoQfbZ6GsLkTVHLjTpMMeyxk">
+                    <a href="https://www.facebook.com/budgetfriendlyhotel?paipv=0&eav=AfZ-waWz6OajACPaAqHeTptaNS9Rt4i4iwbdVK0jE5KwoQfbZ6GsLkTVHLjTpMMeyxk" target="_blank">
                         Facebook
                     </a>
-                    <a href="https://twitter.com/stayboook">Twitter</a>
+                    <a href="https://twitter.com/stayboook" target="_blank">Twitter</a>
                 </div>
 
                 <div className="heading">

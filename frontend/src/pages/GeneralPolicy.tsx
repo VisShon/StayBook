@@ -1,9 +1,14 @@
 import React from 'react'
 import '../styles/Misc.scss'
-
+import {Helmet} from 'react-helmet'
 
 function GeneralPolicy() {
   return (
+    <>
+    <Helmet>
+      <title> General Policy</title>
+      <meta name="description" content="StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels" />
+    </Helmet>
     <div className="Misc">
         <h1>General Policy</h1>
         <h3>Wifi</h3>
@@ -41,6 +46,7 @@ function GeneralPolicy() {
 
         We reserve the right to change the any of the terms and condition without notice to guest.</p>
     </div>
+    </>
   )
 }
 

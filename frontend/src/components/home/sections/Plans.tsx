@@ -36,8 +36,8 @@ function Plans() {
                     We can help you fit your stay and experience within your
                     allotted budget.
                 </p>
-                <a href="tel: +91-8373929299" className="contact">
-                    Call for Support: +91-8373929299
+                <a href="/contactus" className="contact">
+                    Contact Us
                 </a>
             </div>
         </motion.div>

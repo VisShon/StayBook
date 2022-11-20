@@ -1,9 +1,14 @@
 import React from 'react'
 import '../styles/Misc.scss'
-
+import {Helmet} from 'react-helmet'
 
 function PrivacyPolicy() {
   return (
+    <>
+    <Helmet>
+      <title>Privacy Policy</title>
+      <meta name="description" content="StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels" />
+    </Helmet>
     <div className="Misc">
         <h1>Privacy Policy</h1>
         <p>Different type of personal information is collected by us mentioned below.</p>
@@ -38,6 +43,7 @@ function PrivacyPolicy() {
         We can change any of the terms and condition of the website without any prior notice to any person so we request you to please keep a look on the terms and conditions regularly.<br/> <br/>
         </p>
     </div>
+    </>
   )
 }
 

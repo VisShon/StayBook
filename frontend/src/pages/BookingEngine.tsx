@@ -13,6 +13,7 @@ import PhotoGrid from '../components/PhotoGrid'
 import RoomCard from '../components/RoomCard'
 import { useParams } from 'react-router-dom'
 import client from '../client'
+import {Helmet} from 'react-helmet'
 
 function App() {
     const [hotel, setHotel] = useState<any>(null)
@@ -85,6 +86,10 @@ function App() {
         <>
             {hotel ? (
                 <>
+                    <Helmet>
+                        <title>{hotel.name}</title>
+                        <meta name="description" content="StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels" />
+                    </Helmet>
                     {!isMinimized ? (
                         <div className="comparator">
                             <div

@@ -23,10 +23,10 @@ export default function Footer() {
 
     return (
         <div className="footerBody">
-            <img src={footerBg} />
+            <img src={footerBg} alt={'StayBook'}/>
 
             <div className="logoCircle">
-                <img src={logo} />
+                <img src={logo} alt={'StayBook'}/>
                 <div className="line"></div>
                 <p>1/5, Desh Bandhu Gupta Rd, opposite paharganj, Motia Khan, Paharganj, New Delhi, Delhi 110055</p>
                 <a href="Tel: +91-8373929299">Ph. no: +91-8373929299</a>

@@ -87,7 +87,7 @@ function BookingCarousel() {
                 <>
                     <div className="bookingBar">
                         <div onClick={onSubmit} className="arrowButton">
-                            <img src={arrow} />
+                            <img src={arrow} alt={'StayBook Hotels'} />
                             <p>Book Now</p>
                         </div>
 
@@ -116,7 +116,7 @@ function BookingCarousel() {
                                 >
                                     -
                                 </a>
-                                <img src={guest} style={{ height: '1.5rem' }} />
+                                <img src={guest} style={{ height: '1.5rem' }}  alt={'StayBook Hotels'}/>
                                 <a
                                     onClick={() => {
                                         guests == 4
@@ -214,7 +214,7 @@ function BookingCarousel() {
                         <div className="line"></div>
 
                         <div className="search">
-                            <img src={hotel} style={{ height: '1.5rem' }} />
+                            <img src={hotel} style={{ height: '1.5rem' }} alt={'StayBook Hotels'} />
                             <input
                                 onChange={(e) => {
                                     const d = data.filter((item) =>
@@ -255,16 +255,16 @@ function BookingCarousel() {
                     
                     <div className="dish">
                         <img src ={'https://annajona.is/static/media/s1/0.png'} 
-                             className="shadow"/>
+                             className="shadow" alt={'StayBook Hotels'}/>
                         <img style={{transform: 'rotateZ('+(translateY.current/20).toString()+'deg)'}} 
-                            src ={'https://annajona.is/static/media/s1/1.png'}/>
+                            src ={'https://annajona.is/static/media/s1/1.png'} alt={'StayBook Hotels'}/>
                     </div>
 
                     <div className="bottle">
                         <img style={{transform:'translateY('+(translateY2.current/6).toString()+'px)'}} 
-                        src ={'https://annajona.is/static/media/s1/3.png'}/>
+                        src ={'https://annajona.is/static/media/s1/3.png'} alt={'StayBook Hotels'}/>
                         <img style={{transform:'translateY('+(translateY2.current/6).toString()+'px)'}} 
-                        src ={'https://annajona.is/static/media/s1/2.png'} className="shadow"/>
+                        src ={'https://annajona.is/static/media/s1/2.png'} alt={'StayBook Hotels'} className="shadow"/>
                     </div>
 
                 </>

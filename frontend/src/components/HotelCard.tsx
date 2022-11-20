@@ -17,7 +17,7 @@ function HotelCard({name,address,images,slug,description}:Props) {
   return (
     <a  href={`/${slug.current}`}     
         className="hotelCard">
-        <img src={images?.asset.url} alt="image"/>
+        <img src={images?.asset.url} alt={name}/>
         <div>
           <h2>{name}</h2>
           <a>{address}</a>

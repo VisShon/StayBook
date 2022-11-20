@@ -101,7 +101,7 @@ function App() {
                                 </div>
                             </div>
                             <div className="site">
-                                <img src={bc} />
+                                <img src={bc} alt={'Booking.com Hotels'} />
                                 Booking.com
                                 <p>
                                     ₹
@@ -110,7 +110,7 @@ function App() {
                                 </p>
                             </div>
                             <div className="site">
-                                <img src={mmt} />
+                                <img src={mmt} alt={'Make My Trip Hotels'} />
                                 Make My Trip
                                 <p>
                                     ₹
@@ -119,7 +119,7 @@ function App() {
                                 </p>
                             </div>
                             <div className="site">
-                                <img src={tra} />
+                                <img src={tra} alt={'Trip Advisor Hotels'}/>
                                 Trip Advisor
                                 <p>
                                     ₹
@@ -152,6 +152,7 @@ function App() {
                         Open gallery
                     </div>:<img className="cross" 
                                 src={cross}
+                                alt={'Staybook Hotels'}
                                 onClick={() => setGallery((prev) => !prev)}/>}
                     <div className="Maincontainer">
                         <div className="sideContainer">
@@ -161,7 +162,7 @@ function App() {
                                     {hotel.description}
                                 </p>
                                 <a href={hotel.map} className="description" style={{fontSize:'1rem'}}>
-                                    <img src={mapImage}/>
+                                    <img src={mapImage} alt={'Staybook Hotels'}/>
                                     {hotel.address}
                                 </a>
                                 <p className="contact">

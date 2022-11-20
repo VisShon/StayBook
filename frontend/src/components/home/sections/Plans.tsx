@@ -29,7 +29,7 @@ function Plans() {
             variants={boxVariant}
             animate={control}
         >
-            <img src={plans} />
+            <img src={plans} alt={'Staybook Hotels'}/>
             <div className="centerCard">
                 <h2>Plan an Unforgettable Experience in Staybook!</h2>
                 <p>

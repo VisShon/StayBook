@@ -31,7 +31,7 @@ function ContactUs() {
     }
     return (
         <div className="contactUsBody">
-            <img src={tours} />
+            <img src={tours} alt={'Staybook Hotels and Tours'}/>
             <div className="form">
                 <h1>Contact Us</h1>
                 <p>

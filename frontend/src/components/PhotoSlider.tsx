@@ -9,13 +9,14 @@ function PhotoSlider({ data }: any) {
 
     return (
         <div className="photoSlider">
-            <img className="mainImage" src={data[n].asset.url} />
+            <img className="mainImage" alt={'StayBook'} src={data[n].asset.url} />
             <div className="gallery">
                 {data.map((item: any, index: number) => (
                     <img
                         onClick={() => setN(index)}
                         className={n != index ? 'image' : 'image-selected'}
                         src={item.asset.url}
+                        alt={'StayBook'}
                         key={index}
                     />
                 ))}
@@ -31,6 +32,7 @@ function PhotoSlider({ data }: any) {
                         !wind.matches ? { width: '5rem' } : { width: '3rem' }
                     }
                     src={left}
+                    alt={'Hotels in Delhi'}
                 />
             </a>
             <a
@@ -46,6 +48,7 @@ function PhotoSlider({ data }: any) {
                         !wind.matches ? { width: '5rem' } : { width: '3rem' }
                     }
                     src={right}
+                    alt={'Hotels in Delhi'}
                 />
             </a>
         </div>

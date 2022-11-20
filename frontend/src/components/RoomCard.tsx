@@ -10,7 +10,7 @@ function RoomCard({ room }: any) {
                     {room.type}
                     <p>{room.info}</p>
                 </h2>
-                <img src={room.image.asset.url} className="roomImage" />
+                <img src={room.image.asset.url} className="roomImage" alt={room.type}/>
             </div>
             {room.plans.map((plan: any, i: number) => (
                 <PlanCard

@@ -23,7 +23,7 @@ function ToursandTravels() {
 
     return (
         <>
-            <img className="toursImage" src={tourImage} />
+            <img className="toursImage" src={tourImage} alt={'Staybook Hotels'}/>
             <motion.div
                 className="toursContent"
                 ref={ref}

@@ -53,8 +53,8 @@ function HotelCarousel() {
                         animate={control}
                     >
                         <a href={`/${data[n].slug.current}`} className="image">
-                            <img src={data[n].images[0].asset.url} />
-                            <img className="image-second" src={data[n].images[1].asset.url}/>
+                            <img src={data[n].images[0].asset.url} alt={data[n].name}/>
+                            <img className="image-second" src={data[n].images[1].asset.url} alt={data[n].name}/>
                         </a>
 
                         <div className="content">

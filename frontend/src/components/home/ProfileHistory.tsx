@@ -27,7 +27,7 @@ function ProfileHistory({ hotel }: any) {
                 <></>
             ) : (
                 <div className="history">
-                    <img src={data.images[0].asset.url} />
+                    <img src={data.images[0].asset.url} alt={data.name}/>
                     <div className="historyInfo">
                         <h2>{data.name}</h2>
                         <a href={`/${data.slug.current}`} className="button">

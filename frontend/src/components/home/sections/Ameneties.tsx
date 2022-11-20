@@ -47,6 +47,7 @@ function Ameneties() {
                                 src={require('../../../images/staybookAmenities/' +
                                 item +
                                 '.svg')}
+                                alt={'Staybook Hotels Delhi'}
                                 />
                         </Tilt>
                     ))}
@@ -55,6 +56,7 @@ function Ameneties() {
                         <Tilt className="amenety" perspective={500} key={i}>
                             <p>{item}</p>
                             <img
+                                alt={'Staybook Hotels Delhi'}
                                 src={require('../../../images/staybookAmenities/' +
                                 item +
                                 '.svg')}

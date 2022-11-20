@@ -45,7 +45,7 @@ function Navbar() {
     return (
         <div className="navbar" ref={navbar}>
             <Link to="/" className="logo">
-                <img src={logo} className="logo" />
+                <img src={logo} className="logo" alt={'StayBook Hotels'}/>
             </Link>
             <div className="TourPackage">
                 <Dropdown />
@@ -65,6 +65,7 @@ function Navbar() {
                 <img
                     src={decodedToken ? decodedToken.picture : user}
                     className="profilepic"
+                    alt={'StayBook Hotels'}
                 />
             </Link>
 

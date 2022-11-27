@@ -78,6 +78,11 @@ export default {
                             type: 'string',
                         },
                         {
+                            name: 'description',
+                            title: 'Description',
+                            type: 'string',
+                        },
+                        {
                             name: 'totalRooms',
                             title: 'Total Rooms',
                             type: 'number',

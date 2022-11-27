@@ -82,7 +82,7 @@ function BookingCarousel() {
     }, [])
 
     return (
-        <div className="carouselBody">
+        <div className="carouselBody" id="bookingBar">
             {loading && (
                 <>
                     <div className="bookingBar">
@@ -101,7 +101,7 @@ function BookingCarousel() {
                                 max="3"
                             />
                             <div className="change">
-                                <a
+                                <div
                                     onClick={() => {
                                         guests == 2
                                             ? setGuests(2)
@@ -115,11 +115,11 @@ function BookingCarousel() {
                                     }
                                 >
                                     -
-                                </a>
+                                </div>
                                 <img src={guest} style={{ height: '1.5rem' }}  alt={'StayBook Hotels'}/>
-                                <a
+                                <div
                                     onClick={() => {
-                                        guests == 4
+                                        guests === 4
                                             ? setGuests(4)
                                             : setGuests((prev) => ++prev)
                                     }}
@@ -131,7 +131,7 @@ function BookingCarousel() {
                                     }
                                 >
                                     +
-                                </a>
+                                </div>
                             </div>
                         </div>
 

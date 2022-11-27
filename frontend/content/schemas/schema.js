@@ -5,6 +5,7 @@ import post from './post'
 import tourPackage from './package'
 import hotel from './hotel'
 import amenety from './amenety'
+import offer from './offer'
 import navoptions from './navOptions'
 
 export default createSchema({
@@ -14,6 +15,7 @@ export default createSchema({
         tourPackage,
         hotel,
         amenety,
+        offer,
         navoptions,
         blockContent,
     ]),

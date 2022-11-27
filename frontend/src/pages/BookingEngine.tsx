@@ -34,6 +34,7 @@ function App() {
           rooms[]{
             type,
             totalRooms,
+            description,
             guests,
             info,
             plans,
@@ -139,6 +140,7 @@ function App() {
                             onClick={() => setIsMinimized(false)}
                         >
                             <img
+                                alt="StayBook"
                                 src={light}
                                 style={{ width: '1.5rem', objectFit: 'cover' }}
                             />

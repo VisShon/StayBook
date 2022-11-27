@@ -1,0 +1,71 @@
+@import '../colors';
+
+.offerTitle{
+    font-size: 5rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+    width: 100%;
+    text-align: center;
+    -webkit-text-fill-color: $grey;
+    font-family: 'Kraftan', sans-serif;
+    @media screen and (max-width: 800px) {
+        font-size: 2rem;
+    }
+}
+.offersContainer{
+    margin-top: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: start;
+
+    font-weight: 400;
+    font-size: 1rem;
+    align-items: center;
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.offerCard{
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px $shadow;
+    padding: 1.5rem;
+    margin: 2rem;
+    border-radius: 2rem;
+    img{
+        width: 10rem;
+        height: 10rem;
+        object-fit: cover;
+        border-radius:30rem;
+    }
+    h2{
+        -webkit-text-fill-color: $grey;
+        font-family: 'Kraftan', sans-serif;
+    }
+    p{
+        font-family: 'Mada',sans-serif;
+        font-size: .75rem;
+        font-weight: 200;
+        margin-bottom: 1rem;
+        color: $grey;
+    }
+    a{
+        background-color:$main;
+        padding:.5rem;
+        padding: .75rem;
+        border-radius:.5rem;
+        color:White;
+        text-decoration: none;
+    }
+    a:hover {
+        box-shadow: 0 0 10px $shadow;
+        cursor: none;
+    }
+}

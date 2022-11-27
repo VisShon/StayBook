@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from 'react'
 import Ameneties from '../components/home/sections/Ameneties'
 import BookingCarousel from '../components/home/sections/BookingCarousel.jsx'
 import HotelCarousel from '../components/home/sections/HotelCarousel'
-import Plans from '../components/home/sections/Plans'
 import ToursandTravels from '../components/home/sections/ToursandTravels'
+import SpcialOffers from '../components/home/sections/SpcialOffers'
+import Plans from '../components/home/sections/Plans'
 import '../styles/home/App.scss'
 
 function Home() {
@@ -34,6 +35,7 @@ function Home() {
                 <h1 style={{opacity:'0'}}>StayBook Hotels</h1>
                 <ToursandTravels />
                 <Ameneties />
+                <SpcialOffers/>
                 <Plans />
             </div>
         </>

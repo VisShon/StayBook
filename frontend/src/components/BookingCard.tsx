@@ -16,6 +16,9 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
 function BookingCard({hotelName, address}:any) {
+
+    const ref: string = new URL(window.location.href).pathname
+
     let today = new Date()
     let tomorrow = new Date()
     tomorrow.setDate(today.getDate() + 1)
@@ -135,6 +138,23 @@ function BookingCard({hotelName, address}:any) {
                                 templateParams,
                                 'bE7FBsdP5YFb4U6LK'
                                 ).then(()=>setIsPaid(true));
+
+        const result = await axios.post(
+            `/api${ref}/setReservations`,
+            {
+                username: username,
+                email: email,
+                checkIn: checkIn,
+                checkOut: checkOut,
+                amountPaid: price.toString() + '(To be Paid)',
+                selectedPlans: Plans,
+            },
+            {
+                headers: {
+                    Authorization: `bearer ${sessionStorage['user']}`,
+                },
+            }
+        )
 
     }
 

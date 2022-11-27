@@ -3,8 +3,10 @@ import '../styles/Hotel.scss';
 
 export type Props ={
   name: string,
-  address: string,
   slug:{current:string},
+  rooms:{plans:{
+    price:number
+  }},
   description:string,
   images:{
     asset: {
@@ -13,17 +15,19 @@ export type Props ={
   },
 };
 
-function HotelCard({name,address,images,slug,description}:Props) {
+function HotelCard({name,images,rooms,slug,description}:Props) {
+  console.log(rooms)
   return (
-    <a  href={`/${slug.current}`}     
+    <div   
         className="hotelCard">
         <img src={images?.asset.url} alt={name}/>
         <div>
           <h2>{name}</h2>
-          <a>{address}</a>
-          <p>{description.slice(0,100)}...</p>
+          <p>{description.slice(0,50)}...</p>
+          <p><b>Starting ₹{rooms.plans.price}</b></p>
+          <a href={`/${slug.current}`} >Book Now</a>
         </div>
-    </a>
+    </div>
   )
 };
 

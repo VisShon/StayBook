@@ -1,9 +1,10 @@
 @import './colors';
 
-h1{
+.hotelTitle{
     text-align:center;
     font-family: 'kraftan',sans-serif;
-    -webkit-text-fill-color: $main;
+    -webkit-text-fill-color: $grey;
+    font-weight: 100;
     font-size: 4rem;
 }
 .hotelContainer{
@@ -11,15 +12,15 @@ h1{
     display: flex;
     flex-wrap: wrap;
     padding:0 8% 0 8%;
-    justify-content: center;
+    justify-content: start;
     align-items:center;
 
     .hotelCard{
         width: 25%;
-        height: 28rem;
+        height: 26rem;
         box-shadow: 0 0 15px $shadow2;
         border-radius: 0.75rem;
-        margin-left: 2rem;
+        margin-left: 5rem;
         margin-bottom: 2rem;
         display: flex;
         flex-direction: column;
@@ -28,7 +29,7 @@ h1{
         font-family: 'Mada', sans-serif;
         cursor: pointer;
         div{
-            padding: 1rem;
+            padding: .75rem;
         }
         h2{
             text-align:left;
@@ -40,11 +41,18 @@ h1{
             
         }
         a{
+            background-color: $main;
             font-size: .75rem;
-            color: $main;
+            color: white;
+            text-decoration: none;
+            padding: .5rem;
+            border-radius: 0.25rem;
+        }
+        a:hover{
+            box-shadow: 0 0 15px $shadow;
         }
         p{
-            width: 80%;
+            width: 90%;
             font-size: .75rem;
             color: $grey2;
         }

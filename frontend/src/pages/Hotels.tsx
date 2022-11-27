@@ -27,7 +27,9 @@ function Hotels() {
                       name,
                       slug,
                       description,
-                      address,
+                      rooms[0]{
+                        plans[0],
+                      },
                       images[0]{
                         asset -> {url},
                       }
@@ -37,7 +39,7 @@ function Hotels() {
           )
           .then((data) => setData(data[0]))
           .then(()=>setIsLoading(false))
-  }, [])
+  }, [slug])
   return (
     <>
       <Helmet>
@@ -46,12 +48,12 @@ function Hotels() {
       </Helmet>
       {isLoading?<div>Loading...</div>:
       <>
-      <h1>{data!.name}</h1>
+      <h1 className='hotelTitle'>{data!.name}</h1>
       <div className="hotelContainer">
         {data!.hotels.map(item=>item.hotel)
         .map((hotel:Props,index:number)=>(<HotelCard name={hotel!.name} 
           description={hotel!.description}
-          address={hotel!.address} 
+          rooms={hotel!.rooms}
           images={hotel!.images}
           slug={hotel!.slug}
           key={index}/>))}

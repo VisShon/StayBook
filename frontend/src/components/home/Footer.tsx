@@ -29,7 +29,6 @@ export default function Footer() {
                 <img src={logo} alt={'StayBook'}/>
                 <div className="line"></div>
                 <p>2022 © StayBook, New Delhi. All rights reserved</p>
-                <p>1/5, Desh Bandhu Gupta Rd, opposite paharganj, Motia Khan, Paharganj, New Delhi, Delhi 110055</p>
                 <a href="Tel: +91-8373929299">Ph. no: +91-8373929299</a>
                 <a href="mailto: booking@staybook.in">booking@staybook.in</a>
             </div>

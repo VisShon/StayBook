@@ -14,6 +14,7 @@ import RoomCard from '../components/RoomCard'
 import { useParams } from 'react-router-dom'
 import client from '../client'
 import {Helmet} from 'react-helmet'
+import Spinner from '../components/Spinner';
 
 function App() {
     const [hotel, setHotel] = useState<any>(null)
@@ -213,7 +214,7 @@ function App() {
                     </div>
                 </>
             ) : (
-                <div>Loading...</div>
+                <Spinner />
             )}
         </>
     )

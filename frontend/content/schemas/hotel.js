@@ -98,6 +98,12 @@ export default {
                             type: 'image',
                         },
                         {
+                            name: 'images',
+                            title: 'Images',
+                            type: 'array',
+                            of: [{ type: 'image', options: { hotspot: true } }],
+                        },
+                        {
                             name: 'plans',
                             title: 'Plans',
                             type: 'array',

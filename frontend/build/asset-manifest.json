@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f29a18c9.css",
-    "main.js": "/static/js/main.7cd0efc3.js",
+    "main.css": "/static/css/main.35c3a608.css",
+    "main.js": "/static/js/main.68515565.js",
     "static/media/bc.svg": "/static/media/bc.78fa5f5a1721c7e914e49d694ec9bdfc.svg",
     "static/media/plan.png": "/static/media/plan.fa313b8e9e5fd5b305ba.png",
     "static/media/travel.svg": "/static/media/travel.74ec31801e2c5f52c1f7d8e4040ec00d.svg",
@@ -24,13 +24,17 @@
     "static/media/Room Service.svg": "/static/media/Room Service.4a0939c10fa9d3c3a9fd.svg",
     "static/media/hotel.svg": "/static/media/hotel.4056180fe1ec338e21492ddf4a8bbe2a.svg",
     "static/media/arrowVector.svg": "/static/media/arrowVector.43a4307ae23a42184ea728db16750b73.svg",
+    "static/media/Live Chat.svg": "/static/media/Live Chat.25a9b4bee29e7664008c.svg",
     "index.html": "/index.html",
     "static/media/cross.svg": "/static/media/cross.135380c069ff8d921a10adeb82b0e48e.svg",
-    "main.f29a18c9.css.map": "/static/css/main.f29a18c9.css.map",
-    "main.7cd0efc3.js.map": "/static/js/main.7cd0efc3.js.map"
+    "static/media/Social Media.svg": "/static/media/Social Media.0e5ed0465be53fe67fa8.svg",
+    "static/media/Text.svg": "/static/media/Text.d84fb7ab9e5e9468e898.svg",
+    "static/media/Email.svg": "/static/media/Email.e94dfea7c358727ce190.svg",
+    "main.35c3a608.css.map": "/static/css/main.35c3a608.css.map",
+    "main.68515565.js.map": "/static/js/main.68515565.js.map"
   },
   "entrypoints": [
-    "static/css/main.f29a18c9.css",
-    "static/js/main.7cd0efc3.js"
+    "static/css/main.35c3a608.css",
+    "static/js/main.68515565.js"
   ]
 }

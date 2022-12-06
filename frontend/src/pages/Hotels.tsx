@@ -31,7 +31,7 @@ function Hotels() {
                       rooms[0]{
                         plans[0],
                       },
-                      images[0]{
+                      images[]{
                         asset -> {url},
                       }
                     }

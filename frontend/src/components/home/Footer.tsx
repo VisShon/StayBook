@@ -59,6 +59,7 @@ export default function Footer() {
                     <a href="/packages">Tours and Packages</a>
                     <a href="/contactUs">Contact Us</a>
                     <a href="/blogs">Blogs</a>
+                    <a href="/FAQ">FAQ</a>
                 </div>
 
                 <div className="heading">

@@ -20,6 +20,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsCondition from './pages/TermsCondition'
 import RefundPolicy from './pages/RefundPolicy'
 import GeneralPolicy from './pages/GeneralPolicy'
+import FAQ from './pages/Faq'
 
 import { WhatsAppWidget } from 'react-whatsapp-widget'
 import 'react-whatsapp-widget/dist/index.css'
@@ -43,6 +44,7 @@ root.render(
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/privacypolicy" element={<PrivacyPolicy />} />
                     <Route path="/termscondition" element={<TermsCondition />} />
+                    <Route path="/FAQ" element={<FAQ />} />
                     <Route path="/refundpolicy" element={<RefundPolicy />} />
                     <Route path="/generalpolicy" element={<GeneralPolicy />} />
                     <Route path="/:slug" element={<BookingEngine />} />

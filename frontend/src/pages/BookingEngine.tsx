@@ -47,6 +47,13 @@ function App() {
               },
               alt
             },
+            images[]{
+                asset -> {
+                  _id,
+                  url
+                },
+                alt
+            },
           },
           email,
           map,
@@ -199,7 +206,6 @@ function App() {
                                 </p>
                             </>
                             <Amneties data={hotel.amenities} />
-
                             <h3 className="heading">{'Choose your room(s)'}</h3>
                             {hotel.rooms
                                 .filter(

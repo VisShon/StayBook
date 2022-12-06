@@ -5,6 +5,7 @@ import HotelCarousel from '../components/home/sections/HotelCarousel'
 import ToursandTravels from '../components/home/sections/ToursandTravels'
 import SpcialOffers from '../components/home/sections/SpcialOffers'
 import Plans from '../components/home/sections/Plans'
+import ContactUs from '../components/home/sections/ContactUs'
 import '../styles/home/App.scss'
 
 function Home() {
@@ -37,6 +38,7 @@ function Home() {
                 <Ameneties />
                 <SpcialOffers/>
                 <Plans />
+                <ContactUs />
             </div>
         </>
     )

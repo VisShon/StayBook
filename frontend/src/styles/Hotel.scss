@@ -17,7 +17,7 @@
 
     .hotelCard{
         width: 25%;
-        height: 26rem;
+        height: 23rem;
         box-shadow: 0 0 15px $shadow2;
         border-radius: 0.75rem;
         margin-left: 5rem;
@@ -27,10 +27,7 @@
         text-decoration: none;
         justify-content: flex-start;
         font-family: 'Mada', sans-serif;
-        cursor: pointer;
-        div{
-            padding: .75rem;
-        }
+
         h2{
             text-align:left;
             padding-bottom: 1rem;
@@ -40,27 +37,40 @@
             margin-bottom: -.75rem;
             
         }
-        a{
-            background-color: $main;
-            font-size: .75rem;
-            color: white;
-            text-decoration: none;
-            padding: .5rem;
-            border-radius: 0.25rem;
+        .images{
+            position: relative;
         }
-        a:hover{
-            box-shadow: 0 0 15px $shadow;
+        .left{
+            position: absolute;
+            height: 2rem;
+            width:2rem;
+            left: 5%;
+            top:40%;
+            cursor: pointer;
+        }
+        .right{
+            position: absolute;
+            height: 2rem;
+            width:2rem;
+            right: 5%;
+            top:40%;
+            cursor: pointer;
+        }
+        a{
+            padding: .75rem;
+            text-decoration: none;
         }
         p{
             width: 90%;
             font-size: .75rem;
             color: $grey2;
         }
-
         img{
             border-radius: 0.35rem 0.35rem 0 0;
             width: 100%;
             height: 12rem;
+            position: relative;
+            margin-bottom:-1rem;
             @media screen and (max-width: 800px) {
                 width: 90%;
             }

@@ -3,8 +3,11 @@ import Package from '../components/home/Package'
 import '../styles/home/Package.scss'
 import client from '../client'
 import {Helmet} from 'react-helmet'
+import Spinner from '../components/Spinner';
+
 function Packages() {
-    const [packages, setPackages] = useState([])
+    const [packages, setPackages] = useState([]);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
     useEffect(() => {
         client
             .fetch(
@@ -23,6 +26,7 @@ function Packages() {
       }`
             )
             .then((data) => setPackages(data))
+            .then(()=>setIsLoading(false))
     }, [])
 
     return (
@@ -33,7 +37,7 @@ function Packages() {
             </Helmet>
             <div className="packagePageBody">
                 <h1>Tour Packages</h1>
-                {packages.map((p: any, i) => (
+                {isLoading?<Spinner/>:packages.map((p: any, i) => (
                     <Package
                         name={p.name}
                         image={p.image.asset.url}

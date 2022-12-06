@@ -180,6 +180,14 @@ function App() {
                                     <img src={mapImage} alt={'Staybook Hotels'}/>
                                     {hotel.address}
                                 </a>
+                                <iframe
+                                  width="450"
+                                  height="250"
+                                  frameBorder="0"
+                                  referrerPolicy="no-referrer-when-downgrade"
+                                  src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_MAP_KEY}&q=${encodeURIComponent(hotel.address)}`}
+                                  allowFullScreen>
+                                </iframe>
                                 <p className="contact">
                                     <span className="detail">
                                         PHONE:

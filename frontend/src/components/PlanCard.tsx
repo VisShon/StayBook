@@ -27,7 +27,7 @@ function PlanCard({ plan, room, amenities, maxCap, guests }: any) {
 
             <h2>₹{plan.price}</h2>
             <div className="button" onClick={onClickHandler}>
-                Add
+                Select
             </div>
         </div>
     )

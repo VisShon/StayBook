@@ -20,7 +20,10 @@ function Dropdown() {
     return (
         <ul>
             <li>
-                <span aria-haspopup="true">Hotels</span>
+                <a  href='/hotels' 
+                    style={{textDecoration:'none',color:'black'}} 
+                    aria-haspopup="true">
+                        Hotels</a>
                 <ul className="dropdown" aria-label="submenu">
                     {Object.values(data).map((item: any, i: any) => (
                         <li

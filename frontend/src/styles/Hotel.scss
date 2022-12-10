@@ -14,6 +14,10 @@
     padding:0 8% 0 8%;
     justify-content: start;
     align-items:center;
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+        padding:0 0% 0 0%;
+    }
 
     .hotelCard{
         width: 25%;
@@ -27,6 +31,10 @@
         text-decoration: none;
         justify-content: flex-start;
         font-family: 'Mada', sans-serif;
+        @media screen and (max-width: 800px) {
+            width: 90%;
+            margin-left: 0rem;
+        }
 
         h2{
             text-align:left;
@@ -72,7 +80,7 @@
             position: relative;
             margin-bottom:-1rem;
             @media screen and (max-width: 800px) {
-                width: 90%;
+                width: 100%;
             }
         }
     }

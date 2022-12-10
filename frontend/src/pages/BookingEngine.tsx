@@ -180,14 +180,6 @@ function App() {
                                     <img src={mapImage} alt={'Staybook Hotels'}/>
                                     {hotel.address}
                                 </a>
-                                <iframe
-                                  width="450"
-                                  height="250"
-                                  frameBorder="0"
-                                  referrerPolicy="no-referrer-when-downgrade"
-                                  src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_MAP_KEY}&q=${encodeURIComponent(hotel.address)}`}
-                                  allowFullScreen>
-                                </iframe>
                                 <p className="contact">
                                     <span className="detail">
                                         PHONE:
@@ -212,6 +204,13 @@ function App() {
                                         </span>
                                     </span>
                                 </p>
+                                <iframe
+                                  width="450"
+                                  height="250"
+                                  referrerPolicy="no-referrer-when-downgrade"
+                                  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAGvy5rBo-MPjD0vR2BkkRhtKAXmFHCLVY&q=${encodeURIComponent(hotel.address)}`}
+                                  allowFullScreen>
+                                </iframe>
                             </>
                             <Amneties data={hotel.amenities} />
                             <h3 className="heading">{'Choose your room(s)'}</h3>

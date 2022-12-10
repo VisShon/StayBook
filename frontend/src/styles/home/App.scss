@@ -151,3 +151,14 @@
         background-position: 0 0;
     }
 }
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    -webkit-text-fill-color: $grey;
+    font-family: 'Kraftan', sans-serif;
+    @media screen and (max-width: 800px) {
+        font-size: 2rem;
+        text-align: center;
+    }
+}

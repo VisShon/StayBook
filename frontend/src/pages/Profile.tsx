@@ -42,10 +42,10 @@ function Profile() {
             <title>StayBook Profile</title>
             <meta name="description" content="StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels" />
         </Helmet>
-            <h1>Profile</h1>
             {!decodedToken && <div>Reload again</div>}
             {decodedToken && (
-            <div className="profileBody">
+                <div className="profileBody">
+                <h1>Profile</h1>    
                 <div className="userInfo">
                     <img src={decodedToken.picture} alt={'Staybook Hotels'}/>
                     <h2>{decodedToken.email}</h2>

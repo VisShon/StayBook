@@ -33,7 +33,7 @@ function RoomCard({ room }: any) {
                                 src={right} 
                                 alt={room.type}/>
                             <h2>{room.type}</h2>
-                            <p>{room.ameneties}</p>
+                            <p>{room.description}</p>
                         </div>
                     </Popup>
                     </div>

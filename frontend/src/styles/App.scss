@@ -64,6 +64,11 @@
         align-items: center;
         max-width: 100%;
     }
+    iframe{
+        width: 100%;
+        border: 1px solid $main;
+        border-radius: 1rem;
+    }
 }
 
 .container::-webkit-scrollbar {

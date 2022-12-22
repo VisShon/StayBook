@@ -24,7 +24,7 @@ function AmountCard({ checkIn, checkOut }: any) {
             )
         }
         setRoomPrice(x);
-        let taxPrice: number = parseFloat((x * (10 / 100)).toFixed(3));
+        let taxPrice: number = parseFloat((x * (12 / 100)).toFixed(3));
         setTax(taxPrice)
 
         dispatch(updateWithoutTaxPrice(x))

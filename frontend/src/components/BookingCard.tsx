@@ -43,9 +43,8 @@ function BookingCard({hotelName, address}:any) {
     const [isPaid,setIsPaid] = useState<boolean>(false);
     const [noSelected,setNoSelected] = useState<boolean>(false);
     const [noContact,setNoContact] = useState<boolean>(false);
-
-    const { username, email, phone, Login } =
-        useContext<AuthContextProps>(AuthContext)
+    
+    const { username, email, phone, Login } = useContext<AuthContextProps>(AuthContext)
 
 
     const payOnHotel = async () => {
@@ -72,8 +71,8 @@ function BookingCard({hotelName, address}:any) {
         let templateParams = {
             to_name: sessionStorage.getItem('email'),
             hotelName: hotelName,
-            checkIn: checkIn!.toString(),
-            checkOut: checkOut!.toString(),
+            checkIn: checkIn!.toLocaleDateString() + ' 12:00 AM',
+            checkOut: checkOut!.toLocaleDateString() + ' 12:00 PM',
             roomNumbers: Plans.length.toString(),
             guests: guests.toString(),
             hotelContact: "+918373929299",

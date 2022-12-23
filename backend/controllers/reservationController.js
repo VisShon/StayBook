@@ -37,13 +37,13 @@ const getReservations = asyncHandler(async(req, res, next) =>{
 const removeReservations = asyncHandler(async(req, res, next) =>{
   const db = getDatabase();
   checkAuth(req, res, next)?
-  set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+Math.trunc(req.body.amountPaid).toString()}`),null):{};
+  set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+(req.body.amountPaid.toString()).slice(0,4)}`),null):{};
 })
 
 const setReservations = asyncHandler(async(req, res, next)=>{
   const db = getDatabase();
   checkAuth(req, res, next)?
-  set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+Math.trunc(req.body.amountPaid).toString()}`), {
+  set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+(req.body.amountPaid.toString()).slice(0,4)}`), {
     username: req.body.username,
     email: req.body.email,
     checkIn: req.body.checkIn,

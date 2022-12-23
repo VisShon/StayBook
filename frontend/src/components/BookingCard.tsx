@@ -136,12 +136,12 @@ function BookingCard({hotelName, address}:any) {
         //                     'template_i78ka1b',
         //                     templateParams,
         //                     'bE7FBsdP5YFb4U6LK'
-        //                     )
+        //                     ).then(()=>setIsPaid(true))
         // }
         // catch(error){
         //     console.log(error);
         // }
-
+        setIsPaid(true)
         try{
             await axios.post(
                 `/api${ref}/setReservations`,
@@ -158,7 +158,7 @@ function BookingCard({hotelName, address}:any) {
                         Authorization: `bearer ${sessionStorage['user']}`,
                     },
                 }
-            ).then(()=>setIsPaid(true));
+            );
         }
         catch(error){
             console.log(error)

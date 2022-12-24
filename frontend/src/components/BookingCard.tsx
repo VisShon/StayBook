@@ -79,7 +79,7 @@ function BookingCard({hotelName, address}:any) {
             address: address,
             status:`Amount due ₹${price}, Pay now to save extra ₹290-`
         }
-        const res = await axios.post('https://graph.facebook.com/v14.0/101365169455721/messages/',
+        await axios.post('https://graph.facebook.com/v14.0/101365169455721/messages/',
         { "messaging_product": "whatsapp", 
         "to": contact, 
         "type": "template", 
@@ -130,31 +130,40 @@ function BookingCard({hotelName, address}:any) {
                   "Authorization":`Bearer ${bearer}`
         }})
 
-        const mail = await emailjs
-                            .send(
-                                'service_pz9e3th',
-                                'template_i78ka1b',
-                                templateParams,
-                                'bE7FBsdP5YFb4U6LK'
-                                ).then(()=>setIsPaid(true));
-
-        const result = await axios.post(
-            `/api${ref}/setReservations`,
-            {
-                username: username,
-                email: email,
-                checkIn: checkIn,
-                checkOut: checkOut,
-                amountPaid: price.toString() + '(To be Paid)',
-                selectedPlans: Plans,
-            },
-            {
-                headers: {
-                    Authorization: `bearer ${sessionStorage['user']}`,
+        // try{
+        //     await emailjs.send(
+        //                     'service_pz9e3th',
+        //                     'template_i78ka1b',
+        //                     templateParams,
+        //                     'bE7FBsdP5YFb4U6LK'
+        //                     ).then(()=>setIsPaid(true))
+        // }
+        // catch(error){
+        //     console.log(error);
+        // }
+        setIsPaid(true)
+        try{
+            await axios.post(
+                `/api${ref}/setReservations`,
+                {
+                    username: username,
+                    email: email,
+                    checkIn: checkIn,
+                    checkOut: checkOut,
+                    amountPaid: price.toString() + '(To be Paid)',
+                    selectedPlans: Plans,
                 },
-            }
-        )
-
+                {
+                    headers: {
+                        Authorization: `bearer ${sessionStorage['user']}`,
+                    },
+                }
+            );
+        }
+        catch(error){
+            console.log(error)
+        }
+        
     }
 
     useEffect(() => {

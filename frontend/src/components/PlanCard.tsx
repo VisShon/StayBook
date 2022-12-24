@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { addPlan, removePlan } from '../app/planSlice'
+import CheckIcon from '@mui/icons-material/Check';
 import '../styles/PlanCard.scss'
 
 function PlanCard({ plan, room, amenities, maxCap, guests }: any) {
@@ -24,7 +25,13 @@ function PlanCard({ plan, room, amenities, maxCap, guests }: any) {
                     <div className="tooltiptext">{amenities}</div>
                 </div>
             )}
-
+            {plan.features ? (
+                <div className="features">
+                    {plan.features.map((feature: any) => (
+                        <span><CheckIcon fontSize="inherit"/> {feature}</span>
+                    ))}
+                </div>
+            ) : null}
             <h2>₹{plan.price}</h2>
             <div className="button" onClick={onClickHandler}>
                 Select

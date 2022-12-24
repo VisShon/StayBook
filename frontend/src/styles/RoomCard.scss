@@ -31,17 +31,20 @@
 .roomPopUp{
     padding: 1rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    align-items: flex-start;
+    justify-content: space-evenly;
     border-radius: 1.5rem;
     border: 1px solid $main;
     @media screen and (max-width: 800px) {
         font-size:.75rem;
     }
+}
+
+.roomPopUp-images {
+    width: 100%;
+    position: relative;
     img{
-        width: 90%;
+        width: 100%;
         height:20rem;
         @media screen and (max-width: 800px) {
             height:10rem;
@@ -58,7 +61,7 @@
         position: absolute;
         height: 2rem;
         width:2rem;
-        left: 10%;
+        left: 5%;
         top:30%;
         cursor: pointer;
     }
@@ -66,11 +69,23 @@
         position: absolute;
         height: 2rem;
         width:2rem;
-        right: 10%;
+        right: 5%;
         top:30%;
         cursor: pointer;
     }
 }
+
+.roomPopUp-ameneties {
+    margin: 0 1rem;
+    display: flex;
+    height: 90vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    & span {
+        max-width: 48%;
+    }
+}
+
 .roomImage {
     border-radius: 0.5rem;
     object-fit: cover;
@@ -94,4 +109,9 @@
            height: 8%;
         }
     }
+}
+
+// overriding reactjs-popup
+.popup-content {
+    width: 85%;
 }

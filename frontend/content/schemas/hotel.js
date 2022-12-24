@@ -126,6 +126,18 @@ export default {
                                             title: 'Info',
                                             type: 'string',
                                         },
+                                        {
+                                            name: 'features',
+                                            title: 'Features',
+                                            type: 'array',
+                                            of: [
+                                                {
+                                                    name: 'feature',
+                                                    title: 'Feature',
+                                                    type: 'string'
+                                                }
+                                            ] 
+                                        }
                                     ],
                                 },
                             ],

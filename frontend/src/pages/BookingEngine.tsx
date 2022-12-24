@@ -38,7 +38,12 @@ function App() {
             description,
             guests,
             info,
-            plans,
+            plans[]{
+              title,
+              price,
+              info,
+              features
+            },
             ameneties,
             image{
               asset -> {
@@ -77,7 +82,7 @@ function App() {
           },
         }`
             )
-            .then((data) => setHotel(data[0]))
+            .then((data) => {setHotel(data[0]); console.log(data[0])})
     }, [])
 
     const MinPrice = () => {

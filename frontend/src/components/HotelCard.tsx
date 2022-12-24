@@ -1,5 +1,7 @@
 import React,{useState} from 'react';
 import '../styles/Hotel.scss';
+import StarIcon from '@mui/icons-material/Star';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import left from '../images/left.png'
 import right from '../images/right.png'
 
@@ -38,10 +40,19 @@ function HotelCard({name,images,rooms,slug,description}:Props) {
                 src={right} 
                 alt={name}/>
         </div>
+
         <a href={`/${slug.current}`}>
           <h2>{name}</h2>
-          <p>{description.slice(0,50)}...</p>
-          <p><b>Starting ₹{rooms.plans.price}</b></p>
+          <div className="ratingContainer">
+            Rating:
+            <div className="rating">
+              <StarIcon fontSize="large"/>
+              <StarIcon fontSize="large"/>
+              <StarIcon fontSize="large"/>
+              <StarIcon fontSize="large"/>
+            </div>
+          </div>
+            <p><b>Starting ₹{rooms.plans.price}</b> <ArrowForwardIosIcon /></p>
         </a>
     </div>
   )

@@ -20,11 +20,11 @@
     }
 
     .hotelCard{
-        width: 25%;
-        height: 23rem;
+        width: 28%;
+        height: 28rem;
         box-shadow: 0 0 15px $shadow2;
         border-radius: 0.75rem;
-        margin-left: 5rem;
+        margin-left: 2rem;
         margin-bottom: 2rem;
         display: flex;
         flex-direction: column;
@@ -68,9 +68,24 @@
             padding: .75rem;
             text-decoration: none;
         }
+
+        .ratingContainer {
+            color: $grey;
+            margin: 1rem 0;
+            font-size: 1.25rem;
+            padding: 0.5rem;
+
+            .rating {
+                margin: 0.5rem 0;
+            }
+        }
+
         p{
-            width: 90%;
-            font-size: .75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            font-size: 1.5rem;
             color: $grey2;
         }
         img{

@@ -7,6 +7,7 @@ import client from '../../../client'
 import arrow from '../../../images/arrowVector.svg'
 import guest from '../../../images/guests.svg'
 import hotel from '../../../images/hotel.svg'
+import dish from '../../../images/breakfast.png'
 
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import Box from '@mui/material/Box'
@@ -254,10 +255,8 @@ function BookingCarousel() {
                     </ul>
                     
                     <div className="dish">
-                        <img src ={'https://annajona.is/static/media/s1/0.png'} 
-                             className="shadow" alt={'StayBook Hotels'}/>
                         <img style={{transform: 'rotateZ('+(translateY.current/20).toString()+'deg)'}} 
-                            src ={'https://annajona.is/static/media/s1/1.png'} alt={'StayBook Hotels'}/>
+                            src ={dish} alt={'StayBook Hotels'}/>
                     </div>
 
                     <div className="bottle">

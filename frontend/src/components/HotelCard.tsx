@@ -4,6 +4,7 @@ import StarIcon from '@mui/icons-material/Star';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import left from '../images/left.png'
 import right from '../images/right.png'
+import vip from '../images/vip.png'
 
 export type Props ={
   name: string,
@@ -39,6 +40,7 @@ function HotelCard({name,images,rooms,slug,description}:Props) {
                 className="right" 
                 src={right} 
                 alt={name}/>
+          <img className="vip" src={vip} />
         </div>
 
         <a href={`/${slug.current}`}>

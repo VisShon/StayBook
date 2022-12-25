@@ -44,7 +44,7 @@ function RoomCard({ room }: any) {
                             <h2>What We Offer</h2>
                             <div className="roomPopUp-ameneties">
                                 {roomAmenities.map((amenity: any) => (
-                                    <span><CheckIcon />{amenity}</span>
+                                    <span><CheckIcon fontSize="inherit" /> {amenity}</span>
                                 ))}
                             </div>
                         </div>

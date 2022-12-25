@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.b17cfa80.css",
-    "main.js": "/static/js/main.2ff38d3d.js",
+    "main.css": "/static/css/main.79389700.css",
+    "main.js": "/static/js/main.ee17c539.js",
     "static/media/bc.svg": "/static/media/bc.78fa5f5a1721c7e914e49d694ec9bdfc.svg",
     "static/media/plan.png": "/static/media/plan.fa313b8e9e5fd5b305ba.png",
+    "static/media/breakfast.png": "/static/media/breakfast.2896947b5962a63c0eaa.png",
     "static/media/travel.svg": "/static/media/travel.74ec31801e2c5f52c1f7d8e4040ec00d.svg",
     "static/media/kraftan.otf": "/static/media/kraftan.06843398dd85b1237d55.otf",
     "static/media/tra.svg": "/static/media/tra.5cbbc7fbc521ec420aa140efe2a0fc5e.svg",
+    "static/media/map.png": "/static/media/map.36766d5115150b3cb227.png",
     "static/media/footerBg.svg": "/static/media/footerBg.aaa71d94b907bc6544bfd6c5f92ec726.svg",
     "static/media/light.png": "/static/media/light.02280a3f9e9be24b5f27.png",
     "static/media/logo.png": "/static/media/logo.e689314f89211ddc5032.png",
@@ -30,11 +32,11 @@
     "static/media/Social Media.svg": "/static/media/Social Media.0e5ed0465be53fe67fa8.svg",
     "static/media/Text.svg": "/static/media/Text.d84fb7ab9e5e9468e898.svg",
     "static/media/Email.svg": "/static/media/Email.e94dfea7c358727ce190.svg",
-    "main.b17cfa80.css.map": "/static/css/main.b17cfa80.css.map",
-    "main.2ff38d3d.js.map": "/static/js/main.2ff38d3d.js.map"
+    "main.79389700.css.map": "/static/css/main.79389700.css.map",
+    "main.ee17c539.js.map": "/static/js/main.ee17c539.js.map"
   },
   "entrypoints": [
-    "static/css/main.b17cfa80.css",
-    "static/js/main.2ff38d3d.js"
+    "static/css/main.79389700.css",
+    "static/js/main.ee17c539.js"
   ]
 }

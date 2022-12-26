@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/App.scss'
 import Amneties from '../components/Ameneties'
+import HotelDetails from '../components/HotelDetails'
 import mmt from '../images/mmt.svg'
 import mapImage from '../images/map.png'
 import bc from '../images/bc.svg'
@@ -80,6 +81,9 @@ function App() {
             },
             alt
           },
+          hotel_description[],
+          hotel_amenities[],
+          hotel_nearby_places[]
         }`
             )
             .then((data) => {setHotel(data[0]); console.log(data[0])})
@@ -227,6 +231,7 @@ function App() {
                                 .map((room: any, i: number) => (
                                     <RoomCard room={room} key={i} />
                                 ))}
+                            <HotelDetails hotel={hotel} />
                         </div>
                         <BookingCard hotelName={hotel.name} address={hotel.address} />
                     </div>

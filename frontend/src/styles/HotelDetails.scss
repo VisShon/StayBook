@@ -1,0 +1,37 @@
+@import 'colors';
+
+.hoteldetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    & p {
+        color: $grey;
+        font-size: 1.25rem;
+        text-align: start;
+    }
+
+    & .icontext {
+        display: flex;
+        align-items: flex-start;
+        gap: 2px;
+    }
+}
+
+.hotel-amenities {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+
+    & div {
+        width: 30%;
+
+        @media screen and (max-width: 820px) {
+            width: 47%;
+        }
+    }
+
+    @media screen and (max-width: 820px) {
+        flex-wrap: wrap;
+    }
+}

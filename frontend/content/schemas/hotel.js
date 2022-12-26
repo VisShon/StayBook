@@ -146,6 +146,42 @@ export default {
                 },
             ],
         },
+        {
+            name: 'hotel_description',
+            title: 'Hotel Description',
+            type: 'array',
+            of: [
+                {
+                    name: 'desc_point',
+                    title: 'Description Point',
+                    type: 'string'
+                }
+            ]
+        },
+        {
+            name: 'hotel_amenities',
+            title: 'Hotel Amenities',
+            type: 'array',
+            of: [
+                {
+                    name: 'amenity_name',
+                    title: 'Amenity',
+                    type: 'string'
+                }
+            ]
+        },
+        {
+            name: 'hotel_nearby_places',
+            title: 'Hotel Nearby Places',
+            type: 'array',
+            of: [
+                {
+                    name: 'place_name',
+                    title: 'Nearby Place',
+                    type: 'string'
+                }
+            ]
+        }
     ],
 
     preview: {

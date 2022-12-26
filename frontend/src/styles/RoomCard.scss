@@ -1,4 +1,6 @@
 @import 'colors';
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+
 .roomCard {
     border-radius: 0.5rem;
     width: 50vw;
@@ -28,13 +30,35 @@
     }
 }
 
+.roomPopUp-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+}
+
 .roomPopUp{
-    padding: 1rem;
+    position: relative;
     display: flex;
     align-items: flex-start;
     justify-content: space-evenly;
+    background-color: white;
+    width: 75%;
+    gap: 20px;
+    padding: 1rem;
     border-radius: 1.5rem;
     border: 1px solid $main;
+
+    & h2 {
+        margin-top: 0;
+    }
+
     @media screen and (max-width: 800px) {
         font-size:.75rem;
         flex-direction: column;
@@ -42,50 +66,35 @@
     }
 }
 
+.popup-close {
+    position: absolute;
+    font-size: 1.5rem;
+    top: 2%;
+    right: 2%;
+    cursor: pointer;
+}
+
 .roomPopUp-images {
-    width: 100%;
-    position: relative;
-    img{
-        width: 100%;
-        height:20rem;
-        @media screen and (max-width: 800px) {
-            height:10rem;
-            width: 100%;
-        }
-    }
-    h2{
-        font-family: 'Maven Pro', sans-serif;
-    }
-    p{
+    width: 45%;
+
+    @media screen and (max-width: 820px) {
         width: 90%;
-    }
-    .left{
-        position: absolute;
-        height: 2rem;
-        width:2rem;
-        left: 5%;
-        top:30%;
-        cursor: pointer;
-    }
-    .right{
-        position: absolute;
-        height: 2rem;
-        width:2rem;
-        right: 5%;
-        top:30%;
-        cursor: pointer;
     }
 }
 
 .roomPopUp-ameneties {
-    margin: 0 1rem;
     font-size: 0.75rem;
     display: flex;
     height: 80vh;
     flex-direction: column;
     flex-wrap: wrap;
+
     & span {
         max-width: 48%;
+    }
+
+    @media screen and (max-width: 820px) {
+        height: 50vh;
     }
 }
 
@@ -104,6 +113,9 @@
         font-size:.75rem;
      }
     .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 5vw;
         height: 10%;
         color: White;
@@ -114,11 +126,6 @@
     }
 }
 
-// overriding reactjs-popup
-.popup-content {
-    width: 85%;
-
-    @media screen and (max-width: 820px) {
-        width: 75%;
-    }
+.hidden {
+    display: none;
 }

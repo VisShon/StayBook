@@ -1,15 +1,24 @@
 import React,{useState} from 'react'
-import 'reactjs-popup/dist/index.css';
 import '../styles/RoomCard.scss'
 import PlanCard from './PlanCard'
 import CheckIcon from '@mui/icons-material/Check';
-import Popup from 'reactjs-popup';
-import left from '../images/left.png'
-import right from '../images/right.png'
+import CloseIcon from '@mui/icons-material/Close';
+import ImageGallery from 'react-image-gallery';
+
+const prepareImages = (images: any) => {
+    let imagesArray = images.map((image: any) => (
+        {
+            original: image.asset.url + '?w=950&h=750',
+            thumbnail: image.asset.url + '?w=250&h=150',
+        }
+    ))
+    return imagesArray
+}
 
 function RoomCard({ room }: any) {
-    const [n,setN] =useState(0); 
+    const [modal, setModal] = useState(false)
     const roomAmenities = room.ameneties.split(", ")
+    const images = prepareImages(room.images)
     return (
         <>
             <div className="roomCard">
@@ -17,39 +26,25 @@ function RoomCard({ room }: any) {
                     <div>
                         <h2>{room.type}</h2>
                         <p>{room.info}</p>
-                    <Popup trigger={<div className="button">More Info</div>} position="right center" modal>
-                    <div className="roomPopUp">
-                        <div className="roomPopUp-images-container">
-                            <div className="roomPopUp-images">
-                                <img src={room.image.asset.url} className="roomImage" alt={room.type}/>
-                                <img className="left"      
-                                     onClick={() => {
-                                            n == 0 ? setN(0) : setN((prev) => --prev)
-                                        }}
-                                        src={left} 
-                                        alt={room.type}/>
-                                <img onClick={() => {
-                                        n == room.images.length - 1
-                                            ? setN(room.images.length - 1)
-                                            : setN((prev) => ++prev)
-                                    }}
-                                    className="right" 
-                                    src={right} 
-                                    alt={room.type}/>
-                                <h2>{room.type}</h2>
-                                <p>{room.info}</p>
+                        <div className="button" onClick={() => setModal(!modal)}>More Info</div>
+                        <div className={modal ? "roomPopUp-container" : "hidden"} onClick={() => setModal(!modal)}>
+                            <div className="roomPopUp" onClick={e => e.stopPropagation()}>
+                                <span className="popup-close" onClick={() => setModal(!modal)}><CloseIcon fontSize="inherit"/></span>
+                                <div className="roomPopUp-images">
+                                    <ImageGallery items={images} />
+                                    <h2>{room.type}</h2>
+                                    <p>{room.info}</p>
+                                </div>
+                                <div>
+                                    <h2>What We Offer</h2>
+                                    <div className="roomPopUp-ameneties">
+                                        {roomAmenities.map((amenity: any) => (
+                                            <span><CheckIcon fontSize="inherit" /> {amenity}</span>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <h2>What We Offer</h2>
-                            <div className="roomPopUp-ameneties">
-                                {roomAmenities.map((amenity: any) => (
-                                    <span><CheckIcon fontSize="inherit" /> {amenity}</span>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    </Popup>
                     </div>
                     <img src={room.image.asset.url} className="roomImage" alt={room.type}/>
                 </div>

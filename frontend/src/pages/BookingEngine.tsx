@@ -231,7 +231,9 @@ function App() {
                                 .map((room: any, i: number) => (
                                     <RoomCard room={room} key={i} />
                                 ))}
+                          {hotel.hotel_amenities ? (
                             <HotelDetails hotel={hotel} />
+                          ) : null}
                         </div>
                         <BookingCard hotelName={hotel.name} address={hotel.address} />
                     </div>

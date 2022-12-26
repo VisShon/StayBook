@@ -80,7 +80,8 @@
         .ratingContainer {
             color: $grey;
             margin: 1rem 0;
-            font-size: 1.25rem;
+            font-size: 1rem;
+            color: $main;
             padding: 0.5rem;
 
             .rating {

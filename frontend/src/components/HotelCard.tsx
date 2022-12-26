@@ -48,10 +48,10 @@ function HotelCard({name,images,rooms,slug,description}:Props) {
           <div className="ratingContainer">
             Rating:
             <div className="rating">
-              <StarIcon fontSize="large"/>
-              <StarIcon fontSize="large"/>
-              <StarIcon fontSize="large"/>
-              <StarIcon fontSize="large"/>
+              <StarIcon fontSize="medium"/>
+              <StarIcon fontSize="medium"/>
+              <StarIcon fontSize="medium"/>
+              <StarIcon fontSize="medium"/>
             </div>
           </div>
             <p><b>Starting ₹{rooms.plans.price}</b> <ArrowForwardIosIcon /></p>

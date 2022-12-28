@@ -27,6 +27,7 @@ function HotelCarousel() {
                 .fetch(
                     `*[_type == "hotel"] {
         name,
+        order,
         slug,
         description,
         images[]{
@@ -34,7 +35,10 @@ function HotelCarousel() {
         }
       }`
                 )
-                .then((data) => setData(data))
+                .then((data) => {
+                    data.sort((a: any, b: any) => a.order - b.order)
+                    setData(data)
+                })
                 .then(() => {
                     setLoading(true)
                 })

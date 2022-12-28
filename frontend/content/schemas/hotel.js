@@ -9,6 +9,12 @@ export default {
             type: 'string',
         },
         {
+            name: 'order',
+            title: 'Order',
+            type: 'number',
+            validation: Rule => Rule.required().positive().integer()
+        },
+        {
             name: 'slug',
             title: 'Slug',
             type: 'slug',

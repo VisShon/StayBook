@@ -7,7 +7,6 @@ import client from '../../../client'
 import arrow from '../../../images/arrowVector.svg'
 import guest from '../../../images/guests.svg'
 import hotel from '../../../images/hotel.svg'
-import dish from '../../../images/breakfast.png'
 
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import Box from '@mui/material/Box'
@@ -256,14 +255,14 @@ function BookingCarousel() {
                     
                     <div className="dish">
                         <img style={{transform: 'rotateZ('+(translateY.current/20).toString()+'deg)'}} 
-                            src ={dish} alt={'StayBook Hotels'}/>
+                            src ={'https://res.cloudinary.com/deby9hi8w/image/upload/v1672233490/breakfast_jkcxzd.png'} alt={'StayBook Hotels'}/>
                     </div>
 
                     <div className="bottle">
                         <img style={{transform:'translateY('+(translateY2.current/6).toString()+'px)'}} 
-                        src ={'https://annajona.is/static/media/s1/3.png'} alt={'StayBook Hotels'}/>
+                        src ={'https://res.cloudinary.com/deby9hi8w/image/upload/v1672233491/drink_ypa5vl.png'} alt={'StayBook Hotels'}/>
                         <img style={{transform:'translateY('+(translateY2.current/6).toString()+'px)'}} 
-                        src ={'https://annajona.is/static/media/s1/2.png'} alt={'StayBook Hotels'} className="shadow"/>
+                        src ={'https://res.cloudinary.com/deby9hi8w/image/upload/v1672233602/drink-shadow_zzndnr.png'} alt={'StayBook Hotels'} className="shadow"/>
                     </div>
 
                 </>

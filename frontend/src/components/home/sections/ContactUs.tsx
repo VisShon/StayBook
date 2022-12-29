@@ -1,12 +1,26 @@
 import React, { useEffect } from 'react'
 import '../../../styles/home/Ameneties.scss'
+import '../../../styles/home/ContactUs.scss'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Tilt from 'react-parallax-tilt'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const boxVariant = {
     visible: { opacity: 1, translateY: 0, transition: { duration: 1 } },
     hidden: { opacity: 0, translateY: '2vw' },
+}
+
+const SocialMediaBox = () => {
+    return (
+        <div className="socialMediaBox">
+            <a href="#"><FacebookIcon fontSize="inherit" color="inherit"/></a>
+            <a href="#"><InstagramIcon fontSize="inherit" color="inherit"/></a>
+            <a href="#"><LinkedInIcon fontSize="inherit" color="inherit"/></a>
+        </div>
+    )
 }
 
 function ContactUs() {
@@ -57,12 +71,12 @@ function ContactUs() {
                                   perspective={500} 
                                   key={i}>
                                 <p>{item.title}</p>
-                                <img
+                                {item.title != 'Social Media' ? <img
                                     src={require('../../../images/staybookContactus/' +
                                     item.title +
                                     '.svg')}
                                     alt={'Staybook Hotels Delhi'}
-                                    />
+                                    />: <SocialMediaBox />}
                             </Tilt>
                         </a>
                     ))}

@@ -1,5 +1,11 @@
 @import '../colors';
 
+.contactUsContent {
+    & div {
+        flex-wrap: nowrap;
+    }
+}
+
 .contactUsBody {
     width: screen;
     position: relative;
@@ -88,5 +94,18 @@
     img {
         z-index: 0;
         height: 45rem;
+    }
+}
+
+.socialMediaBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: $main;
+    
+    & a {
+        width: 42%;
+        font-size: 3rem;
+        color: inherit;
     }
 }

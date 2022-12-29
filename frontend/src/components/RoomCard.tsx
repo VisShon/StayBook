@@ -22,7 +22,7 @@ function RoomCard({ room, onSelect }: any) {
     return (
         <>
             <div className="roomCard">
-                <div className="roomInfo">
+                <div className="roomInfo" onClick={() => setModal(!modal)}>
                     <div>
                         <h2>{room.type}</h2>
                         <p>{room.info}</p>

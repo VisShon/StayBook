@@ -137,7 +137,7 @@ function Button({ checkIn, checkOut, hotel, address }: any) {
                 >
                     {error
                         ? 'Error Refresh and Try Again'
-                        : 'Proceed to checkout!'}
+                        : 'Book Now!'}
                 </div>
             )}
             {isLoading && <div className="Button-Loading">Loading...</div>}

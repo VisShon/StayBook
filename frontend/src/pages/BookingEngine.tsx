@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import '../styles/App.scss'
 import Amneties from '../components/Ameneties'
 import HotelDetails from '../components/HotelDetails'
@@ -22,6 +22,8 @@ function App() {
     const { slug } = useParams()
     const [gallery, setGallery] = useState<boolean>(false)
     const [isMinimized, setIsMinimized] = useState<boolean>(false)
+    const [selected, setSelected] = useState<boolean>(false)
+    const bookingCardRef = useRef<HTMLElement>()
     const guests = sessionStorage.getItem('guests')
     const prices = [150, 160, 90]
 
@@ -99,6 +101,13 @@ function App() {
         }
         return MinPrice
     }
+
+    useEffect(() => {
+      if (selected) {
+        bookingCardRef.current?.scrollIntoView(true)
+        setSelected(false)
+      }
+    }, [selected])
 
     return (
         <>
@@ -229,13 +238,13 @@ function App() {
                                         item.guests == guests || !guests
                                 )
                                 .map((room: any, i: number) => (
-                                    <RoomCard room={room} key={i} />
+                                    <RoomCard room={room} key={i} onSelect={setSelected}/>
                                 ))}
                           {hotel.hotel_amenities ? (
                             <HotelDetails hotel={hotel} />
                           ) : null}
                         </div>
-                        <BookingCard hotelName={hotel.name} address={hotel.address} />
+                        <BookingCard slideRef={bookingCardRef} hotelName={hotel.name} address={hotel.address} />
                     </div>
                 </>
             ) : (

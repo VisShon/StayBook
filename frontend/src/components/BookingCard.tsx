@@ -15,7 +15,7 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
-function BookingCard({hotelName, address}:any) {
+function BookingCard({hotelName, address, slideRef}:any) {
 
     const ref: string = new URL(window.location.href).pathname
 
@@ -173,7 +173,7 @@ function BookingCard({hotelName, address}:any) {
     }, [])
 
     return (
-        <div className="bookingCard">
+        <div className="bookingCard" ref={slideRef}>
             <h1>₹{withoutTax}</h1>
             <div className="calendar">
                 <div className="input">

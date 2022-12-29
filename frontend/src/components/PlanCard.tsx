@@ -4,11 +4,12 @@ import { addPlan, removePlan } from '../app/planSlice'
 import CheckIcon from '@mui/icons-material/Check';
 import '../styles/PlanCard.scss'
 
-function PlanCard({ plan, room, amenities, maxCap, guests }: any) {
+function PlanCard({ plan, room, amenities, maxCap, guests, onSelect }: any) {
     const dispatch = useAppDispatch()
     const wind = window.matchMedia('(max-width: 800px)')
 
     const onClickHandler = () => {
+        onSelect(true)
         let newPlan = { ...plan, roomType: room, maxCap: maxCap, guests: guests}
         dispatch(addPlan(newPlan))
     }

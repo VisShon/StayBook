@@ -4,7 +4,7 @@ import StarIcon from '@mui/icons-material/Star';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import left from '../images/left.png'
 import right from '../images/right.png'
-import vip from '../images/vip.png'
+import vip from '../images/VIP.svg'
 
 export type Props ={
   name: string,
@@ -48,13 +48,12 @@ function HotelCard({name,images,rooms,slug,description}:Props) {
           <div className="ratingContainer">
             Rating:
             <div className="rating">
-              <StarIcon fontSize="medium"/>
-              <StarIcon fontSize="medium"/>
-              <StarIcon fontSize="medium"/>
-              <StarIcon fontSize="medium"/>
+              {new Array(5).fill(0).map((item,i)=>(
+              <StarIcon fontSize="small" />
+              ))}
             </div>
           </div>
-            <p><b>Starting ₹{rooms.plans.price}</b> <ArrowForwardIosIcon /></p>
+            <p>Starting ₹{rooms.plans.price} <ArrowForwardIosIcon /></p>
         </a>
     </div>
   )

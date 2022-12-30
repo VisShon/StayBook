@@ -21,7 +21,7 @@
 
     .hotelCard{
         width: 28%;
-        height: 28rem;
+        height: 25rem;
         box-shadow: 0 0 15px $shadow2;
         border-radius: 0.75rem;
         margin-left: 2rem;
@@ -70,6 +70,7 @@
             height: 2rem;
             width: 2rem;
             top: 0;
+            margin:1rem;
             left: 0;
         }
         a{
@@ -78,14 +79,17 @@
         }
 
         .ratingContainer {
-            color: $grey;
-            margin: 1rem 0;
+            color: $grey2;
+            font-family: 'Maven Pro', sans-serif;
             font-size: 1rem;
-            color: $main;
-            padding: 0.5rem;
+            font-weight: 500;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
 
             .rating {
                 margin: 0.5rem 0;
+                color: $main;
             }
         }
 
@@ -94,8 +98,10 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            font-size: 1.5rem;
             color: $grey2;
+            font-family: 'Maven Pro', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 500;
         }
 
         img{

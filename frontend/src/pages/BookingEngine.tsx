@@ -3,7 +3,7 @@ import '../styles/App.scss'
 import Amneties from '../components/Ameneties'
 import HotelDetails from '../components/HotelDetails'
 import mmt from '../images/mmt.svg'
-import mapImage from '../images/map.png'
+import mapImage from '../images/map.svg'
 import bc from '../images/bc.svg'
 import tra from '../images/tra.svg'
 import light from '../images/light.png'
@@ -117,6 +117,7 @@ function App() {
                         <title>{hotel.name}</title>
                         <meta name="description" content="StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels" />
                     </Helmet>
+                    
                     {!isMinimized ? (
                         <div className="comparator">
                             <div

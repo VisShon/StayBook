@@ -79,7 +79,7 @@ function BookingCard({hotelName, address, slideRef}:any) {
             address: address,
             status:`Amount due ₹${price}, Pay now to save extra ₹290-`
         }
-        await axios.post('https://graph.facebook.com/v14.0/101365169455721/messages/',
+        await axios.post('https://graph.facebook.com/v14.0/113549444945607/messages/',
         { "messaging_product": "whatsapp", 
         "to": contact, 
         "type": "template", 

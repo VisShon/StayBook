@@ -16,13 +16,13 @@ function PlanCard({ plan, room, amenities, maxCap, guests, onSelect }: any) {
 
     return (
         <div className="planCard">
-            <div style={{ width: '35%' }}>
+            <div style={{ width: '30%' }}>
                 <h2>{plan.title}</h2>
                 <p>{plan.info}</p>
             </div>
             {!wind.matches && (
                 <div className="tooltip">
-                    Cancellation Policy
+                    Amenities
                     <div className="tooltiptext">{amenities}</div>
                 </div>
             )}

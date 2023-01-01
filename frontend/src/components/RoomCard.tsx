@@ -4,6 +4,7 @@ import PlanCard from './PlanCard'
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import ImageGallery from 'react-image-gallery';
+import useMobile from '../hooks/UseMobile';
 
 const prepareImages = (images: any) => {
     let imagesArray = images.map((image: any) => (
@@ -19,6 +20,7 @@ function RoomCard({ room, onSelect }: any) {
     const [modal, setModal] = useState(false)
     const roomAmenities = room.ameneties.split(", ")
     const images = prepareImages(room.images)
+    const isMobile = useMobile()
     return (
         <>
             <div className="roomCard">
@@ -46,7 +48,7 @@ function RoomCard({ room, onSelect }: any) {
                             </div>
                         </div>
                     </div>
-                    <img src={room.image.asset.url} className="roomImage" alt={room.type}/>
+                    <img src={room.image.asset.url + (isMobile ? '?w=200&h=175': '')} className="roomImage" alt={room.type}/>
                 </div>
                 {room.plans.map((plan: any, i: number) => (
                     <PlanCard

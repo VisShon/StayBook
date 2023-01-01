@@ -71,13 +71,13 @@ function BookingCard({hotelName, address, slideRef}:any) {
         let templateParams = {
             to_name: sessionStorage.getItem('email'),
             hotelName: hotelName,
-            checkIn: checkIn!.toLocaleDateString() + ' 12:00 AM',
-            checkOut: checkOut!.toLocaleDateString() + ' 12:00 PM',
+            checkIn: checkIn!.toLocaleDateString() + ' 12:00 PM Onwards',
+            checkOut: checkOut!.toLocaleDateString() + ' Till 11:00 AM',
             roomNumbers: Plans.length.toString(),
             guests: guests.toString(),
             hotelContact: "+918373929299",
             address: address,
-            status:`Amount due ₹${price}, Pay now to save extra ₹290-`
+            status:`Amount due ₹${price}, Pay now to save extra ₹190-`
         }
         await axios.post('https://graph.facebook.com/v14.0/113549444945607/messages/',
         { "messaging_product": "whatsapp", 

@@ -58,8 +58,8 @@ function Button({ checkIn, checkOut, hotel, address }: any) {
                         let templateParams = {
                             to_name: sessionStorage.getItem('email'),
                             hotelName: hotel,
-                            checkIn: checkIn.toLocaleDateString()+' 12:00 AM',
-                            checkOut: checkOut.toLocaleDateString()+' 12:00 PM',
+                            checkIn: checkIn.toLocaleDateString(),
+                            checkOut: checkOut.toLocaleDateString(),
                             roomNumbers: plans.length.toString(),
                             guests: guests.toString(),
                             hotelContact: "+918373929299",

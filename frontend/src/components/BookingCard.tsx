@@ -92,6 +92,10 @@ function BookingCard({hotelName, address, slideRef}:any) {
                   "parameters": [
                     {
                       "type": "text",
+                      "text": templateParams.hotelName
+                    },
+                    {
+                      "type": "text",
                       "text": templateParams.checkIn
                     },
                     {
@@ -117,10 +121,6 @@ function BookingCard({hotelName, address, slideRef}:any) {
                     {
                       "type": "text",
                       "text": templateParams.status
-                    },
-                    {
-                      "type": "text",
-                      "text": templateParams.hotelName
                     },
                     ]
                 }

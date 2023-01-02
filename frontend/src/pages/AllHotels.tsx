@@ -16,7 +16,7 @@ function AllHotels() {
              `*[_type == "hotel"]{
                     name,
                     slug,
-                    description,
+                    rating,
                     rooms[0]{
                      plans[0],
                     },
@@ -39,10 +39,10 @@ function AllHotels() {
       <h1 className='hotelTitle'>StayBook Hotels</h1>
       <div className="hotelContainer">
         {data!.map((hotel:Props,index:number)=>(<HotelCard name={hotel!.name} 
-          description={hotel!.description}
           rooms={hotel!.rooms}
           images={hotel!.images}
           slug={hotel!.slug}
+          rating={hotel!.rating}
           key={index}/>))}
       </div>
       </>}

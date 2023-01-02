@@ -28,6 +28,7 @@ function Hotels() {
                       name,
                       slug,
                       description,
+                      rating,
                       rooms[0]{
                         plans[0],
                       },
@@ -53,10 +54,10 @@ function Hotels() {
       <div className="hotelContainer">
         {data!.hotels.map(item=>item.hotel)
         .map((hotel:Props,index:number)=>(<HotelCard name={hotel!.name} 
-          description={hotel!.description}
           rooms={hotel!.rooms}
           images={hotel!.images}
           slug={hotel!.slug}
+          rating={hotel!.rating}
           key={index}/>))}
       </div>
       </>}

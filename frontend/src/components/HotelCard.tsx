@@ -12,15 +12,15 @@ export type Props ={
   rooms:{plans:{
     price:number
   }},
-  description:string,
   images:[{
     asset: {
       url: string
     }
   }],
+  rating:number
 };
 
-function HotelCard({name,images,rooms,slug,description}:Props) {
+function HotelCard({name,images,rooms,slug,rating}:Props) {
   const [n,setN] =useState(0); 
   return (
     <div className="hotelCard">
@@ -46,14 +46,13 @@ function HotelCard({name,images,rooms,slug,description}:Props) {
         <a href={`/${slug.current}`}>
           <h2>{name}</h2>
           <div className="ratingContainer">
-            Rating:
             <div className="rating">
-              {new Array(5).fill(0).map((item,i)=>(
-              <StarIcon fontSize="small" />
+              {new Array(Math.max(3, rating)).fill(0).map((item, i)=>(
+              <StarIcon fontSize="small" key={i}/>
               ))}
             </div>
           </div>
-            <p>Starting ₹{rooms.plans.price} <ArrowForwardIosIcon /></p>
+            <p>₹{rooms.plans.price} <ArrowForwardIosIcon /></p>
         </a>
     </div>
   )

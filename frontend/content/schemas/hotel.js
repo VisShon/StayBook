@@ -15,6 +15,12 @@ export default {
             validation: Rule => Rule.required().positive().integer()
         },
         {
+            name: 'rating',
+            title: 'Rating',
+            type: 'number',
+            validation: Rule => Rule.required().positive().integer().max(5)
+        },
+        {
             name: 'slug',
             title: 'Slug',
             type: 'slug',

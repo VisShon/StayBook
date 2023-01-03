@@ -130,17 +130,17 @@ function BookingCard({hotelName, address, slideRef}:any) {
                   "Authorization":`Bearer ${bearer}`
         }})
 
-        // try{
-        //     await emailjs.send(
-        //                     'service_pz9e3th',
-        //                     'template_i78ka1b',
-        //                     templateParams,
-        //                     'bE7FBsdP5YFb4U6LK'
-        //                     ).then(()=>setIsPaid(true))
-        // }
-        // catch(error){
-        //     console.log(error);
-        // }
+        try{
+            await emailjs.send(
+                            'service_pz9e3th',
+                            'template_i78ka1b',
+                            templateParams,
+                            'bE7FBsdP5YFb4U6LK'
+                            ).then(()=>setIsPaid(true))
+        }
+        catch(error){
+            console.log(error);
+        }
         setIsPaid(true)
         try{
             await axios.post(

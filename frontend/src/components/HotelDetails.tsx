@@ -10,6 +10,18 @@ const HotelDetails = (props: any) => {
     let amenityArray1: string[] = amenities.slice(0, chunkSize)
     let amenityArray2: string[] = amenities.slice(chunkSize, 2 * chunkSize)
     let amenityArray3: string[] = amenities.slice(2 * chunkSize)
+
+    let places: {a: string, b: string}[] = [];
+
+    let nearbyPlaces: string[] = hotel.hotel_nearby_places;
+    for (let i = 0; i < nearbyPlaces.length; i += 2) {
+        places.push({
+            a: nearbyPlaces[i],
+            b: (i + 1 < nearbyPlaces.length ? nearbyPlaces[i + 1] : '')
+        })
+    }
+
+
     return (
         <div className="hoteldetails">
             {hotel.hotel_description.map((desc: string) => {
@@ -39,8 +51,11 @@ const HotelDetails = (props: any) => {
                 </div>
             </div>
             <h2>Nearby Places</h2>
-            {hotel.hotel_nearby_places.map((place: any) => (
-                <p className="icontext"><PlaceIcon fontSize="inherit"/>{place}</p>
+            {places.map((place: any) => (
+                <div className="hotel-nearby-places">
+                    <p className="icontext"><PlaceIcon fontSize="inherit"/>{place.a}</p>
+                    {place.b && <p className="icontext"><PlaceIcon fontSize="inherit"/>{place.b}</p>}
+                </div>
             ))}
         </div>
     )

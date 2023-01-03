@@ -35,3 +35,14 @@
         flex-wrap: wrap;
     }
 }
+
+.hotel-nearby-places {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+
+    & p {
+        width: 48%;
+    }
+}

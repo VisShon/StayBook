@@ -85,7 +85,7 @@ function BookingCard({hotelName, address, slideRef}:any) {
         "type": "template", 
         "template": { 
             "name": "hotelorder",
-            "language": { "code": "en" }, 
+            "language": { "code": "en_GB" }, 
             "components": [
                 {
                   "type": "body",

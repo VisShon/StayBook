@@ -7,12 +7,13 @@
     & p {
         color: $grey;
         font-size: 1.25rem;
-        text-align: start;
+        text-align: justify;
     }
 
     & .icontext {
         display: flex;
         align-items: flex-start;
+        text-align: start;
         gap: 2px;
     }
 }

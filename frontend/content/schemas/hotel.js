@@ -21,6 +21,11 @@ export default {
             validation: Rule => Rule.required().positive().integer().max(5)
         },
         {
+            name: 'card_amenities',
+            title: 'Card Amenities',
+            type: 'string',
+        },
+        {
             name: 'slug',
             title: 'Slug',
             type: 'slug',

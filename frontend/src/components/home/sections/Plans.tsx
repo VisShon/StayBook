@@ -31,7 +31,7 @@ function Plans() {
         >
             <img src={plans} alt={'Staybook Hotels'}/>
             <div className="centerCard">
-                <h2>Plan an Unforgettable Experience in Staybook!</h2>
+                <h2>Get Best Price GUARANTEED!</h2>
                 <p>
                     We can help you fit your stay and experience within your
                     allotted budget.

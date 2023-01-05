@@ -68,12 +68,14 @@ function BookingCard({hotelName, address, slideRef}:any) {
             data: { key: bearer },
         } = await axios.get('/get-bearer')
 
+
         let templateParams = {
             to_name: sessionStorage.getItem('email'),
             hotelName: hotelName,
-            checkIn: checkIn!.toLocaleDateString() + ' 12:00 PM Onwards',
-            checkOut: checkOut!.toLocaleDateString() + ' Till 11:00 AM',
+            checkIn: checkIn!.toLocaleDateString(),
+            checkOut: checkOut!.toLocaleDateString(),
             roomNumbers: Plans.length.toString(),
+            rooms: Plans.reduce((roomString, curPlan) => (roomString += `${curPlan.roomType} (${curPlan.title}), `), ''),
             guests: guests.toString(),
             hotelContact: "+918373929299",
             address: address,

@@ -144,6 +144,36 @@ export default {
                                             type: 'string',
                                         },
                                         {
+                                            name: 'price_planner',
+                                            title: 'Price Planner',
+                                            type: 'array',
+                                            of: [
+                                                {
+                                                    name: 'date_range',
+                                                    title: 'Date Range',
+                                                    type: 'object',
+                                                    fields: [
+                                                        {
+                                                            name: 'starting_date',
+                                                            title: 'Starting Date',
+                                                            type: 'date',
+                                                        },
+                                                        {
+                                                            name: 'ending_date',
+                                                            title: 'Ending Date',
+                                                            type: 'date',
+                                                        },
+                                                        {
+                                                            name: 'price',
+                                                            title: 'Price',
+                                                            type: 'number',
+                                                            validation: Rule => Rule.integer().positive()
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
                                             name: 'features',
                                             title: 'Features',
                                             type: 'array',

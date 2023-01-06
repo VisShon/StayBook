@@ -11,18 +11,43 @@ function AmountCard({ checkIn, checkOut }: any) {
     const [roomPrice,setRoomPrice] = useState(0.0)
     const [tax,setTax] = useState(0.0)
 
+    const getPrice = (date: Date, arrOfObjects: any, defaultPrice: number): number => {
+        date.setHours(23, 59, 59, 999)
+        for (let i = 0; i < arrOfObjects.length; i++) {
+            let startDate = new Date(arrOfObjects[i].starting_date);
+            let endDate = new Date(arrOfObjects[i].ending_date);
+            startDate.setHours(23, 59, 59, 999)
+            endDate.setHours(23, 59, 59, 999)
+            if(date >= startDate && date <= endDate) {
+                return arrOfObjects[i].price;
+            }
+        }
+        return defaultPrice;
+    }
+
+    const getTotalCost = (checkIn: Date, checkOut: Date, plan: any): number => {
+        let totalPrice = 0;
+        checkIn.setHours(23, 59, 59, 999)
+        checkOut.setHours(23, 59, 59, 999)
+        while (checkIn <= checkOut) {
+            if (!plan.price_planner) {
+                totalPrice += plan.price
+            } else {
+                totalPrice += getPrice(checkIn, plan.price_planner, plan.price);
+            }
+            totalPrice += children * 500
+            let newDate = checkIn.setDate(checkIn.getDate() + 1);
+            checkIn = new Date(newDate);
+        }
+        return totalPrice;
+    }
+
     useEffect(() => {
         var x: number = 0
         plans.forEach((plan: any) => {
-            x += parseInt(plan.price, 10)
+            x += getTotalCost(checkIn, checkOut, plan)
         })
-        x += children * 500
-        if (checkIn && checkOut) {
-            x *= Math.ceil(
-                Math.abs(checkIn!.getTime() - checkOut!.getTime()) /
-                    (1000 * 60 * 60 * 24)
-            )
-        }
+
         setRoomPrice(x);
         let taxPrice: number = parseFloat((x * (12 / 100)).toFixed(3));
         setTax(taxPrice)

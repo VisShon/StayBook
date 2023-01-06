@@ -45,7 +45,8 @@ function App() {
               title,
               price,
               info,
-              features
+              features,
+              price_planner[]
             },
             ameneties,
             image{

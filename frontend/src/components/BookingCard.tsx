@@ -187,6 +187,7 @@ function BookingCard({hotelName, address, slideRef}:any) {
                                 minDate={new Date()}
                                 onChange={(newValue: any) => {
                                     setCheckIn(newValue)
+                                    console.log("date changed");
                                 }}
                                 renderInput={(params: any) => (
                                     <TextField {...params} />

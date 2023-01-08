@@ -7,7 +7,7 @@ function AmountCard({ checkIn, checkOut }: any) {
     const plans = useAppSelector((state) => state.plans.selectedPlans)
     const children = useAppSelector((state) => state.price.children)
     const dispatch = useAppDispatch()
-
+    
     const [roomPrice,setRoomPrice] = useState(0.0)
     const [tax,setTax] = useState(0.0)
 
@@ -31,13 +31,11 @@ function AmountCard({ checkIn, checkOut }: any) {
         checkOut.setHours(23, 59, 59, 999)
         let tempCheckIn = new Date(checkIn.getTime());
         while (tempCheckIn < checkOut) {
-          console.log(tempCheckIn);
           if (!plan.price_planner) {
             totalPrice += plan.price;
           } else {
             totalPrice += getPrice(tempCheckIn, plan.price_planner, plan.price);
           }
-          console.log(totalPrice);
           totalPrice += children * 500;
           let newDate = tempCheckIn.setDate(tempCheckIn.getDate() + 1);
           tempCheckIn = new Date(newDate);
@@ -49,7 +47,6 @@ function AmountCard({ checkIn, checkOut }: any) {
         var x: number = 0
         plans.forEach((plan: any) => {
             x += getTotalCost(checkIn, checkOut, plan)
-            console.log(x)
         })
 
         setRoomPrice(x);

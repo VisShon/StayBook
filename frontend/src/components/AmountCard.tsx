@@ -30,7 +30,7 @@ function AmountCard({ checkIn, checkOut }: any) {
         checkIn.setHours(23, 59, 59, 999)
         checkOut.setHours(23, 59, 59, 999)
         let tempCheckIn = new Date(checkIn.getTime());
-        while (tempCheckIn <= checkOut) {
+        while (tempCheckIn < checkOut) {
           console.log(tempCheckIn);
           if (!plan.price_planner) {
             totalPrice += plan.price;

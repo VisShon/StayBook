@@ -10,11 +10,12 @@ import axios from "axios";
 import { useAppSelector } from "../app/hooks";
 import { AuthContext, AuthContextProps } from "../context/AuthContext";
 import { useAppDispatch } from "../app/hooks";
-import { removePlan } from "../app/planSlice";
+import { removePlan, resetPlans } from "../app/planSlice";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { checkInContext, checkOutContext } from "../App";
+import { numberOfChildren } from "../app/priceSlice";
 
 function BookingCard({ hotelName, address, slideRef }: any) {
   const ref: string = new URL(window.location.href).pathname;
@@ -206,6 +207,8 @@ function BookingCard({ hotelName, address, slideRef }: any) {
                 onChange={(newValue: any) => {
                   setCheckIn(newValue);
                   setcheckInGlobal(newValue);
+                  dispatch(resetPlans());
+                  dispatch(numberOfChildren("0"));
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />
@@ -219,8 +222,10 @@ function BookingCard({ hotelName, address, slideRef }: any) {
                 value={checkOut}
                 minDate={new Date()}
                 onChange={(newValue: any) => {
-                    setCheckOut(newValue);
-                    setcheckOutGlobal(newValue);
+                  setCheckOut(newValue);
+                  setcheckOutGlobal(newValue);
+                  dispatch(resetPlans());
+                  dispatch(numberOfChildren("0"));
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />

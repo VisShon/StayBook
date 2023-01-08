@@ -21,9 +21,7 @@ function PlanCard({ plan, room, amenities, maxCap, guests, onSelect }: any) {
     arrOfObjects: any,
     defaultPrice: number
   ): number => {
-    console.log(date);
-    console.log(arrOfObjects);
-    console.log(defaultPrice);
+
     date.setHours(23, 59, 59, 999);
     if (arrOfObjects === null) {
       return defaultPrice;

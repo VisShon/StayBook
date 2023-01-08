@@ -25,9 +25,12 @@ export const planSlice = createSlice({
                     item.roomType !== action.payload.roomType
             )
         },
+        resetPlans: (state: any) => {
+            state.selectedPlans = []
+        },
     },
 })
 
-export const { addPlan, removePlan } = planSlice.actions
+export const { addPlan, removePlan, resetPlans } = planSlice.actions
 
 export default planSlice.reducer

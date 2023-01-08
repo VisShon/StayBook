@@ -79,7 +79,8 @@ function BookingCard({hotelName, address, slideRef}:any) {
             guests: guests.toString(),
             hotelContact: "+918373929299",
             address: address,
-            status:`Amount due ₹${price}, Pay now to save extra ₹190-`
+            status:`Amount due ₹${price}, Pay now to save extra ₹190-`,
+            customerContact: contact
         }
         await axios.post('https://graph.facebook.com/v14.0/113549444945607/messages/',
         { "messaging_product": "whatsapp", 

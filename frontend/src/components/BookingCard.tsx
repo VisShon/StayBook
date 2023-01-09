@@ -96,63 +96,67 @@ function BookingCard({ hotelName, address, slideRef }: any) {
       status: `Amount due ₹${price}, Pay now to save extra ₹190-`,
       customerContact: contact,
     };
-    await axios.post(
-      "https://graph.facebook.com/v14.0/113549444945607/messages/",
-      {
-        messaging_product: "whatsapp",
-        to: contact,
-        type: "template",
-        template: {
-          name: "hotelorder",
-          language: { code: "en_GB" },
-          components: [
-            {
-              type: "body",
-              parameters: [
-                {
-                  type: "text",
-                  text: templateParams.hotelName,
-                },
-                {
-                  type: "text",
-                  text: templateParams.checkIn,
-                },
-                {
-                  type: "text",
-                  text: templateParams.checkOut,
-                },
-                {
-                  type: "text",
-                  text: templateParams.roomNumbers,
-                },
-                {
-                  type: "text",
-                  text: templateParams.guests,
-                },
-                {
-                  type: "text",
-                  text: templateParams.hotelContact,
-                },
-                {
-                  type: "text",
-                  text: templateParams.address,
-                },
-                {
-                  type: "text",
-                  text: templateParams.status,
-                },
-              ],
-            },
-          ],
+    try {
+      await axios.post(
+        "https://graph.facebook.com/v14.0/113549444945607/messages/",
+        {
+          messaging_product: "whatsapp",
+          to: contact,
+          type: "template",
+          template: {
+            name: "hotelorder",
+            language: { code: "en_GB" },
+            components: [
+              {
+                type: "body",
+                parameters: [
+                  {
+                    type: "text",
+                    text: templateParams.hotelName,
+                  },
+                  {
+                    type: "text",
+                    text: templateParams.checkIn,
+                  },
+                  {
+                    type: "text",
+                    text: templateParams.checkOut,
+                  },
+                  {
+                    type: "text",
+                    text: templateParams.roomNumbers,
+                  },
+                  {
+                    type: "text",
+                    text: templateParams.guests,
+                  },
+                  {
+                    type: "text",
+                    text: templateParams.hotelContact,
+                  },
+                  {
+                    type: "text",
+                    text: templateParams.address,
+                  },
+                  {
+                    type: "text",
+                    text: templateParams.status,
+                  },
+                ],
+              },
+            ],
+          },
         },
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${bearer}`,
-        },
-      }
-    );
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${bearer}`,
+          },
+        }
+      );
+    } catch(error) {
+      console.log(error)
+    }
 
     try {
       await emailjs

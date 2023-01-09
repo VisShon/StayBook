@@ -220,7 +220,7 @@ function BookingCard({ hotelName, address, slideRef }: any) {
                 views={["day", "month"]}
                 label="Check Out"
                 value={checkOut}
-                minDate={new Date()}
+                minDate={checkIn}
                 onChange={(newValue: any) => {
                   setCheckOut(newValue);
                   setcheckOutGlobal(newValue);

@@ -188,7 +188,7 @@ ul li ul li {
 
 .hotels {
     width: 7rem;
-    height: 1.5rem;
+    height: fit-content;
     color: black;
     background-color: bisque;
     font-size: 0.75rem;
@@ -201,7 +201,7 @@ ul li ul li {
 .hotels:hover {
     border-radius: 0rem;
     background: $gradient;
-    height: 1.5rem;
+    height: fit-content;
     @media screen and (max-width: 800px) {
         height: 2.5rem;
     }

@@ -8,6 +8,19 @@
     text-align: center;
 }
 
+.blogHeader {
+    background-color: black;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    h4{
+        color: $main;
+    }
+
+}
+
 .blogsContainer {
     display: flex;
     flex-wrap: wrap;
@@ -15,9 +28,13 @@
     min-height: 40vh;
     justify-content: center;
 
+
+
     article {
         height: 14rem;
-        margin-bottom: 1rem;
+        margin-bottom: 5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
         width: 30%;
         position: relative;
         z-index: 10;
@@ -25,7 +42,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        margin-left: 1rem;
+        margin-left: 2.5rem;
 
         @media screen and (max-width: 800px) {
             width: 80%;
@@ -35,23 +52,24 @@
 
     article:hover::after {
         content: '';
-        background: linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(0, 0, 0, 0.43043154761904767) 100%
-        );
+        background: linear-gradient(0deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(0, 0, 0, 0.43043154761904767) 100%);
         height: 87%;
         width: 100%;
         position: absolute;
         top: 0;
         border-radius: 1rem;
         z-index: 0;
+
         @media screen and (max-width: 800px) {
             height: 50%;
         }
     }
+
     img {
         position: absolute;
+        opacity: 0.8;
         top: 0;
         width: 100%;
         height: 120%;
@@ -59,21 +77,31 @@
         border-radius: 1rem;
         box-shadow: 0 0 10px $shadow;
     }
+
     .button {
         margin-top: 1rem;
         position: relative;
         z-index: 10;
     }
+
     h3 {
         font-family: 'Kraftan', sans-serif;
-        color: white;
+        color: rgb(255, 255, 255);
         text-align: center;
         font-size: 2rem;
         margin-bottom: 1rem;
         margin-top: 1rem;
         position: relative;
         z-index: 10;
+        padding: 0.5rem;
+
+        background-color: #000;
+
+        opacity: .7;
+        border-radius: 1rem;
+
     }
+
 }
 
 .postBody {
@@ -81,6 +109,7 @@
     flex-direction: column;
     position: relative;
     align-items: center;
+
     h1 {
         font-family: 'Kraftan', sans-serif;
         color: white;
@@ -91,34 +120,40 @@
         align-self: center;
         z-index: 10;
     }
+
     .background {
-        background: linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(0, 0, 0, 0.43043154761904767) 100%
-        );
+        background: linear-gradient(0deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(0, 0, 0, 0.43043154761904767) 100%);
         width: 100vw;
         height: 50vh;
         position: absolute;
     }
+
     img {
         width: 100vw;
         height: 50vh;
     }
+
     .content {
         width: 50%;
+
         @media screen and (max-width: 800px) {
             width: 80%;
         }
+
         img {
             width: 100%;
             border: 1px solid $main;
             border-radius: 0.5rem;
+
             @media screen and (max-width: 800px) {
                 height: 15rem;
             }
         }
+
         padding: 2rem;
+
         @media screen and (max-width: 800px) {
             padding: 0rem;
         }

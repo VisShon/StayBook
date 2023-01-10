@@ -104,8 +104,8 @@ function BookingCard({ hotelName, address, slideRef }: any) {
           to: contact,
           type: "template",
           template: {
-            name: "hotelorder",
-            language: { code: "en_GB" },
+            name: "hotel_order",
+            language: { code: "en" },
             components: [
               {
                 type: "body",
@@ -141,6 +141,10 @@ function BookingCard({ hotelName, address, slideRef }: any) {
                   {
                     type: "text",
                     text: templateParams.status,
+                  },
+                  {
+                    type: "text",
+                    text: templateParams.rooms,
                   },
                 ],
               },

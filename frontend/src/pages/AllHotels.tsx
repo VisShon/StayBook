@@ -17,6 +17,7 @@ function AllHotels() {
                     name,
                     slug,
                     rating,
+                    card_amenities,
                     rooms[0]{
                      plans[0],
                     },
@@ -43,7 +44,8 @@ function AllHotels() {
           images={hotel!.images}
           slug={hotel!.slug}
           rating={hotel!.rating}
-          key={index}/>))}
+          key={index}
+          card_amenities={hotel!.card_amenities}/>))}
       </div>
       </>}
     </>

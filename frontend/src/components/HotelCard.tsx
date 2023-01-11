@@ -17,10 +17,11 @@ export type Props ={
       url: string
     }
   }],
-  rating:number
+  rating:number,
+  card_amenities: string
 };
 
-function HotelCard({name,images,rooms,slug,rating}:Props) {
+function HotelCard({name,images,rooms,slug,rating,card_amenities}:Props) {
   const [n,setN] =useState(0); 
   return (
     <div className="hotelCard">
@@ -45,6 +46,7 @@ function HotelCard({name,images,rooms,slug,rating}:Props) {
 
         <a href={`/${slug.current}`}>
           <h2>{name}</h2>
+          {card_amenities && (<p className="card-amenities">{card_amenities}</p>)}
           <div className="ratingContainer">
             <div className="rating">
               {new Array(Math.max(3, rating)).fill(0).map((item, i)=>(

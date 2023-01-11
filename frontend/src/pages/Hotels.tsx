@@ -27,8 +27,8 @@ function Hotels() {
                     "hotel":*[_type=='hotel' && _id ==^._ref][0]{
                       name,
                       slug,
-                      description,
                       rating,
+                      card_amenities,
                       rooms[0]{
                         plans[0],
                       },
@@ -58,7 +58,8 @@ function Hotels() {
           images={hotel!.images}
           slug={hotel!.slug}
           rating={hotel!.rating}
-          key={index}/>))}
+          key={index}
+          card_amenities={hotel!.card_amenities}/>))}
       </div>
       </>}
     </>

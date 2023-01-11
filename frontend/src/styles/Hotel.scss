@@ -21,7 +21,7 @@
 
     .hotelCard{
         width: 28%;
-        height: 26rem;
+        height: 28rem;
         box-shadow: 0 0 15px $shadow2;
         border-radius: 0.75rem;
         margin-left: 2rem;
@@ -31,6 +31,7 @@
         text-decoration: none;
         justify-content: flex-start;
         font-family: 'Mada', sans-serif;
+        overflow-y: auto;
         @media screen and (max-width: 800px) {
             width: 90%;
             margin-left: 0rem;
@@ -82,7 +83,7 @@
             font-family: 'Maven Pro', sans-serif;
             font-size: 1rem;
             font-weight: 500;
-            margin: 0.5rem 0;
+            margin: 0;
             display: flex;
             align-items: center;
 
@@ -90,6 +91,12 @@
                 margin: 0.5rem 0;
                 color: $main;
             }
+        }
+
+        .card-amenities {
+            font-size: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 0;
         }
 
         p{
@@ -101,6 +108,7 @@
             font-family: 'Maven Pro', sans-serif;
             font-size: 1.2rem;
             font-weight: 500;
+            margin: 0;
         }
 
         img{

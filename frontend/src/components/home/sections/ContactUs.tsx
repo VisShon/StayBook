@@ -16,9 +16,9 @@ const boxVariant = {
 const SocialMediaBox = () => {
     return (
         <div className="socialMediaBox">
-            <a href="https://www.facebook.com/budgetfriendlyhotel"><FacebookIcon fontSize="inherit" color="inherit"/></a>
-            <a href="https://www.instagram.com/staybook_1/"><InstagramIcon fontSize="inherit" color="inherit"/></a>
-            <a href="https://www.linkedin.com/company/hotelier/"><LinkedInIcon fontSize="inherit" color="inherit"/></a>
+            <a href="https://www.facebook.com/budgetfriendlyhotel" style={{color: '#4267B2'}}><FacebookIcon fontSize="inherit" color="inherit"/></a>
+            <a href="https://www.instagram.com/staybook_1/"><div className="ig-icon"><InstagramIcon fontSize="inherit" color="inherit"/></div></a>
+            <a href="https://www.linkedin.com/company/hotelier/" style={{color: '#0e76a8'}} ><LinkedInIcon fontSize="inherit" color="inherit"/></a>
         </div>
     )
 }

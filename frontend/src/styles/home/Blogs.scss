@@ -1,5 +1,9 @@
 @import '../colors';
 
+*{
+    margin: 0;
+    padding: 0;
+}
 .heading {
     font-family: 'Kraftan', sans-serif;
     color: $grey;
@@ -15,8 +19,21 @@
     padding-bottom: 2rem;
     margin-bottom: 2rem;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     h4{
         color: $main;
+    }
+    img{
+        width: 40vw;
+        margin-top: 3rem;
+        height: fit-content;
+
+    }
+    .blogSearch{
+        width: 50%;
+        margin-top: 2rem;
     }
 
 }

@@ -25,26 +25,38 @@ function HotelCarousel() {
         const fetchedData = async () => {
             await client
                 .fetch(
-                    `*[_type == "hotel"] {
-        name,
-        order,
-        slug,
-        description,
-        images[]{
-          asset -> {url},
+                `*[_type == "hotel"] {
+                    name,
+                    order,
+                    slug,
+                    description,
+                    images[]{
+                      asset -> {url},
+                    }
+                  }`
+            )
+            .then((data) => {
+                data.sort((a: any, b: any) => a.order - b.order)
+                setData(data)
+            })
+            .then(() => {
+                setLoading(true)
+           })
+
         }
-      }`
-                )
-                .then((data) => {
-                    data.sort((a: any, b: any) => a.order - b.order)
-                    setData(data)
-                })
-                .then(() => {
-                    setLoading(true)
-                })
-        }
+
         fetchedData()
     }, [])
+
+    useEffect(() => {
+        if (data.length == 0) return
+
+        setInterval((setN, data, control) => {
+            setN(n => (n + 1) % data.length)
+            control.set('hidden')
+        }, 5000, setN, data, control)
+ 
+    }, [data])
 
     return (
         <div className="body">

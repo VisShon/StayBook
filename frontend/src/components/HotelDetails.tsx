@@ -59,8 +59,8 @@ const HotelDetails = (props: any) => {
             <h2>Nearby Places</h2>
             {places.map((place: any) => (
                 <div className="hotel-nearby-places">
-                    <p className="icontext"><PlaceIcon fontSize="inherit"/>{place.a}</p>
-                    {place.b && <p className="icontext"><PlaceIcon fontSize="inherit"/>{place.b}</p>}
+                    {place.a.name && <a href={place.a.link}><p className="icontext"><PlaceIcon fontSize="inherit"/>{place.a.name}</p></a>}
+                    {place.b.name && <a href={place.b.name}><p className="icontext"><PlaceIcon fontSize="inherit"/>{place.b}</p></a>}
                 </div>
             ))}
         </div>

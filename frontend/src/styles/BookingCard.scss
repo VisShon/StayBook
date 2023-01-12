@@ -112,7 +112,7 @@
     @extend .calendar;
     margin-top: 1rem;
     text-align: left;
-    height: 4rem;
+    height: fit-content;
 }
 .cancel {
     font-weight: 600;

@@ -6,6 +6,7 @@ import emailjs from "@emailjs/browser";
 import Button from "./Button";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import { useAppSelector } from "../app/hooks";
 import { AuthContext, AuthContextProps } from "../context/AuthContext";
@@ -16,6 +17,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { checkInContext, checkOutContext } from "../App";
 import { numberOfChildren } from "../app/priceSlice";
+import Spinner from "./Spinner";
 
 function BookingCard({ hotelName, address, slideRef }: any) {
   const ref: string = new URL(window.location.href).pathname;
@@ -28,6 +30,7 @@ function BookingCard({ hotelName, address, slideRef }: any) {
   const CheckInDate = sessionStorage.getItem("checkIn");
   const [checkInGlobal, setcheckInGlobal] = useContext(checkInContext);
   const [checkOutGlobal, setcheckOutGlobal] = useContext(checkOutContext);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const [checkIn, setCheckIn] = useState<Date | null>(
     CheckInDate ? new Date(CheckInDate) : today
@@ -52,7 +55,10 @@ function BookingCard({ hotelName, address, slideRef }: any) {
   const { username, email, phone, Login } =
     useContext<AuthContextProps>(AuthContext);
 
+  const navigate = useNavigate();
   const payOnHotel = async () => {
+    window.scrollTo(0, 0);
+    let waysConveyed = 0;
     if (!username) {
       await Login();
     }
@@ -75,6 +81,7 @@ function BookingCard({ hotelName, address, slideRef }: any) {
       guests += plan.guests;
     });
 
+    setIsLoading(true);
     const {
       data: { key: bearer },
     } = await axios.get("/get-bearer");
@@ -93,7 +100,7 @@ function BookingCard({ hotelName, address, slideRef }: any) {
       guests: guests.toString(),
       hotelContact: "+918373929299",
       address: address,
-      status: `Amount due ₹${price}, Pay now to save extra ₹190-`,
+      status: `Amount due: ₹${price}, Pay now to save extra ₹${Math.min(175, (0.05 * price))}-`,
       customerContact: contact,
     };
     try {
@@ -158,8 +165,8 @@ function BookingCard({ hotelName, address, slideRef }: any) {
           },
         }
       );
-    } catch(error) {
-      console.log(error)
+    } catch (error) {
+      console.log(error);
     }
 
     try {
@@ -170,7 +177,10 @@ function BookingCard({ hotelName, address, slideRef }: any) {
           templateParams,
           "bE7FBsdP5YFb4U6LK"
         )
-        .then(() => setIsPaid(true));
+        .then(() => {
+          setIsPaid(true);
+          waysConveyed += 1;
+        });
     } catch (error) {
       console.log(error);
     }
@@ -192,8 +202,17 @@ function BookingCard({ hotelName, address, slideRef }: any) {
           },
         }
       );
+
+      waysConveyed += 1;
     } catch (error) {
       console.log(error);
+    }
+    console.log("Ways conveyed ", waysConveyed);
+    setIsLoading(false);
+    if (waysConveyed > 0) {
+      navigate("/confirmation", {
+        state: { confirmed: true, guestInfo: templateParams, name: "sabaoon" },
+      });
     }
   };
 
@@ -201,7 +220,9 @@ function BookingCard({ hotelName, address, slideRef }: any) {
     dispatch(removePlan({ title: "Monthly Rate", roomType: "Deluxe Suite" }));
   }, []);
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <div className="bookingCard" ref={slideRef}>
       <h1>₹{withoutTax}</h1>
       <div className="calendar">

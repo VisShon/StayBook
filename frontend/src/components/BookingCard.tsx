@@ -210,7 +210,7 @@ function BookingCard({ hotelName, address, slideRef }: any) {
     console.log("Ways conveyed ", waysConveyed);
     setIsLoading(false);
     if (waysConveyed > 0) {
-      navigate("/confirmation", {
+      navigate("/hotelbookingconfirmation", {
         state: { confirmed: true, guestInfo: templateParams, name: "sabaoon" },
       });
     }

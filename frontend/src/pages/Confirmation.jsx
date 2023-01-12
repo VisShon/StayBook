@@ -8,8 +8,11 @@ function Confirmation(props) {
     window.scrollTo(0, 0);
   }, []);
   const location = useLocation();
-  let greeting = `Dear customer, \nThank you for choosing Staybook.`;
-  let hotelInfo = `Your booking for ${location.state.guestInfo.hotelName} is confirmed.`;
+  let greeting = `Yay! \nThanks for choosing Staybook to host you on your stay in `;
+  let hotelInfo = `${location.state.guestInfo.hotelName}" in ${
+    location.state.guestInfo.address.split(",")[
+      location.state.guestInfo.address.split(",").length - 2
+    ]}`;
 
   let allInfo = `Check-in Date: ${location.state.guestInfo.checkIn}\n
 Check-in Time: 12:00 PM onwards\n
@@ -28,13 +31,18 @@ Customer Contact: ${location.state.guestInfo.customerContact}\n`;
   return (
     <>
       <div className="confirmHeader">
-        {greeting.split("\n").map((str) => (
-          <h1>{str}</h1>
-        ))}
+        <div className="confirmContent">
+          {greeting.split("\n").map((str) => (
+            <h1>{str}</h1>
+          ))}
 
-        {hotelInfo.split("\n").map((str) => (
-          <h2>{str}</h2>
-        ))}
+          {hotelInfo.split("\n").map((str) => (
+            <h1>{str}</h1>
+          ))}
+        </div>
+        <button onClick={window.print} className="printBtn bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+          Print confirmation
+        </button>
       </div>
 
       <div className="info">

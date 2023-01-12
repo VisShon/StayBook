@@ -1,4 +1,10 @@
+
 .confirmHeader{
+    display: flex;
+    flex-direction: row;
+}
+
+.confirmContent{
     h1{
         font-size: 1.5rem;
         font-weight: 600;
@@ -34,4 +40,20 @@
     margin-right: 1rem;
     margin-bottom: 2rem;
     font-weight: bold;
+}
+
+.printBtn{
+    height: fit-content;
+    width: fit-content;
+    background-color: #cf8f24;
+    align-self: flex-end;
+    margin: 2.5rem;
+    margin-left: 4rem;
+}
+
+.printBtn:hover{ 
+    height: fit-content;
+    width: fit-content;
+    background-color: #c37f0a;
+    
 }

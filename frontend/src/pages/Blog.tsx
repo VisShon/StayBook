@@ -3,7 +3,7 @@ import "../styles/home/Blogs.scss";
 import client from "../client";
 import { Helmet } from "react-helmet";
 import BlogCard from "../components/BlogCard";
-import logo from "../images/logo.png";
+import logo from "../images/faviconlogo.png";
 function Blog() {
   const [posts, setPosts] = useState([]);
 

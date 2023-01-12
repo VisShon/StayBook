@@ -11,13 +11,19 @@ const HotelDetails = (props: any) => {
     let amenityArray2: string[] = amenities.slice(chunkSize, 2 * chunkSize)
     let amenityArray3: string[] = amenities.slice(2 * chunkSize)
 
-    let places: {a: string, b: string}[] = [];
+    let places: {a: {name: string, link: string},  b: {name: string, link: string}}[] = [];
 
-    let nearbyPlaces: string[] = hotel.hotel_nearby_places;
+    let nearbyPlaces: {nearby_place_name: string, nearby_place_link: string}[] = hotel.hotel_nearby_places;
     for (let i = 0; i < nearbyPlaces.length; i += 2) {
         places.push({
-            a: nearbyPlaces[i],
-            b: (i + 1 < nearbyPlaces.length ? nearbyPlaces[i + 1] : '')
+            a: {
+                name: nearbyPlaces[i].nearby_place_name,
+                link: nearbyPlaces[i].nearby_place_link
+            },
+            b: {
+                name: i + 1 < nearbyPlaces.length ? nearbyPlaces[i + 1].nearby_place_name : '',
+                link: i + 1 < nearbyPlaces.length ? nearbyPlaces[i + 1].nearby_place_link : ''
+            }
         })
     }
 

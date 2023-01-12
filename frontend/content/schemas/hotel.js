@@ -223,9 +223,21 @@ export default {
             type: 'array',
             of: [
                 {
-                    name: 'place_name',
+                    name: 'place',
                     title: 'Nearby Place',
-                    type: 'string'
+                    type: 'object',
+                    fields: [
+                        {
+                            name: 'nearby_place_name',
+                            title: 'Name',
+                            type: 'string'
+                        },
+                        {
+                            name: 'nearby_place_link',
+                            title: 'Link',
+                            type: 'string'
+                        }
+                    ]
                 }
             ]
         }

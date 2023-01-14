@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import '../styles/App.scss'
 import Amneties from '../components/Ameneties'
 import HotelDetails from '../components/HotelDetails'
@@ -9,23 +9,31 @@ import tra from '../images/tra.svg'
 import light from '../images/light.png'
 import cross from '../images/cross.svg'
 import BookingCard from '../components/BookingCard'
+import MobileBookingCard from '../components/MobileBookingCard'
 import Photos from '../components/PhotoSlider'
 import PhotoGrid from '../components/PhotoGrid'
 import RoomCard from '../components/RoomCard'
 import { useParams } from 'react-router-dom'
 import client from '../client'
 import {Helmet} from 'react-helmet'
+import { useInView } from 'react-intersection-observer';
 import Spinner from '../components/Spinner';
+import useMobile from '../hooks/UseMobile'
 
 function App() {
     const [hotel, setHotel] = useState<any>(null)
     const { slug } = useParams()
     const [gallery, setGallery] = useState<boolean>(false)
     const [isMinimized, setIsMinimized] = useState<boolean>(false)
-    const [selected, setSelected] = useState<boolean>(false)
-    const bookingCardRef = useRef<HTMLElement>()
     const guests = sessionStorage.getItem('guests')
     const prices = [150, 160, 90]
+
+    const ref = useRef<HTMLElement>()
+    const { ref: inViewRef, inView, entry } = useInView({
+      threshold: 0
+    })
+    const [isMobVisible, setIsMobvisible] = useState(true)
+    const isMobile = useMobile()
 
     useEffect(() => {
         client
@@ -103,12 +111,28 @@ function App() {
         return MinPrice
     }
 
-    useEffect(() => {
-      if (selected) {
-        bookingCardRef.current?.scrollIntoView(true)
-        setSelected(false)
+    const setRefs = useCallback(
+       (node: any) => {
+        ref.current = node;
+        inViewRef(node);
+      },
+      [inViewRef],
+    );
+
+    const scrollToCard = () => {
+      if (ref.current) {
+        ref.current.scrollIntoView(true)
       }
-    }, [selected])
+    }
+
+    useEffect(() => {
+      if (entry && entry.boundingClientRect.bottom <= 0) {
+        setIsMobvisible(false)
+      } else {
+        setIsMobvisible(true)
+      }
+      console.log(entry)
+    }, [entry])
 
     return (
         <>
@@ -240,13 +264,14 @@ function App() {
                                         item.guests == guests || !guests
                                 )
                                 .map((room: any, i: number) => (
-                                    <RoomCard room={room} key={i} onSelect={setSelected}/>
+                                    <RoomCard room={room} key={i}/>
                                 ))}
                           {hotel.hotel_amenities ? (
                             <HotelDetails hotel={hotel} />
                           ) : null}
                         </div>
-                        <BookingCard slideRef={bookingCardRef} hotelName={hotel.name} address={hotel.address} />
+                        <BookingCard cardRef={setRefs} hotelName={hotel.name} address={hotel.address} />
+                        {isMobile && !inView && isMobVisible && <MobileBookingCard scrollToCard={scrollToCard}/>}
                     </div>
                 </>
             ) : (

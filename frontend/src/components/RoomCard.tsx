@@ -16,7 +16,7 @@ const prepareImages = (images: any) => {
     return imagesArray
 }
 
-function RoomCard({ room, onSelect }: any) {
+function RoomCard({ room }: any) {
     const [modal, setModal] = useState(false)
     const roomAmenities = room.ameneties.split(", ")
     const images = prepareImages(room.images)
@@ -57,7 +57,6 @@ function RoomCard({ room, onSelect }: any) {
                         plan={plan}
                         amenities={room.ameneties}
                         guests={room.guests}
-                        onSelect={onSelect}
                         key={i}
                     />
                 ))}

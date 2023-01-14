@@ -5,7 +5,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import '../styles/PlanCard.scss'
 import { checkInContext, checkOutContext } from "../App";
 
-function PlanCard({ plan, room, amenities, maxCap, guests, onSelect }: any) {
+function PlanCard({ plan, room, amenities, maxCap, guests }: any) {
   const dispatch = useAppDispatch();
   const wind = window.matchMedia("(max-width: 800px)");
 
@@ -39,7 +39,6 @@ function PlanCard({ plan, room, amenities, maxCap, guests, onSelect }: any) {
   };
 
   const onClickHandler = () => {
-    onSelect(true);
     let newPlan = { ...plan, roomType: room, maxCap: maxCap, guests: guests };
     dispatch(addPlan(newPlan));
   };

@@ -20,7 +20,7 @@ import { checkInContext, checkOutContext } from "../App";
 import { numberOfChildren } from "../app/priceSlice";
 import Spinner from "./Spinner";
 
-function BookingCard({ hotelName, address, slideRef }: any) {
+function BookingCard({ hotelName, address, cardRef }: any) {
   const ref: string = new URL(window.location.href).pathname;
 
   let today = new Date();
@@ -224,7 +224,7 @@ function BookingCard({ hotelName, address, slideRef }: any) {
   return isLoading ? (
     <Spinner />
   ) : (
-    <div className="bookingCard" ref={slideRef}>
+    <div className="bookingCard" ref={cardRef}>
       <h1>₹{withoutTax}</h1>
       <div className="calendar">
         <div className="input">

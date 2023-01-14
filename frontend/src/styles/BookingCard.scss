@@ -123,3 +123,42 @@
     color:red !important;
     font-size:1rem;
 }
+
+.mobile-booking-card {
+    position: fixed;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: $background;
+    border: solid;
+    border-color: $grey2;
+    border-width: 1px;
+    border-bottom: none;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    box-shadow: 0 0 10px $shadow;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    p {
+        font-family: 'Maven Pro', sans-serif;
+        font-weight: 600;
+        font-size: 2rem;
+        //font-size: 72px;
+        text-align: left;
+        background: $gradient;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    div {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        color: white;
+        background: $gradient;
+        cursor: pointer;
+    }
+}

@@ -5,7 +5,9 @@ import { Helmet } from "react-helmet";
 import BlogCard from "../components/BlogCard";
 import logo from "../images/faviconlogo.png";
 function Blog() {
-  const [posts, setPosts] = useState([]);
+  const [query, setQuery] = useState('')
+  const [posts, setPosts] = useState<any[]>([])
+  const [filteredPosts, setFilteredPosts] = useState<any[]>([])
 
   useEffect(() => {
     client
@@ -23,8 +25,38 @@ function Blog() {
         }
       }`
       )
-      .then((data) => setPosts(data));
+      .then((data) => {
+        setPosts(data);
+        setFilteredPosts(data);
+      })
   }, []);
+
+  const handleChange = (e: any) => {
+    setQuery(e.target.value)
+  }
+
+  const toPlainText = (blocks: any[]) => {
+    return blocks
+      .map(block => {
+        if (block._type !== 'block' || !block.children) {
+          return ''
+        }
+        return block.children.map((child: any) => child.text).join('')
+      })
+      .join('\n\n')
+  }
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
+    const filter: any[] = [];
+    posts.forEach(post => {
+      if (post.title.toLowerCase().includes(query.toLowerCase()) || 
+          toPlainText(post.body).toLowerCase().includes(query.toLowerCase())) {
+        filter.push(post)
+      }
+    })
+    setFilteredPosts(filter)
+  }
 
   return (
     <>
@@ -43,16 +75,20 @@ function Blog() {
         {/* <span className="absolute inset-y-0 left-0 flex items-center pl-2"> */}
           {/* <svg className="h-5 w-5 fill-slate-300" viewBox="0 0 20 20"><!-- ... --></svg> */}
         {/* </span> */}
-        {/* <input
-          className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm blogSearch"
-          placeholder="Search blogs"
-          type="text"
-          name="search"
-        /> */}
+        <form className="w-full flex justify-center" onSubmit={handleSubmit}>
+          <input
+            className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm blogSearch"
+            placeholder="Search blogs"
+            type="text"
+            name="search"
+            value={query}
+            onChange={handleChange}
+          />
+        </form>
       </div>
 
       <div className="blogsContainer">
-        {posts.map((post: any) => (
+        {filteredPosts.map((post: any) => (
           <BlogCard post={post} />
         ))}
       </div>

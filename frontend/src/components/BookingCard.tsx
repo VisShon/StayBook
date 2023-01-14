@@ -7,7 +7,8 @@ import Button from "./Button";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
 import { useAppSelector } from "../app/hooks";
 import { AuthContext, AuthContextProps } from "../context/AuthContext";
 import { useAppDispatch } from "../app/hooks";
@@ -46,7 +47,7 @@ function BookingCard({ hotelName, address, slideRef }: any) {
   const price = useAppSelector((state) => state.price.value);
   const Plans = useAppSelector((state) => state.plans.selectedPlans);
 
-  const [contact, setContact] = useState<string>("");
+  const [contact, setContact] = useState<any>("");
   const [payAtHotel, setPayAtHote] = useState<boolean>(false);
   const [isPaid, setIsPaid] = useState<boolean>(false);
   const [noSelected, setNoSelected] = useState<boolean>(false);
@@ -297,12 +298,12 @@ function BookingCard({ hotelName, address, slideRef }: any) {
         {!isPaid ? (
           payAtHotel && (
             <>
-              <input
-                type="text"
-                value={contact}
-                onChange={(e) => setContact(e.target.value)}
+              <PhoneInput
                 className="phone"
+                defaultCountry="IN"
                 placeholder="Phone number (eg: 917017495876)"
+                value={contact}
+                onChange={setContact}
               />
               <div onClick={payOnHotel} className="button">
                 Continue

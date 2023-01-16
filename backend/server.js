@@ -57,13 +57,11 @@ console.log('Starting')
 // app.listen(8000, () => console.log("Listening on 80"));
 
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/staybook.in/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/staybook.in/cert.pem', 'utf8');
-const ca = fs.readFileSync('/etc/letsencrypt/live/staybook.in/chain.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/staybook.in/fullchain.pem', 'utf8');
 
 const credentials = {
-        key: privateKey,
-        cert: certificate,
-        ca: ca
+  key: privateKey,
+  cert: certificate,
 };
 
 const httpsServer = https.createServer(credentials, app);

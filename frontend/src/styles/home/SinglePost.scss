@@ -1,0 +1,61 @@
+@import '../colors';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.postBody {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+
+    h4{
+        font-family: 'Kraftan', sans-serif;
+        color: rgb(255, 255, 255);
+        font-size: 2.5rem;
+        // margin-bottom: 1rem;
+        // margin-top: 5rem;
+        position: absolute;
+        // align-self: center;
+        z-index: 10;
+        // align-self: flex-start;
+        // margin-left: 1rem;
+        // margin-right: 1rem;
+        align-self: baseline
+        
+    }
+
+    
+
+    img {
+        width: 100vw;
+        height: 75vh;
+    }
+
+    .content {
+        width: 50%;
+
+        @media screen and (max-width: 800px) {
+            width: 80%;
+        }
+
+        img {
+            width: 100%;
+            border: 1px solid $main;
+            border-radius: 0.5rem;
+
+            @media screen and (max-width: 800px) {
+                height: 15rem;
+            }
+        }
+
+        padding: 2rem;
+
+        @media screen and (max-width: 800px) {
+            padding: 0rem;
+        }
+    }
+}

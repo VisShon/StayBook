@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import '../styles/home/Blogs.scss'
+import '../styles/home/SinglePost.scss'
 import { Link, useParams } from 'react-router-dom'
 import client from '../client'
 import BlockContent from '@sanity/block-content-to-react'
@@ -9,6 +9,7 @@ function SinglePost() {
     const [isLoading, setIsLoading] = useState(true)
     const { slug } = useParams()
     useEffect(() => {
+        window.scrollTo(0, 0)
         client
             .fetch(
                 `*[slug.current == "${slug}"] {
@@ -37,7 +38,7 @@ function SinglePost() {
                 <p>Loading...</p>
             ) : (
                 <section className="postBody">
-                    <h1>{singlePost.title}</h1>
+                    <h4>{singlePost.title}</h4>
                     <div className="background"></div>
                     {singlePost.mainImage && singlePost.mainImage.asset && (
                         <img

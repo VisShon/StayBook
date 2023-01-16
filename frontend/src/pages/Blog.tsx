@@ -4,6 +4,7 @@ import client from "../client";
 import { Helmet } from "react-helmet";
 import BlogCard from "../components/BlogCard";
 import logo from "../images/faviconlogo.png";
+import { Link } from "react-router-dom";
 function Blog() {
   const [query, setQuery] = useState('')
   const [posts, setPosts] = useState<any[]>([])
@@ -58,8 +59,18 @@ function Blog() {
     setFilteredPosts(filter)
   }
 
+
   return (
     <>
+      <div className="outerFloat">
+        <div className="floating">
+          <div className="innerFloat">
+            <Link to="/hotels" className="btn btn-primary">
+              Book Now
+            </Link>
+          </div>
+        </div>
+      </div>
       <Helmet>
         <title>StayBook Blogs</title>
         <meta
@@ -84,7 +95,7 @@ function Blog() {
           />
 
           <button
-            id = "searchBlogsButton"
+            id="searchBlogsButton"
             type="submit"
             className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >

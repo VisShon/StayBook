@@ -5,6 +5,41 @@
     padding: 0;
 }
 
+.outerFloat {
+    display: flex;
+    flex-direction: column;
+    padding: 0
+}
+
+.floating {
+
+    background-color: $main;
+    color: white;
+    position: fixed;
+    margin-top: 5rem;
+    z-index: 100;
+    border-radius: 1rem 0rem 0rem 1rem;
+    height: 8rem;
+    width: 2rem;
+    align-self: flex-end;
+
+}
+
+.innerFloat {
+    font-family: 'Kraftan', sans-serif;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    padding-right: 0rem;
+    padding-top: 3.5rem;
+    padding-left: 1.5rem;
+    height: 0rem;
+    width: 7rem;
+    margin-top: 2rem;
+
+}
 
 .postBody {
     display: flex;

@@ -27,7 +27,14 @@ function SinglePost() {
       .then((data) => setSinglePost(data[0]));
     setIsLoading(false);
   }, [slug]);
-
+  
+  let array = [
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",  
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  ];
   return (
     <>
       <Helmet>
@@ -50,24 +57,87 @@ function SinglePost() {
               </div>
             </div>
           </div>
-          <section className="postBody">
+          <div className="postBody">
             <h4>{singlePost.title}</h4>
-            <div className="background"></div>
-            {singlePost.mainImage && singlePost.mainImage.asset && (
+            <div className="backgroundImg">
+              {singlePost.mainImage && singlePost.mainImage.asset && (
+                <img
+                  src={singlePost.mainImage.asset.url}
+                  alt={singlePost.title}
+                  title={singlePost.title}
+                />
+              )}
+            </div>
+
+            {/* <div className="content">
+                <BlockContent
+                  blocks={singlePost.body}
+                  projectId="fifev1uu"
+                  dataset="blogs"
+                />
+              </div> */}
+          </div>
+
+          <div className="blogBody">
+            <div className="blogContent">
+              <div className="desc">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+                asperiores, minima eos corporis voluptatum ad incidunt ratione!
+                Fuga necessitatibus molestiae voluptatum veniam? Dolores facilis
+                odit suscipit accusamus. Sunt fuga veniam rem sint
+                exercitationem consectetur, perferendis perspiciatis praesentium
+                expedita? Laborum sed maxime nulla ad quos impedit minus ipsum
+                nemo commodi atque corporis sit repellat enim modi delectus
+                distinctio voluptatibus molestias reprehenderit at cum minima
+                eius, labore quod dolorem! Cupiditate deserunt voluptas in
+                excepturi facilis veritatis tempore doloribus nemo aperiam
+                harum? Debitis! Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit. Ex sed nemo maiores pariatur laboriosam vitae
+                tempore nulla soluta. Enim, eius.
+              </div>
+
+              <div className="tableOfContents">
+                {array.map((post) => (
+                  <tr>
+                    <td>{post}</td>
+                  </tr>
+                ))}
+              </div>
+
+              <div className="allContent">
+                {array.map((post) => (
+                  <>
+                    <div className="topicHeading">{post}</div>
+                    <div className="topicDesc">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Rerum porro repellendus obcaecati officia temporibus,
+                      quisquam pariatur unde similique excepturi beatae repellat
+                      ipsum voluptates quo minus commodi. Cum totam beatae vitae
+                      excepturi ipsum aut provident cupiditate quas asperiores
+                      fugit aperiam nihil, exercitationem molestiae, atque esse
+                      ipsam? Molestiae doloremque molestias dicta saepe
+                      perferendis recusandae reiciendis modi quae? Laborum,
+                      pariatur id? Quam, ut excepturi blanditiis fugit cumque
+                      architecto accusamus expedita ducimus facilis enim nihil
+                      voluptatibus eum omnis perspiciatis eius. Officiis ipsum
+                      dolor quasi.
+
+                    </div>
+                  </>
+                ))}
+              </div>
+            </div>
+            <div className="blogImages">
               <img
-                src={singlePost.mainImage.asset.url}
-                alt={singlePost.title}
-                title={singlePost.title}
+                src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+                alt="Pics"
               />
-            )}
-            <div className="content">
-              <BlockContent
-                blocks={singlePost.body}
-                projectId="fifev1uu"
-                dataset="blogs"
+              <img
+                src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+                alt="Pics"
               />
             </div>
-          </section>
+          </div>
         </>
       )}
     </>

@@ -33,21 +33,26 @@
     justify-content: center;
     background-color: transparent;
     align-items: flex-start;
-    height: 4rem;
+    // height: 4rem;
     .logo{
-        display: none;
+        // display: none;
+        visibility: hidden;
     }
     .profilepic{
-        display: none;   
+        // display: none;   
+        visibility: hidden;
     }
     .TourPackage{
-        display: none;
+        // display: none;
+        visibility: hidden;
     }
     .navMobile{
-        display: none;
+        visibility: hidden;
+        // display: none;
     }
     .navMobile-box{
-        display:none;
+        // display:none;
+        visibility: hidden;
     }
 }
 

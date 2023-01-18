@@ -13,6 +13,7 @@ import RefundPolicy from "./pages/RefundPolicy";
 import GeneralPolicy from "./pages/GeneralPolicy";
 import FAQ from "./pages/Faq";
 import Confirmation from "./pages/Confirmation";
+import AboutUs from "./pages/AboutUs";
 
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -65,6 +66,7 @@ export function App() {
                   <Route path="/hotels/:slug" element={<Hotels />} />
                   <Route path="/hotels" element={<AllHotels />} />
                   <Route path="/hotelbookingconfirmation" element={<Confirmation />}/>
+                  <Route path="/aboutus" element={<AboutUs />} />
                 </Routes>
                 <Footer />
                 <WhatsAppWidget CompanyIcon={Logo} phoneNumber="918527703312" />

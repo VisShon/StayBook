@@ -21,10 +21,10 @@ function Navbar() {
         if (prevScrollpos >= currentScrollPos) {
       
           navbar.current!.className = "navbar";
-          console.log("scrolling up");
+         
       } else {
           navbar.current!.className = "navbar-mini";
-          console.log("scrolling down");
+          
       }
       prevScrollpos = currentScrollPos;
     };

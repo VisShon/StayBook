@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import client from "../client";
 import BlockContent from "@sanity/block-content-to-react";
 import { Helmet } from "react-helmet";
+import BlogTableContent from "../components/BlogTableContent";
 function SinglePost() {
   const [singlePost, setSinglePost] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -15,10 +16,17 @@ function SinglePost() {
         `*[slug.current == "${slug}"] {
             title,
             body,
-            description,
-            bullet_points[],
             mainImage {
               asset -> {
+                _id,
+                url
+              },
+              alt
+            },
+            description,
+            bullet_points[],
+            images[] {
+               asset -> {
                 _id,
                 url
               },
@@ -27,19 +35,10 @@ function SinglePost() {
           }`
       )
       .then((data) => {
-        setSinglePost(data[0])
-        console.log(data[0])
-      })
-    setIsLoading(false);
+        setSinglePost(data[0]);
+        setIsLoading(false);
+      });
   }, [slug]);
-  
-  let array = [
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",  
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-  ];
   return (
     <>
       <Helmet>
@@ -73,75 +72,38 @@ function SinglePost() {
                 />
               )}
             </div>
-
-            {/* <div className="content">
-                <BlockContent
-                  blocks={singlePost.body}
-                  projectId="fifev1uu"
-                  dataset="blogs"
-                />
-              </div> */}
           </div>
 
           <div className="blogBody">
             <div className="blogContent">
-              <div className="desc">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-                asperiores, minima eos corporis voluptatum ad incidunt ratione!
-                Fuga necessitatibus molestiae voluptatum veniam? Dolores facilis
-                odit suscipit accusamus. Sunt fuga veniam rem sint
-                exercitationem consectetur, perferendis perspiciatis praesentium
-                expedita? Laborum sed maxime nulla ad quos impedit minus ipsum
-                nemo commodi atque corporis sit repellat enim modi delectus
-                distinctio voluptatibus molestias reprehenderit at cum minima
-                eius, labore quod dolorem! Cupiditate deserunt voluptas in
-                excepturi facilis veritatis tempore doloribus nemo aperiam
-                harum? Debitis! Lorem ipsum dolor, sit amet consectetur
-                adipisicing elit. Ex sed nemo maiores pariatur laboriosam vitae
-                tempore nulla soluta. Enim, eius.
-              </div>
+              <div className="desc">{singlePost.description}</div>
 
               <div className="tableOfContents">
-                {array.map((post) => (
+                {singlePost.bullet_points.map((item, index) => (
                   <tr>
-                    <td>{post}</td>
+                    <td>{item.heading}</td>
                   </tr>
                 ))}
               </div>
 
               <div className="allContent">
-                {array.map((post) => (
-                  <>
-                    <div className="topicHeading">{post}</div>
-                    <div className="topicDesc">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Rerum porro repellendus obcaecati officia temporibus,
-                      quisquam pariatur unde similique excepturi beatae repellat
-                      ipsum voluptates quo minus commodi. Cum totam beatae vitae
-                      excepturi ipsum aut provident cupiditate quas asperiores
-                      fugit aperiam nihil, exercitationem molestiae, atque esse
-                      ipsam? Molestiae doloremque molestias dicta saepe
-                      perferendis recusandae reiciendis modi quae? Laborum,
-                      pariatur id? Quam, ut excepturi blanditiis fugit cumque
-                      architecto accusamus expedita ducimus facilis enim nihil
-                      voluptatibus eum omnis perspiciatis eius. Officiis ipsum
-                      dolor quasi.
-
-                    </div>
-                  {singlePost.bullet_points[0]}
-                  </>
+                {singlePost.bullet_points.map((item, index) => (
+                  <BlogTableContent
+                    heading={item.heading}
+                    allContent={item.heading_content}
+                    key={index}
+                  />
                 ))}
               </div>
             </div>
             <div className="blogImages">
-              <img
-                src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
-                alt="Pics"
-              />
-              <img
-                src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
-                alt="Pics"
-              />
+              {singlePost.images && (
+                <>
+                  {singlePost.images.map((item, index) => (
+                    <img src={item.asset.url}></img>
+                  ))}
+                </>
+              )}
             </div>
           </div>
         </>

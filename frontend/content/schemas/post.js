@@ -53,7 +53,7 @@ export default {
             type: 'string',
         },
         {
-            name: 'content',
+            name: 'bullet_points',
             title: 'Content',
             type: 'array',
             of: [

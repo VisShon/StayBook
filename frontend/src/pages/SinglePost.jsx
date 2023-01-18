@@ -15,6 +15,8 @@ function SinglePost() {
         `*[slug.current == "${slug}"] {
             title,
             body,
+            description,
+            bullet_points[],
             mainImage {
               asset -> {
                 _id,
@@ -24,7 +26,10 @@ function SinglePost() {
             }
           }`
       )
-      .then((data) => setSinglePost(data[0]));
+      .then((data) => {
+        setSinglePost(data[0])
+        console.log(data[0])
+      })
     setIsLoading(false);
   }, [slug]);
   
@@ -123,6 +128,7 @@ function SinglePost() {
                       dolor quasi.
 
                     </div>
+                  {singlePost.bullet_points[0]}
                   </>
                 ))}
               </div>

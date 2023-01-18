@@ -26,6 +26,18 @@ export default {
             },
         },
         {
+            name: 'images',
+            title: 'Images',
+            type: 'array',
+            of: [
+                {
+                    name: 'image',
+                    title: 'Image',
+                    type: 'image'
+                }
+            ]
+        },
+        {
             name: 'publishedAt',
             title: 'Published at',
             type: 'datetime',
@@ -33,8 +45,37 @@ export default {
         {
             name: 'body',
             title: 'Body',
-            type: 'blockContent',
+            type: 'blockContent'
         },
+        {
+            name: 'description',
+            title: 'Description',
+            type: 'string',
+        },
+        {
+            name: 'content',
+            title: 'Content',
+            type: 'array',
+            of: [
+                {
+                    name: 'paragraph',
+                    title: 'Para',
+                    type: 'object',
+                    fields: [
+                        {
+                            name: 'heading',
+                            title: 'Heading',
+                            type: 'string'
+                        },
+                        {
+                            name: 'heading_content',
+                            title: 'Content',
+                            type: 'string'
+                        }
+                    ]
+                },
+            ]
+        }
     ],
 
     preview: {

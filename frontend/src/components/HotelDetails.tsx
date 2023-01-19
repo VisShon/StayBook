@@ -13,18 +13,21 @@ const HotelDetails = (props: any) => {
 
     let places: {a: {name: string, link: string},  b: {name: string, link: string}}[] = [];
 
-    let nearbyPlaces: {nearby_place_name: string, nearby_place_link: string}[] = hotel.hotel_nearby_places;
-    for (let i = 0; i < nearbyPlaces.length; i += 2) {
-        places.push({
-            a: {
-                name: nearbyPlaces[i].nearby_place_name,
-                link: nearbyPlaces[i].nearby_place_link
-            },
-            b: {
-                name: i + 1 < nearbyPlaces.length ? nearbyPlaces[i + 1].nearby_place_name : '',
-                link: i + 1 < nearbyPlaces.length ? nearbyPlaces[i + 1].nearby_place_link : ''
-            }
-        })
+    let nearbyPlaces: { nearby_place_name: string, nearby_place_link: string }[] = hotel.hotel_nearby_places;
+    if (nearbyPlaces) {
+        
+        for (let i = 0; i < nearbyPlaces.length; i += 2) {
+            places.push({
+                a: {
+                    name: nearbyPlaces[i].nearby_place_name,
+                    link: nearbyPlaces[i].nearby_place_link
+                },
+                b: {
+                    name: i + 1 < nearbyPlaces.length ? nearbyPlaces[i + 1].nearby_place_name : '',
+                    link: i + 1 < nearbyPlaces.length ? nearbyPlaces[i + 1].nearby_place_link : ''
+                }
+            })
+        }
     }
 
 
@@ -56,7 +59,8 @@ const HotelDetails = (props: any) => {
                     ))}
                 </div>
             </div>
-            <h2>Nearby Places</h2>
+            {nearbyPlaces && (
+                <h2>Nearby Places</h2>)}
             {places.map((place: any) => (
                 <div className="hotel-nearby-places">
                     {place.a.name && <a href={place.a.link}><p className="icontext"><PlaceIcon fontSize="inherit"/>{place.a.name}</p></a>}

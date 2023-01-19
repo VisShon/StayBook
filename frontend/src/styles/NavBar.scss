@@ -78,7 +78,8 @@
     margin-right: 1rem;
     color: black;
     @media screen and (max-width: 800px) {
-        display: none;
+        // display: none;
+        display: hidden
     }
 }
 
@@ -124,7 +125,7 @@
     display: flex;
     color: $grey;
     align-items: center;
-    width: 30%;
+    width: 40%;
     justify-content: space-between;
     @media screen and (max-width: 800px) {
         display:none;
@@ -167,7 +168,8 @@ ul li ul {
     position: absolute;
     left: 0;
     transition: all 0.5s ease;
-    display: none;
+    // display: none;
+    display: hidden;
     @media screen and (max-width: 800px) {
         left: -1.5rem;
     }
@@ -213,7 +215,8 @@ ul li ul li {
 }
 
 .navMobile{
-    display: none;
+    // display: none;
+    display: hidden;
     @media screen and (max-width: 800px) {
         display: block;
     }

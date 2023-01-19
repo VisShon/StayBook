@@ -65,6 +65,9 @@ function Navbar() {
         <Link to="/blogs" className="item">
           Blogs
         </Link>
+        <Link to="/aboutus" className="item">
+          About Us
+        </Link>
         <Link to="/contactus" className="item">
           Contact Us
         </Link>

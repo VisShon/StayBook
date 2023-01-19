@@ -4,6 +4,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    & h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0.5rem 0;
+    }
+
     & p {
         color: $grey;
         font-size: 1.25rem;
@@ -12,7 +19,7 @@
 
     & .icontext {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         text-align: start;
         gap: 2px;
     }
@@ -43,7 +50,7 @@
     justify-content: space-between;
     font-size: 1.25rem;
 
-    & p {
+    & a {
         width: 48%;
     }
 }

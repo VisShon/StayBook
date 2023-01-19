@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/home/SinglePost.scss";
 import { Link, useParams } from "react-router-dom";
 import client from "../client";
+import urlBuilder from '@sanity/image-url';
 import BlockContent from "@sanity/block-content-to-react";
 import { Helmet } from "react-helmet";
 import BlogTableContent from "../components/BlogTableContent";
@@ -39,7 +40,8 @@ function SinglePost() {
         setIsLoading(false);
       });
   }, [slug]);
-  return (
+
+ return (
     <>
       <Helmet>
         <title>{singlePost.title ? singlePost.title : "StayBook Posts"}</title>
@@ -76,7 +78,14 @@ function SinglePost() {
 
           <div className="blogBody">
             <div className="blogContent">
-              <div className="desc">{singlePost.description}</div>
+               <div className="desc">
+                <BlockContent
+                  blocks={singlePost.body}
+                  projectId="fifev1uu"
+                  dataset="blogs"
+                />
+              </div>
+              {toPlainText(singlePost.body)}
 
               <div className="tableOfContents">
                 {singlePost.bullet_points.map((item, index) => (
@@ -88,11 +97,16 @@ function SinglePost() {
 
               <div className="allContent">
                 {singlePost.bullet_points.map((item, index) => (
-                  <BlogTableContent
-                    heading={item.heading}
-                    allContent={item.heading_content}
-                    key={index}
-                  />
+                  <div>
+                    <div className="topicHeading">{item.heading}</div>
+                     <div className="content">
+                     <BlockContent
+                        blocks={item.heading_content}
+                        projectId="fifev1uu"
+                        dataset="blogs"
+                     />
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>

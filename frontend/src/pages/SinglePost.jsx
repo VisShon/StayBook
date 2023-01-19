@@ -85,40 +85,44 @@ function SinglePost() {
                   dataset="blogs"
                 />
               </div>
-              {toPlainText(singlePost.body)}
 
-              <div className="tableOfContents">
-                {singlePost.bullet_points.map((item, index) => (
-                  <tr>
-                    <td>{item.heading}</td>
-                  </tr>
-                ))}
-              </div>
+               {singlePost.bullet_points && (
 
-              <div className="allContent">
-                {singlePost.bullet_points.map((item, index) => (
-                  <div>
-                    <div className="topicHeading">{item.heading}</div>
-                     <div className="content">
-                     <BlockContent
-                        blocks={item.heading_content}
-                        projectId="fifev1uu"
-                        dataset="blogs"
-                     />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="blogImages">
-              {singlePost.images && (
-                <>
-                  {singlePost.images.map((item, index) => (
-                    <img src={item.asset.url}></img>
-                  ))}
-                </>
-              )}
-            </div>
+                 <div className="tableOfContents">
+                   {singlePost.bullet_points.map((item, index) => (
+                     <tr>
+                       <td>{item.heading}</td>
+                     </tr>
+                   ))}
+                 </div>)}
+
+               {singlePost.bullet_points && (
+
+                 <div className="allContent">
+                   {singlePost.bullet_points.map((item, index) => (
+                     <div>
+                       <div className="topicHeading">{item.heading}</div>
+                       <div className="content">
+                         <BlockContent
+                           blocks={item.heading_content}
+                           projectId="fifev1uu"
+                           dataset="blogs"
+                         />
+                       </div>
+                     </div>
+                   ))}
+                 </div>)}
+             </div>
+             {singlePost.images && (
+               <div className="blogImages">
+                 {singlePost.images && (
+                   <>
+                     {singlePost.images.map((item, index) => (
+                       <img src={item.asset.url}></img>
+                     ))}
+                   </>
+                 )}
+               </div>)}
           </div>
         </>
       )}

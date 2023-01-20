@@ -50,7 +50,8 @@ const setReservations = asyncHandler(async(req, res, next)=>{
     checkOut: req.body.checkOut,
     amountPaid: req.body.amountPaid,
     selectedPlans: req.body.selectedPlans,
-  }):{}
+  }) : {}
+  res.status(200).send()
 })
 
 

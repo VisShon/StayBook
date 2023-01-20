@@ -83,9 +83,9 @@ function BookingCard({ hotelName, address, cardRef }: any) {
     });
 
     setIsLoading(true);
-    const {
-      data: { key: bearer },
-    } = await axios.get("/get-bearer");
+    //const {
+      //data: { key: bearer },
+    //} = await axios.get("/get-bearer");
 
     let templateParams = {
       to_name: sessionStorage.getItem("email"),
@@ -162,10 +162,11 @@ function BookingCard({ hotelName, address, cardRef }: any) {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${bearer}`,
+            Authorization: `Bearer EAAWZAVp5VHbwBAJIcPZBn2S8JTcDKwuewBtZBXadK0Syq1jD6FH7TErHnc2EsHhsUeD4Eps3NCGuzNBp4I4IVgkrZAwYDheZBVUmnsXD2fLI9Mnh7WcrZCce6oZAdnjaDdc9F3oXCo2ZAmYZC8irzjgyKZCBMtV3ECUvdzlRZB6xXz37ZAAzEmMwz8PZCbHa3alKuZBgH28N7eGXyv0wZDZD`,
           },
         }
       );
+      waysConveyed += 1;
     } catch (error) {
       console.log(error);
     }

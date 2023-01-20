@@ -177,7 +177,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
           "service_pz9e3th",
           "template_i78ka1b",
           templateParams,
-          "bE7FBsdP5YFb4U6LK"
+          "Y2_mfBY5Jp8HKpbfz"
         )
         .then(() => {
           setIsPaid(true);

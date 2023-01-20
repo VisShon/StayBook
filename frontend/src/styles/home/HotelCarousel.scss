@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: space-evenly;
     width: 100vw;
-    height: 90vh;
+    min-height: 90vh;
     @media screen and (max-width: 800px) {
         flex-direction: column;
         justify-content: space-around;
@@ -120,9 +120,8 @@
                 margin-right: 0.1rem;
             }
         }
-        .outline {
+        .out {
             transition: all ease-in 200ms;
-            background-color: $main;
             width: 2rem;
             height: 2rem;
             border-radius: 10rem;

@@ -83,7 +83,7 @@ function HotelCarousel() {
                         {data.map((item, index) => (
                             <div className="progress-segment" key={index}>
                                 <div
-                                    className="outline tooltip"
+                                    className="out tooltip"
                                     onClick={() => {setN(index);
                                         control.set('hidden')}}
                                     style={

@@ -97,7 +97,7 @@ function App() {
           hotel_nearby_places[]
         }`
             )
-            .then((data) => {setHotel(data[0]); console.log(data[0])})
+            .then((data) => setHotel(data[0]))
     }, [])
 
     const MinPrice = () => {
@@ -131,7 +131,6 @@ function App() {
       } else {
         setIsMobvisible(true)
       }
-      console.log(entry)
     }, [entry])
 
     return (

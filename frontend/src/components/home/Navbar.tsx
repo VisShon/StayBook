@@ -56,8 +56,7 @@ function Navbar() {
       <Link to="/" className="logo">
         <img src={logo} className="logo" alt={"StayBook Hotels"} />
       </Link>
-          <div className="TourPackage">
-              
+      <div className="TourPackage">
         <Dropdown />
         <Link to="/packages" className="item">
           Tour Packages

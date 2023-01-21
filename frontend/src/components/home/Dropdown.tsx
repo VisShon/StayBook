@@ -5,6 +5,7 @@ import client from '../../client'
 
 function Dropdown() {
     const [data, setData] = useState<any[]>([])
+    const [dropdown, setDropdown] = useState(false)
     useEffect(() => {
         client
             .fetch(
@@ -18,34 +19,30 @@ function Dropdown() {
 
     const nav = useNavigate()
     return (
-      <ul>
-        <li>
-          
-
-          <Link to="/hotels" className="item">
-            Hotels
-          </Link>
-          <ul className="dropdown" aria-label="submenu">
-            {Object.values(data).map((item: any, i: any) => (
-              <li
-                className="hotels"
-                key={i}
-                onClick={() => nav(`/hotels/${item.slug.current}`)}
+      <div className="hotels-dropdown" onMouseLeave={() => setDropdown(false)}>
+        <Link to="/hotels" className="item" onMouseEnter={() => setDropdown(true)}>
+          Hotels
+        </Link>
+        <ul className={"dropdown" + (dropdown ? "" : " hidden")} aria-label="submenu">
+          {Object.values(data).map((item: any, i: any) => (
+            <li
+              className="hotels"
+              key={i}
+              onClick={() => nav(`/hotels/${item.slug.current}`)}
+            >
+              <a
+                href={`/hotels/${item.slug.current}`}
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                }}
               >
-                <a
-                  href={`/hotels/${item.slug.current}`}
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                  }}
-                >
-                  {item.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </li>
-      </ul>
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     );
 }
 

@@ -163,33 +163,29 @@ li:hover {
     cursor: pointer;
 }
 
-ul li ul {
-    visibility: hidden;
+.hotels-dropdown {
+    position: relative;
+}
+
+.dropdown {
     position: absolute;
     left: 0;
     transition: all 0.5s ease;
-    // display: none;
-    display: hidden;
+    margin-top: 0.5rem;
+    opacity: 1;
+
     @media screen and (max-width: 800px) {
         left: -1.5rem;
     }
-}
 
-ul li:hover > ul,
-ul li ul:hover,
-ul li ul:focus {
-    margin-top: 0.5rem;
-    visibility: visible;
-    opacity: 1;
-    display: block;
-}
-ul li ul li {
-    clear: both;
-    font-family: 'Maven Pro', sans-serif;
-    font-size: 1rem;
-    @media screen and (max-width: 800px) {
-        border: none;
-        border-radius: 0rem;
+    & li {
+        clear: both;
+        font-family: 'Maven Pro', sans-serif;
+        font-size: 1rem;
+        @media screen and (max-width: 800px) {
+            border: none;
+            border-radius: 0rem;
+        }
     }
 }
 
@@ -234,4 +230,8 @@ ul li ul li {
     background-color: white !important;
     top: 5rem;
     left:0;
+}
+
+.hidden {
+    visibility: hidden;
 }

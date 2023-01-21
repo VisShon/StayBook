@@ -17,15 +17,16 @@
     border-radius: 25rem;
     position: absolute;
     cursor: pointer;
-    height: 3rem;
     bottom: 25%;
     right: 10%;
-    @media screen and (max-width: 800px) {
-        height: 2rem;
-        width: 2rem;
+    @media screen and (max-width: 820px) {
+        height: 3rem;
+        width: 3rem;
         font-size: 0.75rem;
+        padding: 0.25rem;
         right: 5%;
         top: 42vh;
+        background: $main;
     }
 }
 .galleryButton:hover {

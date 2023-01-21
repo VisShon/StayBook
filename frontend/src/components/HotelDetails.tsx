@@ -63,8 +63,8 @@ const HotelDetails = (props: any) => {
                 <h2>Nearby Places</h2>)}
             {places.map((place: any) => (
                 <div className="hotel-nearby-places">
-                    {place.a.name && <a href={place.a.link}><p className="icontext"><PlaceIcon fontSize="inherit"/>{place.a.name}</p></a>}
-                    {place.b.name && <a href={place.b.link}><p className="icontext"><PlaceIcon fontSize="inherit"/>{place.b.name}</p></a>}
+                    {place.a.name && <a href={place.a.link} target="_blank"><p className="icontext"><PlaceIcon fontSize="inherit"/>{place.a.name}</p></a>}
+                    {place.b.name && <a href={place.b.link} target="_blank"><p className="icontext"><PlaceIcon fontSize="inherit"/>{place.b.name}</p></a>}
                 </div>
             ))}
         </div>

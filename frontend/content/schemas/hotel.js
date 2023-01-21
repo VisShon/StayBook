@@ -26,6 +26,12 @@ export default {
             type: 'string',
         },
         {
+            name: 'card_amenities_ref',
+            title: 'Card Amenities Icons',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'amenety' } }],
+        },
+        {
             name: 'slug',
             title: 'Slug',
             type: 'slug',

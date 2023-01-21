@@ -103,6 +103,20 @@
             margin-bottom: 0;
         }
 
+        .card-amenities-icons {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+
+            & img {
+                width: 2rem;
+                height: 2rem;
+                margin: 0 0.5rem;
+           }
+        }
+
         p{
             display: flex;
             justify-content: space-between;

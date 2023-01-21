@@ -29,6 +29,17 @@ function Hotels() {
                       slug,
                       rating,
                       card_amenities,
+                      card_amenities_ref[]{
+                        "item":*[_type=='amenety' && _id ==^._ref][0]{
+                          name,
+                          image{asset -> {
+                                _id,
+                                url
+                              },
+                              alt
+                          },
+                        }
+                      },
                       rooms[0]{
                         plans[0],
                       },
@@ -59,7 +70,8 @@ function Hotels() {
           slug={hotel!.slug}
           rating={hotel!.rating}
           key={index}
-          card_amenities={hotel!.card_amenities}/>))}
+          card_amenities={hotel!.card_amenities}
+          card_amenities_ref={hotel!.card_amenities_ref}/>))}
       </div>
       </>}
     </>

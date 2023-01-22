@@ -96,18 +96,18 @@ function Navbar() {
       {isOpen && (
         <div className="navMobile-box">
           <Dropdown />
-          <Link className="item" to="/packages">
+          <Link className="item" to="/packages" onClick={collapse}>
             Tour Packages
           </Link>
-          <Link className="item" to="/blogs">
+          <Link className="item" to="/blogs" onClick={collapse}>
             Blogs
           </Link>
-            <Link className="item" to="/aboutus">
-              About Us
-            </Link>
-            <Link className="item" to="/contactus">
-              Contact Us
-            </Link>
+          <Link className="item" to="/aboutus" onClick={collapse}>
+            About Us
+          </Link>
+          <Link className="item" to="/contactus" onClick={collapse}>
+            Contact Us
+          </Link>
         </div>
       )}
     </div>

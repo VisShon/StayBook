@@ -57,8 +57,9 @@ export default function Footer() {
                 <div className="heading">
                     <h2>Interests:</h2>
                     <a href="/packages">Tours and Packages</a>
-                    <a href="/contactUs">Contact Us</a>
                     <a href="/blogs">Blogs</a>
+                    <a href="/aboutus">About Us</a>
+                    <a href="/contactUs">Contact Us</a>
                     <a href="/FAQ">FAQ</a>
                 </div>
 

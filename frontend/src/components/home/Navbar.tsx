@@ -95,16 +95,19 @@ function Navbar() {
 
       {isOpen && (
         <div className="navMobile-box">
+          <Dropdown />
           <Link className="item" to="/packages">
             Tour Packages
           </Link>
           <Link className="item" to="/blogs">
             Blogs
           </Link>
-          <Link className="item" to="/contactus">
-            Contact Us
-          </Link>
-          <Dropdown />
+            <Link className="item" to="/aboutus">
+              About Us
+            </Link>
+            <Link className="item" to="/contactus">
+              Contact Us
+            </Link>
         </div>
       )}
     </div>

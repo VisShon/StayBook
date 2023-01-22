@@ -115,7 +115,7 @@
     padding: 0.5rem;
 }
 .item:hover {
-    color: white;
+    color: $main;
 }
 
 .TourPackage {
@@ -173,7 +173,7 @@ li:hover {
     transition: all 0.5s ease;
     margin-top: 0.5rem;
     opacity: 1;
-
+    z-index: 2;
     @media screen and (max-width: 800px) {
         left: -1.5rem;
     }

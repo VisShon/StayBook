@@ -28,8 +28,8 @@ function App() {
     const guests = sessionStorage.getItem('guests')
     const prices = [150, 160, 90]
 
-    const ref = useRef<HTMLElement>()
-    const { ref: inViewRef, inView, entry } = useInView({
+    const scrollRef = useRef<HTMLDivElement>(null)
+    const { ref, inView, entry } = useInView({
       threshold: 0
     })
     const [isMobVisible, setIsMobvisible] = useState(true)
@@ -111,18 +111,8 @@ function App() {
         return MinPrice
     }
 
-    const setRefs = useCallback(
-       (node: any) => {
-        ref.current = node;
-        inViewRef(node);
-      },
-      [inViewRef],
-    );
-
     const scrollToCard = () => {
-      if (ref.current) {
-        ref.current.scrollIntoView(true)
-      }
+      scrollRef.current!.scrollIntoView(true)
     }
 
     useEffect(() => {
@@ -269,7 +259,8 @@ function App() {
                             <HotelDetails hotel={hotel} />
                           ) : null}
                         </div>
-                        <BookingCard cardRef={setRefs} hotelName={hotel.name} address={hotel.address} />
+                        {isMobile && <div ref={scrollRef} style={{height: '15vh'}}></div>}
+                        <BookingCard cardRef={ref} hotelName={hotel.name} address={hotel.address} />
                         {isMobile && !inView && isMobVisible && <MobileBookingCard scrollToCard={scrollToCard}/>}
                     </div>
                 </>

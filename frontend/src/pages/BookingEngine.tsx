@@ -37,9 +37,11 @@ function App() {
 
     useEffect(() => {
         client
-            .fetch(
-                `*[slug.current == "${slug}"]{
+          .fetch(
+            `*[slug.current == "${slug}"]{
           name,
+          meta_title,
+          meta_desc,
           description,
           phone,
           address,
@@ -96,8 +98,8 @@ function App() {
           hotel_amenities[],
           hotel_nearby_places[]
         }`
-            )
-            .then((data) => setHotel(data[0]))
+          )
+          .then((data) => setHotel(data[0]));
     }, [])
 
     const MinPrice = () => {
@@ -124,151 +126,154 @@ function App() {
     }, [entry])
 
     return (
-        <>
-            {hotel ? (
-                <>
-                    <Helmet>
-                        <title>{hotel.name}</title>
-                        <meta name="description" content="StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels" />
-                    </Helmet>
-                    
-                    {!isMinimized ? (
-                        <div className="comparator">
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    width: '100%',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center',
-                                }}
-                            >
-                                <h2>Direct Price ₹{MinPrice()}</h2>
-                                <div onClick={() => setIsMinimized(true)}>
-                                    X
-                                </div>
-                            </div>
-                            <div className="site">
-                                <img src={bc} alt={'Booking.com Hotels'} />
-                                Booking.com
-                                <p>
-                                    ₹
-                                    {MinPrice() +
-                                        prices[Math.floor(Math.random() * 3)]}
-                                </p>
-                            </div>
-                            <div className="site">
-                                <img src={mmt} alt={'Make My Trip Hotels'} />
-                                Make My Trip
-                                <p>
-                                    ₹
-                                    {MinPrice() +
-                                        prices[Math.floor(Math.random() * 3)]}
-                                </p>
-                            </div>
-                            <div className="site">
-                                <img src={tra} alt={'Trip Advisor Hotels'}/>
-                                Trip Advisor
-                                <p>
-                                    ₹
-                                    {MinPrice() +
-                                        prices[Math.floor(Math.random() * 3)]}
-                                </p>
-                            </div>
-                        </div>
-                    ) : (
-                        <div
-                            className="comparator"
-                            onClick={() => setIsMinimized(false)}
-                        >
-                            <img
-                                alt="StayBook"
-                                src={light}
-                                style={{ width: '1.5rem', objectFit: 'cover' }}
-                            />
-                        </div>
-                    )}
+      <>
+        {hotel ? (
+          <>
+            <Helmet>
+              <title>{hotel.meta_title ? hotel.meta_title : hotel.name}</title>
+              <meta
+                name="description"
+                content={
+                  hotel.meta_desc
+                    ? hotel.meta_desc
+                    : "StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels"
+                }
+              />
+            </Helmet>
 
-                    {gallery ? (
-                        <Photos data={hotel.images} />
-                    ) : (
-                        <PhotoGrid data={hotel.images} />
-                    )}
-                    {!gallery?<div
-                        className="galleryButton"
-                        onClick={() => setGallery((prev) => !prev)}
-                    >
-                        Open gallery
-                    </div>:<img className="cross" 
-                                src={cross}
-                                alt={'Staybook Hotels'}
-                                onClick={() => setGallery((prev) => !prev)}/>}
-                    <div className="Maincontainer">
-                        <div className="sideContainer">
-                            <h1 className="title">{hotel.name}</h1>
-                            <>
-                                <p className="description">
-                                    {hotel.description}
-                                </p>
-                                <a href={hotel.map} className="description" style={{fontSize:'1rem'}}>
-                                    <img src={mapImage} alt={'Staybook Hotels'}/>
-                                    {hotel.address}
-                                </a>
-                                <p className="contact">
-                                    <span className="detail">
-                                        PHONE:
-                                        <span
-                                            style={{
-                                                color: 'black',
-                                                fontWeight: '400',
-                                            }}
-                                        >
-                                            {hotel.phone}
-                                        </span>
-                                    </span>
-                                    <span className="detail">
-                                        EMAIL:
-                                        <span
-                                            style={{
-                                                color: 'black',
-                                                fontWeight: '400',
-                                            }}
-                                        >
-                                            {hotel.email}
-                                        </span>
-                                    </span>
-                                </p>
-                                <iframe
-                                  width="450"
-                                  height="250"
-                                  referrerPolicy="no-referrer-when-downgrade"
-                                  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAGvy5rBo-MPjD0vR2BkkRhtKAXmFHCLVY&q=${encodeURIComponent(hotel.address)}`}
-                                  allowFullScreen>
-                                </iframe>
-                            </>
-                            <Amneties data={hotel.amenities} />
-                            <h3 className="heading">{'Choose your room(s)'}</h3>
-                            {hotel.rooms
-                                .filter(
-                                    (item: any) =>
-                                        item.guests == guests || !guests
-                                )
-                                .map((room: any, i: number) => (
-                                    <RoomCard room={room} key={i}/>
-                                ))}
-                          {hotel.hotel_amenities ? (
-                            <HotelDetails hotel={hotel} />
-                          ) : null}
-                        </div>
-                        {isMobile && <div ref={scrollRef} style={{height: '15vh'}}></div>}
-                        <BookingCard cardRef={ref} hotelName={hotel.name} address={hotel.address} />
-                        {isMobile && !inView && isMobVisible && <MobileBookingCard scrollToCard={scrollToCard}/>}
-                    </div>
-                </>
+            {!isMinimized ? (
+              <div className="comparator">
+                <div
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <h2>Direct Price ₹{MinPrice()}</h2>
+                  <div onClick={() => setIsMinimized(true)}>X</div>
+                </div>
+                <div className="site">
+                  <img src={bc} alt={"Booking.com Hotels"} />
+                  Booking.com
+                  <p>₹{MinPrice() + prices[Math.floor(Math.random() * 3)]}</p>
+                </div>
+                <div className="site">
+                  <img src={mmt} alt={"Make My Trip Hotels"} />
+                  Make My Trip
+                  <p>₹{MinPrice() + prices[Math.floor(Math.random() * 3)]}</p>
+                </div>
+                <div className="site">
+                  <img src={tra} alt={"Trip Advisor Hotels"} />
+                  Trip Advisor
+                  <p>₹{MinPrice() + prices[Math.floor(Math.random() * 3)]}</p>
+                </div>
+              </div>
             ) : (
-                <Spinner />
+              <div className="comparator" onClick={() => setIsMinimized(false)}>
+                <img
+                  alt="StayBook"
+                  src={light}
+                  style={{ width: "1.5rem", objectFit: "cover" }}
+                />
+              </div>
             )}
-        </>
-    )
+
+            {gallery ? (
+              <Photos data={hotel.images} />
+            ) : (
+              <PhotoGrid data={hotel.images} />
+            )}
+            {!gallery ? (
+              <div
+                className="galleryButton"
+                onClick={() => setGallery((prev) => !prev)}
+              >
+                Open gallery
+              </div>
+            ) : (
+              <img
+                className="cross"
+                src={cross}
+                alt={"Staybook Hotels"}
+                onClick={() => setGallery((prev) => !prev)}
+              />
+            )}
+            <div className="Maincontainer">
+              <div className="sideContainer">
+                <h1 className="title">{hotel.name}</h1>
+                <>
+                  <p className="description">{hotel.description}</p>
+                  <a
+                    href={hotel.map}
+                    className="description"
+                    style={{ fontSize: "1rem" }}
+                  >
+                    <img src={mapImage} alt={"Staybook Hotels"} />
+                    {hotel.address}
+                  </a>
+                  <p className="contact">
+                    <span className="detail">
+                      PHONE:
+                      <span
+                        style={{
+                          color: "black",
+                          fontWeight: "400",
+                        }}
+                      >
+                        {hotel.phone}
+                      </span>
+                    </span>
+                    <span className="detail">
+                      EMAIL:
+                      <span
+                        style={{
+                          color: "black",
+                          fontWeight: "400",
+                        }}
+                      >
+                        {hotel.email}
+                      </span>
+                    </span>
+                  </p>
+                  <iframe
+                    width="450"
+                    height="250"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAGvy5rBo-MPjD0vR2BkkRhtKAXmFHCLVY&q=${encodeURIComponent(
+                      hotel.address
+                    )}`}
+                    allowFullScreen
+                  ></iframe>
+                </>
+                <Amneties data={hotel.amenities} />
+                <h3 className="heading">{"Choose your room(s)"}</h3>
+                {hotel.rooms
+                  .filter((item: any) => item.guests == guests || !guests)
+                  .map((room: any, i: number) => (
+                    <RoomCard room={room} key={i} />
+                  ))}
+                {hotel.hotel_amenities ? <HotelDetails hotel={hotel} /> : null}
+              </div>
+              {isMobile && (
+                <div ref={scrollRef} style={{ height: "15vh" }}></div>
+              )}
+              <BookingCard
+                cardRef={ref}
+                hotelName={hotel.name}
+                address={hotel.address}
+              />
+              {isMobile && !inView && isMobVisible && (
+                <MobileBookingCard scrollToCard={scrollToCard} />
+              )}
+            </div>
+          </>
+        ) : (
+          <Spinner />
+        )}
+      </>
+    );
     
 }
 

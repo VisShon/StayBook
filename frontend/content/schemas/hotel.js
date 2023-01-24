@@ -32,6 +32,16 @@ export default {
             of: [{ type: 'reference', to: { type: 'amenety' } }],
         },
         {
+            name: 'meta_title',
+            title: 'Meta Title',
+            type: 'string'
+        },
+        {
+            name: 'meta_desc',
+            title: 'Meta Description',
+            type: 'string'
+        },
+        {
             name: 'slug',
             title: 'Slug',
             type: 'slug',

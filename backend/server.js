@@ -54,7 +54,7 @@ app.get('/*', (req, res) => {
 
 app.use(errorHandler);
 console.log('Starting')
-// app.listen(8000, () => console.log("Listening on 80"));
+ //app.listen(8000, () => console.log("Listening on 8000"));
 
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/staybook.in/privkey.pem', 'utf8');
 const certificate = fs.readFileSync('/etc/letsencrypt/live/staybook.in/fullchain.pem', 'utf8');

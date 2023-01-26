@@ -42,7 +42,7 @@ const removeReservations = asyncHandler(async(req, res, next) =>{
 
 const setReservations = asyncHandler(async(req, res, next)=>{
   const db = getDatabase();
-  checkAuth(req, res, next)?
+  //checkAuth(req, res, next)?
   set(ref(db, `/reservations/${req.params.hotelname}/${req.body.username+"_"+(req.body.amountPaid.toString()).slice(0,3)}`), {
     username: req.body.username,
     email: req.body.email,
@@ -50,7 +50,13 @@ const setReservations = asyncHandler(async(req, res, next)=>{
     checkOut: req.body.checkOut,
     amountPaid: req.body.amountPaid,
     selectedPlans: req.body.selectedPlans,
-  }) : {}
+  })
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
   res.status(200).send()
 })
 

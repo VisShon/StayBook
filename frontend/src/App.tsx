@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
 import NavBar from "./components/home/Navbar";
+import TeamPage from "./components/TeamPage";
 import Footer from "./components/home/Footer";
 import BookingEngine from "./pages/BookingEngine";
 import Packages from "./pages/Packages";
@@ -67,6 +68,7 @@ export function App() {
                   <Route path="/hotels" element={<AllHotels />} />
                   <Route path="/hotelbookingconfirmation" element={<Confirmation />}/>
                   <Route path="/aboutus" element={<AboutUs />} />
+                  <Route path="/team" element={<TeamPage />} />
                 </Routes>
                 <Footer />
                 <WhatsAppWidget CompanyIcon={Logo} phoneNumber="918527703312" />

@@ -7,7 +7,7 @@ import SpcialOffers from '../components/home/sections/SpcialOffers'
 import Plans from '../components/home/sections/Plans'
 import ContactUs from '../components/home/sections/ContactUs'
 import '../styles/home/App.scss'
-
+import { Helmet } from "react-helmet";
 function Home() {
     const ring = useRef<HTMLDivElement>(null)
     const body = useRef<HTMLDivElement>(null)
@@ -28,20 +28,27 @@ function Home() {
     }, [])
 
     return (
-        <>
-            <div className="ring" ref={ring}></div>
-            <div className="body" ref={body}>
-                <BookingCarousel />
-                <HotelCarousel />
-                <h1 style={{opacity:'0'}}>StayBook Hotels</h1>
-                <ToursandTravels />
-                <Ameneties />
-                <SpcialOffers/>
-                <Plans />
-                <ContactUs />
-            </div>
-        </>
-    )
+      <>
+        <Helmet>
+          <title>{`Direct Hotel booking | Book Budget, luxury and Heritage hotels in New Delhi`}</title>
+          <meta
+            name="description"
+            content="We provide hotel booking of hotels in New Delhi Book Direct Best Price Promise, we have affordable heritage to budget hotels near New Delhi Railway Station, Paharganj, cannaught place and South Delhi"
+          />
+        </Helmet>
+        <div className="ring" ref={ring}></div>
+        <div className="body" ref={body}>
+          <BookingCarousel />
+          <HotelCarousel />
+          <h1 style={{ opacity: "0" }}>StayBook Hotels</h1>
+          <ToursandTravels />
+          <Ameneties />
+          <SpcialOffers />
+          <Plans />
+          <ContactUs />
+        </div>
+      </>
+    );
 }
 
 export default Home

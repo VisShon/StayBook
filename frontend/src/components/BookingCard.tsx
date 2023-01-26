@@ -52,17 +52,26 @@ function BookingCard({ hotelName, address, cardRef }: any) {
   const [isPaid, setIsPaid] = useState<boolean>(false);
   const [noSelected, setNoSelected] = useState<boolean>(false);
   const [noContact, setNoContact] = useState<boolean>(false);
+  const [fullname, setFullname] = useState<any>("")
+  const [useremail, setUserEmail] = useState<any>("")
 
   const { username, email, phone, Login } =
     useContext<AuthContextProps>(AuthContext);
 
   const navigate = useNavigate();
-  const payOnHotel = async () => {
+  const payOnHotel = async (e: any) => {
+    e.preventDefault();
     window.scrollTo(0, 0);
     let waysConveyed = 0;
-    if (!username) {
-      await Login();
+
+    if (!username && (!fullname || !useremail)) {
+      setNoContact(true);
+      setTimeout(() => {
+        setNoContact(false);
+      }, 2000);
+      return;
     }
+
     if (!contact) {
       setNoContact(true);
       setTimeout(() => {
@@ -70,6 +79,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
       }, 2000);
       return;
     }
+
     if (Plans.length == 0) {
       setNoSelected(true);
       setTimeout(() => {
@@ -77,6 +87,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
       }, 2000);
       return;
     }
+
     let guests = 0;
     Plans.forEach((plan) => {
       guests += plan.guests;
@@ -88,7 +99,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
     } = await axios.get("/get-bearer");
 
     let templateParams = {
-      to_name: sessionStorage.getItem("email"),
+      to_name: (username ? sessionStorage.getItem("email") : useremail),
       hotelName: hotelName,
       checkIn: checkIn!.toLocaleDateString(),
       checkOut: checkOut!.toLocaleDateString(),
@@ -191,8 +202,8 @@ function BookingCard({ hotelName, address, cardRef }: any) {
       await axios.post(
         `/api${ref}/setReservations`,
         {
-          username: username,
-          email: email,
+          username: (username ? username : fullname),
+          email: (username ? email : useremail),
           checkIn: checkIn,
           checkOut: checkOut,
           amountPaid: price.toString() + "(To be Paid)",
@@ -298,7 +309,9 @@ function BookingCard({ hotelName, address, cardRef }: any) {
       <div className="payAtHotel">
         {!isPaid ? (
           payAtHotel && (
-            <>
+            <form onSubmit={payOnHotel}>
+              {!username && <input className="customer-form" type="text" placeholder="Full name" required onChange={(e) => setFullname(e.target.value)} value={fullname}/>}
+              {!username && <input className="customer-form" type="email" placeholder="Your email address" required onChange={(e) => setUserEmail(e.target.value)} value={useremail}/>}
               <PhoneInput
                 className="phone"
                 defaultCountry="IN"
@@ -306,10 +319,8 @@ function BookingCard({ hotelName, address, cardRef }: any) {
                 value={contact}
                 onChange={setContact}
               />
-              <div onClick={payOnHotel} className="button">
-                Continue
-              </div>
-            </>
+              <input type="submit" className="button" value="Continue" />
+            </form>
           )
         ) : (
           <div className="Button-Loading">Booking Done</div>

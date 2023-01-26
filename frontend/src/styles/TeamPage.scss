@@ -1,0 +1,16 @@
+.leaderImage{
+    img{
+        width: 16rem;
+        height: 20rem;
+        object-fit: cover;
+    }
+    margin: 1.5rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+.teamLeadContainer{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}

@@ -59,8 +59,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
     useContext<AuthContextProps>(AuthContext);
 
   const navigate = useNavigate();
-  const payOnHotel = async (e: any) => {
-    e.preventDefault();
+  const payOnHotel = async () => {
     window.scrollTo(0, 0);
     let waysConveyed = 0;
 
@@ -309,7 +308,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
       <div className="payAtHotel">
         {!isPaid ? (
           payAtHotel && (
-            <form onSubmit={payOnHotel}>
+            <form>
               {!username && <input className="customer-form" type="text" placeholder="Full name" required onChange={(e) => setFullname(e.target.value)} value={fullname}/>}
               {!username && <input className="customer-form" type="email" placeholder="Your email address" required onChange={(e) => setUserEmail(e.target.value)} value={useremail}/>}
               <PhoneInput
@@ -319,7 +318,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
                 value={contact}
                 onChange={setContact}
               />
-              <input type="submit" className="button" value="Continue" />
+              <div className="button" onClick={payOnHotel}>Continue</div>
             </form>
           )
         ) : (

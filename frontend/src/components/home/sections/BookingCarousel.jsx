@@ -276,7 +276,7 @@ function BookingCarousel() {
                         <img style={{transform:'translateY('+(translateY2.current/6).toString()+'px)'}} 
                         src ={'https://res.cloudinary.com/deby9hi8w/image/upload/v1672233491/drink_ypa5vl.png'} alt={'StayBook Hotels'}/>
                         <img style={{transform:'translateY('+(translateY2.current/6).toString()+'px)'}} 
-                        src ={'https://res.cloudinary.com/deby9hi8w/image/upload/v1672233602/drink-shadow_zzndnr.png'} alt={'StayBook Hotels'} className="shadow"/>
+                        src ={'https://res.cloudinary.com/deby9hi8w/image/upload/v1672233602/drink-shadow_zzndnr.png'} alt={'StayBook Hotels'} className="shadowed"/>
                     </div>
 
                 </>

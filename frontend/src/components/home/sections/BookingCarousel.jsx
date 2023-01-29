@@ -48,7 +48,14 @@ function BookingCarousel() {
 
     const onSubmit = () => {
         sessionStorage.setItem('guests', guests.toString())
-        nav(`/${data[n].slug.current}`)
+        console.log(n);
+        if (n == -1) {
+            nav(`hotels`);
+            return;
+        } else {
+            
+            nav(`/${data[n].slug.current}`)
+        }
     }
 
     useEffect(() => {
@@ -60,6 +67,7 @@ function BookingCarousel() {
     }, [control, inView])
 
     useEffect(() => {
+        setN(-1);
         const fetchedData = async () => {
             await client
                 .fetch(
@@ -223,7 +231,13 @@ function BookingCarousel() {
                                             .includes(
                                                 e.target.value.toLowerCase()
                                             )
-                                    )
+                                            )
+                                 
+                                    if (e.target.value.toLowerCase().trim() == "") {
+                            
+                                        setN(-1)
+                                        return;
+                                    }
                                     setSuggestions(d)
                                     const n = data.indexOf(d[0])
                                     if (n != -1) {

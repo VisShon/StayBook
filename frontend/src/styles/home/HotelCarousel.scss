@@ -9,6 +9,7 @@
 
 .hotelCarouselBody {
     display: flex;
+    margin-bottom:3.5rem;
     align-items: center;
     justify-content: space-evenly;
     width: 100vw;
@@ -86,7 +87,8 @@
         }
         p {
             color: $grey2;
-            font-size: 0.75rem;
+            font-size: 1rem;
+            // margin-bottom: 1rem;
         }
     }
 }

@@ -235,3 +235,9 @@ li:hover {
 .hidden {
     visibility: hidden;
 }
+
+@media print {
+    .noprint {
+        display: none;
+    }
+}   

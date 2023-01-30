@@ -57,3 +57,9 @@
     background-color: #c37f0a;
     
 }
+
+@media print {
+    .noprint {
+        display: none;
+    }
+}

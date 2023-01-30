@@ -58,21 +58,21 @@ function Navbar() {
       </Link>
       <div className="TourPackage">
         <Dropdown />
-        <Link to="/packages" className="item">
+        <Link to="/packages" className="item noprint">
           Tour Packages
         </Link>
-        <Link to="/blogs" className="item">
+        <Link to="/blogs" className="item noprint">
           Blogs
         </Link>
-        <Link to="/aboutus" className="item">
+        <Link to="/aboutus" className="item noprint">
           About Us
         </Link>
-        <Link to="/contactus" className="item">
+        <Link to="/contactus" className="item noprint">
           Contact Us
         </Link>
       </div>
 
-      <Link to="/profile" className="logo">
+      <Link to="/profile" className="logo noprint">
         <img
           src={decodedToken ? decodedToken.picture : user}
           className="profilepic"
@@ -80,7 +80,7 @@ function Navbar() {
         />
       </Link>
 
-      <div className="navMobile">
+      <div className="navMobile noprint">
         <button
           className="hamburger hamburger--collapse"
           ref={hamburger}

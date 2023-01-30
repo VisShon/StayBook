@@ -19,11 +19,21 @@ function Dropdown() {
 
     const nav = useNavigate()
     return (
-      <div className="hotels-dropdown" onMouseLeave={() => setDropdown(false)}>
-        <Link to="/hotels" className="item" onMouseEnter={() => setDropdown(true)}>
+      <div
+        className="hotels-dropdown noprint"
+        onMouseLeave={() => setDropdown(false)}
+      >
+        <Link
+          to="/hotels"
+          className="item"
+          onMouseEnter={() => setDropdown(true)}
+        >
           Hotels
         </Link>
-        <ul className={"dropdown" + (dropdown ? "" : " hidden")} aria-label="submenu">
+        <ul
+          className={"dropdown" + (dropdown ? "" : " hidden")}
+          aria-label="submenu"
+        >
           {Object.values(data).map((item: any, i: any) => (
             <li
               className="hotels"

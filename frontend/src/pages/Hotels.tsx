@@ -50,7 +50,10 @@ function Hotels() {
                   },
               }`
           )
-          .then((data) => setData(data[0]))
+        .then((data) => {
+          data[0].hotels.sort((a: any, b: any) => a.order - b.order);
+          setData(data[0])
+        })
           .then(()=>setIsLoading(false))
   }, [slug])
   return (

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.431fcfc2.css",
-    "main.js": "/static/js/main.7e1a9679.js",
+    "main.css": "/static/css/main.c5aa6e30.css",
+    "main.js": "/static/js/main.7b6d9e36.js",
     "static/media/bc.svg": "/static/media/bc.3617141ba50398e97742689c0cbf1e30.svg",
     "static/media/plan.png": "/static/media/plan.fa313b8e9e5fd5b305ba.png",
     "static/media/6.jpg": "/static/media/6.cbaec7f56cf0f19f4197.jpg",
@@ -30,6 +30,7 @@
     "static/media/left.png": "/static/media/left.2aad3fad72b24c23004c.png",
     "static/media/mmt.svg": "/static/media/mmt.03b0ca26e90b159b202b1059fd5e7fbb.svg",
     "static/media/Parking.svg": "/static/media/Parking.ec6fb5bc259f0cabb97c.svg",
+    "static/media/google_maps.svg": "/static/media/google_maps.9afa4f75dd9f1a7e198c9cdba3050b9b.svg",
     "static/media/user.svg": "/static/media/user.7c7b22d03efc212f44fa9764a13abb34.svg",
     "static/media/VIP.svg": "/static/media/VIP.3bc2bce818da080855cb92a0cc88ce7e.svg",
     "static/media/Concierge.svg": "/static/media/Concierge.459bf4dfec25ca2f3ca9.svg",
@@ -47,11 +48,11 @@
     "static/media/cross.svg": "/static/media/cross.135380c069ff8d921a10adeb82b0e48e.svg",
     "static/media/Text.svg": "/static/media/Text.fc3480e23c826ee79e2b.svg",
     "static/media/Email.svg": "/static/media/Email.3c2e657198ef5ab0f09e.svg",
-    "main.431fcfc2.css.map": "/static/css/main.431fcfc2.css.map",
-    "main.7e1a9679.js.map": "/static/js/main.7e1a9679.js.map"
+    "main.c5aa6e30.css.map": "/static/css/main.c5aa6e30.css.map",
+    "main.7b6d9e36.js.map": "/static/js/main.7b6d9e36.js.map"
   },
   "entrypoints": [
-    "static/css/main.431fcfc2.css",
-    "static/js/main.7e1a9679.js"
+    "static/css/main.c5aa6e30.css",
+    "static/js/main.7b6d9e36.js"
   ]
 }

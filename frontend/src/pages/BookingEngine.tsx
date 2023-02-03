@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import '../styles/App.scss'
+import '../styles/BookingEngine.scss'
 import Amneties from '../components/Ameneties'
 import HotelDetails from '../components/HotelDetails'
 import mmt from '../images/mmt.svg'
-import mapImage from '../images/map.svg'
+import mapImage from '../images/google_maps.svg'
 import bc from '../images/bc.svg'
 import tra from '../images/tra.svg'
 import light from '../images/light.png'
@@ -202,7 +203,7 @@ function App() {
             )}
             <div className="Maincontainer">
               <div className="sideContainer">
-                <h1 className="title">{hotel.name}</h1>
+                <h3 className="hotelTitleEngine">{hotel.name}</h3>
                 <>
                   <p className="description">{hotel.description}</p>
                   <a

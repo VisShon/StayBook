@@ -59,6 +59,20 @@ function BookingCard({ hotelName, address, cardRef }: any) {
     useContext<AuthContextProps>(AuthContext);
 
   const navigate = useNavigate();
+
+  const mouseClickEvents = ["mousedown", "click", "mouseup"];
+  function simulateMouseClick(element: any) {
+    mouseClickEvents.forEach((mouseEventType) =>
+      element.dispatchEvent(
+        new MouseEvent(mouseEventType, {
+          view: window,
+          bubbles: true,
+          cancelable: true,
+          buttons: 1,
+        })
+      )
+    );
+  }
   const payOnHotel = async () => {
     window.scrollTo(0, 0);
     let waysConveyed = 0;
@@ -250,12 +264,14 @@ function BookingCard({ hotelName, address, cardRef }: any) {
                   setcheckInGlobal(newValue);
                   dispatch(resetPlans());
                   dispatch(numberOfChildren("0"));
+                  var element = document.querySelector("#toOpen")?.querySelector("button");
+                  simulateMouseClick(element);
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />
             </LocalizationProvider>
           </div>
-          <div>
+          <div id = "toOpen">
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 views={["day", "month"]}
@@ -267,6 +283,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
                   setcheckOutGlobal(newValue);
                   dispatch(resetPlans());
                   dispatch(numberOfChildren("0"));
+                 
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />

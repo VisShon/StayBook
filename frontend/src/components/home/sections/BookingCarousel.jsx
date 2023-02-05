@@ -28,15 +28,28 @@ function BookingCarousel() {
     const [suggestions, setSuggestions] = useState([])
     const control = useAnimation()
     const [ref, inView] = useInView()
+    const mouseClickEvents = ["mousedown", "click", "mouseup"];
     const nav = useNavigate()
-
+    
     const { scrollY } = useScroll();
     const translateY = useSpring(scrollY, {
         stiffness: 100,
         damping: 30,
         restDelta: 1,
-
+        
     });
+    function simulateMouseClick(element) {
+      mouseClickEvents.forEach((mouseEventType) =>
+        element.dispatchEvent(
+          new MouseEvent(mouseEventType, {
+            view: window,
+            bubbles: true,
+            cancelable: true,
+            buttons: 1,
+          })
+        )
+      );
+    }
     const translateY2 = useSpring(scrollY, {
         stiffness: 80,
         damping: 30,
@@ -90,199 +103,211 @@ function BookingCarousel() {
     }, [])
 
     return (
-        <div className="carouselBody" id="bookingBar">
-            {loading && (
-                <>
-                    <div className="bookingBar">
-                        <div onClick={onSubmit} className="arrowButton">
-                            <img src={arrow} alt={'StayBook Hotels'} />
-                            <p>Book Now</p>
-                        </div>
+      <div className="carouselBody" id="bookingBar">
+        {loading && (
+          <>
+            <div className="bookingBar">
+              <div onClick={onSubmit} className="arrowButton">
+                <img src={arrow} alt={"StayBook Hotels"} />
+                <p>Book Now</p>
+              </div>
 
-                        <div className="line"></div>
+              <div className="line"></div>
 
-                        <div className="guests">
-                            <input
-                                type="number"
-                                value={guests}
-                                min="2"
-                                max="3"
-                            />
-                            <div className="change">
-                                <div
-                                    onClick={() => {
-                                        guests == 2
-                                            ? setGuests(2)
-                                            : setGuests((prev) => --prev)
-                                    }}
-                                    className="changeValue"
-                                    style={
-                                        guests == 2
-                                            ? { color: 'grey' }
-                                            : { color: 'black' }
-                                    }
-                                >
-                                    -
-                                </div>
-                                <img src={guest} style={{ height: '1.5rem' }}  alt={'StayBook Hotels'}/>
-                                <div
-                                    onClick={() => {
-                                        guests === 4
-                                            ? setGuests(4)
-                                            : setGuests((prev) => ++prev)
-                                    }}
-                                    className="changeValue"
-                                    style={
-                                        guests == 4
-                                            ? { color: 'grey' }
-                                            : { color: 'black' }
-                                    }
-                                >
-                                    +
-                                </div>
-                            </div>
-                        </div>
+              <div className="guests">
+                <input type="number" value={guests} min="2" max="3" />
+                <div className="change">
+                  <div
+                    onClick={() => {
+                      guests == 2 ? setGuests(2) : setGuests((prev) => --prev);
+                    }}
+                    className="changeValue"
+                    style={guests == 2 ? { color: "grey" } : { color: "black" }}
+                  >
+                    -
+                  </div>
+                  <img
+                    src={guest}
+                    style={{ height: "1.5rem" }}
+                    alt={"StayBook Hotels"}
+                  />
+                  <div
+                    onClick={() => {
+                      guests === 4 ? setGuests(4) : setGuests((prev) => ++prev);
+                    }}
+                    className="changeValue"
+                    style={guests == 4 ? { color: "grey" } : { color: "black" }}
+                  >
+                    +
+                  </div>
+                </div>
+              </div>
 
-                        <div className="line"></div>
+              <div className="line"></div>
 
-                        <div className="input">
-                            <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                <DatePicker
-                                    label="Check In"
-                                    value={checkIn}
-                                    minDate={new Date()}
-                                    onChange={(newValue) => {
-                                        setCheckIn(newValue)
-                                        sessionStorage.setItem(
-                                            'checkIn',
-                                            newValue
-                                        )
-                                    }}
-                                    renderInput={({
-                                        inputRef,
-                                        inputProps,
-                                        InputProps,
-                                    }) => (
-                                        <Box
-                                            sx={{
-                                                alignItems: 'center',
-                                                display: 'flex',
-                                                width: '8rem',
-                                                flexDirection: 'column',
-                                            }}
-                                        >
-                                            <input
-                                                ref={inputRef}
-                                                {...inputProps}
-                                                placeholder="Check In"
-                                            />
-                                            {InputProps?.endAdornment}
-                                        </Box>
-                                    )}
-                                />
-                            </LocalizationProvider>
-                            <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                <DatePicker
-                                    views={['day', 'month']}
-                                    label="Check Out"
-                                    value={checkOut}
-                                    minDate={new Date()}
-                                    onChange={(newValue) => {
-                                        setCheckOut(newValue)
-                                        sessionStorage.setItem(
-                                            'checkOut',
-                                            newValue
-                                        )
-                                    }}
-                                    renderInput={({
-                                        inputRef,
-                                        inputProps,
-                                        InputProps,
-                                    }) => (
-                                        <Box
-                                            sx={{
-                                                alignItems: 'center',
-                                                display: 'flex',
-                                                width: '8rem',
-                                                flexDirection: 'column',
-                                            }}
-                                        >
-                                            <input
-                                                ref={inputRef}
-                                                {...inputProps}
-                                                placeholder="Check Out"
-                                            />
-                                            {InputProps?.endAdornment}
-                                        </Box>
-                                    )}
-                                />
-                            </LocalizationProvider>
-                        </div>
+              <div className="input">
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <DatePicker
+                    label="Check In"
+                    value={checkIn}
+                    minDate={new Date()}
+                    onChange={(newValue) => {
+                      setCheckIn(newValue);
+                        sessionStorage.setItem("checkIn", newValue);
+                       var element = document
+                         .querySelector("#toOpen")
+                         ?.querySelector("button");
 
-                        <div className="line"></div>
+                       simulateMouseClick(element);
+                        
+                    }}
+                    renderInput={({ inputRef, inputProps, InputProps }) => (
+                      <Box
+                        sx={{
+                          alignItems: "center",
+                          display: "flex",
+                          width: "8rem",
+                          flexDirection: "column",
+                        }}
+                      >
+                        <input
+                          ref={inputRef}
+                          {...inputProps}
+                          placeholder="Check In"
+                        />
+                        {InputProps?.endAdornment}
+                      </Box>
+                    )}
+                  />
+                </LocalizationProvider>
+                <div id="toOpen">
+                  <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <DatePicker
+                      views={["day", "month"]}
+                      label="Check Out"
+                      value={checkOut}
+                      minDate={new Date()}
+                      onChange={(newValue) => {
+                        setCheckOut(newValue);
+                        sessionStorage.setItem("checkOut", newValue);
+                      }}
+                      renderInput={({ inputRef, inputProps, InputProps }) => (
+                        <Box
+                          sx={{
+                            alignItems: "center",
+                            display: "flex",
+                            width: "8rem",
+                            flexDirection: "column",
+                          }}
+                        >
+                          <input
+                            ref={inputRef}
+                            {...inputProps}
+                            placeholder="Check Out"
+                          />
+                          {InputProps?.endAdornment}
+                        </Box>
+                      )}
+                    />
+                  </LocalizationProvider>
+                </div>
+              </div>
 
-                        <div className="search">
-                            <img src={hotel} style={{ height: '1.5rem' }} alt={'StayBook Hotels'} />
-                            <input
-                                onChange={(e) => {
-                                    const d = data.filter((item) =>
-                                        item.name
-                                            .toLowerCase()
-                                            .includes(
-                                                e.target.value.toLowerCase()
-                                            )
-                                            )
-                                 
-                                    if (e.target.value.toLowerCase().trim() == "") {
-                            
-                                        setN(-1)
-                                        return;
-                                    }
-                                    setSuggestions(d)
-                                    const n = data.indexOf(d[0])
-                                    if (n != -1) {
-                                        setN(n)
-                                    }
-                                }}
-                                list="browse"
-                                type="text"
-                                placeholder="Search hotels in Delhi"
-                            />
-                            <datalist id="browse">
-                                {suggestions.map((hotel, i) => (
-                                    <option key={i} value={hotel.name} />
-                                ))}
-                            </datalist>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Homely Stay</li>
-                        <li>Breakfast</li>
-                        <li>Lunch</li>
-                        <motion.li
-                                ref={ref}
-                                variants={boxVariant}
-                                initial="hidden"
-                                animate={control}>
-                           Dinner & Party</motion.li>
-                    </ul>
-                    
-                    <div className="dish">
-                        <img style={{transform: 'rotateZ('+(translateY.current/20).toString()+'deg)'}} 
-                            src ={'https://res.cloudinary.com/deby9hi8w/image/upload/v1672233490/breakfast_jkcxzd.png'} alt={'StayBook Hotels'}/>
-                    </div>
+              <div className="line"></div>
 
-                    <div className="bottle">
-                        <img style={{transform:'translateY('+(translateY2.current/6).toString()+'px)'}} 
-                        src ={'https://res.cloudinary.com/deby9hi8w/image/upload/v1672233491/drink_ypa5vl.png'} alt={'StayBook Hotels'}/>
-                        <img style={{transform:'translateY('+(translateY2.current/6).toString()+'px)'}} 
-                        src ={'https://res.cloudinary.com/deby9hi8w/image/upload/v1672233602/drink-shadow_zzndnr.png'} alt={'StayBook Hotels'} className="shadowed"/>
-                    </div>
+              <div className="search">
+                <img
+                  src={hotel}
+                  style={{ height: "1.5rem" }}
+                  alt={"StayBook Hotels"}
+                />
+                <input
+                  onChange={(e) => {
+                    const d = data.filter((item) =>
+                      item.name
+                        .toLowerCase()
+                        .includes(e.target.value.toLowerCase())
+                    );
 
-                </>
-            )}
-        </div>
-    )
+                    if (e.target.value.toLowerCase().trim() == "") {
+                      setN(-1);
+                      return;
+                    }
+                    setSuggestions(d);
+                    const n = data.indexOf(d[0]);
+                    if (n != -1) {
+                      setN(n);
+                    }
+                  }}
+                  list="browse"
+                  type="text"
+                  placeholder="Search hotels in Delhi"
+                />
+                <datalist id="browse">
+                  {suggestions.map((hotel, i) => (
+                    <option key={i} value={hotel.name} />
+                  ))}
+                </datalist>
+              </div>
+            </div>
+            <ul>
+              <li>Homely Stay</li>
+              <li>Breakfast</li>
+              <li>Lunch</li>
+              <motion.li
+                ref={ref}
+                variants={boxVariant}
+                initial="hidden"
+                animate={control}
+              >
+                Dinner & Party
+              </motion.li>
+            </ul>
+
+            <div className="dish">
+              <img
+                style={{
+                  transform:
+                    "rotateZ(" + (translateY.current / 20).toString() + "deg)",
+                }}
+                src={
+                  "https://res.cloudinary.com/deby9hi8w/image/upload/v1672233490/breakfast_jkcxzd.png"
+                }
+                alt={"StayBook Hotels"}
+              />
+            </div>
+
+            <div className="bottle">
+              <img
+                style={{
+                  transform:
+                    "translateY(" +
+                    (translateY2.current / 6).toString() +
+                    "px)",
+                }}
+                src={
+                  "https://res.cloudinary.com/deby9hi8w/image/upload/v1672233491/drink_ypa5vl.png"
+                }
+                alt={"StayBook Hotels"}
+              />
+              <img
+                style={{
+                  transform:
+                    "translateY(" +
+                    (translateY2.current / 6).toString() +
+                    "px)",
+                }}
+                src={
+                  "https://res.cloudinary.com/deby9hi8w/image/upload/v1672233602/drink-shadow_zzndnr.png"
+                }
+                alt={"StayBook Hotels"}
+                className="shadowed"
+              />
+            </div>
+          </>
+        )}
+      </div>
+    );
 }
 
 export default BookingCarousel

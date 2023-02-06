@@ -26,7 +26,9 @@
 }
 
 .innerFloat {
-    font-family: 'Kraftan', sans-serif;
+    letter-spacing: 0.5px;
+    font-family: 'Garamond', 'Georgia', sans-serif;
+    font-weight: 300;
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
@@ -55,7 +57,9 @@
         align-self: flex-end;
         margin-bottom: 1rem;
         margin-left: 1rem;
-        font-family: 'Kraftan', sans-serif;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        font-weight: 300;
     }
 
     img {

@@ -1,6 +1,6 @@
 @import '../colors';
 
-.offerTitle{
+.offerTitle {
     font-size: 5rem;
     font-weight: 200;
     margin-bottom: 1rem;
@@ -8,12 +8,16 @@
     width: 100%;
     text-align: center;
     -webkit-text-fill-color: $grey;
-    font-family: 'Kraftan', sans-serif;
+    letter-spacing: 0.5px;
+    font-family: 'Garamond', 'Georgia', sans-serif;
+    font-weight: 300;
+
     @media screen and (max-width: 800px) {
         font-size: 2rem;
     }
 }
-.offersContainer{
+
+.offersContainer {
     margin-top: 0.25rem;
     display: flex;
     flex-direction: row;
@@ -23,6 +27,7 @@
     font-weight: 400;
     font-size: 1rem;
     align-items: center;
+
     @media screen and (max-width: 800px) {
         width: 100%;
         flex-wrap: wrap;
@@ -30,7 +35,7 @@
     }
 }
 
-.offerCard{
+.offerCard {
     width: 20rem;
     display: flex;
     flex-direction: column;
@@ -39,31 +44,38 @@
     padding: 1.5rem;
     margin: 2rem;
     border-radius: 2rem;
-    img{
+
+    img {
         width: 10rem;
         height: 10rem;
         object-fit: cover;
-        border-radius:30rem;
+        border-radius: 30rem;
     }
-    h2{
+
+    h2 {
         -webkit-text-fill-color: $grey;
-        font-family: 'Kraftan', sans-serif;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        font-weight: 300;
     }
-    p{
-        font-family: 'Mada',sans-serif;
+
+    p {
+        font-family: 'Mada', sans-serif;
         font-size: .75rem;
         font-weight: 200;
         margin-bottom: 1rem;
         color: $grey;
     }
-    a{
-        background-color:$main;
-        padding:.5rem;
+
+    a {
+        background-color: $main;
+        padding: .5rem;
         padding: .75rem;
-        border-radius:.5rem;
-        color:White;
+        border-radius: .5rem;
+        color: White;
         text-decoration: none;
     }
+
     a:hover {
         box-shadow: 0 0 10px $shadow;
         cursor: none;

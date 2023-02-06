@@ -8,6 +8,7 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 7rem;
+
     @media screen and (max-width: 800px) {
         margin-bottom: 2rem;
     }
@@ -19,7 +20,10 @@
         margin-top: 0rem;
         width: 100%;
         -webkit-text-fill-color: $grey;
-        font-family: 'Kraftan', sans-serif;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        font-weight: 300;
+
         @media screen and (max-width: 800px) {
             font-size: 2rem;
         }
@@ -37,12 +41,14 @@
         font-weight: 400;
         font-size: 1rem;
         align-items: center;
+
         @media screen and (max-width: 800px) {
             width: 100%;
             flex-wrap: wrap;
             justify-content: center;
         }
     }
+
     .amenety {
         padding-bottom: 2.5%;
         box-shadow: 0 0 20px $shadow2;
@@ -56,9 +62,10 @@
         justify-content: center;
         height: 18rem;
         margin-right: 2rem;
-        margin-bottom:2rem;
+        margin-bottom: 2rem;
         position: relative;
         transform-style: preserve-3d;
+
         @media screen and (max-width: 800px) {
             flex-direction: column;
             margin-right: 0rem;
@@ -69,17 +76,23 @@
             padding-bottom: 0%;
             margin-bottom: 2%;
         }
+
         img {
             width: 8rem;
             background-color: white;
             transform: translateZ(60px);
+
             @media screen and (max-width: 800px) {
                 width: 4rem;
             }
         }
+
         p {
-            font-family: 'kraftan', sans-serif;
+            letter-spacing: 0.5px;
+            font-family: 'Garamond', 'Georgia', sans-serif;
+            font-weight: 300;
             font-size: 2rem;
+
             @media screen and (max-width: 800px) {
                 writing-mode: horizontal-tb;
                 font-size: 1.75rem;
@@ -92,13 +105,15 @@
             flex-direction: column;
         }
     }
+
     .amenety:nth-child(odd) {
         border-radius: 1rem 1rem 5rem 5rem;
+
         @media screen and (max-width: 800px) {
             padding-right: 5%;
             height: 14rem;
         }
-        
+
     }
 }
 

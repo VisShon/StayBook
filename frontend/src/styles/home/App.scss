@@ -14,6 +14,7 @@
     z-index: 10000;
     height: 20px;
     width: 20px;
+
     @media screen and (max-width: 800px) {
         display: none;
     }
@@ -25,6 +26,7 @@
     align-items: center;
     overflow: hidden;
     flex-direction: column;
+
     @media screen and (max-width: 800px) {
         cursor: default;
     }
@@ -40,6 +42,7 @@
     width: 80%;
     border-radius: 1rem;
 }
+
 .descp {
     font-size: 1rem;
     margin: 1rem;
@@ -60,6 +63,7 @@
     justify-content: space-around;
     flex-direction: column;
     box-shadow: 0 0 10px $shadow;
+
     @media screen and (max-width: 800px) {
         margin: 2rem;
     }
@@ -90,18 +94,16 @@
 
 .glow-on-hover:before {
     content: '';
-    background: linear-gradient(
-        45deg,
-        #ff0000,
-        #ff7300,
-        #fffb00,
-        #48ff00,
-        #00ffd5,
-        #002bff,
-        #7a00ff,
-        #ff00c8,
-        #ff0000
-    );
+    background: linear-gradient(45deg,
+            #ff0000,
+            #ff7300,
+            #fffb00,
+            #48ff00,
+            #00ffd5,
+            #002bff,
+            #7a00ff,
+            #ff00c8,
+            #ff0000);
     position: absolute;
     top: -2px;
     left: -2px;
@@ -144,9 +146,11 @@
     0% {
         background-position: 0 0;
     }
+
     50% {
         background-position: 400% 0;
     }
+
     100% {
         background-position: 0 0;
     }
@@ -156,7 +160,9 @@ h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     -webkit-text-fill-color: $grey;
-    font-family: 'Kraftan', sans-serif;
+    letter-spacing: 0.5px;
+    font-family: 'Garamond', 'Georgia', sans-serif;
+    font-weight: 300;
     @media screen and (max-width: 800px) {
         font-size: 2rem;
         text-align: center;

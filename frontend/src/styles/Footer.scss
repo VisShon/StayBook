@@ -21,6 +21,7 @@
         left: 0;
         top: 0;
         height: 30rem;
+
         @media screen and (max-width: 800px) {
             height: 20rem;
             top: 10%;
@@ -39,7 +40,8 @@
         width: 15rem;
         height: 15rem;
         z-index: 0;
-        p{
+
+        p {
             line-height: normal;
             margin-bottom: .25rem;
             text-align: center;
@@ -57,6 +59,7 @@
             background-color: $main;
             height: 1px;
         }
+
         a {
             font-size: .75rem;
             color: black;
@@ -75,23 +78,29 @@
         width: 60%;
         justify-content: space-evenly;
         border-radius: 0.5rem;
+
         @media screen and (max-width: 820px) {
             flex-wrap: wrap;
             width: 90%;
             margin-top: 1rem;
             margin-bottom: 1rem;
         }
+
         .heading {
             display: flex;
             text-align: left;
             flex-direction: column;
         }
+
         h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
             -webkit-text-fill-color: $grey;
-            font-family: 'Kraftan', sans-serif;
+            letter-spacing: 0.5px;
+            font-family: 'Garamond', 'Georgia', sans-serif;
+            font-weight: 300;
         }
+
         a {
             text-decoration: none;
             color: $main;

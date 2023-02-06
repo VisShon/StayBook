@@ -1,21 +1,21 @@
 @import '../colors';
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.outerFloat{
-    display:flex;
+.outerFloat {
+    display: flex;
     flex-direction: column;
-    padding:0;
+    padding: 0;
 }
 
-.floating{
- 
+.floating {
+
     background-color: $main;
     color: white;
-    position: fixed; 
+    position: fixed;
     margin-top: 5rem;
     z-index: 100;
     border-radius: 1rem 0rem 0rem 1rem;
@@ -24,22 +24,24 @@
     align-self: flex-end;
 }
 
-.innerFloat{
-    font-family: 'Kraftan', sans-serif;
+.innerFloat {
+    letter-spacing: 0.5px;
+    font-family: 'Garamond', 'Georgia', sans-serif;
+    font-weight: 300;
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
-    transform: rotate(90deg);  
+    transform: rotate(90deg);
     padding-right: 0rem;
     padding-top: 3.5rem;
     padding-left: 1.5rem;
-    height:0rem;
-    width:7rem; 
-    margin-top:2rem;    
+    height: 0rem;
+    width: 7rem;
+    margin-top: 2rem;
 }
 
-#searchBlogsButton{
+#searchBlogsButton {
     background-color: $main;
     height: 2.5rem;
     width: 2.5rem;
@@ -47,7 +49,9 @@
 }
 
 .heading {
-    font-family: 'Kraftan', sans-serif;
+    letter-spacing: 0.5px;
+    font-family: 'Garamond', 'Georgia', sans-serif;
+    font-weight: 300;
     color: $grey;
     font-size: 3rem;
     width: 100%;
@@ -64,16 +68,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    h4{
+
+    h4 {
         color: $main;
     }
-    img{
+
+    img {
         width: 7vw;
         margin-top: 3rem;
         height: fit-content;
 
     }
-    .blogSearch{
+
+    .blogSearch {
         width: 50%;
         margin-top: 2rem;
     }
@@ -108,9 +115,10 @@
             margin-left: 0;
         }
     }
-    article:hover{
+
+    article:hover {
         transform: translateY(-5px);
-            box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
     }
 
     article:hover::after {
@@ -149,7 +157,9 @@
     }
 
     h3 {
-        font-family: 'Kraftan', sans-serif;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        font-weight: 300;
         color: rgb(255, 255, 255);
         text-align: center;
         font-size: 1.5rem;
@@ -175,7 +185,9 @@
     align-items: center;
 
     h1 {
-        font-family: 'Kraftan', sans-serif;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        font-weight: 300;
         color: white;
         font-size: 4rem;
         margin-bottom: 1rem;

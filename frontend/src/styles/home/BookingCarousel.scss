@@ -4,27 +4,32 @@
     border-radius: 1rem;
     width: 98%;
     position: relative;
-    display:flex;
+    display: flex;
     align-items: center;
     flex-direction: column;
     z-index: 0;
     margin-bottom: 1rem;
     margin-top: 1rem;
-    ul{
-        width:100%;
+
+    ul {
+        width: 100%;
         text-align: center;
-        font-family: 'Kraftan', sans-serif;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        font-weight: 300;
         color: $main;
         font-weight: 500;
         font-size: 9rem;
-        li:hover{
+
+        li:hover {
             color: $grey2;
             background-color: white;
             border-radius: none;
             height: auto;
             cursor: none;
         }
-        li{
+
+        li {
             @media screen and (max-width: 800px) {
                 font-size: 3.5rem;
                 border: none !important
@@ -33,49 +38,56 @@
 
     }
 
-    .bottle{
-        img{
+    .bottle {
+        img {
             top: 25%;
-            right:0%;
+            right: 0%;
             position: absolute;
             z-index: 10;
-            width:25%;
+            width: 25%;
+
             @media screen and (max-width: 800px) {
                 top: 55%;
-                right:-20%;
-                width:40%;
+                right: -20%;
+                width: 40%;
             }
         }
-        .shadowed{
+
+        .shadowed {
             z-index: 0;
             top: 65%;
-            right:11%;
+            right: 11%;
+
             @media screen and (max-width: 800px) {
                 top: 71%;
-                right:0%;
-                width:40%;
+                right: 0%;
+                width: 40%;
             }
         }
     }
-    .dish{
-        img{
+
+    .dish {
+        img {
             top: 50%;
-            left:4%;
+            left: 4%;
             position: absolute;
             z-index: 10;
-            width:25%;
+            width: 25%;
+
             @media screen and (max-width: 800px) {
                 top: 65%;
-                left:-30%;
-                width:55%;
+                left: -30%;
+                width: 55%;
             }
         }
-        .shadowed{
+
+        .shadowed {
             z-index: 0;
             opacity: .25;
         }
     }
 }
+
 .bookingBar {
     z-index: 10;
     display: flex;
@@ -90,6 +102,7 @@
     height: 15vh;
     border-radius: 0.5rem;
     background-color: $secondary;
+
     @media screen and (max-width: 800px) {
         flex-direction: column-reverse;
         align-items: center;
@@ -102,6 +115,7 @@
         background: #937749;
         width: 1px;
         height: 70%;
+
         @media screen and (max-width: 800px) {
             width: 70%;
             height: 1px;
@@ -119,14 +133,16 @@
             margin-left: 0rem;
             text-align: center;
             width: 10rem;
+
             @media screen and (max-width: 800px) {
                 margin-left: -0.25rem;
             }
         }
+
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
+            -webkit-appearance: none;
+            margin: 0;
         }
 
         .change {
@@ -134,12 +150,14 @@
             align-items: center;
             justify-content: center;
             margin-bottom: -0.5rem;
+
             .changeValue {
                 color: #937749;
                 text-align: center;
                 font-size: 1.5rem;
                 cursor: none;
             }
+
             .changeValue::selection {
                 display: none;
             }
@@ -152,9 +170,11 @@
         justify-content: center;
         align-items: center;
         margin-left: 2rem;
+
         @media screen and (max-width: 800px) {
             margin-left: 0rem;
         }
+
         input {
             margin-bottom: 0;
             margin-left: 0;
@@ -165,6 +185,7 @@
             padding: 0.5rem;
             border-radius: 0.5rem;
         }
+
         img {
             @media screen and (max-width: 800px) {
                 display: none;
@@ -176,10 +197,12 @@
         display: flex;
         width: 30%;
         justify-content: space-between;
+
         @media screen and (max-width: 800px) {
             width: 90%;
         }
     }
+
     input {
         color: #937749;
         font-family: 'Mada', sans-serif;
@@ -192,17 +215,21 @@
         margin-bottom: 1rem;
         margin-left: 1rem;
     }
+
     input::placeholder {
         color: #937749;
     }
+
     input:focus {
         outline-width: 0;
     }
+
     div {
         @media screen and (max-width: 800px) {
             font-size: 0.5rem;
         }
     }
+
     .arrowButton {
         transition: all ease-in 500ms;
         background-color: white;
@@ -213,24 +240,31 @@
         height: 5rem;
         width: 5rem;
         margin-right: 2rem;
+
         p {
             display: none;
         }
+
         @media screen and (max-width: 800px) {
             height: 3rem;
             width: 90%;
             margin-right: 0rem;
         }
     }
+
     .arrowButton:hover {
         transition: all ease-in 500ms;
         background-color: #937749;
         box-shadow: 0 0 10px $shadow;
+
         img {
             display: none;
         }
+
         p {
-            font-family: 'kraftan', sans-serif;
+            letter-spacing: 0.5px;
+            font-family: 'Garamond', 'Georgia', sans-serif;
+            font-weight: 300;
             width: 50%;
             color: white;
             animation: ease-in 500ms;

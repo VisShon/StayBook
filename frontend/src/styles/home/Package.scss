@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     h1 {
         width: 80%;
         text-align: center;
@@ -11,7 +12,10 @@
         font-weight: 200;
         margin-bottom: 1rem;
         -webkit-text-fill-color: $grey;
-        font-family: 'Kraftan', sans-serif;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        font-weight: 300;
+
         @media screen and (max-width: 800px) {
             width: 100%;
             font-size: 2rem;
@@ -28,15 +32,18 @@
     align-items: center;
     padding: 2rem;
     margin-top: 10rem;
+
     img {
         width: 70%;
         border-radius: 2rem;
         margin-top: -10rem;
+
         @media screen and (max-width: 800px) {
             width: 100%;
             margin-top: -8rem;
         }
     }
+
     h1 {
         width: 80%;
         text-align: center;
@@ -44,12 +51,16 @@
         font-weight: 200;
         margin-bottom: 1rem;
         -webkit-text-fill-color: $grey;
-        font-family: 'Kraftan', sans-serif;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        font-weight: 300;
+
         @media screen and (max-width: 800px) {
             width: 100%;
             font-size: 2rem;
         }
     }
+
     h2 {
         text-align: center;
         width: 80%;
@@ -57,16 +68,21 @@
         font-weight: 200;
         margin-bottom: 1rem;
         -webkit-text-fill-color: $main;
-        font-family: 'Kraftan', sans-serif;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        font-weight: 300;
+
         @media screen and (max-width: 800px) {
             width: 100%;
             font-size: 1.5rem;
         }
     }
+
     p {
         width: 80%;
         color: $main;
         font-size: 1rem;
+
         @media screen and (max-width: 800px) {
             width: 100%;
             font-size: 0.75rem;
@@ -84,6 +100,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
         @media screen and (max-width: 800px) {
             width: 80%;
             text-align: center;
@@ -94,29 +111,36 @@
             align-items: center;
             justify-content: space-between;
             width: 80%;
+
             @media screen and (max-width: 800px) {
                 flex-direction: column-reverse;
             }
         }
+
         img {
             width: auto;
             border-radius: 0px;
             margin-top: auto;
         }
+
         h2 {
             text-align: left;
             font-size: 2rem;
+
             @media screen and (max-width: 800px) {
                 text-align: center;
             }
         }
+
         h1 {
             text-align: left;
             font-size: 1rem;
+
             @media screen and (max-width: 800px) {
                 text-align: center;
             }
         }
+
         p {
             font-size: 0.75rem;
         }

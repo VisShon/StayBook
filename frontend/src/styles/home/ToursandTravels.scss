@@ -2,11 +2,12 @@
 
 
 .toursImage {
-    height:55vh;
-    width:85vw;
+    height: 55vh;
+    width: 85vw;
     object-fit: cover;
     margin-top: 8rem;
     border-radius: 0rem 0rem 10rem 10rem;
+
     @media screen and (max-width: 800px) {
         margin-top: 5rem;
         width: 90%;
@@ -29,7 +30,10 @@
         margin-bottom: 1rem;
         font-weight: 200;
         -webkit-text-fill-color: $grey;
-        font-family: 'Kraftan', sans-serif;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        font-weight: 300;
+
         @media screen and (max-width: 800px) {
             font-size: 3rem;
             margin: 0rem 0 0.25rem 0;
@@ -43,20 +47,23 @@
         font-weight: 400;
         font-size: 1rem;
     }
+
     .button {
         width: 20%;
         cursor: none;
         border: 1px solid $main;
-        background-color:white;
+        background-color: white;
         padding: 1rem;
         width: 15%;
         text-decoration: none;
         color: $grey;
+
         @media screen and (max-width: 800px) {
             width: 50%;
         }
     }
-    .button:hover{
+
+    .button:hover {
         color: white;
     }
 }

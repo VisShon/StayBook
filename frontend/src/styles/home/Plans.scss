@@ -8,9 +8,11 @@
     align-items: center;
     overflow: hidden;
     margin-bottom: 5rem;
+
     @media screen and (max-width: 800px) {
         width: 100%;
     }
+
     .centerCard {
         margin-bottom: -1rem;
         position: absolute;
@@ -23,33 +25,40 @@
         text-align: center;
         align-items: center;
         border-radius: 2.5rem 2.5rem 2.5rem 2.5rem;
+
         @media screen and (max-width: 800px) {
             font-size: 2rem;
             width: 80%;
             padding: 1rem;
         }
+
         h2 {
             font-size: 3rem;
             font-weight: 200;
             margin-bottom: 1rem;
             -webkit-text-fill-color: $grey;
-            font-family: 'Kraftan', sans-serif;
+            letter-spacing: 0.5px;
+            font-family: 'Garamond', 'Georgia', sans-serif;
+            font-weight: 300;
             @media screen and (max-width: 800px) {
                 font-size: 2rem;
                 width: 90%;
             }
         }
+
         p {
             color: $main;
             margin-top: 0.25rem;
             font-family: 'Maven Pro', sans-serif;
             font-weight: 200;
             font-size: 1.25rem;
+
             @media screen and (max-width: 800px) {
                 font-size: 1rem;
             }
         }
     }
+
     img {
         z-index: 0;
         height: 80vh;
@@ -57,11 +66,14 @@
         width: 95vw;
         border-radius: 1rem 1rem 1rem 1rem;
     }
+
     .contact {
         font-size: 2rem;
         margin-bottom: 1rem;
         text-decoration: none;
         -webkit-text-fill-color: $main;
-        font-family: 'Kraftan', sans-serif;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        font-weight: 300;
     }
 }

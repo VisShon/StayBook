@@ -13,10 +13,11 @@ function Profile() {
     const { decodedToken, isExpired }: any = useJwt(userToken!)
     const [history, setHistory] = useState<string[]>([])
 
+    const nav = useNavigate()
     useEffect(() => {
         const checkAuth = async () => {
             if (!userToken) {
-                await Login()
+                nav('/signup')
             }
             const result = await axios
                 .post('/api/getAllReservations', {
@@ -27,7 +28,6 @@ function Profile() {
         checkAuth()
     }, [])
 
-    const nav = useNavigate()
 
     const logout = async () => {
         sessionStorage.removeItem('user')

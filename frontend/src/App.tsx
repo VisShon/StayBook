@@ -15,6 +15,8 @@ import GeneralPolicy from "./pages/GeneralPolicy";
 import FAQ from "./pages/Faq";
 import Confirmation from "./pages/Confirmation";
 import AboutUs from "./pages/AboutUs";
+import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -69,6 +71,8 @@ export function App() {
                   <Route path="/hotelbookingconfirmation" element={<Confirmation />}/>
                   <Route path="/aboutus" element={<AboutUs />} />
                   <Route path="/team" element={<TeamPage />} />
+                  <Route path="/signUp" element={<SignUp />} />
+                  <Route path="/login" element={<SignIn />} />
                 </Routes>
                 <Footer />
                 <WhatsAppWidget CompanyIcon={Logo} phoneNumber="918527703312" />

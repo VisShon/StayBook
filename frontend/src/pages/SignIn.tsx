@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext, AuthContextProps } from "../context/AuthContext";
 export default function SignIn() {
   const { Login, Logout, signInWithEmail } = useContext<AuthContextProps>(AuthContext);
+  const [displayedErr, setDisplayedError] = useState("Please enter credentials");
   const nav = useNavigate();
   const loginWithGmail = async () => {
     await Login().then(() => {
@@ -16,6 +17,15 @@ export default function SignIn() {
   const [error, setError] = useState("");
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    if (!email || email === "") {
+      setDisplayedError("Please enter an email!");
+      return;
+    }
+
+    if (!password || password === "") {
+      setDisplayedError("Please enter a password!");
+      return;
+    }
     setError("");
     try {
       await signInWithEmail(email, password).then(() => {
@@ -23,6 +33,7 @@ export default function SignIn() {
         nav('/profile')
       });
     } catch (err: any) {
+      setDisplayedError(err.message);
       setError(err.message);
       console.log(err.message);
     }
@@ -33,7 +44,18 @@ export default function SignIn() {
       <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
         <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
           <h1 className="mb-8 text-3xl text-center">Sign In</h1>
-
+          <div
+            className="warning"
+            style={{
+              backgroundColor: "#FEEFB3",
+              color: "#9F6000",
+              padding: "1rem",
+              margin: "1rem",
+              // display: 'none'
+            }}
+          >
+            {displayedErr}
+          </div>
           <input
             onChange={(e) => setEmail(e.target.value)}
             type="text"
@@ -49,7 +71,7 @@ export default function SignIn() {
             name="password"
             placeholder="Password"
           />
-  
+
           <button
             onClick={handleSubmit}
             style={{
@@ -61,8 +83,8 @@ export default function SignIn() {
           >
             Log In
           </button>
-          <span>or</span> 
-         
+          <span>or</span>
+
           <button
             onClick={loginWithGmail}
             style={{

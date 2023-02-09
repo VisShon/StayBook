@@ -5,8 +5,10 @@ export default function SignUp() {
   const nav = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmpassword, setconfirmPassword] = useState("");
   const [userName, setUserName] = useState("");
   const [error, setError] = useState("");
+  const [displayedErr, setDisplayedError] = useState("Please enter credentials");
   const { Login, Logout, createUserWithEmail, addName } = useContext<AuthContextProps>(AuthContext);
   const loginWithGmail = async () => {
     await Login().then(() => { 
@@ -17,14 +19,34 @@ export default function SignUp() {
   const handleSubmit = async (e:any) => {
     e.preventDefault();
     setError("");
+    if (!userName || userName === "") {
+      setDisplayedError("Please enter a name!");
+      return;
+    }
+    if (!email || email === "") {
+      setDisplayedError("Please enter an email!");
+      return;
+    }
+
+    if (!password || password === "") { 
+      setDisplayedError("Please enter a password!");
+      return;
+    }
+    if (password !== confirmpassword) {
+      setDisplayedError("Passwords do not match!");
+      return;
+     }
+
     try {
       await createUserWithEmail(email, password).then(() => {
         console.log("User created")
       });
     
-    } catch (err:any) {
+    } catch (err: any) {
+      setDisplayedError(err.message);
       setError(err.message);
       console.log(err.message);
+      return;
     }
     try {
       await addName(userName).then(() => {
@@ -33,6 +55,7 @@ export default function SignUp() {
         nav('/profile')
       });
     } catch (err: any) {
+      setDisplayedError(err.message);
       setError(err.message);
       console.log(err.message);
     }
@@ -43,6 +66,18 @@ export default function SignUp() {
       <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
         <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
           <h1 className="mb-8 text-3xl text-center">Sign up</h1>
+          <div
+            className="warning"
+            style={{
+              backgroundColor: "#FEEFB3",
+              color: "#9F6000",
+              padding: "1rem",
+              margin: "1rem",
+              // display: 'none'
+            }}
+          >
+            {displayedErr}
+          </div>
           <input
             onChange={(e) => setUserName(e.target.value)}
             type="text"
@@ -67,6 +102,7 @@ export default function SignUp() {
             placeholder="Password"
           />
           <input
+            onChange={(e) => setconfirmPassword(e.target.value)}
             type="password"
             className="block border border-grey-light w-full p-3 rounded mb-4"
             name="confirm_password"

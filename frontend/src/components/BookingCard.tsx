@@ -33,7 +33,11 @@ function BookingCard({ hotelName, address, cardRef }: any) {
   const [checkOutGlobal, setcheckOutGlobal] = useContext(checkOutContext);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  var tempDate = new Date();
   const [checkIn, setCheckIn] = useState<Date | null>(
+    CheckInDate ? new Date(CheckInDate) : today
+  );
+  const [initCheckout, setinitCheckout] = useState<Date | null>(
     CheckInDate ? new Date(CheckInDate) : today
   );
   const [checkOut, setCheckOut] = useState<Date | null>(
@@ -52,8 +56,8 @@ function BookingCard({ hotelName, address, cardRef }: any) {
   const [isPaid, setIsPaid] = useState<boolean>(false);
   const [noSelected, setNoSelected] = useState<boolean>(false);
   const [noContact, setNoContact] = useState<boolean>(false);
-  const [fullname, setFullname] = useState<any>("")
-  const [useremail, setUserEmail] = useState<any>("")
+  const [fullname, setFullname] = useState<any>("");
+  const [useremail, setUserEmail] = useState<any>("");
 
   const { username, email, phone, Login } =
     useContext<AuthContextProps>(AuthContext);
@@ -112,7 +116,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
     } = await axios.get("/get-bearer");
 
     let templateParams = {
-      to_name: (username ? sessionStorage.getItem("email") : useremail),
+      to_name: username ? sessionStorage.getItem("email") : useremail,
       hotelName: hotelName,
       checkIn: checkIn!.toLocaleDateString(),
       checkOut: checkOut!.toLocaleDateString(),
@@ -125,7 +129,10 @@ function BookingCard({ hotelName, address, cardRef }: any) {
       guests: guests.toString(),
       hotelContact: "+918373929299",
       address: address,
-      status: `Amount due: ₹${price}, Pay now to save extra ₹${Math.min(175, (0.05 * price))}-`,
+      status: `Amount due: ₹${price}, Pay now to save extra ₹${Math.min(
+        175,
+        0.05 * price
+      )}-`,
       customerContact: contact,
     };
     try {
@@ -215,8 +222,8 @@ function BookingCard({ hotelName, address, cardRef }: any) {
       await axios.post(
         `/api${ref}/setReservations`,
         {
-          username: (username ? username : fullname),
-          email: (username ? email : useremail),
+          username: username ? username : fullname,
+          email: username ? email : useremail,
           checkIn: checkIn,
           checkOut: checkOut,
           amountPaid: price.toString() + "(To be Paid)",
@@ -262,28 +269,31 @@ function BookingCard({ hotelName, address, cardRef }: any) {
                 onChange={(newValue: any) => {
                   setCheckIn(newValue);
                   setcheckInGlobal(newValue);
+                  tempDate.setDate(newValue.getDate() + 1);
+                  setinitCheckout(tempDate);
                   dispatch(resetPlans());
                   dispatch(numberOfChildren("0"));
-                  var element = document.querySelector("#toOpen")?.querySelector("button");
+                  var element = document
+                    .querySelector("#toOpen")
+                    ?.querySelector("button");
                   simulateMouseClick(element);
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />
             </LocalizationProvider>
           </div>
-          <div id = "toOpen">
+          <div id="toOpen">
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 views={["day", "month"]}
                 label="Check Out"
                 value={checkOut}
-                minDate={checkIn}
+                minDate={initCheckout}
                 onChange={(newValue: any) => {
                   setCheckOut(newValue);
                   setcheckOutGlobal(newValue);
                   dispatch(resetPlans());
                   dispatch(numberOfChildren("0"));
-                 
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />
@@ -326,8 +336,26 @@ function BookingCard({ hotelName, address, cardRef }: any) {
         {!isPaid ? (
           payAtHotel && (
             <form>
-              {!username && <input className="customer-form" type="text" placeholder="Full name" required onChange={(e) => setFullname(e.target.value)} value={fullname}/>}
-              {!username && <input className="customer-form" type="email" placeholder="Your email address" required onChange={(e) => setUserEmail(e.target.value)} value={useremail}/>}
+              {!username && (
+                <input
+                  className="customer-form"
+                  type="text"
+                  placeholder="Full name"
+                  required
+                  onChange={(e) => setFullname(e.target.value)}
+                  value={fullname}
+                />
+              )}
+              {!username && (
+                <input
+                  className="customer-form"
+                  type="email"
+                  placeholder="Your email address"
+                  required
+                  onChange={(e) => setUserEmail(e.target.value)}
+                  value={useremail}
+                />
+              )}
               <PhoneInput
                 className="phone"
                 defaultCountry="IN"
@@ -335,7 +363,9 @@ function BookingCard({ hotelName, address, cardRef }: any) {
                 value={contact}
                 onChange={setContact}
               />
-              <div className="button" onClick={payOnHotel}>Continue</div>
+              <div className="button" onClick={payOnHotel}>
+                Continue
+              </div>
             </form>
           )
         ) : (

@@ -23,6 +23,8 @@ function BookingCarousel() {
     const [loading, setLoading] = useState(false)
     const [checkIn, setCheckIn] = useState(null)
     const [checkOut, setCheckOut] = useState(null)
+    var tempDate = new Date();
+    const [initCheckout, setinitCheckout] = useState(null);
     const [guests, setGuests] = useState(2)
     const [n, setN] = useState(0)
     const [suggestions, setSuggestions] = useState([])
@@ -153,12 +155,11 @@ function BookingCarousel() {
                     minDate={new Date()}
                     onChange={(newValue) => {
                       setCheckIn(newValue);
-                        sessionStorage.setItem("checkIn", newValue);
-                       var element = document
-                         .querySelector("#toOpen")
-                         ?.querySelector("button");
-
-                       simulateMouseClick(element);
+                      sessionStorage.setItem("checkIn", newValue);
+                      tempDate.setDate(newValue.getDate() + 1);
+                      setinitCheckout(tempDate);
+                      var element = document.querySelector("#toOpen")?.querySelector("button");
+                      simulateMouseClick(element);
                         
                     }}
                     renderInput={({ inputRef, inputProps, InputProps }) => (
@@ -186,7 +187,7 @@ function BookingCarousel() {
                       views={["day", "month"]}
                       label="Check Out"
                       value={checkOut}
-                      minDate={new Date()}
+                      minDate={initCheckout}
                       onChange={(newValue) => {
                         setCheckOut(newValue);
                         sessionStorage.setItem("checkOut", newValue);

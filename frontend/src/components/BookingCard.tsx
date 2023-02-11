@@ -32,8 +32,11 @@ function BookingCard({ hotelName, address, cardRef }: any) {
   const [checkInGlobal, setcheckInGlobal] = useContext(checkInContext);
   const [checkOutGlobal, setcheckOutGlobal] = useContext(checkOutContext);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
+  var tempDate = new Date();
   const [checkIn, setCheckIn] = useState<Date | null>(
+    CheckInDate ? new Date(CheckInDate) : today
+  );
+  const [initCheckout, setinitCheckout] = useState<Date | null>(
     CheckInDate ? new Date(CheckInDate) : today
   );
   const [checkOut, setCheckOut] = useState<Date | null>(
@@ -262,6 +265,8 @@ function BookingCard({ hotelName, address, cardRef }: any) {
                 onChange={(newValue: any) => {
                   setCheckIn(newValue);
                   setcheckInGlobal(newValue);
+                  tempDate.setDate(newValue.getDate()+1)
+                  setinitCheckout(tempDate);
                   dispatch(resetPlans());
                   dispatch(numberOfChildren("0"));
                   var element = document.querySelector("#toOpen")?.querySelector("button");
@@ -271,13 +276,13 @@ function BookingCard({ hotelName, address, cardRef }: any) {
               />
             </LocalizationProvider>
           </div>
-          <div id = "toOpen">
+          <div id="toOpen">
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 views={["day", "month"]}
                 label="Check Out"
                 value={checkOut}
-                minDate={checkIn}
+                minDate={initCheckout}
                 onChange={(newValue: any) => {
                   setCheckOut(newValue);
                   setcheckOutGlobal(newValue);
@@ -326,8 +331,26 @@ function BookingCard({ hotelName, address, cardRef }: any) {
         {!isPaid ? (
           payAtHotel && (
             <form>
-              {!username && <input className="customer-form" type="text" placeholder="Full name" required onChange={(e) => setFullname(e.target.value)} value={fullname}/>}
-              {!username && <input className="customer-form" type="email" placeholder="Your email address" required onChange={(e) => setUserEmail(e.target.value)} value={useremail}/>}
+              {!username && (
+                <input
+                  className="customer-form"
+                  type="text"
+                  placeholder="Full name"
+                  required
+                  onChange={(e) => setFullname(e.target.value)}
+                  value={fullname}
+                />
+              )}
+              {!username && (
+                <input
+                  className="customer-form"
+                  type="email"
+                  placeholder="Your email address"
+                  required
+                  onChange={(e) => setUserEmail(e.target.value)}
+                  value={useremail}
+                />
+              )}
               <PhoneInput
                 className="phone"
                 defaultCountry="IN"
@@ -335,7 +358,9 @@ function BookingCard({ hotelName, address, cardRef }: any) {
                 value={contact}
                 onChange={setContact}
               />
-              <div className="button" onClick={payOnHotel}>Continue</div>
+              <div className="button" onClick={payOnHotel}>
+                Continue
+              </div>
             </form>
           )
         ) : (

@@ -150,6 +150,7 @@ function BookingCarousel() {
               <div className="input">
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                   <DatePicker
+                    inputFormat="dd-MM-yyyy"
                     label="Check In"
                     value={checkIn}
                     minDate={new Date()}
@@ -158,9 +159,10 @@ function BookingCarousel() {
                       sessionStorage.setItem("checkIn", newValue);
                       tempDate.setDate(newValue.getDate() + 1);
                       setinitCheckout(tempDate);
-                      var element = document.querySelector("#toOpen")?.querySelector("button");
+                      var element = document
+                        .querySelector("#toOpen")
+                        ?.querySelector("button");
                       simulateMouseClick(element);
-                        
                     }}
                     renderInput={({ inputRef, inputProps, InputProps }) => (
                       <Box
@@ -184,6 +186,7 @@ function BookingCarousel() {
                 <div id="toOpen">
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <DatePicker
+                      inputFormat="dd-MM-yyyy"
                       views={["day", "month"]}
                       label="Check Out"
                       value={checkOut}

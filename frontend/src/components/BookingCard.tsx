@@ -263,6 +263,8 @@ function BookingCard({ hotelName, address, cardRef }: any) {
           <div style={{ marginRight: "0.5rem" }}>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
+                inputFormat="dd-MM-yyyy"
+                showToolbar={true}
                 label="Check In"
                 value={checkIn}
                 minDate={new Date()}
@@ -285,6 +287,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
           <div id="toOpen">
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
+                inputFormat="dd-MM-yyyy"
                 views={["day", "month"]}
                 label="Check Out"
                 value={checkOut}

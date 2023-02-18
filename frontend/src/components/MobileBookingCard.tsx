@@ -62,7 +62,7 @@ const MobileBookingCard = ({ scrollToCard }: any) => {
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 inputFormat="dd-MM-yyyy"
-                label="Check In mbc1"
+                label="Check In"
                 value={CheckInLocal}
                 minDate={new Date()}
                 onChange={(newValue: any) => {

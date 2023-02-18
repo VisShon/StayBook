@@ -113,9 +113,9 @@ function BookingCard({ hotelName, address, cardRef }: any) {
     });
 
     setIsLoading(true);
-    // const {
-    //   data: { key: bearer },
-    // } = await axios.get("/get-bearer");
+    const {
+      data: { key: bearer },
+    } = await axios.get("/get-bearer");
 
     let templateParams = {
       to_name: username ? sessionStorage.getItem("email") : useremail,
@@ -193,10 +193,10 @@ function BookingCard({ hotelName, address, cardRef }: any) {
           },
         },
         {
-          // headers: {
-          //   "Content-Type": "application/json",
-          //   Authorization: `Bearer ${bearer}`,
-          // },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${bearer}`,
+          },
         }
       );
       waysConveyed += 1;
@@ -233,7 +233,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
         },
         {
           headers: {
-            // Authorization: `bearer ${sessionStorage["user"]}`,
+            Authorization: `bearer ${sessionStorage["user"]}`,
           },
         }
       );

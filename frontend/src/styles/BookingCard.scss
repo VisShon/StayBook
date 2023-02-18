@@ -160,12 +160,18 @@
         -webkit-text-fill-color: transparent;
     }
 
-    div {
+    .continue {
         width: 100%;
         padding: 0.5rem 1rem;
         border-radius: 0.25rem;
         color: white;
         background: $gradient;
         cursor: pointer;
+    }
+    .datesSelect{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 0;
     }
 }

@@ -34,17 +34,19 @@ function BookingCard({ hotelName, address, cardRef }: any) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   var tempDate = new Date();
-  const [checkIn, setCheckIn] = useState<Date | null>(
-    CheckInDate ? new Date(CheckInDate) : today
-  );
+  const [checkIn, setCheckIn] = [checkInGlobal, setcheckInGlobal]
   const [initCheckout, setinitCheckout] = useState<Date | null>(
     CheckInDate ? new Date(CheckInDate) : today
   );
-  const [checkOut, setCheckOut] = useState<Date | null>(
-    CheckOutDate ? new Date(CheckOutDate) : tomorrow
-  );
-  setcheckInGlobal(checkIn);
-  setcheckOutGlobal(checkOut);
+  const [checkOut, setCheckOut] = [checkOutGlobal, setcheckOutGlobal];
+  useEffect(() => {
+
+  let today = new Date();
+  let tomorrow = new Date();
+  tomorrow.setDate(today.getDate() + 1);    
+    setcheckOutGlobal(CheckOutDate ? new Date(CheckOutDate) : tomorrow);
+    setcheckInGlobal(CheckInDate ? new Date(CheckInDate) : today);
+  }, [CheckOutDate, CheckInDate]);
 
   const dispatch = useAppDispatch();
   const withoutTax = useAppSelector((state) => state.price.withoutTax);
@@ -111,9 +113,9 @@ function BookingCard({ hotelName, address, cardRef }: any) {
     });
 
     setIsLoading(true);
-    const {
-      data: { key: bearer },
-    } = await axios.get("/get-bearer");
+    // const {
+    //   data: { key: bearer },
+    // } = await axios.get("/get-bearer");
 
     let templateParams = {
       to_name: username ? sessionStorage.getItem("email") : useremail,
@@ -191,10 +193,10 @@ function BookingCard({ hotelName, address, cardRef }: any) {
           },
         },
         {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${bearer}`,
-          },
+          // headers: {
+          //   "Content-Type": "application/json",
+          //   Authorization: `Bearer ${bearer}`,
+          // },
         }
       );
       waysConveyed += 1;
@@ -231,7 +233,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
         },
         {
           headers: {
-            Authorization: `bearer ${sessionStorage["user"]}`,
+            // Authorization: `bearer ${sessionStorage["user"]}`,
           },
         }
       );
@@ -264,7 +266,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 inputFormat="dd-MM-yyyy"
-                showToolbar={true}
+                showToolbar={false}
                 label="Check In"
                 value={checkIn}
                 minDate={new Date()}

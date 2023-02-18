@@ -8,7 +8,7 @@ function Confirmation(props) {
     window.scrollTo(0, 0);
   }, []);
   const location = useLocation();
-  let greeting = `Yay! \nThanks for choosing Staybook to host you on your stay in `;
+  let greeting = `Yay! Thanks for choosing Staybook to host you on your stay in: `;
   let hotelInfo = `${location.state.guestInfo.hotelName}" in ${
     location.state.guestInfo.address.split(",")[
       location.state.guestInfo.address.split(",").length - 2

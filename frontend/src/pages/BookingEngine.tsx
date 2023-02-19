@@ -259,7 +259,7 @@ function App() {
                 <Amneties data={hotel.amenities} />
                 <h3 className="heading">{"Choose your room(s)"}</h3>
                 {hotel.rooms
-                  .filter((item: any) => item.guests == guests || !guests)
+                  .filter((item: any) => (!guests || item.guests >= guests))
                   .map((room: any, i: number) => (
                     <RoomCard room={room} key={i} />
                   ))}

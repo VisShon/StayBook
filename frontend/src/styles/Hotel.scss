@@ -159,3 +159,90 @@
         box-shadow: 0 0 20px $shadow2;
     }
 }
+
+.aboutLocation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .locationTitle {
+        font-size: 1.75rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+
+    }
+
+    .locationDescription {
+        font-size: 1.25rem;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        color: black;
+    }
+
+    .locationMoreButton {
+        color: blue;
+        align-self: left;
+
+    }
+
+    .locationLessButton {
+        color: blue;
+        align-self: left;
+        display: none
+    }
+
+    .readMore {
+        font-size: 1.25rem;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        color: black;
+
+    }
+
+    .locationSubHeading{
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        margin-top: 1rem;
+        color: black;
+    }
+    .placesToGo{
+        margin-top: 1rem;
+        b{
+            font-weight: 700;
+        }
+    }
+    li{
+        font-size: 1.25rem;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        font-family: 'Garamond', 'Georgia', sans-serif;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        list-style-type: disc;
+        color: black;
+    }
+    li:hover{
+        color:black;
+        background-color:white;
+        visibility: block;
+        height: fit-content;
+        cursor: auto;
+
+    }
+}

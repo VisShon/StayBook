@@ -270,6 +270,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
                 label="Check In"
                 value={checkIn}
                 minDate={new Date()}
+                maxDate={new Date("2025-02-25")}
                 onChange={(newValue: any) => {
                   setCheckIn(newValue);
                   setcheckInGlobal(newValue);
@@ -294,6 +295,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
                 label="Check Out"
                 value={checkOut}
                 minDate={initCheckout}
+                maxDate={new Date("2025-02-25")}
                 onChange={(newValue: any) => {
                   setCheckOut(newValue);
                   setcheckOutGlobal(newValue);

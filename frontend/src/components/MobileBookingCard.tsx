@@ -65,6 +65,7 @@ const MobileBookingCard = ({ scrollToCard }: any) => {
                 label="Check In"
                 value={CheckInLocal}
                 minDate={new Date()}
+                maxDate={new Date("2025-02-25")}
                 onChange={(newValue: any) => {
                   setCheckInLocal(newValue);
                   setcheckInGlobal(newValue);
@@ -86,6 +87,7 @@ const MobileBookingCard = ({ scrollToCard }: any) => {
                 label="Check Out"
                 value={CheckOutLocal}
                 minDate={initCheckout}
+                maxDate={new Date("2025-02-25")}
                 onChange={(newValue: any) => {
                   setcheckOutGlobal(newValue);
                   setCheckOutLocal(newValue);

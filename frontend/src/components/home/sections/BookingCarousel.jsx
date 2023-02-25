@@ -154,6 +154,7 @@ function BookingCarousel() {
                     label="Check In"
                     value={checkIn}
                     minDate={new Date()}
+                    maxDate={new Date("2025-02-25")}
                     onChange={(newValue) => {
                       setCheckIn(newValue);
                       sessionStorage.setItem("checkIn", newValue);
@@ -191,6 +192,7 @@ function BookingCarousel() {
                       label="Check Out"
                       value={checkOut}
                       minDate={initCheckout}
+                      maxDate={new Date("2025-02-25")}
                       onChange={(newValue) => {
                         setCheckOut(newValue);
                         sessionStorage.setItem("checkOut", newValue);

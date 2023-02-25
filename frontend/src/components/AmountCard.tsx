@@ -11,7 +11,7 @@ function AmountCard({ checkIn, checkOut }: any) {
   const [checkInGlobal, setcheckInGlobal] = useContext(checkInContext);
   const [checkOutGlobal, setcheckOutGlobal] = useContext(checkOutContext);
   const [roomPrice, setRoomPrice] = useState(0.0);
-  const [tax, setTax] = useState(0.0);
+  const [tax, setTax] = useState(0);
 
   const getPrice = (
     date: Date,
@@ -57,6 +57,7 @@ function AmountCard({ checkIn, checkOut }: any) {
 
     setRoomPrice(x);
     let taxPrice: number = parseFloat((x * (12 / 100)).toFixed(3));
+    taxPrice = Math.ceil(taxPrice);
     setTax(taxPrice);
 
     dispatch(updateWithoutTaxPrice(x));

@@ -65,6 +65,7 @@ const MobileBookingCard = ({ scrollToCard }: any) => {
                 label="Check In"
                 value={CheckInLocal}
                 minDate={new Date()}
+                views={["day", "month"]}
                 maxDate={new Date("2025-02-25")}
                 onChange={(newValue: any) => {
                   setCheckInLocal(newValue);

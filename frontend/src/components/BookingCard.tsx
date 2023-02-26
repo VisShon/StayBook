@@ -271,6 +271,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
                 value={checkIn}
                 minDate={new Date()}
                 maxDate={new Date("2025-02-25")}
+                views={["day", "month"]}
                 onChange={(newValue: any) => {
                   setCheckIn(newValue);
                   setcheckInGlobal(newValue);

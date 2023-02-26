@@ -151,6 +151,7 @@ function BookingCarousel() {
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                   <DatePicker
                     inputFormat="dd-MM-yyyy"
+                    views={["day", "month"]}
                     label="Check In"
                     value={checkIn}
                     minDate={new Date()}

@@ -187,17 +187,18 @@ function Hotels() {
               <p className="locationDescription">
                 Paharganj is a lively neighborhood in the heart of Delhi, famous
                 for its affordability and abundance of experiences. Whether
-                you're looking for a budget-friendly hotel room, street food,
-                restaurants, or a wide variety of shops for both domestic and
+                you're looking for a budget-friendly hotel, street food,
+                restaurants, there is lot of places to eat in Paharganj like
+                Dominoes, KFC,burger king and may more.There are some couple
+                friedly hotels in Paharganj delhi who provide service for
+                couplesThere is large places to eat at paharganj but Sita Ram
+                Diwan chand best. wide variety of shops for both domestic and
                 international travelers, you'll find it all in Paharganj. With
                 interconnected roads such as Sadar Bazar, Main Bazar, Connaught
                 Palace, and Karol bagh, you can easily navigate the area and
                 take advantage of the plentiful options of hotels, lodges,
                 restaurants, and shops - all within close proximity. Come
-                explore and experience yourself the wonders of Paharganj. Delhi
-                Paharganj is a budget-friendly destination that attracts
-                travelers from all over the world. Whether you are on a budget
-                or not, there is a hotel in Paharganj for you
+                explore and experience yourself the wonders of Paharganj.
               </p>
 
               <button
@@ -209,30 +210,87 @@ function Hotels() {
               </button>
 
               <div id="text3" style={{ display: "none" }} className="readMore">
-                A visit here is sure to be a memorable experience for first-time
-                travelers. Boasting a vibrant atmosphere and a wide range of
-                street food and shopping opportunities, the area is full of life
-                and beauty. Furthermore, 24/7 food availability ensures that
-                visitors can enjoy local taste at any time. For added peace of
-                mind, the area is monitored by CCTV surveillance provided by the
-                New Delhi police for crime prevention.
+                Delhi Paharganj is a budget-friendly destination that attracts
+                travelers from all over the world. Whether you are on a budget
+                or not, there is a hotel in Paharganj for you.there is some
+                famous 2 and 3 star hotels in Paharganj weather it’s business
+                hotels in Paharganj or couple friendly hotel A visit here is
+                sure to be a memorable experience for first-time travelers.
+                Boasting a vibrant atmosphere and a wide range of street food
+                and shopping opportunities, the area is full of life and beauty.
+                Furthermore, 24/7 food availability ensures that visitors can
+                enjoy local taste at any time. For added peace of mind, the area
+                is monitored by CCTV surveillance provided by the New Delhi
+                police for crime prevention.2 and 3 star hotels in Paharganj
+                provide the best facility In paharganj as 4 star hotel provide
+                service in their hotel. 2 and 3 star hotels in Paharganj are
+                just 1km away from New Delhi Railway Station you can stay in
+                this budget friendly hotel and explore the near places in
+                evening
                 <div className="locationSubHeading">
-                  Some famous shops in Paharganj-
+                  Tourist atraction in Paharganj Delhi -
                 </div>
                 <div className="placesToGo">
-                  <b>Bikaner Sweets Corner - </b>Discover Bikaner famous sweet
-                  shop, located right in the heart of Paharganj! Offering a wide
-                  variety of delicious sweets and snacks at very reasonable
-                  prices, Bikaner Sweets corner has something for everyone.
-                  Enjoy Bikaner's famous Sohan Halwa, Royal Anjeer Barfi,
-                  Khajoor Barfi, and more. Or, try out some of the delicious
-                  snacks like Chow Mein Samosa, Paneer ka Pakoda, Aloo Samosa,
-                  and more - all available here. Plus, it is open from 8 am to
-                  11 pm, for your convenience. Stop by Bikaner's famous sweet
-                  shop today and find out why it's so popular in this area!
+                  In Paharganj, Chuna Mandi is also famous for too many things
+                  like for shopping, the best bar, Budjust-friendly hotels,
+                  famous for business hotels in Pharganj travel agencies, and
+                  money exchange agencies. Imperial Cinema is situated in Chuna
+                  Mandi Paharganj once upon a time it was really famous now it’s
+                  permanently closed behind this cinema there is a street which
+                  is famous for their best hotels and service some are Feb
+                  hotel, Hotel Shanti villa, Hotel Pinky villa By Staybook,
+                  Hotel Jyoti Mahal ( A Heritage Hotel ) these hotel located in
+                  Nalwa Street. These all are couple friendly hotels in
+                  Paharganj Delhi. Hotel Pinky villa by Staybook is right
+                  opposite Hotel Jyoti mahal ( A Heritage Hotel) This two are
+                  from the Staybook company. It can be the best property if you
+                  love Heritage site They promise to guests and provide the best
+                  hospitality service on the highest level to satisfy guests and
+                  expectations for better hospitality. Best location. Everything
+                  is near whether it’s markets or food places. Momo’s is a
+                  famous street food in Paharganj. Main bazaar market is famous
+                  for its stuff like clothes, affordable home decor things,
+                  chip, and budget-friendly restaurants, backpackers, affordable
+                  hotels, and tour agencies located on this street. You can
+                  exchange your money here. This is the best area for staying
+                  before and after your trip to India.here are food Resturant
+                  are also famous like tadka restaurant, Bistro 55 Roof Top
+                  Restaurant and etc The Main Bazaar in Paharganj is a
+                  must-visit for tourists and locals.This bustling street market
+                  located near the New Delhi Railway Station is a one-stop shop
+                  for all your shopping desires. If you book hotels in Paharganj
+                  you must visit in Main Bazar market it’s fully crowded but
+                  tourist love this area after dinner you can come here for walk
+                  and have some shopping. You'll find western clothes,
+                  traditional Indian garments such as ghagras and shorts,
+                  t-shirts, western dresses, and even kolhapuri slippers. If
+                  you're looking for a place to hang out with your family and
+                  friends, the Main Market has plenty of cafes, bars,
+                  andrestaurants to choose from,offering a variety of Indian and
+                  South Indian dishes. The Chabad House is especially popular
+                  with Israeli visitors,book hotels in Paharganj near Main
+                  bazar. Business hotels in paharganj also available in Business
+                  hotels in Paharganj located near Main bazar New delhi
+                </div>
+                <div className="locationSubHeading">
+                  Street food in Paharganj For Foodies
                 </div>
                 <div className="placesToGo">
-                  Chawla de chur-chur naan - Chawla de chur-chur naan is
+                  <b>Bikaner Sweets Corner - </b>There is lot of places to eat
+                  in Paharganj, but Discover Bikaner famous sweet shop, located
+                  right in the heart of Paharganj! Offering a wide variety of
+                  delicious sweets and snacks at very reasonable prices, Bikaner
+                  Sweets corner has something for everyone. Enjoy Bikaner's
+                  famous Sohan Halwa, Royal Anjeer Barfi, Khajoor Barfi, and
+                  more. Or, try out some of the delicious snacks like Chow Mein
+                  Samosa, Paneer ka Pakoda, Aloo Samosa, and more - all
+                  available here. Plus, it is open from 8 am to 11 pm, for your
+                  convenience. Stop by Bikaner's famous sweet shop today and
+                  find out why it's so popular in this area! Pahrganj is famous
+                  for best street food.
+                </div>
+                <div className="placesToGo">
+                  <b>Chawla de chur-chur naan - </b>Chawla de chur-chur naan is
                   renowned for its delicious Indian cuisine. The naan is
                   buttery, with accompaniments such as raita, salad, chole ki
                   sabzi, and rajma. There is a variety of naan available - aloo
@@ -245,49 +303,36 @@ function Hotels() {
                   shop and even they serve the best chole bhature Their Chole
                   Bhature is delicious, and not so oily, the Bhatura is stuffed
                   with paneer. With so much to offer, the Main Market in
-                  Paharganj is the perfect place to spend an afternoon. This
+                  Paharganj is the perfect place to spend an afternoon. Sita Ram
+                  Chole Bhature is famous street food in paharganj. This
                   restaurant is Situated in Paharganj Chuna Mandi, The Heart Of
                   Paharganj. Just near The Railway Station of New Delhi and just
                   1.3km away from Connaught place It is one of the most famous
-                  shops and if you are staying near the Railway Station In
-                  Delhi, you must try it. Chole Bhature is very delicious.
-                  Located in Paharganj you can easily reach out to this place
-                  since anyone in that area is pretty familiar with this shop.
-                  This is very close to the imperial cinema. They also provide
-                  home delivery. You can order online through zomato.com and
-                  swiggy.com for the menu you can visit their official sites -
-                  Menu:
-                  <a
-                    style={{ color: "blue" }}
-                    target="_blank"
-                    href="https://sitaramdiwanchand.co.in/"
-                  >
-                    sitaramdiwanchand.co.in
-                  </a>
-                  Address: 2243, Rajguru Marg, Chuna Mandi, Paharganj, New
-                  Delhi, Delhi 110055
+                  shops. Address: 2243, Rajguru Marg, Chuna Mandi, Paharganj,
+                  New Delhi, Delhi 110055
                 </div>
                 <div className="placesToGo">
                   <b>Multan Moth Bhandar Kachori -</b> One of the best kachoris
                   I have tasted. The accompaniment to the kachoris was unique as
                   it contained cooked rice. For Rs 40/- two kachoris with moth
-                  daal accompaniment are very cheap. Do try and visit the shop
+                  dal accompaniment are very cheap. Do try and visit the shop
                   whenever in Paharganj. It is very close to Bikaner Sweet Shop.
                   The kachoris and their accompaniments are served on leaves
                   which are disposed of in an eco-friendly manner. It's located
                   at Paharganj Gali no 6 Multani Dhandha near Modi Opticals.
                 </div>
                 <div className="placesToGo">
-                  <b>Darbar Restaurant - </b>Experience the amazing taste of
-                  delicious food from all around the world at the famous Darbar
-                  Restaurant in Paharganj! Located right in front of the famous
-                  Bikaner sweet shop, this restaurant serves a wide variety of
-                  Indian, South Indian, and Chinese dishes. Not only is the food
-                  here mouth-wateringly delicious, but it is also prepared with
-                  utmost care and hygiene, ensuring that you and your family can
-                  enjoy a meal without any health concerns. Don't wait any
-                  longer - visit Darbar Restaurant today and enjoy a delicious
-                  feast!
+                  <b>Darbar Restaurant - </b> Darbar is also one of the best
+                  places to eat at Paharganj which provides Experience the
+                  amazing taste of delicious food from all around the world at
+                  the famous Darbar Restaurant in Paharganj! Located right in
+                  front of the famous Bikaner sweet shop, this restaurant serves
+                  a wide variety of Indian, South Indian, and Chinese dishes.
+                  Not only is the food here mouth-wateringly delicious, but it
+                  is also prepared with utmost care and hygiene, ensuring that
+                  you and your family can enjoy a meal without any health
+                  concerns. Don't wait any longer - visit Darbar Restaurant
+                  today and enjoy a delicious feast!
                 </div>
                 <div className="locationSubHeading">
                   Some famous markets in Paharganj
@@ -328,28 +373,6 @@ function Hotels() {
                   destination for those looking for an authentic Delhi
                   experience.
                 </div>
-                <div>Here are some interesting facts about Karol Bagh: </div>
-                <ul>
-                  <li>
-                    It is one of the largest wholesale marketplaces in Delhi and
-                    is famous for its textiles and jewelry shops.
-                  </li>
-                  <li>
-                    Karol Bagh is named after Saint Karol Jaspal Singh, who
-                    lived and preached in the area during the 1940s.
-                  </li>
-                  <li>
-                    Karol Bagh is known for its street food, including the
-                    popular "chaat" dishes, and is a popular place for foodies.
-                  </li>
-                  <li>
-                    It is also home to several budget hotels, making it a
-                    popular choice for travelers looking for affordable
-                    accommodations in Delhi. The neighborhood is located near
-                    the Karol Bagh metro station, which provides easy access to
-                    other parts of Delhi.
-                  </li>
-                </ul>
                 <div className="placesToGo">
                   <b>Khari Baoli-</b> Khari Baoli is a historical street located
                   in Old Delhi, India, and is one of the largest wholesale spice
@@ -359,51 +382,17 @@ function Hotels() {
                   come to this market to purchase goods in bulk. The street is
                   also a popular tourist destination for those interested in
                   experiencing the vibrant and bustling atmosphere of Delhi's
-                  traditional markets. Despite its historical significance and
-                  bustling atmosphere, Khari Baoli still serves as a hub for the
-                  spice trade and continues to be a hub of commerce and activity
-                  in modern-day Delhi.
+                  traditional markets.
                 </div>
                 <div className="placesToGo">
-                  <b>Timber Market-</b> Looking for quality wood pieces for your
-                  next project? Look no further than Paharganj! This area is
-                  home to a number of wood shops offering boards of all shapes,
-                  sizes, and designs. Whether you're looking for plywood doors,
-                  adhesives, wood moldings, or PVC sheets, you'll be sure to
-                  find what you need at Kapoor Timber Stores or North India
-                  Timber Supply. With their competitive prices and wide
-                  selection, you can rest assured that you'll get the best
-                  quality materials for your project. Shop today and get your
-                  hands on the perfect wood pieces for your project!
-                </div>
-                <div className="placesToGo">
-                  <b>Furniture Market -</b> Come to Paharganj Multani Dhanda and
-                  find an amazing selection of chairs and tables of all types!
-                  Whether you're after plastic or steel chairs, we've got
-                  something to suit your needs and budget. With so many choices
-                  available, you're sure to find the perfect chair for you.
-                  Don't wait - come and explore our selection today!
-                </div>
-                <div className="placesToGo">
-                  <b>Plastic Market -</b> It is also famous for plastic acrylic
-                  sheets, vinyl, led, electric board and PVC sheets, Boards with
-                  lights are also made here, you can get them made of your
-                  choice or you can get them made with the name of your shop and
-                  shakti plastic and kapoor plastic shop is very famous.
-                </div>
-                <div className="placesToGo">
-                  <b>Bag market-</b> This bag market is spread over a very large
-                  area, which is in Singhara Chowk, this Nabi Karim market is
-                  the largest wholesale market in Asia. People come from all
-                  over here to buy designer bags, and from here you can buy
-                  goods in bulk. You can buy a variety of handbags, backpacks,
-                  School bags, pouches, trolleys, leather suitcases, fancy
-                  packs, and more from here. This is a very big market, there
-                  are many outlets here which give very good brand bags which
-                  last for a very long time and You can buy bags very cheap from
-                  here. There is so much variety here that you cannot find it
-                  anywhere in Delhi. There are lots of outlets open at 9 am and
-                  close at 7 pm, between which you can shop whenever you want.
+                  <b>Desh Bandhu Gupta Road -</b> Desh Bandhu Gupta Road
+                  provides a direct route to New Delhi Railway Station, enabling
+                  travelers to catch trains from all over India in just 10
+                  minutes. The surrounding area features a variety of
+                  restaurants, hotels, and sightseeing attractions, as well as a
+                  travel agency to accommodate any needs. 2 and 3 star hotels in
+                  Paharganj also available at desh bandu gupta road. Business
+                  hotels in paharganj are also located there.
                 </div>
                 <div className="placesToGo">
                   <b>Connaught Place-</b> Connaught Place is known for its
@@ -414,13 +403,70 @@ function Hotels() {
                   and Farzi Cafe for a wonderful evening experience. Not only do
                   they have delicious street food, but they also have a great
                   selection of drinks to enjoy. Make sure to visit Connaught
-                  Place and experience its unique atmosphere. The famous Central
-                  park is also there. It's famous for beautiful evenings located
-                  at Connaught place just across from the Rajiv chowk metro
-                  station. People come here with their families and friends.
-                  Many cultural and musical events are organized here, and the
-                  added attraction is the Indian flag. A good place to hang out
-                  for a couple of hours.
+                  Place and experience its unique atmosphere
+                </div>
+                <div className="placesToGo">
+                  <b>Janpath market -</b> This market is most popular for
+                  decorating, antique, and crafted items than dresses, unlike
+                  other markets in Delhi. It is stretched around the outer
+                  circle of CP. It is popular among students and tourists alike.
+                  Some good footwear shops are here. The only thing required
+                  here is bargaining. The more you bargain the better price you
+                  get for your desired product. You will get clothes from here
+                  at a cheap price. This market is located in Connaught Place.
+                  You can enjoy the beautiful view and do some shopping in
+                  Janpath market.
+                </div>
+                <div className="locationSubHeading">
+                  Best hotel in paharganj delhi -
+                </div>
+                <div className="placesToGo">
+                  Paharganj is famous for the best hotels. There are huge choice
+                  for Business hotels in paharganj There are a lot of
+                  pocket-friendly hotels. You can stay there if you visit New
+                  Delhi. Some of our metro Poli, Vivek hotels, and hotel Vishal
+                  Avtaar are 2 to 3-star hotels in Paharganj, Available at good
+                  price and nice view of paharganj. New Delhi. this road is
+                  situated near New Delhi Railway Station it’s just 2.4km away
+                  from New Delhi Railway. Arakashan Road in Paharganj is
+                  considered to be the hub of hotels. It’s a Great choice for
+                  those who are looking for pocket-friendly accommodation. Here
+                  is a lot of a variety of good hotels weather it’s a Business
+                  hotels in Paharganj or a couple of friendly hotels in
+                  Paharganj. If you are coming for a business trip in Paharganj
+                  you must book a hotel on Prakashan Road. As I already told you
+                  it’s a hub of hotels, you can get a good hotel at the best
+                  price and the best facility. Hotel Jyoti heritage by Staybook.
+                  Jyoti Heritage by Staybook Is a heritage property this is the
+                  best property in Pharganj which reminds you of the hotel of
+                  Jaipur. It’s difficult to find such property in Paharganj near
+                  New Delhi. Best location everything is near. You can book it
+                  for shooting, if you are coming for a business trip and
+                  looking for business hotels in Paharganj you must book, in
+                  this hotel a conference room is also available for meeting
+                  It’s located In Chuna mandi pahrganj Near New Delhi Here is
+                  lot of budget and couple friendly hotels in Paharganj Delhi.
+                  They all are budget friendly and pocket friendly. If you are
+                  couple you can book hotels in Paharganj. Here is lot of
+                  benefit to stay in paharganj the transportation is easy, easy
+                  to transportation is easy. easy to catch the metro, located
+                  just 10 minutes away from Paharganj, and also easily catch the
+                  e-rikshaw from the road. Famous street food in Paharganj also
+                  available around the corner of every street While the Nearsest
+                  Metro Station is just 1.5km away from Arakasha road and the
+                  New Delhi metro is also near. The Indra Gandhi Internation
+                  Airport about 14.6km away The airport metro connects directly
+                  to the nearby metro station of this place for a tourist it's
+                  easy to come directly here. While ‘Main Bazar’ is a paradise
+                  for those who love shopping and food. Best restaurant
+                  available in Main Bazar. The Sambar near Arakashan Road
+                  situated in Main Bazar is famous for delicious food and live
+                  concert. You can enjoy it with your friends and family. The
+                  road situated on the left side of the New Delhi Railway
+                  Station is connected directly to Connaught place. The road's
+                  name is Chelmsford road. It can be a good place for tourists
+                  because whether it's New Delhi Railway Station or New Delhi
+                  Metro station these two are near Arakshan road.
                 </div>
                 <div className="locationSubHeading">
                   Famous Temple near Paharganj -
@@ -436,7 +482,7 @@ function Hotels() {
                   in its spiritual atmosphere.
                 </div>
                 <div className="placesToGo">
-                  <b>Jhandewalan Temple</b> - Jhandewalan Temple is a renowned
+                  <b>Jhandewalan Temple</b> -Jhandewalan Temple is a renowned
                   Hindu temple located just a short distance away. Its octagonal
                   structure is topped with a lotus-shaped leaf, and at the
                   bottom of the cave lies an ancient idol of the Mother. Behind
@@ -448,7 +494,7 @@ function Hotels() {
                   <b>Gurdwara Bangla Sahib -</b> Delhi's most renowned & most
                   visited Gurdwaras, located near Gol Market, just 1 km away
                   from Paharganj. Inside this majestic Gurdwara, you will find a
-                  serene atmosphere of peace and tranquillity. Take in the
+                  serene atmosphere of peace and tranquility. Take in the
                   beautiful recitation of Gurbani and find a sense of inner
                   harmony. Besides, there is a pond (Sarovar), where people can
                   take a dip in it to purify their souls. Come experience the
@@ -464,19 +510,26 @@ function Hotels() {
                   visitors can experience the serenity of the sacred space and
                   admire the beauty of the carvings. With its majestic splendor,
                   Birla Mandir is a place of peace and tranquillity that no one
-                  should miss.
+                  should miss.The famous Birla Mandir, also known as the Temple
+                  of Lord Vishnu and Mata Lukmi, is a grand Hindu temple located
+                  only 2 km away from Paharganj. It is one of the largest Hindu
+                  temples in the city, renowned for its exquisite architecture
+                  and intricate design. Here, visitors can experience the
+                  serenity of the sacred space and admire the beauty of the
+                  carvings. With its majestic splendor, Birla Mandir is a place
+                  of peace and tranquility that no one should miss.
                 </div>
                 <div className="placesToGo">
-                 <b> Gurudwara Sis Ganj - </b>It is located in Chandni chowk, the most
-                  religious place of Sikhs, their ninth Holy Guru Tegh Bahadur
-                  martyr by The Mughal King Aurangzeb, where was beheaded, where
-                  the Guru Dwara was built.
+                  <b> Gurudwara Sis Ganj - </b>It is located in Chandni chowk,
+                  the most religious place of Sikhs, their ninth Holy Guru Tegh
+                  Bahadur martyr by The Mughal King Aurangzeb, where was
+                  beheaded, where the Guru Dwara was built.
                 </div>
                 <div className="placesToGo">
-                  <b>Gori Shankar Mandir-</b> Gori Shankar mandir is a renowned Hindu
-                  temple located near Digambar ala mandir known for Lord Shiva.
+                  <b>Gori Shankar Mandir-</b> Gori Shankar mandir is a renowned
+                  Hindu temple located near Digambar ala mandir known for Lord
+                  Shiva.
                 </div>
-                <div className="placesToGo"></div>
                 <div className="placesToGo"></div>
               </div>
 

@@ -143,20 +143,25 @@ function Hotels() {
                 Read Less
               </button>
             </div>
-          )}
+          )*/}
           {data!.name == "Hotels near New Delhi Railway Station" && (
             <div className="aboutLocation">
-              <h3 className="locationTitle">ABOUT New Delhi Railway Station</h3>
+              <h3 className="locationTitle">ABOUT NEW DELHI RAILWAY STATION</h3>
               <p className="locationDescription">
-                New Delhi Railway Station is a major railway station in New
-                Delhi, India. It is the headquarters of the Northern Railway
-                zone of the Indian Railways. It is the largest railway station
-                in India by area and the second largest by platform area. It is
-                the busiest railway station in India by both passenger traffic
-                and number of trains. It is also the busiest railway station in
-                the world by number of trains. The station is located in the
-                Paharganj area of New Delhi. It is the terminus of the New
-                Delhi–Amritsar Shatabdi Express and the New Delhi–Kalka Mail.
+                Delhi is heart of India. Delhi is divided into two parts - Old
+                Delhi and New Delhi. Both districts have their own main railway
+                station - Old Delhi and New Delhi. The New Delhi Railway Station
+                is the largest and busiest railway station in the city. It
+                serves as a major hub for the Indian Railways, connecting the
+                national capital to other major cities and towns of India. With
+                its extensive network and excellent facilities, it is one of the
+                most important railway stations in the country. The National
+                Capital Region includes Old and New Delhi and the surrounding
+                metropolitan areas.chandni chowk acts as shopping spree for the
+                rulers, paharganj share the boundary with the this and was one
+                of largest wholesale market grains, later on the neighborhood
+                area of paharganj daryaganj was merged in to sadar bazar that
+                later turned in to asia's cheapest market.
               </p>
 
               <button
@@ -168,8 +173,111 @@ function Hotels() {
               </button>
 
               <div id="text2" style={{ display: "none" }} className="readMore">
-                jfaskdafakjsf fkjsandjfkanfksadfnsdafkjasn ij foiawj ffiowejvn
-                voweio voiw jiovja sdiajw oiawoe v
+                <div className="locationSubHeading">
+                  New Delhi Railway Station -
+                </div>
+                <div className="placesToGo">
+                  New Delhi Railway Station, which people also call NDRS is the
+                  busiest railway station.New Delhi, is the national capital of
+                  India. It is situated in the north-central part of the
+                  country. There are 16 platforms, the first platform is located
+                  on the Paharganj side and the other 16 platforms are located
+                  on the side of Ajmeri Gate.New Delhi Railway Station is 2nd
+                  busiest and largest railway station in India. On the daily
+                  basis it carries more than 5 to 6 lakh passenger over 350
+                  trains with 16 platforms. North side of the railway station
+                  there is Connaught place which is just 1.5km away from New
+                  Delhi Railway Station. This station has built by East India
+                  company in 1926. In 2010 the New Delhi railway station was
+                  developed in 2007 because of the commonwealth game held in
+                  india in 2010. On that time there was only 5000 to 6000
+                  passenger was suffer by train daily. till 1980 there are only
+                  seven platforms in the station after some time in 1995 there
+                  are 3 more new platforms built. during redevelopment in 2010
+                  the total platform in New Delhi had sixteen. Around 235 trains
+                  pass through the station daily, starting, ending, or crossing
+                  over its 16 platforms. There is a wide variation in estimates
+                  for daily footfall and the number of passengers handled based
+                  upon different studies and seasons of the year. There are
+                  approximately 2.12 lakh passengers inflowing and outflowing
+                  daily other estimates place the number at around 5 lakh, which
+                  can reach 6 lakh during the months of the festival season.
+                  According to the officials of Indian Railways, the
+                  redevelopment work of the New Delhi Railway Station is to be
+                  done under the National Transit-Oriented Development Policy.
+                  New Delhi railway station has been built because there was a
+                  lot of traffic, and it was built for the convenience of the
+                  people. Paharganj is a neighouhood of central delhi.its
+                  located near new delhi railway station. There are lots of
+                  places where you can visit. Like Connaught Place, Main Bazar,
+                  Chandni Chowk,India Gate, etc. you can go where you want to go
+                  From here you can go everywhere in very easy way Paharganj
+                  main center is located in Delhi. It is also very close to the
+                  metro station like Kashmere Gate Metro Station, New Delhi
+                  Metro Station. Sadar Bazar Sadar Bazar is a bustling market
+                  located 1 km away from Paharganj. it is one of the largest
+                  national markets in India. Shoppers can find a wide range of
+                  products here, including clothes, groceries, crockery, gift
+                  items, and more. The market is constantly changing with the
+                  festivals, offering special items such as Diwali goods, Holi
+                  flowers, tricolor, kites, home decor items, Jhalar Ladiyas,
+                  lights, greeting cards, Rakhi ki Rakhi during Rakhi days, and
+                  even Chunri and accessories for parents during special
+                  occasions. With so many options available, Sadar Bazaar is the
+                  perfect place to find everything you need in the most
+                  convenient and cost-effective way.
+                </div>
+
+                <div className="locationSubHeading">
+                  Old New Delhi Railway station -
+                </div>
+
+                <div className="placesToGo">
+                  Delhi Junction is also known as Old Delhi. It is the oldest
+                  railway station in Delhi. The code of this railway station is
+                  DLI. This is India's busiest railway station. It was built in
+                  1864 near Chandni Chowk when the train from Calcutta used to
+                  come to Delhi.It also has 16 stations. It is the biggest
+                  railway station. Along with this, the above-mentioned New
+                  Delhi Railway Station has also been described as big.It has
+                  also been built along with the Yellow Line Metro, which is
+                  closest to Chandni Chowk.The nearest metro station to take the
+                  metro is Chandni Chowk, which is closest to Gate No 3.It runs
+                  13000 passenger trains daily.
+                </div>
+
+                <div className="placesToGo">
+                  <b>Facility available - </b>national and international food
+                  stalls were open at New Delhi railway station in 2021 they
+                  provide service 24/7 hours. There are some magazine and books
+                  shops also available. If your train is late you can spend some
+                  time with readings. Hence there are waiting room available,
+                  executive lounges, per platform water vending machin
+                  available, snack area ,Free wifi connectivity service was
+                  launched there in 2014. The service of free wifi are available
+                  there for limited time period after after user have to pay for
+                  this service. There is also a waiting room where you can sit
+                  and wait for your train. There is also a feeding room in this
+                  waiting room where you can sit freely and feed your baby.
+                  Platform No. 1 has many facilities like Wi-Fi, Clock Room,
+                  Waiting Room, Retiring Room, Restaurant, Toilet, etc. The same
+                  facility which is available on Platform Number 1 is also
+                  available on Platform Number 16. Enquiry counter - Inquiry
+                  counter is located on either side of the station which is at
+                  the entrance of the main gate as you enter from Platform No. 1
+                  which is towards Paharganj If You Enter From Platform No. 16
+                  Ajmeri Gate, Then There Is an Inquiry Counter On Your Right
+                  Side. Reservation Counter - here is a reservation counter also
+                  where you can buy a ticket and book a train for your journey.
+                  there are two types of trains the first one is
+                  express/classics train the 2nd one is a local train. the local
+                  train stop at every station for 4 to 5mnt but the express
+                  train stops at the important station like the big railway
+                  station Patel nagar, Gurgaon, etc. express train run faster
+                  than the local train. like some trains' names superfast,
+                  Shatabdi, Rajdhani, Garib Rath, etc., and Rajdhani is one of
+                  the fastest runs.
+                </div>
               </div>
 
               <button
@@ -180,7 +288,8 @@ function Hotels() {
                 Read Less
               </button>
             </div>
-          )} */}
+          )}
+
           {data!.name == "Hotels in Paharganj" && (
             <div className="aboutLocation">
               <h3 className="locationTitle">ABOUT PAHARGANJ</h3>

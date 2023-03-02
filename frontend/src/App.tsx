@@ -12,6 +12,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsCondition from "./pages/TermsCondition";
 import RefundPolicy from "./pages/RefundPolicy";
 import GeneralPolicy from "./pages/GeneralPolicy";
+import NotFound from "./pages/NotFound.tsx";
 import FAQ from "./pages/Faq";
 import Confirmation from "./pages/Confirmation";
 import AboutUs from "./pages/AboutUs";
@@ -52,6 +53,7 @@ export function App() {
               >
                 <NavBar />
                 <Routes>
+                  <Route path="*" element={<NotFound />} />
                   <Route path="/" element={<Home />} />
                   <Route path="/packages" element={<Packages />} />
                   <Route path="/contactus" element={<ContactUs />} />
@@ -66,7 +68,10 @@ export function App() {
                   <Route path="/:slug" element={<BookingEngine />} />
                   <Route path="/hotels/:slug" element={<Hotels />} />
                   <Route path="/hotels" element={<AllHotels />} />
-                  <Route path="/hotelbookingconfirmation" element={<Confirmation />}/>
+                  <Route
+                    path="/hotelbookingconfirmation"
+                    element={<Confirmation />}
+                  />
                   <Route path="/aboutus" element={<AboutUs />} />
                   <Route path="/team" element={<TeamPage />} />
                 </Routes>

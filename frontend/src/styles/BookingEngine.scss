@@ -14,3 +14,20 @@
  .contact {
     margin-bottom: 1.2rem;
  }
+
+ .question{
+      margin-top:0.6rem;
+      font-weight: 600;
+      text-align: left;
+   }
+   .answer{
+      font-weight: 400;
+      text-align: left;
+ }
+ .faqContainer{
+      margin-top: 1.2rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+ }

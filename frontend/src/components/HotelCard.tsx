@@ -42,7 +42,7 @@ function HotelCard({name,images,rooms,slug,rating,card_amenities,card_amenities_
                 className="right" 
                 src={right} 
                 alt={name}/>
-          <img className="vip" src={vip} />
+          <img className="vip" src={vip} alt = 'vip'/>
         </div>
 
         <a href={`/${slug.current}`}>

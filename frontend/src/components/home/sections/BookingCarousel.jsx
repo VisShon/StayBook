@@ -110,7 +110,7 @@ function BookingCarousel() {
           <>
             <div className="bookingBar">
               <div onClick={onSubmit} className="arrowButton">
-                <img src={arrow} alt={"StayBook Hotels"} />
+                <img src={arrow} alt='Go ahead' />
                 <p>Book Now</p>
               </div>
 
@@ -131,7 +131,7 @@ function BookingCarousel() {
                   <img
                     src={guest}
                     style={{ height: "1.5rem" }}
-                    alt={"StayBook Hotels"}
+                    alt='Guests'
                   />
                   <div
                     onClick={() => {
@@ -226,7 +226,7 @@ function BookingCarousel() {
                 <img
                   src={hotel}
                   style={{ height: "1.5rem" }}
-                  alt={"StayBook Hotels"}
+                  alt='Search'
                 />
                 <input
                   onChange={(e) => {
@@ -280,7 +280,7 @@ function BookingCarousel() {
                 src={
                   "https://res.cloudinary.com/deby9hi8w/image/upload/v1672233490/breakfast_jkcxzd.png"
                 }
-                alt={"StayBook Hotels"}
+                alt='food'
               />
             </div>
 
@@ -295,7 +295,7 @@ function BookingCarousel() {
                 src={
                   "https://res.cloudinary.com/deby9hi8w/image/upload/v1672233491/drink_ypa5vl.png"
                 }
-                alt={"StayBook Hotels"}
+                alt='drink'
               />
               <img
                 style={{
@@ -307,7 +307,7 @@ function BookingCarousel() {
                 src={
                   "https://res.cloudinary.com/deby9hi8w/image/upload/v1672233602/drink-shadow_zzndnr.png"
                 }
-                alt={"StayBook Hotels"}
+                alt='Drink shadow'
                 className="shadowed"
               />
             </div>

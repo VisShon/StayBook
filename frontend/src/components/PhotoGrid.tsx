@@ -7,7 +7,7 @@ function PhotoGrid({ data }: any) {
 
     return (
         <div className="photoGrid">
-            <img className="image" src={data[0].asset.url + (isMobile ? '?w=550&h=500' : '')} alt={'StayBook'} />
+            <img className="image" src={data[0].asset.url + (isMobile ? '?w=550&h=500' : '')} alt='photos from grid' />
             <div className="grid">
                 {data.slice(1, 5).map((item: any, i: number) => (
                     <img className="image" alt={'Hotel Image'} key={i} src={item.asset.url + (isMobile ? '?w=150&h=100' : '')} />

@@ -47,7 +47,7 @@ function Profile() {
                 <div className="profileBody">
                 <h1>Profile</h1>    
                 <div className="userInfo">
-                    <img src={decodedToken.picture} alt={'Staybook Hotels'}/>
+                    <img src={decodedToken.picture} alt='profile_pic'/>
                     <h2>{decodedToken.email}</h2>
                     <p>{decodedToken.name}</p>
                     <div onClick={logout} className="button">

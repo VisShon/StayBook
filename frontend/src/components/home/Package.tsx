@@ -13,7 +13,7 @@ export type props = {
 function Package({ name, image, time, description, highlight }: props) {
     return (
         <div className="packageBody">
-            <img src={image} alt={name} />
+            <img src={image} alt='package'/>
             <h1>{name}</h1>
             <h2>{time}</h2>
             <a href="/contactus" className="button">
@@ -24,7 +24,7 @@ function Package({ name, image, time, description, highlight }: props) {
             <div className="locationBody">
                 <div className="title">
                     <h2>Locations Covered</h2>
-                    <img src={map} alt={'StayBook tour package'}/>
+                    <img src={map} alt='map locations'/>
                 </div>
                 <h1>Noteworth Points</h1>
                 <p>{highlight}</p>

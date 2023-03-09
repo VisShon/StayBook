@@ -75,7 +75,7 @@ function ContactUs() {
                                     src={require('../../../images/staybookContactus/' +
                                     item.title +
                                     '.svg')}
-                                    alt={'Staybook Hotels Delhi'}
+                                    alt='media icons'
                                     />: <SocialMediaBox />}
                             </Tilt>
                         </a>

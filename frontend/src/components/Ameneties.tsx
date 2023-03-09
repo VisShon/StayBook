@@ -23,7 +23,7 @@ function Ameneties({ data }: any) {
                         <img
                             src={amenety.item.image?.asset.url}
                             style={{ width: '2rem' }}
-                            alt={amenety.item.name}
+                            alt='amenity'
                         />
                         {amenety.item.name}
                     </h1>

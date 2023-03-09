@@ -16,7 +16,7 @@ function PhotoSlider({ data }: any) {
                         onClick={() => setN(index)}
                         className={n != index ? 'image' : 'image-selected'}
                         src={item.asset.url}
-                        alt={'StayBook'}
+                        alt='Hotel images'
                         key={index}
                     />
                 ))}

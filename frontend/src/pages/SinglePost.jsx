@@ -118,7 +118,7 @@ function SinglePost() {
                  {singlePost.images && (
                    <>
                      {singlePost.images.map((item, index) => (
-                       <img src={item.asset.url}></img>
+                       <img src={item.asset.url} alt='blogImage'></img>
                      ))}
                    </>
                  )}

@@ -79,7 +79,7 @@ function Blog() {
         />
       </Helmet>
       <div className="blogHeader">
-        <img src={logo} alt="StayBook Hotels" />
+        <img src={logo} alt="StayBook logo" />
         <h4 className="heading">Blog page</h4>
 
         <span className="sr-only">Search</span>

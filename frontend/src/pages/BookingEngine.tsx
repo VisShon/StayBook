@@ -205,7 +205,7 @@ function App() {
             <img
               className="cross"
               src={cross}
-              alt={"Staybook Hotels"}
+              alt='Cross button'
               onClick={() => setGallery((prev) => !prev)}
             />
           )}

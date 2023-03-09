@@ -30,10 +30,10 @@ function Home() {
     return (
       <>
         <Helmet>
-          <title>{`Direct Hotel booking | Book Budget, luxury and Heritage hotels in New Delhi`}</title>
+          <title>{`Hotel booking | Book Budget, luxury and Heritage hotels in New Delhi`}</title>
           <meta
             name="description"
-            content="We provide hotel booking of hotels in New Delhi Book Direct Best Price Promise, we have affordable heritage to budget hotels near New Delhi Railway Station, Paharganj, cannaught place and South Delhi"
+            content="We provide hotel booking in New Delhi. Best Price Promise, From Luxury heritage to budget hotels near New Delhi Railway Station, Paharganj, Cannaught place."
           />
         </Helmet>
         <div className="ring" ref={ring}></div>

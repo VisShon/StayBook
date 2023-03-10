@@ -205,7 +205,7 @@ function App() {
             <img
               className="cross"
               src={cross}
-              alt='Cross button'
+              alt="Cross button"
               onClick={() => setGallery((prev) => !prev)}
             />
           )}
@@ -482,6 +482,274 @@ function App() {
                   </div>
                 </div>
               )}
+              {hotel.name == "Staybook Hotel Pinky Villa" && (
+                <div className="faqContainer">
+                  <h2 className="heading">FAQs</h2>
+                  <div className="question">
+                    What is the check-in and check-out time at Staybook Pinky
+                    Villa?
+                  </div>
+                  <div className="answer">
+                    Check-in time is 12:00 Noon or later, and check-out time is
+                    11:00 am or earlier. You may request for early check-in and
+                    late check out, subject to the availability.
+                  </div>
+                  <div className="question">
+                    How do I reach the Staybook Pinky Villa?
+                  </div>
+                  <div className="answer">
+                    Staybook Pinky villa is easy to access from New Delhi
+                    railway station (500m from hotel) and IGI Airport (12 kms
+                    from hotel). You can also book a taxi for pick up and drop
+                    from the hotel itself.
+                  </div>
+                  <div className="question">
+                    What is the smoking policy at Staybook Pinky Villa?
+                  </div>
+                  <div className="answer">
+                    The Property has both non-smoking and smoking rooms
+                    available, all rooms are cross ventilated. It also has a
+                    common smoking area on the rooftop
+                  </div>
+                  <div className="question">
+                    What document is required for check-in and is it mandatory?
+                  </div>
+                  <div className="answer">
+                    Yes it is mandatory. As per Delhi Govt guests should have
+                    government approved id proof such as Passport, Visa(if
+                    outsider), Aadhar Card, Driving Licence, Voter Id.
+                  </div>
+                  <div className="question">
+                    Does Staybook Pinky Villa have a room with a view?
+                  </div>
+                  <div className="answer">
+                    Yes, The hotel has two room categories :standard heritage
+                    room and deluxe heritage room. You should book a deluxe
+                    heritage room for courtyard view or city, standard room has
+                    no special view
+                  </div>
+                  <div className="question">
+                    Do you offer airport shuttle service?
+                  </div>
+                  <div className="answer">
+                    Yes, Staybook Pinky Villa offers paid airport pick up and
+                    drop service, Guests should check with the hotel directly.
+                  </div>
+                  <div className="question">Are pets allowed in the hotel?</div>
+                  <div className="answer">
+                    Yes, The accommodation allows pets for an additional fee of
+                    700/pet per night.
+                  </div>
+                  <div className="question">
+                    What is the cancellation policy?
+                  </div>
+                  <div className="answer">
+                    Guests should have to cancel 72 hr prior to the check-in
+                    date otherwise the hotel will charge 100% of the booking
+                    amount as the cancellation charge.
+                  </div>
+                  <div className="question">
+                    Is there an age restriction for staying at Staybook Pinky
+                    Villa?
+                  </div>
+                  <div className="answer">
+                    Yes, guests must be at least 18 years old to stay in a hotel
+                    room.
+                  </div>
+                  <div className="question">
+                    Do you have a restaurant on site, and what is the opening
+                    timing?
+                  </div>
+                  <div className="answer">
+                    Yes, We have an on-site restaurant, and it is open 6:30 am
+                    to 11:30 pm.
+                  </div>
+                  <div className="question">
+                    Do you offer free Wi-Fi, and is it available in all rooms?
+                  </div>
+                  <div className="answer">
+                    Yes, the hotel offers free & very high speed Wi-Fi in all
+                    rooms and entire hotel premises.
+                  </div>
+                  <div className="question">
+                    Do you offer room service, and what are the timings?
+                  </div>
+                  <div className="answer">
+                    Yes, you’ll get 24/7 room service.
+                  </div>
+                  <div className="question">
+                    What types of payment do you accept?
+                  </div>
+                  <div className="answer">
+                    You can pay via Cash, Card, and with payment links. We
+                    accept major credit cards, such as Visa, Mastercard, and
+                    American Express.
+                  </div>
+                  <div className="question">
+                    Are there any additional parking fees?
+                  </div>
+                  <div className="answer">
+                    No, We have on site parking and it is free of cost.
+                  </div>
+                  <div className="question">
+                    Is breakfast available at staybook pinky villa?
+                  </div>
+                  <div className="answer">
+                    Yes, The hotel offers buffet breakfast at rooftop restaurant
+                    between 6:30 am to 11:00 am, apart from breakfast staybook
+                    pinky villa provides different meal plans with the room.
+                  </div>
+                  <div className="answer">EP Plan: Room Only</div>
+                  <div className="answer">
+                    CP Plan: Room with complimentary breakfast
+                  </div>
+                  <div className="answer">
+                    MAP plan: Room with complimentary breakfast and lunch/dinner
+                  </div>
+                  <div className="answer">
+                    AP Plan: Room with complimentary breakfast, lunch and
+                    dinner.
+                  </div>
+                  <div className="answer">
+                    You have to select the meal plans while making the
+                    reservation.
+                  </div>
+                  <div className="question">
+                    Are there any nearby attractions you recommend?
+                  </div>
+                  <div className="answer">
+                    There are so many things to do near Staybook Jyoti Mahal
+                    such as visit Lal Quila, Jama Masjid, Gurudwara Bangla Sahib
+                    eat Delhi’s most famous street food like Chole Bhature,
+                    Chur-Chur naan, Chats, Butter Chicken, banke bihari ka
+                    samosa and gulab jamun and shopping at chandni chowk, karol
+                    bagh, connaught place and sarojini nagar.
+                  </div>
+                  <div className="question">
+                    Do you offer laundry service for guests?
+                  </div>
+                  <div className="answer">
+                    Yes, the property offers paid laundry service for guests.
+                  </div>
+                  <div className="question">
+                    Is there a 24-hour front desk available?
+                  </div>
+                  <div className="answer">
+                    Yes always, the accommodation is provided round the clock
+                    front desk to assist the guest with any needs or requests.
+                  </div>
+                </div>
+              )}
+
+              {hotel.name == "Hotel Aira Xing by Staybook" && (
+                <div className="faqContainer">
+                  <h2 className="heading">FAQs</h2>
+                  <div className="question">
+                    What amenities can I expect from Staybook Aira Xing?
+                  </div>
+                  <div className="answer">
+                    Staybook Aira Xing offers a wide range of amenities such as
+                    free Wi-Fi, cable TV, breakfast (surcharge), free
+                    toiletries, paid airport shuttle, daily cleaning, air
+                    conditioning, a private bathroom, a mini fridge, and a
+                    coffee maker, on-site parking, 24/7 room service, special
+                    view rooms
+                  </div>
+                  <div className="question">
+                    How do I book a room at Staybook Aira Xing?
+                  </div>
+                  <div className="answer">
+                    You can book a room by visiting the staybook.in website or
+                    using booking sites such as Expedia, Hotels.com,
+                    Booking.com, Agoda, MakeMyTrip, Goibibo, Yatra or
+                    EasyMyTrip.
+                  </div>
+                  <div className="question">
+                    How much does it cost for a 1 night stay?
+                  </div>
+                  <div className="answer">
+                    The cost of a stay at Staybook Aira xing varies depending on
+                    the room categories and the date you choose. On an average,
+                    you can expect to pay between 1349 to 1800 per night for the
+                    base category.
+                  </div>
+                  <div className="question">
+                    What is the check-in/check-out time at Staybook Aira Xing?
+                  </div>
+                  <div className="answer">
+                    What is the check-in/check-out time at Staybook Aira Xing?
+                  </div>
+                  <div className="question">Are pets allowed? </div>
+                  <div className="answer">
+                    Pets are allowed at Staybook Aira Xing with an additional
+                    fee of 700/night per pet.
+                  </div>
+                  <div className="question">
+                    What is the cancellation policy?
+                  </div>
+                  <div className="answer">
+                    The accommodation offers free cancellation up to 72 hours
+                    before check-in. After that the hotel will charge 100% of
+                    the total booking amount as the cancellation charge.
+                  </div>
+                  <div className="question">
+                    {" "}
+                    Is breakfast included in the room rate?
+                  </div>
+                  <div className="answer">
+                    If you booked a cp plan then the hotel provides a
+                    complimentary breakfast with the room rate, while others may
+                    charge an additional fee for breakfast
+                  </div>
+                  <div className="question">Is room service available? </div>
+                  <div className="answer">
+                    The property offers round the clock room service
+                  </div>
+                  <div className="question">
+                    Can I expect housekeeping services?
+                  </div>
+                  <div className="answer">
+                    Yes, Staybook aira xing provides daily cleaning on request.
+                  </div>
+                  <div className="question">Is parking free?</div>
+                  <div className="answer">Yes, it is absolutely free.</div>
+                  <div className="question">
+                    What types of rooms are available at Staybook aira xing?
+                  </div>
+                  <div className="answer">
+                    The accommodation offers a variety of room types, such as
+                    deluxe double room, deluxe king room, luxury triple room,
+                    deluxe family rooms. Each room type may have different
+                    amenities and sizes, and the price may vary accordingly.
+                  </div>
+                  <div className="question">
+                    How can I check availability and make a reservation at
+                    Staybook aira xing?
+                  </div>
+                  <div className="answer">
+                    You can check availability and make a reservation at a hotel
+                    by visiting the staybook.in website or using a travel
+                    booking site such as Expedia or Booking.com.
+                  </div>
+                  <div className="question">Is smoking and non-smoking ?</div>
+                  <div className="answer">
+                    Yes, we have both smoking and non-smoking available.
+                  </div>
+                </div>
+              )}
+
+              {/* {hotel.name == "Hotel Aira Xing by Staybook" && (
+                <div className="faqContainer">
+                  <h2 className="heading">FAQs</h2>
+                  <div className="question">
+                    Is there a 24-hour front desk available?
+                  </div>
+                  <div className="answer">
+                    Yes always, the accommodation is provided round the clock
+                    front desk to assist the guest with any needs or requests.
+                  </div>
+                </div>
+              )} */}
             </div>
             {isMobile && <div ref={scrollRef} style={{ height: "15vh" }}></div>}
             <BookingCard

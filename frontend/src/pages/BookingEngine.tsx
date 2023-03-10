@@ -738,6 +738,106 @@ function App() {
                 </div>
               )}
 
+              {hotel.name ==
+                "Staybook Hotel Jai Balaji New Delhi  Train Station" && (
+                <div className="faqContainer">
+                  <h2 className="heading">FAQs</h2>
+                  <div className="question">
+                    What are check-in and check-out times at Staybook Jai
+                    Balaji?
+                  </div>
+                  <div className="answer">
+                    Generally check-in time is 12:00 noon or later and 11:00 am
+                    or earlier.
+                  </div>
+                  <div className="question">
+                    What are the meal plans offered by Staybook jai balaji?
+                  </div>
+                  <div className="answer">
+                    Staybook jai balaji provide room with different meal plan
+                    such as:
+                    <div className="answer">
+                      CP: room with complimentary breakfast
+                    </div>
+                    <div className="answer">
+                      MAP: room with complimentary breakfast and lunch/dinner
+                    </div>
+                    <div className="answer">
+                      AP: room with complimentary breakfast, lunch and dinner.
+                    </div>
+                    <div className="answer">
+                      You have to just select the meal plan while making the
+                      reservation.
+                    </div>
+                  </div>
+                  <div className="question">
+                    What are the different types available at Staybook jai
+                    balaji?
+                  </div>
+                  <div className="answer">
+                    There are various types of rooms at staybook jai balaji,
+                    including economy double room, deluxe double room, quadruple
+                    family room.
+                  </div>
+                  <div className="question">
+                    What amenities are offered by Staybook jai balaji?{" "}
+                  </div>
+                  <div className="answer">
+                    The hotels offer amenities such as room service, free Wi-Fi,
+                    on-site parking, housekeeping, free Wi-Fi, flat-screen TV,
+                    air conditioning,Tea coffee maker, linen, and private
+                    bathroom, currency exchange and paid airport shuttle to its
+                    guests.
+                  </div>
+                  <div className="question">What is a hotel room rate? </div>
+                  <div className="answer">
+                    The hotel room rate is the cost per night to stay in a
+                    particular room at a hotel. Can I cancel my hotel
+                    reservation? Cancellation policies vary by hotel, but most
+                    allow for free cancellations within a certain time frame
+                    before the check-in date.
+                  </div>
+                  <div className="question">
+                    Is staybook jai balaji pet-friendly?
+                  </div>
+                  <div className="answer">
+                    Yes, pets are allowed with an additional fee of 800/night
+                    per pet
+                  </div>
+                  <div className="question">
+                    Do you offer airport shuttle service?
+                  </div>
+                  <div className="answer">
+                    Yes, Staybook Jai balaji offers paid airport shuttle
+                    service. Guests should check with the hotel directly to see
+                    if this service is available.
+                  </div>
+                  <div className="question">
+                    What is the cancellation policy?
+                  </div>
+                  <div className="answer">
+                    Guests should have to cancel 72 hr prior to the check-in
+                    date otherwise the hotel will charge 100% of the booking
+                    amount as the cancellation charge.
+                  </div>
+                  <div className="question">
+                    Is there a parking facility available?
+                  </div>
+                  <div className="answer">
+                    Yes The hotel has free on-site parking facilities for their
+                    guests.
+                  </div>
+                  <div className="question">
+                    Is the hotel located in a convenient area?
+                  </div>
+                  <div className="answer">
+                    Staybook Jai balaji is located near New Delhi train station
+                    also jama masjid, sadar bazar, chandni chowk, karol bagh,
+                    and connaught place are the some nearest places to the
+                    hotel.
+                  </div>
+                </div>
+              )}
               {/* {hotel.name == "Hotel Aira Xing by Staybook" && (
                 <div className="faqContainer">
                   <h2 className="heading">FAQs</h2>

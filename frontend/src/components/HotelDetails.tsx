@@ -10,7 +10,8 @@ const HotelDetails = (props: any) => {
   let amenityArray1: string[] = amenities.slice(0, chunkSize);
   let amenityArray2: string[] = amenities.slice(chunkSize, 2 * chunkSize);
   let amenityArray3: string[] = amenities.slice(2 * chunkSize);
-  let nearbyPlaces: { nearby_place_name: string, nearby_place_link: string }[] = hotel.hotel_nearby_places;
+  let nearbyPlaces: { nearby_place_name: string; nearby_place_link: string }[] =
+    hotel.hotel_nearby_places;
 
   let places: {
     a: { name: string; link: string };
@@ -102,7 +103,122 @@ const HotelDetails = (props: any) => {
         nearby_place_link: nearLinks[i],
       });
     }
-  } else {
+  } else if (hotel.name == "Staybook Jyoti Mahal A Heritage Hotel") {
+    let allPlaces = [
+      "New Delhi Railway Station 1.2 Km",
+      "Connaught palace 1.9 km",
+      "New Delhi Metro Railway Station 1 Km",
+      "Lal Quila 4.7 Km",
+      "Sadar Bazar 2.2 Km",
+      "Karol Bagh 1.4 km",
+      "RK Ashram Metro Station 500 meters",
+      "Jama Masjid 2.8 km",
+      "Jhandewalan Temple 1.9 km",
+      "National Gandhi Museum 4.0 km",
+      "Raj Ghat 4.4 km",
+      "India Gate 5.0 km",
+      "Indira Gandhi International Airport 13.5 Km",
+      "Humayun Tomb 8.0 Km",
+      "Qutub Minar 15.8 Km",
+      "Jantar Mantar 2.5 km",
+      "Iskcon Temple 14.3 km",
+      "New Delhi Metro Station 1.5 Km",
+      "Hauz Khas 13.2 Km",
+      "Adventure Ice Land 16.5 Km",
+      "Talkatora Park 3.9 Km",
+      "Janpath Market 3.4 Km",
+      "Lotus Temple 15.4 km",
+      "Firoz shah kotla 5.6 Km",
+      "Bangla Sahib Gurdwara 3.2 Km",
+      "Chandni Chowk 3.1 Km",
+      "Chawri Bazar 1.9 Km",
+      "Lodhi Garden 6.7 Km",
+      "Sarojini Nagar 12.9 Km",
+      "Laxmi Nagar Market 9.3 Km",
+      "Delhi Haat INA 13.2 Km",
+      "Shish Ganj Gurdwara 3.1 Km",
+      "National Crafts Museum 6.5 Km",
+      "Kamla Nagar 6.5 Km",
+      "Old Delhi 3.2 Km",
+      "Meena Bazar 4 Km",
+      "Jantar Mantar 2.5 Km",
+      "Tank Road 4.0 Km",
+      "Science Museum 8.1 Km",
+      "Hazrat Nizamuddin 12.2 Km",
+      "Champa Kali 17.4 Km",
+      "Chhatarpur Mandir 19.0 Km",
+    ];
+
+    let nearLinks = [
+      "https://goo.gl/maps/6L41zJtH6Vq3eXDX6",
+      "https://goo.gl/maps/naWwQ5HphoWsL42p6",
+      "https://goo.gl/maps/N66QaVqgbDtic3dT6",
+      "https://goo.gl/maps/TyCYGmhEw1Dk4zkk9",
+      "https://goo.gl/maps/YQELLhHRrGYMvFaPA",
+      "https://goo.gl/maps/VSWHwbYkbsMEvwzy9",
+      "https://goo.gl/maps/m41PBEsY6jCY7ZVH8",
+      "https://goo.gl/maps/kyckfvHc72rGesZG6",
+      "https://goo.gl/maps/LQUE7vqx4Xa1r7Q88",
+      "https://goo.gl/maps/LMdmiFAMmF5Tch6j8",
+      "https://goo.gl/maps/xYXp7F9EDcyqdLFJ9",
+      "https://goo.gl/maps/5hnz89FwPSLi6QVV9",
+      "https://goo.gl/maps/SButfRteZ8QYfJjQ7",
+      "https://goo.gl/maps/53NZ2bSwwCzDSpNaA",
+      "https://goo.gl/maps/MVgoCKqnpbyaUN3m9",
+      "https://goo.gl/maps/GDThw1oTSctyDHycA",
+      "https://goo.gl/maps/RpXrrodF6nKcZnUt5",
+      "https://goo.gl/maps/bF5t7r44rNj7L59S8",
+      "https://goo.gl/maps/Uyvh8fGZU7849bhbA",
+      "https://goo.gl/maps/oikRYRWpT5cobxvA9",
+      "https://goo.gl/maps/72SAJBPVeXrwiido6",
+      "https://goo.gl/maps/6wqXh1B9y6s9jYYD9",
+      "https://goo.gl/maps/dkSrUUMXTiRP7UjM9",
+      "https://goo.gl/maps/wwemN8GVkbTZcXiJ8",
+      "https://goo.gl/maps/pZuuDKoXdNAVoA468",
+      "https://goo.gl/maps/aHzBw79xEA8QJNRN7",
+      "https://goo.gl/maps/Bd3kTsw3kdSZUV1F8",
+      "https://goo.gl/maps/1nk9PTx6Jhwdntez6",
+      "https://goo.gl/maps/nHRaqsipGycpQfYL9",
+      "https://goo.gl/maps/N35L6JUFKwngWVis5",
+      "https://goo.gl/maps/Qfmm7J7T3BPN4C456",
+      "https://goo.gl/maps/Du9Sn4xHL3j9UtLB9",
+      "https://goo.gl/maps/baSdSFujmrgfbrzTA",
+      "https://goo.gl/maps/TZgqFuPFeoc4hqfs6",
+      "https://goo.gl/maps/VCw9uUoQHNnhVSUG7",
+      "https://goo.gl/maps/7D9fnYKjHdrnAteMA",
+      "https://goo.gl/maps/GDThw1oTSctyDHycA",
+      "https://goo.gl/maps/ZpDpgUVrr3ziXKbx5",
+      "https://goo.gl/maps/fQErWWaXBg1Z3cPP7",
+      "https://goo.gl/maps/NEsT365qD51hvwQu9",
+
+      "https://goo.gl/maps/R46BYQte3xSaAhUK9",
+      "https://goo.gl/maps/aHzBw79xEA8QJNRN7",
+    ];
+
+    nearbyPlaces = [];
+    for (let i = 0; i < allPlaces.length; i++) {
+      nearbyPlaces.push({
+        nearby_place_name: allPlaces[i],
+        nearby_place_link: nearLinks[i],
+      });
+    }
+  }
+  // else if (hotel.name == "") {
+  //   let allPlaces = [
+  //     "National Crafts Museum 6.5 Km",
+  //     "Adventure Ice Land 16.5 km",
+  //   ];
+
+  //   let nearLinks = ["dass"];
+  //   nearbyPlaces = [];
+  //   for (let i = 0; i < allPlaces.length; i++) {
+  //     nearbyPlaces.push({
+  //       nearby_place_name: allPlaces[i],
+  //       nearby_place_link: nearLinks[i],
+  //     });
+  //   }
+  // }
+  else {
     // let nearbyPlaces: { nearby_place_name: string, nearby_place_link: string }[] = hotel.hotel_nearby_places;
   }
   if (nearbyPlaces) {

@@ -838,6 +838,221 @@ function App() {
                   </div>
                 </div>
               )}
+              {hotel.name ==
+                "Staybook City Stories New Delhi Train Station" && (
+                <div className="faqContainer">
+                  <h2 className="heading">FAQs</h2>
+                  <div className="question">
+                    What are the check-in and check-out times?
+                  </div>
+                  <div className="answer">
+                    Generally check-in time at Staybook City Stories is 12:00 pm
+                    or later and check-out time 11:00 am or earlier.
+                  </div>
+                  <div className="question">
+                    What amenities does the Staybook City Stories provide?
+                  </div>
+                  <div className="answer">
+                    Staybook City Stories offers a wide variety of amenities
+                    including wifi, free parking, private bathroom, free
+                    toiletries, room service, free toiletries, round-the-clock
+                    help desk, welcome water bottle, breakfast(surcharge),
+                    airport pick & drop (surcharge).
+                  </div>
+                  <div className="question">
+                    What is the room rate per night?
+                  </div>
+                  <div className="answer">
+                    Staybook city stories offer different types of rooms and the
+                    rate fluctuates every day. To check the price visit
+                    https://staybook.in/
+                  </div>
+                  <div className="question">
+                    Is there a restaurant or room service available?
+                  </div>
+                  <div className="answer">
+                    The accommodation does not offer a restaurant but it
+                    provides 24/7 room service to fulfill all the requirements
+                    of its guest.
+                  </div>
+                  <div className="question">
+                    Do you offer laundry service for guests?
+                  </div>
+                  <div className="answer">
+                    Yes, the property offers paid laundry service for guests.
+                  </div>
+                  <div className="question">
+                    What is the cancellation policy?
+                  </div>
+                  <div className="answer">
+                    The property offers free cancellation prior 72 hr before
+                    check-in date after that you might pay 100% of your booking
+                    amount as a cancellation charge.
+                  </div>
+                  <div className="question">
+                    Is there a shuttle service to the airport or nearby
+                    attractions?
+                  </div>
+                  <div className="answer">
+                    Staybook City Stories offer paid shuttle service to the
+                    airport or nearby attractions such as whole Delhi
+                    sightseeing, Jaipur, Agra, Mathura, Vrindavan etc.
+                  </div>
+                  <div className="question">
+                    What types of rooms are available?
+                  </div>
+                  <div className="answer">
+                    The property offers a variety of room types, including
+                    deluxe room, superior double room, deluxe family suite, and
+                    family studio.
+                  </div>
+                  <div className="question">
+                    Is there a complimentary breakfast?
+                  </div>
+                  <div className="answer">
+                    Staybook City Stories provide free breakfast with room, but
+                    you should book room with CP plan.
+                  </div>
+                  <div className="question">
+                    Are pets allowed in Staybook City Stories?
+                  </div>
+                  <div className="answer">
+                    Pets are allowed with the additional charge of 800/pet per
+                    night.
+                  </div>
+                  <div className="question">Is there free Wi-Fi available?</div>
+                  <div className="answer">
+                    Staybook City Stories offers free WiFi in all rooms as well
+                    as whole hotel premises.
+                  </div>
+                  <div className="question">How do I make a reservation?</div>
+                  <div className="answer">
+                    For the best rate book from the staybook.in, you can also
+                    book from b.com, agoda, expedia, goibibo, make my trip.
+                  </div>
+                  <div className="question">
+                    What are the payment modes accepted?
+                  </div>
+                  <div className="answer">
+                    The hotel accepts credit cards, debit cards,payment through
+                    link and cash.
+                  </div>
+                  <div className="question">
+                    Is there a dress code for the Staybook City Stories?
+                  </div>
+                  <div className="answer">
+                    Staybook City Stories have a dress code for their Managers,
+                    waiters, and housekeeping staff.
+                  </div>
+                </div>
+              )}
+              {hotel.name == "Staybook Shivdev New Delhi Railway Station" && (
+                <div className="faqContainer">
+                  <h2 className="heading">FAQs</h2>
+                  <div className="question">
+                    Is there a 24-hour front desk available?What are check-in
+                    and check-out time at Staybook shiv dev international
+                  </div>
+                  <div className="answer">
+                    Check-in time 12:00 noon or later and check-out 11:00 in the
+                    morning or earlier. You can also request for early check-in
+                    and late check-out.
+                  </div>
+                  <div className="question">
+                    Does the hotel offer contactless check-in and check-out?
+                  </div>
+                  <div className="answer">
+                    Yes, since covid-19 the accommodation also offers
+                    contactless check-in and check-out.
+                  </div>
+                  <div className="question">
+                    What is the distance between New Delhi railways station and
+                    Staybook shiv dev international?
+                  </div>
+                  <div className="answer">
+                    100m from new delhi railway station.
+                  </div>
+                  <div className="question">
+                    Is there any room service available?
+                  </div>
+                  <div className="answer">
+                    Yes, The hotel offers round the clock room service to
+                    fulfill the requirements for its guest.
+                  </div>
+                  <div className="question">
+                    Is there a way to communicate with hotel staff from the
+                    room?
+                  </div>
+                  <div className="answer">
+                    Yes, each room has a telephone, you can communicate with the
+                    hotel staff by dialing 9 or 66 or 69
+                  </div>
+                  <div className="question">
+                    Are there any non-smoking and noise free rooms available?
+                  </div>
+                  <div className="answer">
+                    Yes, The property has non-smoking and noise free rooms.
+                  </div>
+                  <div className="question">
+                    What are the different types available at Staybook shiv dev
+                    international?
+                  </div>
+                  <div className="answer">
+                    There are 5 types of rooms at staybook shiv dev, including
+                    deluxe room, executive double room, deluxe suite with
+                    bathtub, deluxe triple room, and deluxe family room.
+                  </div>
+                  <div className="question">
+                    What amenities are offered by Staybook shiv dev
+                    international?
+                  </div>
+                  <div className="answer">
+                    The hotels offer amenities such as room service, free Wi-Fi,
+                    on-site parking, housekeeping, free Wi-Fi, flat-screen TV,
+                    air conditioning,Tea coffee maker, linen, and private
+                    bathroom, currency exchange and paid airport shuttle to its
+                    guests.
+                  </div>
+                  <div className="question">
+                    Are there any additional fees or charges?
+                  </div>
+                  <div className="answer">
+                    As per the central govt of India guests should have to pay
+                    12% GST additional charges beyond the room rate.
+                  </div>
+                  {/* <div className="question">
+                    Is early check-in or late check-out possible?
+                  </div>
+                  <div className="answer"></div> */}
+                  <div className="question">
+                    Does Staybook shiv dev have accessibility features for
+                    guests with disabilities?
+                  </div>
+                  <div className="answer">
+                    Yes, the hotel has an elevator for guests with disabilities
+                    or in general.
+                  </div>
+                  <div className="question">
+                    Are pets allowed at Staybook shiv dev?
+                  </div>
+                  <div className="answer">
+                    Pets are allowed with an additional fee of 900/pet per
+                    night.
+                  </div>
+                  <div className="question">What is the price range? </div>
+                  <div className="answer">
+                    The price of rooms changes according to the room and
+                    selected date, in general the rate of the base category is
+                    1500/night per room.
+                  </div>
+                  <div className="question">
+                    Is it necessary to tip the staff at Staybook shiv dev?
+                  </div>
+                  <div className="answer">
+                    Tipping is not mandatory, but appreciated for good service.
+                  </div>
+                </div>
+              )}
               {/* {hotel.name == "Hotel Aira Xing by Staybook" && (
                 <div className="faqContainer">
                   <h2 className="heading">FAQs</h2>

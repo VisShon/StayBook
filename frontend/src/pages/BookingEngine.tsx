@@ -130,25 +130,176 @@ function App() {
     <>
       {hotel ? (
         <>
-          <Helmet>
-            <title>{hotel.meta_title ? hotel.meta_title : hotel.name}</title>
-            <meta
-              name="description"
-              content={
-                hotel.meta_desc
-                  ? hotel.meta_desc
-                  : "StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels"
-              }
-            />
-            <meta
-              name="robots"
-              content={
-                hotel.meta_desc
-                  ? hotel.meta_desc
-                  : "StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels"
-              }
-            />
-          </Helmet>
+          {hotel.name == "Staybook@South Delhi" && (
+            <Helmet>
+              <title>
+                {"Best Couple-friendly Hotel in South Delhi - Staybook.in"}
+              </title>
+              <meta
+                name="description"
+                content="Experience a romantic getaway at our couple-friendly hotel. Enjoy comfortable rooms, intimate amenities, and a welcoming atmosphere."
+              />
+              <meta
+                name="robots"
+                content="Experience a romantic getaway at our couple-friendly hotel. Enjoy comfortable rooms, intimate amenities, and a welcoming atmosphere."
+              />
+            </Helmet>
+          )}
+          {hotel.name == "Staybook BlueSky Camp, Manali" && (
+            <Helmet>
+              <title>{"Best Budget Hotel in Manali - Feel the height"}</title>
+              <meta
+                name="description"
+                content="Treat yourself to a luxurious getaway with our camp. Enjoy exceptional services, fine dining, and best amenities for a truly relaxing vacation."
+              />
+              <meta
+                name="robots"
+                content="Treat yourself to a luxurious getaway with our camp. Enjoy exceptional services, fine dining, and best amenities for a truly relaxing vacation."
+              />
+            </Helmet>
+          )}
+          {hotel.name == "Staybook WoodsView Mall Road Mussorie" && (
+            <Helmet>
+              <title>
+                {
+                  "Experience the Best of Nature at our Mountain View Hotel - Staybook.in"
+                }
+              </title>
+              <meta
+                name="description"
+                content="Make your next vacation memorable at the mountain. Enjoy kid-friendly amenities, fun activities, and comfortable accommodations."
+              />
+              <meta
+                name="robots"
+                content="Make your next vacation memorable at the mountain. Enjoy kid-friendly amenities, fun activities, and comfortable accommodations."
+              />
+            </Helmet>
+          )}
+          {hotel.name == "Staybook Shivdev New Delhi Railway Station" && (
+            <Helmet>
+              <title>
+                {
+                  "Perfect Hotel For Your Next Trip, Affordable & Comfortable - Staybook.in"
+                }
+              </title>
+              <meta
+                name="description"
+                content="Experience comfort and convenience. Enjoy spacious rooms, On-Site dining, and top-notch amenities at an affordable price. Perfect for business and leisure travelers."
+              />
+              <meta
+                name="robots"
+                content="Experience comfort and convenience. Enjoy spacious rooms, On-Site dining, and top-notch amenities at an affordable price. Perfect for business and leisure travelers."
+              />
+            </Helmet>
+          )}
+          {hotel.name == "Staybook City Stories New Delhi Train Station" && (
+            <Helmet>
+              <title>{"Staybook City Stories New Delhi Train Station"}</title>
+              <meta
+                name="description"
+                content="StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels"
+              />
+              <meta
+                name="robots"
+                content="StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels"
+              />
+            </Helmet>
+          )}
+          {hotel.name ==
+            "Staybook Hotel Jai Balaji New Delhi  Train Station" && (
+            <Helmet>
+              <title>
+                {"Best Affordable Hotel in Paharganj - Staybook.in"}
+              </title>
+              <meta
+                name="description"
+                content="The hotel offers Breakfast, easy access, WiFi throughout, 24/7 room service, Paid Airport Transfer and Money exchange. "
+              />
+              <meta
+                name="robots"
+                content="The hotel offers Breakfast, easy access, WiFi throughout, 24/7 room service, Paid Airport Transfer and Money exchange. "
+              />
+            </Helmet>
+          )}
+          {hotel.name == "Staybook Hotel Pinky Villa" && (
+            <Helmet>
+              <title>
+                {
+                  "Most Booked Hotel Near New Delhi Railway Station- Staybook.in"
+                }
+              </title>
+              <meta
+                name="description"
+                content="A boutique pure white hotel that features wooden furniture, buffet breakfast on rooftop, AC, WiFi and Car Parking. Grab the Deal now."
+              />
+              <meta
+                name="robots"
+                content="A boutique pure white hotel that features wooden furniture, buffet breakfast on rooftop, AC, WiFi and Car Parking. Grab the Deal now."
+              />
+            </Helmet>
+          )}
+          {hotel.name == "Staybook Atlanta New Delhi Train Station" && (
+            <Helmet>
+              <title>{"Staybook Atlanta New Delhi Train Station"}</title>
+              <meta
+                name="description"
+                content="StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels"
+              />
+              <meta
+                name="robots"
+                content="StayBook Booking engine for Hotels enabled with high speed wifi throughout. There are different wifi connections on different floors. The guest can find the wifi passwords on the wifi cards inside of their rooms we have a specialized work station for our guests with high speed cables. Delhi hotels"
+              />
+            </Helmet>
+          )}
+          {hotel.name == "Hotel Aira Xing by Staybook" && (
+            <Helmet>
+              <title>
+                {"Best Family-Friendly Hotel in Paharganj- Staybook.in"}
+              </title>
+              <meta
+                name="description"
+                content="The hotel is designed for families, no two rooms alike, each one is unique in itself and features Breakfast, WiFi, Carking, City View, Lift, Airport Shuttle. Book Now pay later."
+              />
+              <meta
+                name="robots"
+                content="The hotel is designed for families, no two rooms alike, each one is unique in itself and features Breakfast, WiFi, Carking, City View, Lift, Airport Shuttle. Book Now pay later."
+              />
+            </Helmet>
+          )}
+          {hotel.name == "Staybook Jyoti Mahal A Heritage Hotel" && (
+            <Helmet>
+              <title>
+                {
+                  "4 star Hotel in Paharganj, Best Heritage Hotel in New Delhi - 100% Free Cancellation"
+                }
+              </title>
+              <meta
+                name="description"
+                content="The hotel depicts a Rajasthani lifestyle near New Delhi Railway Station in design, luxury, perfect view of the lush green courtyard from the room itself. Book now for the best price."
+              />
+              <meta
+                name="robots"
+                content="The hotel depicts a Rajasthani lifestyle near New Delhi Railway Station in design, luxury, perfect view of the lush green courtyard from the room itself. Book now for the best price."
+              />
+            </Helmet>
+          )}
+          {hotel.name == "Corbett Paradiso Resort By Staybook" && (
+            <Helmet>
+              <title>
+                {
+                  "Corbett Paradiso Resort By Staybook at 2999 I Jim Corbett - Staybook.in"
+                }
+              </title>
+              <meta
+                name="description"
+                content="Offers a unique luxury, comfort, and natural experience. With beautifully well designed rooms and quick service featuring furnished rooms are equipped with all required amenities."
+              />
+              <meta
+                name="robots"
+                content="Offers a unique luxury, comfort, and natural experience. With beautifully well designed rooms and quick service featuring furnished rooms are equipped with all required amenities."
+              />
+            </Helmet>
+          )}
 
           {!isMinimized ? (
             <div className="comparator">

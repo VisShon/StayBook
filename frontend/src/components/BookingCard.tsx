@@ -19,8 +19,31 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { checkInContext, checkOutContext } from "../App";
 import { numberOfChildren } from "../app/priceSlice";
 import Spinner from "./Spinner";
+import HotelContext from "../context/hotel-context";
 
-function BookingCard({ hotelName, address, cardRef }: any) {
+function addNDay(startDate: string | number | Date, numOfDays: number) {
+  const result = new Date(startDate);
+  result.setDate(result.getDate() + Number(numOfDays));
+  return result;
+}
+
+function getDateDifference(checkInDate: string | number | Date, checkOutDate: string | number | Date) {
+  var timeDiff = new Date(checkOutDate).getTime() - new Date(checkInDate).getTime();
+  var dayDiff =  timeDiff / (1000 * 3600 * 24);
+
+  return dayDiff;
+}
+
+function BookingCard({
+  hotelName,
+  address,
+  cardRef,
+  hotelId,
+  hotelNameSlug,
+  checkInVal,
+  checkOutVal,
+}: any) {
+  const hotelCtx = React.useContext(HotelContext);
   const ref: string = new URL(window.location.href).pathname;
 
   let today = new Date();
@@ -55,8 +78,8 @@ function BookingCard({ hotelName, address, cardRef }: any) {
   const [isPaid, setIsPaid] = useState<boolean>(false);
   const [noSelected, setNoSelected] = useState<boolean>(false);
   const [noContact, setNoContact] = useState<boolean>(false);
-  const [fullname, setFullname] = useState<any>("")
-  const [useremail, setUserEmail] = useState<any>("")
+  const [fullname, setFullname] = useState<any>("");
+  const [useremail, setUserEmail] = useState<any>("");
 
   const { username, email, phone, Login } =
     useContext<AuthContextProps>(AuthContext);
@@ -115,7 +138,7 @@ function BookingCard({ hotelName, address, cardRef }: any) {
     } = await axios.get("/get-bearer");
 
     let templateParams = {
-      to_name: (username ? sessionStorage.getItem("email") : useremail),
+      to_name: username ? sessionStorage.getItem("email") : useremail,
       hotelName: hotelName,
       checkIn: checkIn!.toLocaleDateString(),
       checkOut: checkOut!.toLocaleDateString(),
@@ -128,7 +151,10 @@ function BookingCard({ hotelName, address, cardRef }: any) {
       guests: guests.toString(),
       hotelContact: "+918373929299",
       address: address,
-      status: `Amount due: ₹${price}, Pay now to save extra ₹${Math.min(175, (0.05 * price))}-`,
+      status: `Amount due: ₹${price}, Pay now to save extra ₹${Math.min(
+        175,
+        0.05 * price
+      )}-`,
       customerContact: contact,
     };
     try {
@@ -218,8 +244,8 @@ function BookingCard({ hotelName, address, cardRef }: any) {
       await axios.post(
         `/api${ref}/setReservations`,
         {
-          username: (username ? username : fullname),
-          email: (username ? email : useremail),
+          username: username ? username : fullname,
+          email: username ? email : useremail,
           checkIn: checkIn,
           checkOut: checkOut,
           amountPaid: price.toString() + "(To be Paid)",
@@ -260,17 +286,23 @@ function BookingCard({ hotelName, address, cardRef }: any) {
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 label="Check In"
-                value={checkIn}
+                value={checkInVal}
                 minDate={new Date()}
                 onChange={(newValue: any) => {
+                  hotelCtx.checkIn = newValue;
+                  hotelCtx.numOfNights = getDateDifference(newValue, hotelCtx.checkOut);
                   setCheckIn(newValue);
                   setcheckInGlobal(newValue);
-                  tempDate.setDate(newValue.getDate()+1)
+                  tempDate.setDate(newValue.getDate() + 1);
                   setinitCheckout(tempDate);
                   dispatch(resetPlans());
                   dispatch(numberOfChildren("0"));
-                  var element = document.querySelector("#toOpen")?.querySelector("button");
+                  var element = document
+                    .querySelector("#toOpen")
+                    ?.querySelector("button");
                   simulateMouseClick(element);
+
+                  // navigate(`/hotel/google/list/${hotelId}`);
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />
@@ -281,14 +313,15 @@ function BookingCard({ hotelName, address, cardRef }: any) {
               <DatePicker
                 views={["day", "month"]}
                 label="Check Out"
-                value={checkOut}
+                value={checkOutVal}
                 minDate={initCheckout}
                 onChange={(newValue: any) => {
+                  hotelCtx.checkOut = newValue;
+                  hotelCtx.numOfNights = getDateDifference(hotelCtx.checkIn, newValue);
                   setCheckOut(newValue);
                   setcheckOutGlobal(newValue);
                   dispatch(resetPlans());
                   dispatch(numberOfChildren("0"));
-                 
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />

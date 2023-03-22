@@ -371,7 +371,8 @@ function App() {
                 cardRef={ref}
                 hotelName={hotel.name}
                 address={hotel.address}
-                hotelSlug={slug_name}
+                hotelId={hotelId}
+                hotelNameSlug={slug_name}
                 checkInVal={checkin}
                 checkOutVal={checkout}
               />

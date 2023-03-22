@@ -130,8 +130,6 @@ function App() {
       setnum_guests(Number(searchParams?.split("&")[2].split("=")[1]));
       sethotel_id(String(searchParams?.split("&")[3].split("=")[1]));
       setslug_name(getHotelNameFromHotelId(Number(hotel_id)));
-      // setcheckin(new Date(searchParams?.split("&")[0].split("=")[1]));
-      // setcheckin(format(hotelCtx.checkIn as Date, 'dd/MM/yyyy'))
       console.log(Number(searchParams?.split("&")[2].split("=")[1]));
       console.log(String(searchParams?.split("&")[3].split("=")[1]));
       console.log(getHotelNameFromHotelId(Number(hotel_id)));
@@ -374,8 +372,8 @@ function App() {
                 hotelName={hotel.name}
                 address={hotel.address}
                 hotelSlug={slug_name}
-                checkInVal={params.bookInDate}
-                checkOutVal={params.bookOutDate}
+                checkInVal={checkin}
+                checkOutVal={checkout}
               />
               {isMobile && !inView && isMobVisible && (
                 <MobileBookingCard scrollToCard={scrollToCard} />

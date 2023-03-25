@@ -54,20 +54,20 @@ app.get('/*', (req, res) => {
 
 app.use(errorHandler);
 console.log('Starting')
- //app.listen(8000, () => console.log("Listening on 8000"));
+ app.listen(8000, () => console.log("Listening on 8000"));
 
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/staybook.in/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/staybook.in/fullchain.pem', 'utf8');
+// const privateKey = fs.readFileSync('/etc/letsencrypt/live/staybook.in/privkey.pem', 'utf8');
+// const certificate = fs.readFileSync('/etc/letsencrypt/live/staybook.in/fullchain.pem', 'utf8');
 
-const credentials = {
-  key: privateKey,
-  cert: certificate,
-};
+// const credentials = {
+//   key: privateKey,
+//   cert: certificate,
+// };
 
-const httpsServer = https.createServer(credentials, app);
-const redirector = express();
-redirector.get('*', (req, res) => res.redirect("https://" + req.headers.host + req.url));
-const httpServer = require('http').createServer(redirector);
+// const httpsServer = https.createServer(credentials, app);
+// const redirector = express();
+// redirector.get('*', (req, res) => res.redirect("https://" + req.headers.host + req.url));
+// const httpServer = require('http').createServer(redirector);
 
-httpServer.listen(80, () => console.log("Listening on 80 HTTP Redirect"));
-httpsServer.listen(443, () => console.log("Listening on 443 HTTPS"));
+// httpServer.listen(80, () => console.log("Listening on 80 HTTP Redirect"));
+// httpsServer.listen(443, () => console.log("Listening on 443 HTTPS"));

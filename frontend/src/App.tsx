@@ -3,6 +3,7 @@ import NavBar from "./components/home/Navbar";
 import TeamPage from "./components/TeamPage";
 import Footer from "./components/home/Footer";
 import BookingEngine from "./pages/BookingEngine";
+import OldBookingEngine from './pages/OldBookingEngine';
 import Packages from "./pages/Packages";
 import ContactUs from "./pages/ContactUs";
 import Profile from "./pages/Profile";
@@ -65,7 +66,7 @@ export function App() {
                   <Route path="/FAQ" element={<FAQ />} />
                   <Route path="/refundpolicy" element={<RefundPolicy />} />
                   <Route path="/generalpolicy" element={<GeneralPolicy />} />
-                  {/* <Route path="/:slug" element={<BookingEngine />} /> */}
+                  <Route path="/:slug" element={<OldBookingEngine />} />
                   <Route path="/hotel/google/list/:hotelId/:searchParams" element={<BookingEngine />} />
                   {/* <Route path="/:slug/:bookInDate/:bookOutDate" element={<BookingEngine />} /> */}
                   <Route path="/hotels/:slug" element={<Hotels />} />

@@ -22,40 +22,6 @@ import Spinner from '../components/Spinner';
 import useMobile from '../hooks/UseMobile'
 import { format } from 'date-fns'
 
-const hotelMap = {
-  "aira-xing": 24669,
-  "jyoti-mahal": 25095,
-  "jai-balaji": 23690,
-  "pinky-villa": 23540,
-  "atlanta-near-new-delhi-train-station": 4,
-  "staybook-woods-view": 5,
-  "shiv-dev": 6,
-  "staybook-blue-sky-camp": 7,
-  "staybook-south-delhi": 23719,
-  "staybook-city-stories-new-delhi-train-station": 9,
-};
-
-function getHotelUniqueId(hotelName: string) {
-  if (hotelName === "aira-xing") {
-    return "24669";
-  }
-  else if (hotelName === "jyoti-mahal") {
-    return "25095";
-  }
-  else if (hotelName === "jai-balaji") {
-    return "23690";
-  }
-  else if (hotelName === "pinky-villa") {
-    return "23540";
-  }
-  else if (hotelName === "staybook-south-delhi") {
-    return "23719";
-  }
-  else {
-    return "12345";
-  }
-}
-
 function getHotelNameFromHotelId(hotelId: number) {
   if (hotelId === 24669) {
     return "aira-xing";

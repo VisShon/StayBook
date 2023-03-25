@@ -28,7 +28,10 @@ export default function Footer() {
         <div className="logoCircle">
           <img src={logo} alt={"StayBook"} />
           <div className="line"></div>
-          <p>2022 © StayBook, New Delhi. All rights reserved</p>
+          <p>
+            2023 © Staybook.in Hospitality PVT LTD., New Delhi. All
+            rights reserved
+          </p>
           <a href="Tel: +91-8373929299">Ph. no: +91-8373929299</a>
           <a href="mailto: booking@staybook.in">booking@staybook.in</a>
         </div>

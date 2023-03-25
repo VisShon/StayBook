@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { addPlan, removePlan } from "../app/planSlice";
 import '../styles/App.scss'
 import '../styles/BookingEngine.scss'
 import Amneties from '../components/Ameneties'
@@ -82,6 +84,7 @@ function App() {
     const [isMobVisible, setIsMobvisible] = useState(true)
     const isMobile = useMobile()
 
+    const dispatch = useAppDispatch();
     useEffect(() => {
       console.log(params);
       var splitArr = searchParams?.split("&");
@@ -168,7 +171,15 @@ function App() {
           hotel_nearby_places[]
         }`
           )
-          .then((data) => setHotel(data[0]));
+          .then((data) => {
+            setHotel(data[0])
+            if (hotel.rooms) {
+               console.log("Here")
+               console.log(hotel.rooms[0].plans[0]);
+               var defaultPlan = hotel.rooms[0].plans[0];
+               dispatch(addPlan(defaultPlan));
+             }
+          });
     }, [params, slug_name])
 
     const MinPrice = () => {
@@ -193,6 +204,8 @@ function App() {
         setIsMobvisible(true)
       }
     }, [entry])
+  
+ 
 
     return (
       <>

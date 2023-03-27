@@ -6,7 +6,6 @@ import emailjs from "@emailjs/browser";
 import Button from "./Button";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useAppSelector } from "../app/hooks";
@@ -21,6 +20,13 @@ import { numberOfChildren } from "../app/priceSlice";
 import Spinner from "./Spinner";
 import HotelContext from "../context/hotel-context";
 
+
+import {
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
+import { format } from "date-fns";
+
 function addNDay(startDate: string | number | Date, numOfDays: number) {
   const result = new Date(startDate);
   result.setDate(result.getDate() + Number(numOfDays));
@@ -31,7 +37,16 @@ function getDateDifference(checkInDate: string | number | Date, checkOutDate: st
   var timeDiff = new Date(checkOutDate).getTime() - new Date(checkInDate).getTime();
   var dayDiff =  timeDiff / (1000 * 3600 * 24);
 
-  return dayDiff;
+  return Math.ceil(dayDiff);
+}
+
+function getDateFormatToUrl(givenDate: string | number | Date) {
+  const result = format(new Date(givenDate), 'dd/MM/yyyy');
+  var d00 = result.toString().split("/")[0];
+  var d01 = result.toString().split("/")[1];
+  var d02 = result.toString().split("/")[2];
+  
+  return `${d00}-${d01}-${d02}`;
 }
 
 function BookingCard({
@@ -44,7 +59,19 @@ function BookingCard({
   checkOutVal,
 }: any) {
   const hotelCtx = React.useContext(HotelContext);
+  const navigate = useNavigate();
   const ref: string = new URL(window.location.href).pathname;
+  // const navigate = useNavigate();
+  // var checkIn = format(hotelCtx.checkIn as Date, 'dd/MM/yyyy');
+  // var checkOut = format(hotelCtx.checkOut as Date, 'dd/MM/yyyy');
+  // var checkInSplit = checkIn.toString().split("/");
+  // var checkOutSplit = checkOut.toString().split("/");
+  // var checkInInfo = `${checkInSplit[0]}-${checkInSplit[1]}-${checkInSplit[2]}`;
+  // var checkOutInfo = `${checkOutSplit[0]}-${checkOutSplit[1]}-${checkOutSplit[2]}`;
+  // const [searchParams, setSearchParams] = useSearchParams({checkin: checkInInfo, num_nights: hotelCtx.numOfNights.toString(), num_guests: hotelCtx.numOfGuests.toString(), hotel_id: hotelId});
+
+  // const [searchParams, setSearchParams] = useSearchParams({checkin: String(hotelCtx.checkIn), num_nights: String(hotelCtx.numOfNights), num_guests: String(hotelCtx.numOfGuests), hotel_id: hotelId});
+  // const [searchParams, setSearchParams] = useSearchParams({checkin: getDateFormatToUrl(hotelCtx.checkIn), num_nights: String(hotelCtx.numOfNights), num_guests: String(hotelCtx.numOfGuests), hotel_id: hotelId});
 
   let today = new Date();
   let tomorrow = new Date();
@@ -65,8 +92,8 @@ function BookingCard({
   const [checkOut, setCheckOut] = useState<Date | null>(
     CheckOutDate ? new Date(CheckOutDate) : tomorrow
   );
-  setcheckInGlobal(checkIn);
-  setcheckOutGlobal(checkOut);
+  setcheckInGlobal(hotelCtx.checkIn);
+  setcheckOutGlobal(hotelCtx.checkOut);
 
   const dispatch = useAppDispatch();
   const withoutTax = useAppSelector((state) => state.price.withoutTax);
@@ -83,8 +110,6 @@ function BookingCard({
 
   const { username, email, phone, Login } =
     useContext<AuthContextProps>(AuthContext);
-
-  const navigate = useNavigate();
 
   const mouseClickEvents = ["mousedown", "click", "mouseup"];
   function simulateMouseClick(element: any) {
@@ -119,7 +144,7 @@ function BookingCard({
       return;
     }
 
-    if (Plans.length == 0) {
+    if (Plans.length === 0) {
       setNoSelected(true);
       setTimeout(() => {
         setNoSelected(false);
@@ -286,11 +311,16 @@ function BookingCard({
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 label="Check In"
-                value={checkInVal}
+                value={hotelCtx.checkIn}
                 minDate={new Date()}
                 onChange={(newValue: any) => {
                   hotelCtx.checkIn = newValue;
-                  hotelCtx.numOfNights = getDateDifference(newValue, hotelCtx.checkOut);
+                  // hotelCtx.numOfNights = getDateDifference(newValue, hotelCtx.checkOut);
+                  console.log(`ci: ${newValue}`);
+
+                  // setSearchParams({checkin: getDateFormatToUrl(newValue), num_nights: String(getDateDifference(newValue, hotelCtx.checkOut)), num_guests: String(hotelCtx.numOfGuests), hotel_id: hotelId});
+                  // console.log(searchParams.get('checkin'));
+
                   setCheckIn(newValue);
                   setcheckInGlobal(newValue);
                   tempDate.setDate(newValue.getDate() + 1);
@@ -301,8 +331,9 @@ function BookingCard({
                     .querySelector("#toOpen")
                     ?.querySelector("button");
                   simulateMouseClick(element);
-
-                  // navigate(`/hotel/google/list/${hotelId}`);
+                  
+                  var hotelUrl = `checkin=${getDateFormatToUrl(newValue)}&num_nights=${getDateDifference(newValue, hotelCtx.checkOut)}&num_guests=${hotelCtx.numOfGuests}&hotel_id=${hotelId}`;
+                  navigate(`/hotel/google/list/${hotelId}/${hotelUrl}`);
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />
@@ -313,15 +344,26 @@ function BookingCard({
               <DatePicker
                 views={["day", "month"]}
                 label="Check Out"
-                value={checkOutVal}
+                value={hotelCtx.checkOut}
                 minDate={initCheckout}
                 onChange={(newValue: any) => {
                   hotelCtx.checkOut = newValue;
                   hotelCtx.numOfNights = getDateDifference(hotelCtx.checkIn, newValue);
+                  console.log(`co: ${newValue}`);
+
+                  // setSearchParams({checkin: getDateFormatToUrl(hotelCtx.checkIn), num_nights: String(getDateDifference(hotelCtx.checkIn, newValue)), num_guests: String(hotelCtx.numOfGuests), hotel_id: hotelId});
+                  // console.log(searchParams.get('checkin'));
+
                   setCheckOut(newValue);
                   setcheckOutGlobal(newValue);
                   dispatch(resetPlans());
                   dispatch(numberOfChildren("0"));
+                  console.log(hotelCtx.checkIn);
+                  console.log("New Value of Date" + newValue);
+                  console.log(getDateDifference(hotelCtx.checkIn, newValue));
+                  
+                  var hotelUrl = `checkin=${getDateFormatToUrl(hotelCtx.checkIn)}&num_nights=${getDateDifference(hotelCtx.checkIn, newValue)}&num_guests=${hotelCtx.numOfGuests}&hotel_id=${hotelId}`;
+                  navigate(`/hotel/google/list/${hotelId}/${hotelUrl}`);
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />

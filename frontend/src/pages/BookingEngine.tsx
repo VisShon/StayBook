@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { addPlan, removePlan } from "../app/planSlice";
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import '../styles/App.scss'
 import '../styles/BookingEngine.scss'
 import Amneties from '../components/Ameneties'
@@ -23,8 +21,48 @@ import { useInView } from 'react-intersection-observer';
 import Spinner from '../components/Spinner';
 import useMobile from '../hooks/UseMobile'
 import { format } from 'date-fns'
+import HotelContext from '../context/hotel-context'
+import { checkInContext, checkOutContext } from '../App'
+
+const hotelMap = {
+  "aira-xing": 24669,
+  "jyoti-mahal": 25095,
+  "jai-balaji": 23690,
+  "pinky-villa": 23540,
+  "atlanta-near-new-delhi-train-station": 24712,
+  "staybook-woods-view": 5,
+  "shiv-dev": 6,
+  "staybook-blue-sky-camp": 7,
+  "staybook-south-delhi": 23719,
+  "staybook-city-stories-new-delhi-train-station": 9,
+};
+
+function getHotelUniqueId(hotelName: string) {
+  if (hotelName === "aira-xing") {
+    return "24669";
+  }
+  else if (hotelName === "jyoti-mahal") {
+    return "25095";
+  }
+  else if (hotelName === "jai-balaji") {
+    return "23690";
+  }
+  else if (hotelName === "pinky-villa") {
+    return "23540";
+  }
+  else if (hotelName === "atlanta-near-new-delhi-train-station") {
+    return "24712";
+  }
+  else if (hotelName === "staybook-south-delhi") {
+    return "23719";
+  }
+  else {
+    return "12345";
+  }
+}
 
 function getHotelNameFromHotelId(hotelId: number) {
+  console.log("Hotel Id " + hotelId);
   if (hotelId === 24669) {
     return "aira-xing";
   }
@@ -48,6 +86,31 @@ function getHotelNameFromHotelId(hotelId: number) {
   }
 }
 
+function getHotelNameFromStringHotelId(hotelId: string) {
+  console.log("Hotel Id " + hotelId);
+  if (hotelId === "24669") {
+    return "aira-xing";
+  }
+  else if (hotelId === "25095") {
+    return "jyoti-mahal";
+  }
+  else if (hotelId === "23690") {
+    return "jai-balaji";
+  }
+  else if (hotelId === "24712") {
+    return "atlanta-near-new-delhi-train-station";
+  }
+  else if (hotelId === "23540") {
+    return "pinky-villa";
+  }
+  else if (hotelId === "23719") {
+    return "staybook-south-delhi";
+  }
+  else {
+    return "shiv-dev";
+  }
+}
+
 function addNDay(startDate: string | number | Date, numOfDays: number) {
   const result = new Date(startDate);
   result.setDate(result.getDate() + Number(numOfDays));
@@ -58,10 +121,11 @@ function getDateDifference(checkInDate: string | number | Date, checkOutDate: st
   var timeDiff = new Date(checkOutDate).getTime() - new Date(checkInDate).getTime();
   var dayDiff =  timeDiff / (1000 * 3600 * 24);
 
-  return dayDiff;
+  return Math.ceil(dayDiff);
 }
 
 function App() {
+  const hotelCtx = React.useContext(HotelContext);
     const params = useParams();
     const [hotel, setHotel] = useState<any>(null)
     const { hotelId, searchParams } = useParams()
@@ -69,6 +133,8 @@ function App() {
     const [isMinimized, setIsMinimized] = useState<boolean>(false)
     const guests = sessionStorage.getItem('guests')
     const prices = [150, 160, 90]
+    const [checkInGlobal, setcheckInGlobal] = useContext(checkInContext);
+    const [checkOutGlobal, setcheckOutGlobal] = useContext(checkOutContext);
 
     const [checkin, setcheckin] = useState<Date>();
     const [checkout, setcheckout] = useState<Date>();
@@ -87,11 +153,13 @@ function App() {
     const dispatch = useAppDispatch();
     useEffect(() => {
       console.log(params);
-      var splitArr = searchParams?.split("&");
 
       var checkIn00 = Number(searchParams?.split("&")[0].split("=")[1].split("-")[0]);
-      var checkIn01 = Number(searchParams?.split("&")[0].split("=")[1].split("-")[1]);
+      var checkIn01 = Number(searchParams?.split("&")[0].split("=")[1].split("-")[1]) - Number(1);
       var checkIn02 = Number(searchParams?.split("&")[0].split("=")[1].split("-")[2]);
+      console.log(checkIn00);
+      console.log(checkIn01);
+      console.log(checkIn02);
       var dt = new Date();
       dt.setDate(checkIn00);
       dt.setMonth(checkIn01);
@@ -100,17 +168,33 @@ function App() {
       setcheckout(addNDay(dt, Number(searchParams?.split("&")[1].split("=")[1])));
       setnum_nights(Number(searchParams?.split("&")[1].split("=")[1]));
       setnum_guests(Number(searchParams?.split("&")[2].split("=")[1]));
-      sethotel_id(String(searchParams?.split("&")[3].split("=")[1]));
-      setslug_name(getHotelNameFromHotelId(Number(hotel_id)));
-      console.log(Number(searchParams?.split("&")[2].split("=")[1]));
-      console.log(String(searchParams?.split("&")[3].split("=")[1]));
-      console.log(getHotelNameFromHotelId(Number(hotel_id)));
-      console.log(checkin);
-      console.log(checkout);
+      sethotel_id(String(params.hotelId));
+      setslug_name(getHotelNameFromStringHotelId(String(params.hotelId)));
+      // console.log(Number(searchParams?.split("&")[2].split("=")[1]));
+      // console.log(String(searchParams?.split("&")[3].split("=")[1]));
+      // console.log(getHotelNameFromHotelId(Number(hotel_id)));
+      // console.log(checkin);
+      // console.log(checkout);
+      // console.log(dt);
+
+      hotelCtx.checkIn = dt;
+      hotelCtx.checkOut = addNDay(dt, Number(searchParams?.split("&")[1].split("=")[1]));
+      hotelCtx.numOfNights = Number(searchParams?.split("&")[1].split("=")[1]);
+      hotelCtx.numOfGuests = Number(searchParams?.split("&")[2].split("=")[1]);
+      hotelCtx.hotelId = String(searchParams?.split("&")[3].split("=")[1]);
+
+      setcheckInGlobal(hotelCtx.checkIn);
+      setcheckOutGlobal(hotelCtx.checkOut);
+
+      console.log(hotelCtx.checkIn);
+      console.log(hotelCtx.checkOut);
+      console.log(hotelCtx.numOfNights);
+      console.log(hotelCtx.numOfGuests);
+      console.log(hotelCtx.hotelId);
 
         client
           .fetch(
-            `*[slug.current == "${getHotelNameFromHotelId(Number(hotel_id))}"]{
+            `*[slug.current == "${getHotelNameFromStringHotelId(String(params.hotelId))}"]{
           name,
           meta_title,
           meta_desc,
@@ -171,16 +255,8 @@ function App() {
           hotel_nearby_places[]
         }`
           )
-          .then((data) => {
-            setHotel(data[0])
-            if (hotel.rooms) {
-               console.log("Here")
-               console.log(hotel.rooms[0].plans[0]);
-               var defaultPlan = hotel.rooms[0].plans[0];
-               dispatch(addPlan(defaultPlan));
-             }
-          });
-    }, [params, slug_name])
+          .then((data) => setHotel(data[0]));
+    }, [])
 
     const MinPrice = () => {
         let MinPrice: number = 0

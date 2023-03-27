@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import '../styles/App.scss'
 import '../styles/BookingEngine.scss'
 import Amneties from '../components/Ameneties'
@@ -20,6 +20,7 @@ import {Helmet} from 'react-helmet'
 import { useInView } from 'react-intersection-observer';
 import Spinner from '../components/Spinner';
 import useMobile from '../hooks/UseMobile'
+import { checkInContext, checkOutContext } from '../App'
 
 function OldBookingEngine() {
     const [hotel, setHotel] = useState<any>(null)
@@ -28,6 +29,8 @@ function OldBookingEngine() {
     const [isMinimized, setIsMinimized] = useState<boolean>(false)
     const guests = sessionStorage.getItem('guests')
     const prices = [150, 160, 90]
+    const [checkInGlobal, setcheckInGlobal] = useContext(checkInContext);
+    const [checkOutGlobal, setcheckOutGlobal] = useContext(checkOutContext);
 
     const scrollRef = useRef<HTMLDivElement>(null)
     const { ref, inView, entry } = useInView({
@@ -37,6 +40,7 @@ function OldBookingEngine() {
     const isMobile = useMobile()
 
     useEffect(() => {
+      console.log("Old Booking Engine");
         client
           .fetch(
             `*[slug.current == "${slug}"]{
@@ -101,7 +105,7 @@ function OldBookingEngine() {
         }`
           )
           .then((data) => setHotel(data[0]));
-    }, [slug])
+    }, [])
 
     const MinPrice = () => {
         let MinPrice: number = 0

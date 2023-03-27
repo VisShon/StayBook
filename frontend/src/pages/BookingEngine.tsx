@@ -133,9 +133,6 @@ function App() {
     const [isMinimized, setIsMinimized] = useState<boolean>(false)
     const guests = sessionStorage.getItem('guests')
     const prices = [150, 160, 90]
-    const [checkInGlobal, setcheckInGlobal] = useContext(checkInContext);
-    const [checkOutGlobal, setcheckOutGlobal] = useContext(checkOutContext);
-
     const [checkin, setcheckin] = useState<Date>();
     const [checkout, setcheckout] = useState<Date>();
     const [slug_name, setslug_name] = useState<string>();

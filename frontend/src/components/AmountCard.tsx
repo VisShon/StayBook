@@ -4,6 +4,8 @@ import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { updatePrice, updateWithoutTaxPrice } from "../app/priceSlice";
 
 function AmountCard({ checkIn, checkOut }: any) {
+  console.log(checkIn,checkOut)
+
   const plans = useAppSelector((state) => state.plans.selectedPlans);
   const children = useAppSelector((state) => state.price.children);
   const dispatch = useAppDispatch();

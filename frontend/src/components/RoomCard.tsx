@@ -16,9 +16,9 @@ const prepareImages = (images: any) => {
     return imagesArray
 }
 
-function RoomCard({ room }: any) {
+function RoomCard({ room,checkIn,checkOut }: any) {
     const [modal, setModal] = useState(false)
-    const roomAmenities = room.ameneties.split(", ")
+    const roomAmenities = room.ameneties?.split(", ")
     const images = prepareImages(room.images)
     const isMobile = useMobile()
     return (
@@ -40,8 +40,8 @@ function RoomCard({ room }: any) {
                                 <div>
                                     <h2>What We Offer</h2>
                                     <div className="roomPopUp-ameneties">
-                                        {roomAmenities.map((amenity: any) => (
-                                            <span><CheckIcon fontSize="inherit" /> {amenity}</span>
+                                        {roomAmenities?.map((amenity: any,index:number) => (
+                                            <span key={index}><CheckIcon fontSize="inherit" /> {amenity}</span>
                                         ))}
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@ function RoomCard({ room }: any) {
                     </div>
                     <img src={room.image.asset.url + (isMobile ? '?w=200&h=175': '')} className="roomImage" alt={room.type}/>
                 </div>
-                {room.plans.map((plan: any, i: number) => (
+                {room?.plans.map((plan: any, i: number) => (
                     <PlanCard
                         maxCap={room.totalRooms}
                         room={room.type}
@@ -58,6 +58,8 @@ function RoomCard({ room }: any) {
                         amenities={room.ameneties}
                         guests={room.guests}
                         key={i}
+                        checkIn ={checkIn}
+                        checkOut ={checkOut}
                     />
                 ))}
             </div>

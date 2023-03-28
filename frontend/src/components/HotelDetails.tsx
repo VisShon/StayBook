@@ -33,36 +33,38 @@ const HotelDetails = (props: any) => {
 
     return (
         <div className="hoteldetails">
-            {hotel.hotel_description.map((desc: string) => {
+            {hotel.hotel_description.map((desc: string,index:number) => {
                 let boldIndex = desc.indexOf('-')
                 if (boldIndex != -1) {
-                    return <p><b>{desc.substring(0, boldIndex)}</b> {desc.substring(boldIndex)}</p>
+                    return <p key={index}>
+                            <b>{desc.substring(0, boldIndex)}</b> {desc.substring(boldIndex)}
+                        </p>
                 }
 
-                return <p>{desc}</p>
+                return <p key={index}>{desc}</p>
             })}
             <h2>Hotel Amenities</h2>
             <div className="hotel-amenities">
                 <div>
-                    {amenityArray1.map((amenity: string) => (
-                        <p className="icontext"><CheckIcon fontSize="inherit"/> {amenity}</p>
+                    {amenityArray1.map((amenity: string, index:number) => (
+                        <p className="icontext" key={index}><CheckIcon fontSize="inherit"/> {amenity}</p>
                     ))}
                 </div>
                 <div>
-                    {amenityArray2.map((amenity: string) => (
-                        <p className="icontext"><CheckIcon fontSize="inherit"/> {amenity}</p>
+                    {amenityArray2.map((amenity: string, index:number) => (
+                        <p className="icontext" key={index}><CheckIcon fontSize="inherit"/> {amenity}</p>
                     ))}
                 </div>
                 <div>
-                    {amenityArray3.map((amenity: string) => (
-                        <p className="icontext"><CheckIcon fontSize="inherit"/> {amenity}</p>
+                    {amenityArray3.map((amenity: string, index:number) => (
+                        <p className="icontext" key={index}><CheckIcon fontSize="inherit"/> {amenity}</p>
                     ))}
                 </div>
             </div>
             {nearbyPlaces && (
                 <h2>Nearby Places</h2>)}
-            {places.map((place: any) => (
-                <div className="hotel-nearby-places">
+            {places.map((place: any, index:number) => (
+                <div className="hotel-nearby-places" key={index}>
                     {place.a.name && <a href={place.a.link} target="_blank"><p className="icontext"><PlaceIcon fontSize="inherit"/>{place.a.name}</p></a>}
                     {place.b.name && <a href={place.b.link} target="_blank"><p className="icontext"><PlaceIcon fontSize="inherit"/>{place.b.name}</p></a>}
                 </div>

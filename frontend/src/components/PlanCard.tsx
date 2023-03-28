@@ -48,8 +48,8 @@ function PlanCard({ plan, room, amenities, maxCap, guests, checkIn, checkOut }: 
       )}
       {plan.features ? (
         <div className="features">
-          {plan.features.map((feature: any) => (
-            <span>
+          {plan.features.map((feature: any,index:number) => (
+            <span key={index}>
               <CheckIcon fontSize="inherit" /> {feature}
             </span>
           ))}

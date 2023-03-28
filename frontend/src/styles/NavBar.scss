@@ -210,18 +210,10 @@ li:hover {
     }
 }
 
-.navMobile{
-    // display: none;
-    display: hidden;
-    @media screen and (max-width: 800px) {
-        display: block;
-    }
-}
 .navMobile-box{
     @extend .navMobile;
     padding: 1rem;
     position: absolute;
-    display: flex;
     border: 1px solid $main;
     flex-direction: column;
     justify-content:center;
@@ -230,6 +222,10 @@ li:hover {
     background-color: white !important;
     top: 5rem;
     left:0;
+    display: hidden;
+    @media screen and (max-width: 800px) {
+        display: flex;
+    }
 }
 
 .hidden {

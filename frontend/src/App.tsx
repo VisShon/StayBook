@@ -51,7 +51,7 @@ export function App() {
               <Route path="/refundpolicy" element={<RefundPolicy />} />
               <Route path="/generalpolicy" element={<GeneralPolicy />} />
               <Route path="/:slug" element={<BookingEngine />} />
-              <Route path="/hotel/google/list/:hotelId" element={<BookingEngine />} />
+              <Route path="/hotel/google/list/:slug" element={<BookingEngine />} />
               <Route path="/hotels/:slug" element={<Hotels />} />
               <Route path="/hotels" element={<AllHotels />} />
               <Route path="/hotelbookingconfirmation" element={<Confirmation />}/>

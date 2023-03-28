@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion, useAnimation, useScroll, useSpring } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate, createSearchParams } from 'react-router-dom'
 import '../../../styles/home/BookingCarousel.scss'
 import client from '../../../client'
 import arrow from '../../../images/arrowVector.svg'
@@ -11,6 +11,7 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import Box from '@mui/material/Box'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import { Search } from '@mui/icons-material'
 
 const boxVariant = {
     visible: { opacity: 1, translateY: 0, transition: { duration: .65 } },
@@ -20,10 +21,9 @@ const boxVariant = {
 function BookingCarousel() {
 
     const nav = useNavigate()
-    const [searchParams, setSearchParams] = useSearchParams()
-
     const [checkIn, setCheckIn] = useState(new Date())
-    const [checkOut, setCheckOut] = useState(new Date().setDate(checkIn.getDate()+1))
+    const tommorow = new Date().setDate(checkIn.getDate()+1)
+    const [checkOut, setCheckOut] = useState(new Date(tommorow))
     const [guests, setGuests] = useState(2)
 
     const [data, setData] = useState([])
@@ -77,16 +77,16 @@ function BookingCarousel() {
             return;
         } 
         else {
-          setSearchParams({
-            checkin:checkIn.toISOString('en-IN').replace('/','-'),
-            num_nights:getDateDifference(checkIn,checkOut),
-            num_guests:guests,
-            hotel_id:data[n].slug.current,
-          })
-
+          const checkInParam = checkIn.toISOString('en-IN').replace('/','-')
+          const numNightsParam = getDateDifference(checkIn,checkOut)
           nav({
-            pathname:`/${data[n].slug.current}`,
-            search:searchParams
+            pathname:`${data[n].slug.current}/`,
+            search:createSearchParams({
+              checkin:checkInParam,
+              num_nights:numNightsParam,
+              num_guests:guests,
+              hotel_id:data[n].id,
+            }).toString()
           })
         }
     }
@@ -107,6 +107,7 @@ function BookingCarousel() {
                     `*[_type == "hotel"] {
                       name,
                       slug,
+                      id,
                       description,
                       images[]{
                         asset -> {url},

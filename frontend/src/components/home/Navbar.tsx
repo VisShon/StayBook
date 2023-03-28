@@ -15,6 +15,13 @@ function Navbar() {
   const { decodedToken, isExpired }: any = useJwt(userToken!);
   const [isOpen, setIsOpen] = useState(false);
   var prevScrollpos = window.pageYOffset;
+  const [windowSize, setWindowSize] = useState(0);
+  
+  useEffect(() => {
+    setWindowSize(window.innerWidth);
+  }, []);
+
+
   useEffect(() => {
     window.onscroll = function () {
       var currentScrollPos = window.pageYOffset;
@@ -28,14 +35,6 @@ function Navbar() {
       }
       prevScrollpos = currentScrollPos;
     };
-    // scrollYProgress.onChange((latest) => {
-    //     if(latest<scrollYProgress.getPrevious()){
-    //         navbar.current!.className='navbar';
-    //     }
-    //     else if(latest>=scrollYProgress.getPrevious()){
-    //         navbar.current!.className='navbar-mini';
-    //     };
-    // })
     window.addEventListener('mousemove',()=>{
         navbar.current!.className='navbar';
     })
@@ -80,6 +79,7 @@ function Navbar() {
         />
       </Link>
 
+      {!(windowSize >= 768)&&
       <div className="navMobile noprint">
         <button
           className="hamburger hamburger--collapse"
@@ -91,9 +91,9 @@ function Navbar() {
             <span className="hamburger-inner"></span>
           </span>
         </button>
-      </div>
+      </div>}
 
-      {isOpen && (
+      {isOpen && !(windowSize >= 768)&& (
         <div className="navMobile-box">
           <Dropdown />
           <Link className="item" to="/packages" onClick={collapse}>

@@ -21,31 +21,30 @@ import { useInView } from 'react-intersection-observer';
 import Spinner from '../components/Spinner';
 import useMobile from '../hooks/UseMobile'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
+import { format } from 'date-fns'
 
 
 function App() {
-
+	const [searchParams, setSearchParams] = useSearchParams({});
 	const [checkIn, setCheckIn] = useState<Date>(new Date())
-	const tommorow = new Date().setDate(new Date().getDate()+1)
+	const tommorow = new Date().setDate(checkIn.getDate()+1)
 	const [checkOut, setCheckOut] = useState<Date>(new Date(tommorow))
-	const [guests, setGuests] = useState<number>(-1)
+	const [guests, setGuests] = useState<number|null>(null)
 
 	const isMobile = useMobile()
-	const dispatch = useAppDispatch();
 	const {slug} = useParams()
+
 	
 	const prices = [150, 160, 90]
-	const [searchParams, setSearchParams] = useSearchParams();
 	const [hotel, setHotel] = useState<any>(null)
 	const [gallery, setGallery] = useState<boolean>(false)
 	const [isMinimized, setIsMinimized] = useState<boolean>(false)
 	const [isMobVisible, setIsMobvisible] = useState(true)
-
+	
 	const scrollRef = useRef<HTMLDivElement>(null)
 	const { ref, inView, entry } = useInView({
 	  threshold: 0
 	})
-
 
 	const addNDay = (startDate: Date, numOfDays: string) => {
 		const result = new Date(startDate);
@@ -144,7 +143,7 @@ function App() {
 	}, [entry])
 
 	useEffect(() => {
-		if(searchParams.entries()){
+		if(searchParams.get('checkin')){
 			const checkInParam = new Date(searchParams.get('checkin')!)
 			const numGuestsParam = searchParams.get('num_guests')
 			const numNightsParam = searchParams.get('num_nights')
@@ -290,7 +289,12 @@ function App() {
 				{hotel.rooms
 				  .filter((item: any) => item.guests == guests || !guests)
 				  .map((room: any, i: number) => (
-					<RoomCard room={room} key={i} />
+					<RoomCard 
+						room={room} 
+						key={i} 
+						checkIn={checkIn}
+						checkOut={checkOut}
+					/>
 				  ))}
 				{hotel.hotel_amenities ? <HotelDetails hotel={hotel} /> : null}
 			  </div>
@@ -303,8 +307,11 @@ function App() {
 				address={hotel.address}
 				hotelId={slug}
 				hotelNameSlug={slug}
-				checkInVal={checkIn}
-				checkOutVal={checkOut}
+				guests={guests}
+				checkIn={checkIn}
+				checkOut={checkOut}
+				setCheckIn={setCheckIn}
+				setCheckOut={setCheckOut}
 			  />
 			  {isMobile && !inView && isMobVisible && (
 				<MobileBookingCard scrollToCard={scrollToCard} />

@@ -77,7 +77,7 @@ function BookingCarousel() {
             return;
         } 
         else {
-          const checkInParam = checkIn.toISOString('en-IN').replace('/','-')
+          const checkInParam = checkIn.toLocaleDateString('en-IN').replaceAll('/','-')
           const numNightsParam = getDateDifference(checkIn,checkOut)
           nav({
             pathname:`${data[n].slug.current}/`,
@@ -171,6 +171,7 @@ function BookingCarousel() {
                   <DatePicker
                     label="Check In"
                     value={checkIn}
+                    inputFormat="dd/MM/yyyy"
                     minDate={new Date()}
                     onChange={(newValue) => {
                       setCheckIn(newValue)
@@ -205,6 +206,7 @@ function BookingCarousel() {
                       views={["day", "month"]}
                       label="Check Out"
                       value={checkOut}
+                      inputFormat="dd/MM/yyyy"
                       minDate={new Date().setDate(checkIn.getDate()+1)} //tommorow
                       onChange={(newValue) => setCheckOut(newValue)}
                       renderInput={({ inputRef, inputProps, InputProps }) => (

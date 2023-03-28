@@ -249,6 +249,7 @@ function BookingCard({ hotelName, address, cardRef, hotelId, hotelNameSlug, gues
               <DatePicker
                 label="Check In"
                 value={checkIn}
+				inputFormat="dd/MM/yyyy"
                 minDate={new Date()}
                 onChange={(newValue: any) => {
                     setCheckIn(newValue)
@@ -269,6 +270,7 @@ function BookingCard({ hotelName, address, cardRef, hotelId, hotelNameSlug, gues
                 views={["day", "month"]}
                 label="Check Out"
                 value={checkOut}
+				inputFormat="dd/MM/yyyy"
                 minDate={new Date()}
                 onChange={(newValue: any) => {
                   setCheckOut(newValue);

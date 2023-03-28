@@ -42,6 +42,7 @@
         }
 
         h2 {
+            padding: 0.5rem;            
             text-align: left;
             -webkit-text-fill-color: $grey;
             letter-spacing: 0.5px;
@@ -85,6 +86,8 @@
         }
 
         a {
+            padding-left: 0.5rem;            
+            padding-right: 0.5rem;
             display: flex;
             height: 100%;
             flex-direction: column;
@@ -94,6 +97,8 @@
         }
 
         .ratingContainer {
+            padding-left: 0.5rem;            
+            padding-right: 0.5rem;
             color: $grey2;
             font-family: 'Maven Pro', sans-serif;
             font-size: 1rem;
@@ -109,12 +114,15 @@
         }
 
         .card-amenities {
+            padding: 0.5rem;
             font-size: 1rem;
             margin-top: 1rem;
             margin-bottom: 0;
         }
 
         .card-amenities-icons {
+            padding-left: 0.5rem;            
+            padding-right: 0.5rem;
             display: flex;
             width: 100%;
             align-items: center;
@@ -129,6 +137,8 @@
         }
 
         p {
+            padding-left: 0.5rem;            
+            padding-right: 0.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;

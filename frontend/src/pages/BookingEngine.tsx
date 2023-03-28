@@ -144,7 +144,7 @@ function App() {
 
 	useEffect(() => {
 		if(searchParams.get('checkin')){
-			const checkInParam = new Date(searchParams.get('checkin')!)
+			const checkInParam = new Date(searchParams.get('checkin')?.split("-").reverse().join("-")!)
 			const numGuestsParam = searchParams.get('num_guests')
 			const numNightsParam = searchParams.get('num_nights')
 			const checkOutParam = addNDay(checkInParam, numNightsParam!)

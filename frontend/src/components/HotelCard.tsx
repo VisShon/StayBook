@@ -1,4 +1,4 @@
-import React,{useState, useContext, useEffect} from 'react';
+import {useState} from 'react';
 import '../styles/Hotel.scss';
 import StarIcon from '@mui/icons-material/Star';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -7,7 +7,6 @@ import right from '../images/right.png'
 import vip from '../images/VIP.svg'
 import { format } from 'date-fns'
 import { useNavigate, useSearchParams} from "react-router-dom";
-import HotelContext from '../context/HotelContext';
 
 export type Props ={
   name: string,
@@ -30,12 +29,7 @@ function HotelCard({name,images,rooms,slug,rating,card_amenities,card_amenities_
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [n,setN] =useState(0); 
-  const {checkIn,checkOut,getDateDifference,guests} = useContext(HotelContext);
   const navigate = useNavigate();
-  const checkInDate = checkIn.toLocaleDateString('en-IN')
-                              .replace("/","-");
-  const checkOutDate = checkOut.toLocaleDateString('en-IN')
-                              .replace("/","-");
 
   const onClickHandler = () => {
     setSearchParams({

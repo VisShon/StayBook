@@ -1,13 +1,12 @@
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, useAnimation, useScroll, useSpring } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import '../../../styles/home/BookingCarousel.scss'
 import client from '../../../client'
 import arrow from '../../../images/arrowVector.svg'
 import guest from '../../../images/guests.svg'
 import hotel from '../../../images/hotel.svg'
-import { HotelContext } from '../../../context/HotelContext'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import Box from '@mui/material/Box'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
@@ -19,7 +18,14 @@ const boxVariant = {
 }
 
 function BookingCarousel() {
-    const {guests,setGuests,numOfNights, checkIn, checkOut, getDateDifference, setcheckIn, setcheckOut } = useContext(HotelContext);
+
+    const nav = useNavigate()
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    const [checkIn, setCheckIn] = useState(new Date())
+    const [checkOut, setCheckOut] = useState(new Date(new Date().getDate()+1))
+    const [guests, setGuests] = useState(2)
+
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     const [n, setN] = useState(0)
@@ -27,7 +33,6 @@ function BookingCarousel() {
     const control = useAnimation()
     const [ref, inView] = useInView()
     const mouseClickEvents = ["mousedown", "click", "mouseup"];
-    const nav = useNavigate()
     
     const { scrollY } = useScroll();
     const translateY = useSpring(scrollY, {
@@ -37,8 +42,13 @@ function BookingCarousel() {
         
     });
 
-//num of guest error
-    function simulateMouseClick(element) {
+    const getDateDifference = (checkInDate, checkOutDate) => {
+      var timeDiff = checkOutDate.getTime() - checkInDate.getTime();
+      var dayDiff =  timeDiff / (1000 * 3600 * 24);
+      return Math.ceil(dayDiff);
+    }
+
+    const simulateMouseClick = (element) => {
       mouseClickEvents.forEach((mouseEventType) =>
         element.dispatchEvent(
           new MouseEvent(mouseEventType, {
@@ -57,6 +67,7 @@ function BookingCarousel() {
         restDelta: 0.01,
         
       });
+
     const[prog,setProg] = useState(translateY.current)
     translateY.onChange((current, value) => {setProg(current)})
 
@@ -64,8 +75,18 @@ function BookingCarousel() {
         if (n == -1) {
             nav(`hotels`);
             return;
-        } else {
-            nav(`/${data[n].slug.current}`)
+        } 
+        else {
+          setSearchParams({
+            checkin:checkIn,
+            num_nights:getDateDifference(checkIn,checkOut),
+            num_guests:guests,
+            hotel_id:data[n].slug.current,
+          })
+          nav({
+            pathname:`/${data[n].slug.current}`,
+            search:searchParams
+          })
         }
     }
 
@@ -150,7 +171,7 @@ function BookingCarousel() {
                     value={checkIn}
                     minDate={new Date()}
                     onChange={(newValue) => {
-                      setcheckIn(newValue)
+                      setCheckIn(newValue)
                       var element = document
                         .querySelector("#toOpen")
                         ?.querySelector("button");
@@ -183,10 +204,7 @@ function BookingCarousel() {
                       label="Check Out"
                       value={checkOut}
                       minDate={new Date().setDate(new Date().getDate()+1)} //tommorow
-                      onChange={(newValue) => {
-                        setcheckOut(newValue)
-                        getDateDifference(checkIn, checkOut);
-                      }}
+                      onChange={(newValue) => setCheckOut(newValue)}
                       renderInput={({ inputRef, inputProps, InputProps }) => (
                         <Box
                           sx={{

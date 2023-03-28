@@ -25,26 +25,9 @@ import { useAppDispatch, useAppSelector } from '../app/hooks'
 
 function App() {
 
-  const addNDay = (startDate: Date, numOfDays: number|string) => {
-    const result = new Date(startDate);
-    result.setDate(result.getDate() + Number(numOfDays));
-    return result;
-  }
-  
-  const getDateDifference = (checkInDate: Date, checkOutDate: Date) => {
-    var timeDiff = new Date(checkOutDate).getTime() - new Date(checkInDate).getTime();
-    var dayDiff =  timeDiff / (1000 * 3600 * 24);
-    return Math.ceil(dayDiff);
-  }
-
-    const {
-      checkIn, 
-      checkOut, 
-      setCheckIn,
-      setCheckOut,
-      guests,
-      setGuests
-    } = useContext(HotelContext);
+	const [checkIn, setCheckIn] = useState<Date>(new Date())
+	const [checkOut, setCheckOut] = useState<Date>(new Date(new Date().getDate()+1))
+	const [guests, setGuests] = useState<number>(-1)
 
     const isMobile = useMobile()
     const dispatch = useAppDispatch();

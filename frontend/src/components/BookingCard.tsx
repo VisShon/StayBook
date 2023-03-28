@@ -17,22 +17,13 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { numberOfChildren } from "../app/priceSlice";
 import Spinner from "./Spinner";
-import HotelContext from "../context/HotelContext";
 import { useNavigate, useSearchParams} from "react-router-dom";
 
-function BookingCard({ hotelName, address, cardRef, hotelId, hotelNameSlug}: any) {
+function BookingCard({ hotelName, address, cardRef, hotelId, hotelNameSlug, guests, checkIn, checkOut, setCheckIn, setCheckOut}: any) {
 
-  
+
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-
-  const {
-    checkIn,
-    checkOut,
-    getDateDifference,
-    setCheckIn, 
-    setCheckOut, 
-    guests} = useContext(HotelContext);
 
   const { 
     username, 
@@ -267,13 +258,6 @@ function BookingCard({ hotelName, address, cardRef, hotelId, hotelNameSlug}: any
                       .querySelector("#toOpen")
                       ?.querySelector("button");
                     simulateMouseClick(element);
-                    
-                    var hotelUrl = `checkin=${checkIn?.toLocaleDateString('en-IN').replace("/","-")}
-                                    &num_nights=${getDateDifference(checkIn,checkOut)}
-                                    &num_guests=${guests}
-                                    &hotel_id=${hotelId}`;
-                  
-                    navigate(`/hotel/google/list/${hotelId}/${hotelUrl}`);
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />
@@ -287,17 +271,9 @@ function BookingCard({ hotelName, address, cardRef, hotelId, hotelNameSlug}: any
                 value={checkOut}
                 minDate={new Date()}
                 onChange={(newValue: any) => {
-                  getDateDifference(checkIn, newValue);
                   setCheckOut(newValue);
                   dispatch(resetPlans());
                   dispatch(numberOfChildren("0"));
-
-                  var hotelUrl = `checkin=${checkIn?.toLocaleDateString('en-IN').replace("/","-")}
-                                  &num_nights=${getDateDifference(checkIn,checkOut)}
-                                  &num_guests=${guests}
-                                  &hotel_id=${hotelId}`;
-
-                  navigate(`/hotel/google/list/${hotelId}/${hotelUrl}`);
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />

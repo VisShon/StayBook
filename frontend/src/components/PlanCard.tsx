@@ -1,16 +1,12 @@
-import { useContext } from 'react'
 import { useAppDispatch } from '../app/hooks'
 import { addPlan } from '../app/planSlice'
 import CheckIcon from '@mui/icons-material/Check';
 import '../styles/PlanCard.scss'
-import HotelContext from '../context/HotelContext';
 
-function PlanCard({ plan, room, amenities, maxCap, guests }: any) {
+function PlanCard({ plan, room, amenities, maxCap, guests, checkIn, checkOut }: any) {
   const dispatch = useAppDispatch();
   const wind = window.matchMedia("(max-width: 800px)");
-  const {checkIn} = useContext(HotelContext)
 
-  //remove this shit
   const getPrice = (
     date: Date,
     arrOfObjects: any,

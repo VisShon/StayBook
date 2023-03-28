@@ -22,20 +22,14 @@ export type Props ={
   rating:number,
   card_amenities: string
   card_amenities_ref: any
-  checkIn:Date
-  checkOut:Date
 };
 
 
-function HotelCard({name,images,rooms,slug,rating,card_amenities,card_amenities_ref, checkIn, checkOut}:Props) {
+function HotelCard({name,images,rooms,slug,rating,card_amenities,card_amenities_ref}:Props) {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [n,setN] =useState(0); 
   const navigate = useNavigate();
-  const checkInDate = checkIn.toLocaleDateString('en-IN')
-                              .replace("/","-");
-  const checkOutDate = checkOut.toLocaleDateString('en-IN')
-                              .replace("/","-");
 
   const onClickHandler = () => {
     setSearchParams({

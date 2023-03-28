@@ -6,7 +6,7 @@ export type HotelContextProps = {
   checkIn: Date,
   checkOut: Date,
   numOfNights: number,
-  setnumOfNights:number,
+  setnumOfNights:Function,
   setGuests:Function,
   setCheckIn:Function,
   setCheckOut:Function,

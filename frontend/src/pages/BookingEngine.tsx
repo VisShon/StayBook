@@ -25,7 +25,6 @@ import { useAppDispatch, useAppSelector } from '../app/hooks'
 
 
 function App() {
-
   const addNDay = (startDate: Date, numOfDays: number|string) => {
     const result = new Date(startDate);
     result.setDate(result.getDate() + Number(numOfDays));

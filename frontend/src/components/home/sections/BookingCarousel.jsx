@@ -38,7 +38,6 @@ function BookingCarousel() {
     });
 
 //num of guest error
-
     function simulateMouseClick(element) {
       mouseClickEvents.forEach((mouseEventType) =>
         element.dispatchEvent(

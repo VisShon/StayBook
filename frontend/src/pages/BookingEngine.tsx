@@ -26,7 +26,8 @@ import { useAppDispatch, useAppSelector } from '../app/hooks'
 function App() {
 
 	const [checkIn, setCheckIn] = useState<Date>(new Date())
-	const [checkOut, setCheckOut] = useState<Date>(new Date(new Date().getDate()+1))
+	const tommorow = new Date().setDate(new Date().getDate()+1)
+	const [checkOut, setCheckOut] = useState<Date>(new Date(tommorow))
 	const [guests, setGuests] = useState<number>(-1)
 
 	const isMobile = useMobile()

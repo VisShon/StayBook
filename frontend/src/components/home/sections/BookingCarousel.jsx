@@ -23,7 +23,7 @@ function BookingCarousel() {
     const [searchParams, setSearchParams] = useSearchParams()
 
     const [checkIn, setCheckIn] = useState(new Date())
-    const [checkOut, setCheckOut] = useState(new Date(new Date().getDate()+1))
+    const [checkOut, setCheckOut] = useState(new Date().setDate(checkIn.getDate()+1))
     const [guests, setGuests] = useState(2)
 
     const [data, setData] = useState([])
@@ -78,11 +78,12 @@ function BookingCarousel() {
         } 
         else {
           setSearchParams({
-            checkin:checkIn,
+            checkin:checkIn.toISOString('en-IN').replace('/','-'),
             num_nights:getDateDifference(checkIn,checkOut),
             num_guests:guests,
             hotel_id:data[n].slug.current,
           })
+
           nav({
             pathname:`/${data[n].slug.current}`,
             search:searchParams
@@ -203,7 +204,7 @@ function BookingCarousel() {
                       views={["day", "month"]}
                       label="Check Out"
                       value={checkOut}
-                      minDate={new Date().setDate(new Date().getDate()+1)} //tommorow
+                      minDate={new Date().setDate(checkIn.getDate()+1)} //tommorow
                       onChange={(newValue) => setCheckOut(newValue)}
                       renderInput={({ inputRef, inputProps, InputProps }) => (
                         <Box

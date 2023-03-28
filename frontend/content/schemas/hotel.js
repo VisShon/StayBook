@@ -51,6 +51,11 @@ export default {
             },
         },
         {
+            name: 'id',
+            title: 'ID',
+            type: 'string',
+        },
+        {
             name: 'phone',
             title: 'Phone',
             type: 'string',

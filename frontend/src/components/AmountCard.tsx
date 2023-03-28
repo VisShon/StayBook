@@ -1,15 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import "../styles/BookingCard.scss";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { updatePrice, updateWithoutTaxPrice } from "../app/priceSlice";
-import { checkInContext, checkOutContext } from "../App";
 
 function AmountCard({ checkIn, checkOut }: any) {
   const plans = useAppSelector((state) => state.plans.selectedPlans);
   const children = useAppSelector((state) => state.price.children);
   const dispatch = useAppDispatch();
-  const [checkInGlobal, setcheckInGlobal] = useContext(checkInContext);
-  const [checkOutGlobal, setcheckOutGlobal] = useContext(checkOutContext);
+
   const [roomPrice, setRoomPrice] = useState(0.0);
   const [tax, setTax] = useState(0.0);
 
@@ -52,7 +50,7 @@ function AmountCard({ checkIn, checkOut }: any) {
   useEffect(() => {
     var x: number = 0;
     plans.forEach((plan: any) => {
-      x += getTotalCost(checkInGlobal, checkOutGlobal, plan);
+      x += getTotalCost(checkIn, checkOut, plan);
     });
 
     setRoomPrice(x);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { motion, useAnimation, useScroll, useSpring } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useNavigate } from 'react-router-dom'
@@ -7,10 +7,7 @@ import client from '../../../client'
 import arrow from '../../../images/arrowVector.svg'
 import guest from '../../../images/guests.svg'
 import hotel from '../../../images/hotel.svg'
-import { format } from 'date-fns'
-
-import { HotelContext } from '../../../context/hotel-context'
-
+import { HotelContext } from '../../../context/HotelContext'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import Box from '@mui/material/Box'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
@@ -21,20 +18,10 @@ const boxVariant = {
     hidden: { opacity: 0, translateY: '3vw' },
 }
 
-function getDateDifference(checkInDate: string | number | Date, checkOutDate: string | number | Date) {
-  var timeDiff = new Date(checkOutDate).getTime() - new Date(checkInDate).getTime();
-  var dayDiff =  timeDiff / (1000 * 3600 * 24);
-
-  return dayDiff;
-}
-
 function BookingCarousel() {
-    const hotelCtx = React.useContext(HotelContext);
+    const {guests,setGuests,numOfNights, checkIn, checkOut, getDateDifference, setcheckIn, setcheckOut } = useContext(HotelContext);
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
-    const [checkIn, setCheckIn] = useState(null)
-    const [checkOut, setCheckOut] = useState(null)
-    const [guests, setGuests] = useState(2)
     const [n, setN] = useState(0)
     const [suggestions, setSuggestions] = useState([])
     const control = useAnimation()
@@ -49,6 +36,9 @@ function BookingCarousel() {
         restDelta: 1,
         
     });
+
+//num of guest error
+
     function simulateMouseClick(element) {
       mouseClickEvents.forEach((mouseEventType) =>
         element.dispatchEvent(
@@ -61,6 +51,7 @@ function BookingCarousel() {
         )
       );
     }
+
     const translateY2 = useSpring(scrollY, {
         stiffness: 80,
         damping: 30,
@@ -71,13 +62,10 @@ function BookingCarousel() {
     translateY.onChange((current, value) => {setProg(current)})
 
     const onSubmit = () => {
-        sessionStorage.setItem('guests', guests.toString())
-        console.log(n);
         if (n == -1) {
             nav(`hotels`);
             return;
         } else {
-            
             nav(`/${data[n].slug.current}`)
         }
     }
@@ -96,13 +84,13 @@ function BookingCarousel() {
             await client
                 .fetch(
                     `*[_type == "hotel"] {
-        name,
-        slug,
-        description,
-        images[]{
-          asset -> {url},
-        }
-      }`
+                      name,
+                      slug,
+                      description,
+                      images[]{
+                        asset -> {url},
+                      }
+                    }`
                 )
                 .then((data) => setData(data))
                 .then(() => {
@@ -130,13 +118,7 @@ function BookingCarousel() {
                 <div className="change">
                   <div
                     onClick={() => {
-                      guests === 2 ? setGuests(2) : setGuests((prev) => --prev);
-                      if (guests === 2) {
-                        hotelCtx.numOfGuests = Number(2);
-                      }
-                      else {
-                        hotelCtx.numOfGuests = Number(Number(guests) - Number(1));
-                      }
+                      guests === 2 ? setGuests(2) : setGuests((prev) => --prev)
                     }}
                     className="changeValue"
                     style={guests == 2 ? { color: "grey" } : { color: "black" }}
@@ -151,12 +133,6 @@ function BookingCarousel() {
                   <div
                     onClick={() => {
                       guests === 4 ? setGuests(4) : setGuests((prev) => ++prev);
-                      if (guests === 4) {
-                        hotelCtx.numOfGuests = Number(4);
-                      }
-                      else {
-                        hotelCtx.numOfGuests = Number(Number(guests) + Number(1));
-                      }
                     }}
                     className="changeValue"
                     style={guests == 4 ? { color: "grey" } : { color: "black" }}
@@ -175,15 +151,11 @@ function BookingCarousel() {
                     value={checkIn}
                     minDate={new Date()}
                     onChange={(newValue) => {
-                      setCheckIn(newValue);
-                        hotelCtx.checkIn = newValue;
-                        console.log("Check In: " + format(hotelCtx.checkIn, 'MM/dd/yyyy'));
-                        sessionStorage.setItem("checkIn", newValue);
-                       var element = document
-                         .querySelector("#toOpen")
-                         ?.querySelector("button");
-
-                       simulateMouseClick(element);
+                      setcheckIn(newValue)
+                      var element = document
+                        .querySelector("#toOpen")
+                        ?.querySelector("button");
+                      simulateMouseClick(element);
                         
                     }}
                     renderInput={({ inputRef, inputProps, InputProps }) => (
@@ -211,14 +183,10 @@ function BookingCarousel() {
                       views={["day", "month"]}
                       label="Check Out"
                       value={checkOut}
-                      minDate={new Date()}
+                      minDate={new Date().setDate(new Date().getDate()+1)} //tommorow
                       onChange={(newValue) => {
-                        setCheckOut(newValue);
-                        hotelCtx.checkOut = newValue;
-                        console.log("Check Out: " + format(hotelCtx.checkOut, 'MM/dd/yyyy'));
-                        hotelCtx.numOfNights = Number(getDateDifference(hotelCtx.checkIn, hotelCtx.checkOut));
-                        // hotelCtx.checkOut = newValue;
-                        sessionStorage.setItem("checkOut", newValue);
+                        setcheckOut(newValue)
+                        getDateDifference(checkIn, checkOut);
                       }}
                       renderInput={({ inputRef, inputProps, InputProps }) => (
                         <Box

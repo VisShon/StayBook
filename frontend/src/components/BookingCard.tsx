@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import "../styles/BookingCard.scss";
 import AmountCard from "./AmountCard";
 import SelectedPlan from "./SelectedPlan";
@@ -15,91 +15,38 @@ import { removePlan, resetPlans } from "../app/planSlice";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { checkInContext, checkOutContext } from "../App";
 import { numberOfChildren } from "../app/priceSlice";
 import Spinner from "./Spinner";
-import HotelContext from "../context/hotel-context";
+import HotelContext from "../context/HotelContext";
+import { useNavigate, useSearchParams} from "react-router-dom";
 
+function BookingCard({ hotelName, address, cardRef, hotelId, hotelNameSlug}: any) {
 
-import {
-  useNavigate,
-  useSearchParams,
-} from "react-router-dom";
-import { format } from "date-fns";
-
-function addNDay(startDate: string | number | Date, numOfDays: number) {
-  const result = new Date(startDate);
-  result.setDate(result.getDate() + Number(numOfDays));
-  return result;
-}
-
-function getDateDifference(checkInDate: string | number | Date, checkOutDate: string | number | Date) {
-  var timeDiff = new Date(checkOutDate).getTime() - new Date(checkInDate).getTime();
-  var dayDiff =  timeDiff / (1000 * 3600 * 24);
-
-  return Math.ceil(dayDiff);
-}
-
-function getDateFormatToUrl(givenDate: string | number | Date) {
-  const result = format(new Date(givenDate), 'dd/MM/yyyy');
-  var d00 = result.toString().split("/")[0];
-  var d01 = result.toString().split("/")[1];
-  var d02 = result.toString().split("/")[2];
   
-  return `${d00}-${d01}-${d02}`;
-}
-
-function BookingCard({
-  hotelName,
-  address,
-  cardRef,
-  hotelId,
-  hotelNameSlug,
-  checkInVal,
-  checkOutVal,
-}: any) {
-  const hotelCtx = React.useContext(HotelContext);
   const navigate = useNavigate();
-  const ref: string = new URL(window.location.href).pathname;
-  // const navigate = useNavigate();
-  // var checkIn = format(hotelCtx.checkIn as Date, 'dd/MM/yyyy');
-  // var checkOut = format(hotelCtx.checkOut as Date, 'dd/MM/yyyy');
-  // var checkInSplit = checkIn.toString().split("/");
-  // var checkOutSplit = checkOut.toString().split("/");
-  // var checkInInfo = `${checkInSplit[0]}-${checkInSplit[1]}-${checkInSplit[2]}`;
-  // var checkOutInfo = `${checkOutSplit[0]}-${checkOutSplit[1]}-${checkOutSplit[2]}`;
-  // const [searchParams, setSearchParams] = useSearchParams({checkin: checkInInfo, num_nights: hotelCtx.numOfNights.toString(), num_guests: hotelCtx.numOfGuests.toString(), hotel_id: hotelId});
-
-  // const [searchParams, setSearchParams] = useSearchParams({checkin: String(hotelCtx.checkIn), num_nights: String(hotelCtx.numOfNights), num_guests: String(hotelCtx.numOfGuests), hotel_id: hotelId});
-  // const [searchParams, setSearchParams] = useSearchParams({checkin: getDateFormatToUrl(hotelCtx.checkIn), num_nights: String(hotelCtx.numOfNights), num_guests: String(hotelCtx.numOfGuests), hotel_id: hotelId});
-
-  let today = new Date();
-  let tomorrow = new Date();
-  tomorrow.setDate(today.getDate() + 1);
-
-  const CheckOutDate = sessionStorage.getItem("checkOut");
-  const CheckInDate = sessionStorage.getItem("checkIn");
-  const [checkInGlobal, setcheckInGlobal] = useContext(checkInContext);
-  const [checkOutGlobal, setcheckOutGlobal] = useContext(checkOutContext);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  var tempDate = new Date();
-  const [checkIn, setCheckIn] = useState<Date | null>(
-    CheckInDate ? new Date(CheckInDate) : today
-  );
-  const [initCheckout, setinitCheckout] = useState<Date | null>(
-    CheckInDate ? new Date(CheckInDate) : today
-  );
-  const [checkOut, setCheckOut] = useState<Date | null>(
-    CheckOutDate ? new Date(CheckOutDate) : tomorrow
-  );
-  setcheckInGlobal(hotelCtx.checkIn);
-  setcheckOutGlobal(hotelCtx.checkOut);
-
   const dispatch = useAppDispatch();
+
+  const {
+    checkIn,
+    checkOut,
+    getDateDifference,
+    setCheckIn, 
+    setCheckOut, 
+    guests} = useContext(HotelContext);
+
+  const { 
+    username, 
+    email, 
+    phone, 
+    Login } = useContext<AuthContextProps>(AuthContext);
+    
   const withoutTax = useAppSelector((state) => state.price.withoutTax);
   const price = useAppSelector((state) => state.price.value);
   const Plans = useAppSelector((state) => state.plans.selectedPlans);
 
+
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [searchParams,setSearchParams] = useSearchParams()
   const [contact, setContact] = useState<any>("");
   const [payAtHotel, setPayAtHote] = useState<boolean>(false);
   const [isPaid, setIsPaid] = useState<boolean>(false);
@@ -108,8 +55,6 @@ function BookingCard({
   const [fullname, setFullname] = useState<any>("");
   const [useremail, setUserEmail] = useState<any>("");
 
-  const { username, email, phone, Login } =
-    useContext<AuthContextProps>(AuthContext);
 
   const mouseClickEvents = ["mousedown", "click", "mouseup"];
   function simulateMouseClick(element: any) {
@@ -124,6 +69,7 @@ function BookingCard({
       )
     );
   }
+
   const payOnHotel = async () => {
     window.scrollTo(0, 0);
     let waysConveyed = 0;
@@ -267,7 +213,7 @@ function BookingCard({
     setIsPaid(true);
     try {
       await axios.post(
-        `/api${ref}/setReservations`,
+        `/api${hotelNameSlug}/setReservations`,
         {
           username: username ? username : fullname,
           email: username ? email : useremail,
@@ -311,29 +257,23 @@ function BookingCard({
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 label="Check In"
-                value={hotelCtx.checkIn}
+                value={checkIn}
                 minDate={new Date()}
                 onChange={(newValue: any) => {
-                  hotelCtx.checkIn = newValue;
-                  // hotelCtx.numOfNights = getDateDifference(newValue, hotelCtx.checkOut);
-                  console.log(`ci: ${newValue}`);
-
-                  // setSearchParams({checkin: getDateFormatToUrl(newValue), num_nights: String(getDateDifference(newValue, hotelCtx.checkOut)), num_guests: String(hotelCtx.numOfGuests), hotel_id: hotelId});
-                  // console.log(searchParams.get('checkin'));
-
-                  setCheckIn(newValue);
-                  setcheckInGlobal(newValue);
-                  tempDate.setDate(newValue.getDate() + 1);
-                  setinitCheckout(tempDate);
-                  dispatch(resetPlans());
-                  dispatch(numberOfChildren("0"));
-                  var element = document
-                    .querySelector("#toOpen")
-                    ?.querySelector("button");
-                  simulateMouseClick(element);
+                    setCheckIn(newValue)
+                    dispatch(resetPlans());
+                    dispatch(numberOfChildren("0"));
+                    var element = document
+                      .querySelector("#toOpen")
+                      ?.querySelector("button");
+                    simulateMouseClick(element);
+                    
+                    var hotelUrl = `checkin=${checkIn?.toLocaleDateString('en-IN').replace("/","-")}
+                                    &num_nights=${getDateDifference(checkIn,checkOut)}
+                                    &num_guests=${guests}
+                                    &hotel_id=${hotelId}`;
                   
-                  var hotelUrl = `checkin=${getDateFormatToUrl(newValue)}&num_nights=${getDateDifference(newValue, hotelCtx.checkOut)}&num_guests=${hotelCtx.numOfGuests}&hotel_id=${hotelId}`;
-                  navigate(`/hotel/google/list/${hotelId}/${hotelUrl}`);
+                    navigate(`/hotel/google/list/${hotelId}/${hotelUrl}`);
                 }}
                 renderInput={(params: any) => <TextField {...params} />}
               />
@@ -344,25 +284,19 @@ function BookingCard({
               <DatePicker
                 views={["day", "month"]}
                 label="Check Out"
-                value={hotelCtx.checkOut}
-                minDate={initCheckout}
+                value={checkOut}
+                minDate={new Date()}
                 onChange={(newValue: any) => {
-                  hotelCtx.checkOut = newValue;
-                  hotelCtx.numOfNights = getDateDifference(hotelCtx.checkIn, newValue);
-                  console.log(`co: ${newValue}`);
-
-                  // setSearchParams({checkin: getDateFormatToUrl(hotelCtx.checkIn), num_nights: String(getDateDifference(hotelCtx.checkIn, newValue)), num_guests: String(hotelCtx.numOfGuests), hotel_id: hotelId});
-                  // console.log(searchParams.get('checkin'));
-
+                  getDateDifference(checkIn, newValue);
                   setCheckOut(newValue);
-                  setcheckOutGlobal(newValue);
                   dispatch(resetPlans());
                   dispatch(numberOfChildren("0"));
-                  console.log(hotelCtx.checkIn);
-                  console.log("New Value of Date" + newValue);
-                  console.log(getDateDifference(hotelCtx.checkIn, newValue));
-                  
-                  var hotelUrl = `checkin=${getDateFormatToUrl(hotelCtx.checkIn)}&num_nights=${getDateDifference(hotelCtx.checkIn, newValue)}&num_guests=${hotelCtx.numOfGuests}&hotel_id=${hotelId}`;
+
+                  var hotelUrl = `checkin=${checkIn?.toLocaleDateString('en-IN').replace("/","-")}
+                                  &num_nights=${getDateDifference(checkIn,checkOut)}
+                                  &num_guests=${guests}
+                                  &hotel_id=${hotelId}`;
+
                   navigate(`/hotel/google/list/${hotelId}/${hotelUrl}`);
                 }}
                 renderInput={(params: any) => <TextField {...params} />}

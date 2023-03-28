@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useContext, useEffect} from 'react';
 import '../styles/Hotel.scss';
 import StarIcon from '@mui/icons-material/Star';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -6,13 +6,8 @@ import left from '../images/left.png'
 import right from '../images/right.png'
 import vip from '../images/VIP.svg'
 import { format } from 'date-fns'
-
-import {
-  useNavigate,
-  useSearchParams,
-} from "react-router-dom";
-
-import HotelContext from '../context/hotel-context';
+import { useNavigate, useSearchParams} from "react-router-dom";
+import HotelContext from '../context/HotelContext';
 
 export type Props ={
   name: string,
@@ -30,44 +25,28 @@ export type Props ={
   card_amenities_ref: any
 };
 
-function getHotelUniqueId(hotelName: string) {
-  if (hotelName === "aira-xing") {
-    return "24669";
-  }
-  else if (hotelName === "jyoti-mahal") {
-    return "25095";
-  }
-  else if (hotelName === "jai-balaji") {
-    return "23690";
-  }
-  else if (hotelName === "pinky-villa") {
-    return "23540";
-  }
-  else if (hotelName === "staybook-south-delhi") {
-    return "23719";
-  }
-  else if (hotelName === "atlanta-near-new-delhi-train-station") {
-    return "24712";
-  }
-  else {
-    return "12345";
-  }
-}
 
 function HotelCard({name,images,rooms,slug,rating,card_amenities,card_amenities_ref}:Props) {
-  const hotelCtx = React.useContext(HotelContext);
-  const hotelCode = getHotelUniqueId(slug.current);
-  const navigate = useNavigate();
-  var checkIn = format(hotelCtx.checkIn as Date, 'dd/MM/yyyy');
-  var checkOut = format(hotelCtx.checkOut as Date, 'dd/MM/yyyy');
-  var checkInSplit = checkIn.toString().split("/");
-  var checkOutSplit = checkOut.toString().split("/");
-  var checkInInfo = `${checkInSplit[0]}-${checkInSplit[1]}-${checkInSplit[2]}`;
-  var checkOutInfo = `${checkOutSplit[0]}-${checkOutSplit[1]}-${checkOutSplit[2]}`;
-  // const [searchParams, setSearchParams] = useSearchParams({checkin: checkInInfo, num_nights: 1, num_guests: 2, hotel_Id: hotelCode});
-  const [searchParams, setSearchParams] = useSearchParams({checkin: checkInInfo, num_nights: hotelCtx.numOfNights.toString(), num_guests: hotelCtx.numOfGuests.toString(), hotel_id: hotelCode});
 
+  const [searchParams, setSearchParams] = useSearchParams();
   const [n,setN] =useState(0); 
+  const {checkIn,checkOut,getDateDifference,guests} = useContext(HotelContext);
+  const navigate = useNavigate();
+  const checkInDate = checkIn.toLocaleDateString('en-IN')
+                              .replace("/","-");
+  const checkOutDate = checkOut.toLocaleDateString('en-IN')
+                              .replace("/","-");
+
+  const onClickHandler = () => {
+    setSearchParams({
+
+    })
+    navigate({
+      pathname:`/${slug.current}`,
+      search:`?${searchParams}`
+    })
+  }
+
   return (
     <div className="hotelCard">
         <div className="images">
@@ -89,10 +68,7 @@ function HotelCard({name,images,rooms,slug,rating,card_amenities,card_amenities_
           <img className="vip" src={vip} />
         </div>
 
-        {/* <a href={`/${slug.current}/${checkInInfo}/${checkOutInfo}`}> */}
-        {/* <a href={`/${slug.current}`}> */}
-        {/* <a href={`/hotel/google/list/${hotelCode}/${searchParams}/${slug.current}`}> */}
-        <a href={`/hotel/google/list/${hotelCode}/${searchParams}`}>
+        <div onClick={onClickHandler}>
           <h2>{name}</h2>
           {!card_amenities_ref && card_amenities && (<p className="card-amenities">{card_amenities}</p>)}
           {card_amenities_ref && (
@@ -114,7 +90,7 @@ function HotelCard({name,images,rooms,slug,rating,card_amenities,card_amenities_
             </div>
           </div>
             <p>₹{rooms.plans.price} <ArrowForwardIosIcon /></p>
-        </a>
+        </div>
     </div>
   )
 };

@@ -1,21 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../app/hooks'
-import { addPlan, removePlan } from '../app/planSlice'
+import { useContext } from 'react'
+import { useAppDispatch } from '../app/hooks'
+import { addPlan } from '../app/planSlice'
 import CheckIcon from '@mui/icons-material/Check';
 import '../styles/PlanCard.scss'
-import { checkInContext, checkOutContext } from "../App";
+import HotelContext from '../context/HotelContext';
 
 function PlanCard({ plan, room, amenities, maxCap, guests }: any) {
   const dispatch = useAppDispatch();
   const wind = window.matchMedia("(max-width: 800px)");
+  const {checkIn} = useContext(HotelContext)
 
-  // const CheckOutDate = sessionStorage.getItem("checkOut");
-  // const CheckInDate = sessionStorage.getItem("checkIn");
-  const [checkInGlobal, setcheckInGlobal] = useContext(checkInContext);
-  const [checkOutGlobal, setcheckOutGlobal] = useContext(checkOutContext);
-  const [CheckInDate, setCheckInDate] = useState(checkInGlobal);
-  const [CheckOutDate, setCheckOutDate] = useState(checkOutGlobal);
-
+  //remove this shit
   const getPrice = (
     date: Date,
     arrOfObjects: any,
@@ -66,7 +61,7 @@ function PlanCard({ plan, room, amenities, maxCap, guests }: any) {
       ) : null}
       <h2>
         
-         ₹{getPrice(checkInGlobal, plan.price_planner,plan.price)}
+         ₹{getPrice(checkIn, plan.price_planner,plan.price)}
       </h2>
       <div className="button" onClick={onClickHandler}>
         Select

@@ -7,7 +7,8 @@ import { AuthContext, AuthContextProps } from '../context/AuthContext'
 
 function Button({ checkIn, checkOut, hotel, address }: any) {
     let price = useAppSelector((state) => state.price.value)
-    let orderAmount = (price * 10).toString() + '0'
+    let orderAmount = Number(price*100).toFixed(0)
+
     const { username, email, phone, Login } =
         useContext<AuthContextProps>(AuthContext)
 

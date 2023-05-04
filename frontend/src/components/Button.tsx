@@ -87,7 +87,7 @@ function Button({ checkIn, checkOut, hotel, address }: any) {
                         setIsPaid(true)
 
                         const result = await axios.post(
-                            `/api${hotelName}/setReservations`,
+                            `/api/${hotelName}/setReservations`,
                             {
                                 username: username,
                                 email: email,
